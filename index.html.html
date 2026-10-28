@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Experiencias personalizadas de senderismo por los Prealpes bávaros. Montaña, naturaleza y descanso, adaptados a tu nivel.">
+  <meta name="theme-color" content="#203c32">
+  <title>Una pausa en tu viaje | Experiencias en los Prealpes bávaros</title>
+  <style>
+    :root {
+      --forest: #203c32;
+      --forest-2: #315344;
+      --sage: #dfe7d9;
+      --cream: #f7f5ef;
+      --sand: #e9e2d4;
+      --ink: #202a25;
+      --muted: #65716a;
+      --white: #fff;
+      --radius: 18px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--cream);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .topbar {
+      background: var(--forest); color: #fff; font-size: .84rem;
+      padding: 9px 0; text-align: center; letter-spacing: .02em;
+    }
+    header {
+      background: rgba(247,245,239,.96); position: sticky; top: 0; z-index: 10;
+      border-bottom: 1px solid rgba(32,60,50,.12); backdrop-filter: blur(10px);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: Georgia, serif; color: var(--forest); font-size: 1.18rem; text-decoration: none; line-height: 1.15; }
+    .brand small { display: block; font: 600 .68rem system-ui, sans-serif; letter-spacing: .13em; text-transform: uppercase; margin-top: 5px; }
+    nav { display: flex; align-items: center; gap: 24px; }
+    nav a { text-decoration: none; font-size: .94rem; }
+    nav a:hover { color: var(--forest-2); text-decoration: underline; text-underline-offset: 5px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 13px 20px; border-radius: 999px; border: 1px solid var(--forest);
+      background: var(--forest); color: #fff; text-decoration: none; font-weight: 650;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--forest-2); }
+    .button.secondary { background: transparent; color: var(--forest); }
+    .button.secondary:hover { background: var(--sage); }
+    .hero {
+      min-height: 690px; display: grid; align-items: center; color: #fff;
+      background:
+        linear-gradient(90deg, rgba(13,35,28,.80) 0%, rgba(13,35,28,.48) 48%, rgba(13,35,28,.12) 100%),
+        url("https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=2000&q=85") center 52%/cover;
+    }
+    .hero-content { max-width: 700px; padding: 90px 0; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .77rem; font-weight: 750; }
+    h1, h2, h3 { line-height: 1.12; }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(3rem, 7vw, 5.6rem); font-weight: 500; letter-spacing: -.045em; margin: 20px 0; }
+    .hero .lead { max-width: 600px; font-size: clamp(1.08rem, 2vw, 1.32rem); color: #f4f4ed; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .hero .button { background: #f4f0e6; border-color: #f4f0e6; color: var(--forest); }
+    .hero .button.secondary { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.72); color: #fff; }
+    section { padding: 88px 0; }
+    .section-head { max-width: 710px; margin-bottom: 36px; }
+    .section-head h2 { font: 500 clamp(2.1rem, 4vw, 3.3rem)/1.12 Georgia, serif; letter-spacing: -.03em; color: var(--forest); margin: 12px 0 18px; }
+    .section-head p { color: var(--muted); font-size: 1.08rem; }
+    .eyebrow.dark { color: var(--forest-2); }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+    .intro-photo {
+      min-height: 520px; border-radius: var(--radius);
+      background: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85") center/cover;
+    }
+    .intro-copy h2 { font: 500 clamp(2.2rem, 4vw, 3.4rem)/1.12 Georgia, serif; color: var(--forest); margin: 14px 0 22px; }
+    .intro-copy p { color: var(--muted); }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+    .pill { padding: 8px 12px; border-radius: 99px; background: var(--sage); color: var(--forest); font-size: .87rem; font-weight: 600; }
+    .experiences { background: #edf0e8; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card { overflow: hidden; border-radius: 12px; background: #fff; border: 1px solid rgba(32,60,50,.1); box-shadow: 0 8px 26px rgba(32,60,50,.06); }
+    .card-image { height: 245px; background-position: center; background-size: cover; }
+    .card-body { padding: 24px; }
+    .level { color: var(--forest-2); font-size: .76rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .card h3 { font: 500 1.65rem/1.2 Georgia, serif; color: var(--forest); margin: 10px 0 12px; }
+    .card p { color: var(--muted); font-size: .96rem; }
+    .card ul { padding-left: 18px; color: var(--muted); font-size: .91rem; }
+    .card .button { margin-top: 10px; padding: 10px 15px; font-size: .91rem; }
+    .custom { background: var(--forest); color: #fff; }
+    .custom-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: start; }
+    .custom h2 { font: 500 clamp(2.2rem, 4vw, 3.3rem)/1.12 Georgia, serif; margin: 14px 0 18px; }
+    .custom p { color: #dbe4dc; }
+    .steps { display: grid; gap: 22px; }
+    .step { display: grid; grid-template-columns: 42px 1fr; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,.2); }
+    .step:last-child { border-bottom: 0; }
+    .step-num { width: 38px; height: 38px; border-radius: 50%; background: #dfe7d9; color: var(--forest); display: grid; place-items: center; font-weight: 800; }
+    .step h3 { margin: 2px 0 7px; font-size: 1.1rem; }
+    .step p { margin: 0; font-size: .95rem; }
+    .practical-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .practical { padding: 25px; border-top: 2px solid var(--forest-2); background: rgba(255,255,255,.55); }
+    .practical h3 { font: 500 1.35rem Georgia, serif; color: var(--forest); margin: 0 0 10px; }
+    .practical p { color: var(--muted); margin: 0; font-size: .96rem; }
+    .about { background: var(--sand); }
+    .about-inner { max-width: 780px; }
+    .about h2 { font: 500 clamp(2.2rem, 4vw, 3.3rem)/1.12 Georgia, serif; color: var(--forest); margin: 12px 0 18px; }
+    .contact { background: #fff; }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 50px; }
+    .contact h2 { font: 500 clamp(2.2rem, 4vw, 3.2rem)/1.12 Georgia, serif; color: var(--forest); margin: 12px 0 18px; }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label { display: block; font-size: .87rem; font-weight: 650; margin-bottom: 6px; }
+    input, select, textarea { width: 100%; padding: 12px 13px; border: 1px solid #cbd3cb; border-radius: 10px; background: #fcfcf9; font: inherit; color: var(--ink); }
+    textarea { min-height: 125px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+    .form-note { font-size: .82rem; color: var(--muted); }
+    .notice { display: none; padding: 14px; background: var(--sage); color: var(--forest); border-radius: 10px; }
+    footer { background: #172e26; color: #e4ebe5; padding: 30px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; font-size: .88rem; }
+    footer a { color: #e4ebe5; }
+    .legal-placeholder { color: #c6d2c8; font-size: .78rem; max-width: 650px; }
+    @media (max-width: 800px) {
+      section[style*="padding:0"] > .wrap { grid-template-columns: 1fr !important; }
+      nav a:not(.button) { display: none; }
+      .hero { min-height: 590px; }
+      .intro-grid, .custom-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .intro-photo { min-height: 330px; }
+      .cards { grid-template-columns: 1fr; }
+      .card-image { height: 240px; }
+      .practical-grid { grid-template-columns: 1fr; gap: 14px; }
+      section { padding: 64px 0; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .nav { min-height: 66px; }
+      .nav .button { padding: 10px 13px; font-size: .84rem; }
+      .hero { min-height: 620px; }
+      .hero-content { padding: 70px 0; }
+      form { grid-template-columns: 1fr; }
+      .full { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Experiencias en español · Prealpes bávaros · Alemania</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio">Una pausa en tu viaje<small>Montaña a tu ritmo</small></a>
+      <nav aria-label="Navegación principal">
+        <a href="#experiencias">Experiencias</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#proyecto">El proyecto</a>
+        <a class="button" href="#contacto">Consultar una fecha</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-content">
+        <div class="eyebrow">Prealpes bávaros · Al sur de Múnich</div>
+        <h1>Los Alpes se viven<br>caminando.</h1>
+        <p class="lead">Los Alpes se viven caminando. Descubre los Prealpes bávaros a tu ritmo, con una experiencia personalizada en español y un momento de descanso al final del camino.</p>
+        <div class="hero-actions">
+          <a class="button" href="#experiencias">Encuentra tu experiencia</a>
+          <a class="button secondary" href="#como-funciona">Cómo funciona</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap intro-grid">
+        <div class="intro-photo" role="img" aria-label="Paisaje montañoso de los Alpes"></div>
+        <div class="intro-copy">
+          <div class="eyebrow dark">Un día fuera de la ciudad</div>
+          <h2>El placer de llegar. La belleza del camino.</h2>
+          <p>Deja atrás por un día el ritmo de las ciudades y ven a descubrir los paisajes de Baviera caminando. La propuesta no es coleccionar cimas: es disfrutar del recorrido, del esfuerzo y de las vistas, sin prisas innecesarias.</p>
+          <p>Después de la montaña, buscamos un lugar para relajarnos: un lago, un río, una piscina o una sauna, según la ruta, la temporada y el tiempo.</p>
+          <div class="pill-row">
+            <span class="pill">Grupos pequeños</span>
+            <span class="pill">Rutas por nivel</span>
+            <span class="pill">Transporte público</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experiences" id="experiencias">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow dark">Elige por nivel, no solo por destino</div>
+          <h2>¿Qué tipo de montaña te apetece?</h2>
+          <p>La dificultad y el esfuerzo son el punto de partida. Las rutas concretas se confirmarán según tu experiencia, el equipo, la temporada y las condiciones de la montaña.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Senderistas en un camino de montaña"></div>
+            <div class="card-body">
+              <div class="level">Nivel 1 · Moderado</div>
+              <h3>Caminar y descubrir</h3>
+              <p>Para quienes disfrutan de caminar varias horas, ganar altura poco a poco y contemplar el paisaje sin buscar una jornada extrema.</p>
+              <ul><li>Ritmo constante y pausas</li><li>Terreno y desnivel por confirmar en cada ruta</li><li>Ideal para conocer la región a pie</li></ul>
+              <a class="button secondary" href="#contacto">Consultar este nivel</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Crestas y cimas de montaña"></div>
+            <div class="card-body">
+              <div class="level">Nivel 2 · Exigente</div>
+              <h3>El reto de la cima</h3>
+              <p>Para personas con buena condición física que buscan una jornada intensa, con más desnivel y terreno de montaña.</p>
+              <ul><li>Buen estado físico y calzado adecuado</li><li>Posibles tramos empinados o irregulares</li><li>Requisitos específicos según la ruta</li></ul>
+              <a class="button secondary" href="#contacto">Consultar este nivel</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Paisaje natural de montaña y lago"></div>
+            <div class="card-body">
+              <div class="level">Nivel 3 · A medida</div>
+              <h3>Montaña, esfuerzo y descanso</h3>
+              <p>Una caminata elegida también pensando en el descanso posterior: un lago, un río u otra alternativa que encaje con el día.</p>
+              <ul><li>Especialmente atractiva en temporada cálida</li><li>El baño depende del clima y las condiciones</li><li>Alternativas si el plan no es viable</li></ul>
+              <a class="button secondary" href="#contacto">Diseñar mi experiencia</a>
+            </div>
+          </article>
+        </div>
+        <p class="form-note" style="margin-top:22px">Estos niveles son orientativos, no una clasificación definitiva de rutas. Antes de publicar cada excursión se indicarán distancia, desnivel, duración estimada, tipo de terreno, dificultad técnica y equipo requerido.</p>
+      </div>
+    </section>
+
+    <section style="padding:0">
+      <div class="wrap" style="width:100%;max-width:none;display:grid;grid-template-columns:1fr 1fr;min-height:390px">
+        <div style="background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85') center/cover;min-height:340px" role="img" aria-label="Paisaje de montaña y agua"></div>
+        <div style="background:var(--forest);color:white;padding:clamp(30px,6vw,76px);display:flex;flex-direction:column;justify-content:center">
+          <div class="eyebrow" style="color:#dfe7d9">Más que una caminata</div>
+          <h2 style="font:500 clamp(2rem,4vw,3rem)/1.12 Georgia,serif;margin:12px 0 18px">Naturaleza, esfuerzo y descanso.</h2>
+          <p style="color:#e0e8e1">La experiencia no termina al llegar a la cima. Si las condiciones lo permiten, buscamos un lugar para bañarnos, relajarnos o simplemente sentarnos a disfrutar del paisaje.</p>
+          <p style="color:#e0e8e1">Y si la logística no permite encontrar un sitio para comer, llevamos algo sencillo para el camino. La comida no está incluida.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="custom" id="como-funciona">
+      <div class="wrap custom-grid">
+        <div>
+          <div class="eyebrow" style="color:#dfe7d9">Tu día en la montaña</div>
+          <h2>Una experiencia pensada para ti.</h2>
+          <p>Escoge entre las experiencias y fechas disponibles. Priorizamos que la exigencia de la ruta encaje contigo; después revisamos la fecha y las condiciones necesarias para realizarla responsablemente.</p>
+          <p>Los tours se plantean para grupos pequeños. El punto de encuentro y el final de cada recorrido se organizan, siempre que sea posible, junto a conexiones de tren o autobús que faciliten el regreso hacia Múnich.</p>
+          <a class="button" href="#contacto">Cuéntame qué buscas</a>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div><h3>Elegimos el nivel adecuado</h3><p>Hablamos de tu experiencia, condición física y del tipo de jornada que te gustaría vivir.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div><h3>Preparamos la ruta</h3><p>Te informamos de la duración estimada, desnivel, terreno, equipo necesario, transporte y exigencia de la excursión.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div><h3>Disfrutamos del camino</h3><p>La montaña manda: el recorrido puede ajustarse, acortarse o cancelarse si las condiciones lo requieren.</p></div></div>
+          <div class="step"><div class="step-num">4</div><div><h3>Nos tomamos un respiro</h3><p>Si las condiciones lo permiten, terminamos junto al agua o en otro lugar para relajarnos antes de regresar.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow dark">Antes de reservar</div>
+          <h2>Lo importante, sin sorpresas.</h2>
+          <p>Queremos que sepas qué esperar y puedas decidir si la experiencia es adecuada para ti.</p>
+        </div>
+        <div class="practical-grid">
+          <article class="practical"><h3>Equipo y condición física</h3><p>En las rutas exigentes se necesita buena condición física y equipo apropiado, como botas o zapatos de montaña con buen agarre, agua y ropa adecuada. La lista exacta dependerá de la ruta.</p></article>
+          <article class="practical"><h3>Un día completo</h3><p>Reserva el día entero. La duración es orientativa y puede alargarse por el clima, el terreno, el ritmo del grupo o cambios necesarios en el recorrido.</p></article>
+          <article class="practical"><h3>Comida y transporte</h3><p>La comida no está incluida. Si no hay un lugar adecuado para comer cerca de la ruta, llevaremos algo sencillo. El transporte público se planifica según cada excursión.</p></article>
+          <article class="practical"><h3>Clima y decisiones</h3><p>Si el tiempo impide realizar la ruta prevista, valoraremos una alternativa comparable. Si no existe una opción adecuada, se ofrecerá reprogramar cuando sea posible o devolver el importe pagado, según las condiciones de reserva.</p></article>
+          <article class="practical"><h3>Descanso al final</h3><p>El baño en un lago o río, la piscina o la sauna dependen del clima, la temporada, el horario y la viabilidad logística. No se garantiza una opción concreta.</p></article>
+          <article class="practical"><h3>Grupos pequeños</h3><p>Las plazas serán limitadas para poder organizar mejor la jornada. El tamaño máximo del grupo y los requisitos se indicarán en cada experiencia.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="proyecto">
+      <div class="wrap about-inner">
+        <div class="eyebrow dark">Un proyecto que crece paso a paso</div>
+        <h2>Descubrir la montaña, una cima a la vez.</h2>
+        <p>Este proyecto nace de una curiosidad personal por los paisajes de los Prealpes bávaros y del reto de conocer cien montañas en un año. Cada salida es una oportunidad para explorar la región y descubrir nuevos caminos.</p>
+        <p>Quiero compartir esa experiencia con viajeros que buscan algo más que visitar una ciudad: pasar un día en la naturaleza, moverse, respirar y disfrutar de la satisfacción de llegar.</p>
+        <a class="button secondary" href="#contacto">Hablemos de tu próxima salida</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="eyebrow dark">Cuéntame tu idea</div>
+          <h2>¿Qué montaña te gustaría vivir?</h2>
+          <p>Cuéntame cuántas personas sois, qué experiencia tenéis caminando y qué tipo de día buscáis. Revisaremos qué experiencia puede encajar mejor y las fechas posibles.</p>
+          <p><strong>Importante:</strong> enviar una consulta no confirma una reserva. La excursión se acuerda una vez revisados el nivel, el equipo, la fecha y las condiciones.</p>
+        </div>
+        <div>
+          <form id="inquiry-form">
+            <div><label for="name">Nombre</label><input id="name" name="name" autocomplete="name" required placeholder="Tu nombre"></div>
+            <div><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@email.com"></div>
+            <div><label for="people">Número de personas</label><select id="people" name="people" required><option value="">Selecciona</option><option>1 persona</option><option>2 personas</option><option>3 personas</option><option>4 personas</option><option>5 personas</option><option>6 personas</option></select></div>
+            <div><label for="level">Nivel que buscas</label><select id="level" name="level" required><option value="">Selecciona</option><option>Moderado</option><option>Exigente</option><option>No estoy seguro/a</option></select></div>
+            <div><label for="date">Fecha preferida (opcional)</label><input id="date" name="date" type="date"></div>
+            <div><label for="language">Idioma preferido</label><select id="language" name="language"><option>Español</option><option>Inglés</option><option>Alemán</option></select></div>
+            <div class="full"><label for="experience">Tu experiencia caminando y lo que te gustaría hacer</label><textarea id="experience" name="experience" required placeholder="Por ejemplo: suelo caminar los fines de semana, me gustaría una ruta exigente y terminar cerca de un lago…"></textarea></div>
+            <div class="full"><button class="button" type="submit">Preparar consulta</button></div>
+            <p class="form-note full">Prototipo: este formulario todavía no envía mensajes ni almacena datos. Antes de publicarlo conectaremos un método de contacto real y añadiremos la información de privacidad necesaria.</p>
+            <div class="notice full" id="form-notice" role="status">La vista previa del formulario funciona. Para recibir consultas reales hay que conectar un servicio de formularios o correo antes de publicar la web.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><strong>Una pausa en tu viaje</strong><br><span>Experiencias en los Prealpes bávaros</span></div>
+      <div class="legal-placeholder">Borrador en desarrollo. Antes de ofrecer reservas se añadirán el aviso legal (Impressum), la política de privacidad y las condiciones de reserva correspondientes.</div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('inquiry-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('form-notice').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
