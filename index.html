@@ -1,329 +1,633 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Experiencias personalizadas de senderismo por los Prealpes bávaros. Montaña, naturaleza y descanso, adaptados a tu nivel.">
-  <meta name="theme-color" content="#203c32">
-  <title>Una pausa en tu viaje | Experiencias en los Prealpes bávaros</title>
-  <style>
-    :root {
-      --forest: #203c32;
-      --forest-2: #315344;
-      --sage: #dfe7d9;
-      --cream: #f7f5ef;
-      --sand: #e9e2d4;
-      --ink: #202a25;
-      --muted: #65716a;
-      --white: #fff;
-      --radius: 18px;
-      --max: 1120px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; color: var(--ink); background: var(--cream);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-    }
-    a { color: inherit; }
-    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
-    .topbar {
-      background: var(--forest); color: #fff; font-size: .84rem;
-      padding: 9px 0; text-align: center; letter-spacing: .02em;
-    }
-    header {
-      background: rgba(247,245,239,.96); position: sticky; top: 0; z-index: 10;
-      border-bottom: 1px solid rgba(32,60,50,.12); backdrop-filter: blur(10px);
-    }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { font-family: Georgia, serif; color: var(--forest); font-size: 1.18rem; text-decoration: none; line-height: 1.15; }
-    .brand small { display: block; font: 600 .68rem system-ui, sans-serif; letter-spacing: .13em; text-transform: uppercase; margin-top: 5px; }
-    nav { display: flex; align-items: center; gap: 24px; }
-    nav a { text-decoration: none; font-size: .94rem; }
-    nav a:hover { color: var(--forest-2); text-decoration: underline; text-underline-offset: 5px; }
-    .button {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 13px 20px; border-radius: 999px; border: 1px solid var(--forest);
-      background: var(--forest); color: #fff; text-decoration: none; font-weight: 650;
-      transition: transform .18s ease, background .18s ease;
-    }
-    .button:hover { transform: translateY(-2px); background: var(--forest-2); }
-    .button.secondary { background: transparent; color: var(--forest); }
-    .button.secondary:hover { background: var(--sage); }
-    .hero {
-      min-height: 690px; display: grid; align-items: center; color: #fff;
-      background:
-        linear-gradient(90deg, rgba(13,35,28,.80) 0%, rgba(13,35,28,.48) 48%, rgba(13,35,28,.12) 100%),
-        url("portada1.jpg") center 52%/cover;
-    }
-    .hero-content { max-width: 700px; padding: 90px 0; }
-    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .77rem; font-weight: 750; }
-    h1, h2, h3 { line-height: 1.12; }
-    h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(3rem, 7vw, 5.6rem); font-weight: 500; letter-spacing: -.045em; margin: 20px 0; }
-    .hero .lead { max-width: 600px; font-size: clamp(1.08rem, 2vw, 1.32rem); color: #f4f4ed; }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-    .hero .button { background: #f4f0e6; border-color: #f4f0e6; color: var(--forest); }
-    .hero .button.secondary { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.72); color: #fff; }
-    section { padding: 88px 0; }
-    .section-head { max-width: 710px; margin-bottom: 36px; }
-    .section-head h2 { font: 500 clamp(2.1rem, 4vw, 3.3rem)/1.12 Georgia, serif; letter-spacing: -.03em; color: var(--forest); margin: 12px 0 18px; }
-    .section-head p { color: var(--muted); font-size: 1.08rem; }
-    .eyebrow.dark { color: var(--forest-2); }
-    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
-    .intro-photo {
-      min-height: 520px; border-radius: var(--radius);
-      background: url("Fockenstein.jpg") center/cover;
-    }
-    .intro-copy h2 { font: 500 clamp(2.2rem, 4vw, 3.4rem)/1.12 Georgia, serif; color: var(--forest); margin: 14px 0 22px; }
-    .intro-copy p { color: var(--muted); }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
-    .pill { padding: 8px 12px; border-radius: 99px; background: var(--sage); color: var(--forest); font-size: .87rem; font-weight: 600; }
-    .experiences { background: #edf0e8; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .card { overflow: hidden; border-radius: 12px; background: #fff; border: 1px solid rgba(32,60,50,.1); box-shadow: 0 8px 26px rgba(32,60,50,.06); }
-    .card-image { height: 245px; background-position: center; background-size: cover; }
-    .card-body { padding: 24px; }
-    .level { color: var(--forest-2); font-size: .76rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
-    .card h3 { font: 500 1.65rem/1.2 Georgia, serif; color: var(--forest); margin: 10px 0 12px; }
-    .card p { color: var(--muted); font-size: .96rem; }
-    .card ul { padding-left: 18px; color: var(--muted); font-size: .91rem; }
-    .card .button { margin-top: 10px; padding: 10px 15px; font-size: .91rem; }
-    .custom { background: var(--forest); color: #fff; }
-    .custom-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: start; }
-    .custom h2 { font: 500 clamp(2.2rem, 4vw, 3.3rem)/1.12 Georgia, serif; margin: 14px 0 18px; }
-    .custom p { color: #dbe4dc; }
-    .steps { display: grid; gap: 22px; }
-    .step { display: grid; grid-template-columns: 42px 1fr; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,.2); }
-    .step:last-child { border-bottom: 0; }
-    .step-num { width: 38px; height: 38px; border-radius: 50%; background: #dfe7d9; color: var(--forest); display: grid; place-items: center; font-weight: 800; }
-    .step h3 { margin: 2px 0 7px; font-size: 1.1rem; }
-    .step p { margin: 0; font-size: .95rem; }
-    .practical-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
-    .practical { padding: 25px; border-top: 2px solid var(--forest-2); background: rgba(255,255,255,.55); }
-    .practical h3 { font: 500 1.35rem Georgia, serif; color: var(--forest); margin: 0 0 10px; }
-    .practical p { color: var(--muted); margin: 0; font-size: .96rem; }
-    .about { background: var(--sand); }
-    .about-inner { max-width: 780px; }
-    .about h2 { font: 500 clamp(2.2rem, 4vw, 3.3rem)/1.12 Georgia, serif; color: var(--forest); margin: 12px 0 18px; }
-    .contact { background: #fff; }
-    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 50px; }
-    .contact h2 { font: 500 clamp(2.2rem, 4vw, 3.2rem)/1.12 Georgia, serif; color: var(--forest); margin: 12px 0 18px; }
-    form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    label { display: block; font-size: .87rem; font-weight: 650; margin-bottom: 6px; }
-    input, select, textarea { width: 100%; padding: 12px 13px; border: 1px solid #cbd3cb; border-radius: 10px; background: #fcfcf9; font: inherit; color: var(--ink); }
-    textarea { min-height: 125px; resize: vertical; }
-    .full { grid-column: 1 / -1; }
-    .form-note { font-size: .82rem; color: var(--muted); }
-    .notice { display: none; padding: 14px; background: var(--sage); color: var(--forest); border-radius: 10px; }
-    footer { background: #172e26; color: #e4ebe5; padding: 30px 0; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; font-size: .88rem; }
-    footer a { color: #e4ebe5; }
-    .legal-placeholder { color: #c6d2c8; font-size: .78rem; max-width: 650px; }
-    @media (max-width: 800px) {
-      section[style*="padding:0"] > .wrap { grid-template-columns: 1fr !important; }
-      nav a:not(.button) { display: none; }
-      .hero { min-height: 590px; }
-      .intro-grid, .custom-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
-      .intro-photo { min-height: 330px; }
-      .cards { grid-template-columns: 1fr; }
-      .card-image { height: 240px; }
-      .practical-grid { grid-template-columns: 1fr; gap: 14px; }
-      section { padding: 64px 0; }
-    }
-    @media (max-width: 520px) {
-      .wrap { width: min(var(--max), calc(100% - 28px)); }
-      .nav { min-height: 66px; }
-      .nav .button { padding: 10px 13px; font-size: .84rem; }
-      .hero { min-height: 620px; }
-      .hero-content { padding: 70px 0; }
-      form { grid-template-columns: 1fr; }
-      .full { grid-column: auto; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Una pausa en tu viaje | Prealpes bávaros</title>
+<style>
+:root {
+  --verde:#203c32;
+  --verde2:#315344;
+  --crema:#f7f5ef;
+  --salvia:#dfe7d9;
+  --arena:#e9e2d4;
+  --texto:#26332d;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  background:var(--crema);
+  color:var(--texto);
+  font-family:Arial,sans-serif;
+  line-height:1.6;
+}
+h1,h2,h3 {font-family:Georgia,serif;font-weight:normal}
+h1 {font-size:clamp(42px,6vw,76px);line-height:1.08}
+h2 {font-size:clamp(30px,4vw,46px);color:var(--verde)}
+h3 {font-size:26px;margin:10px 0}
+p {color:#536158}
+button {cursor:pointer;font:inherit}
+button:disabled {opacity:.45;cursor:not-allowed}
+.btn {
+  background:var(--verde);
+  color:white;
+  padding:13px 22px;
+  border:0;
+  border-radius:3px;
+  font-size:14px;
+}
+.btn:hover:not(:disabled) {background:var(--verde2)}
+header {
+  background:var(--verde);
+  color:white;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+header strong {font-family:Georgia;font-size:21px}
+header a {color:white;text-decoration:none;font-size:13px}
+.hero {
+  min-height:510px;
+  display:flex;
+  align-items:center;
+  padding:75px 8%;
+  background:
+    linear-gradient(90deg,rgba(20,40,30,.78),rgba(20,40,30,.12)),
+    url("portada1.jpg") center/cover,
+    #637e70;
+  color:white;
+}
+.hero div {max-width:720px}
+.hero p {font-size:20px;color:white}
+.hero .btn {background:var(--crema);color:var(--verde)}
+section {padding:75px 8%}
+.center {text-align:center;max-width:720px;margin:0 auto 35px}
+.tours {background:var(--salvia)}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.card {background:white;overflow:hidden}
+.card img {width:100%;height:220px;object-fit:cover}
+.card-body {padding:22px}
+.card p {font-size:14px;min-height:80px}
+.tag {font-size:11px;color:var(--verde2);text-transform:uppercase;letter-spacing:1px}
+.price {font-weight:bold;color:var(--verde);font-size:20px;margin:15px 0}
+.booking {
+  max-width:900px;
+  margin:auto;
+  background:white;
+  padding:35px;
+  border:1px solid #dce3db;
+}
+.hidden {display:none!important}
+.date-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:25px 0;
+}
+.date {
+  background:var(--crema);
+  border:1px solid #d7ded5;
+  padding:15px;
+  text-align:left;
+  border-radius:4px;
+}
+.date strong,.date span {display:block}
+.date span {font-size:12px;color:#617067;margin-top:5px}
+.date.selected {
+  background:var(--salvia);
+  border:2px solid var(--verde);
+}
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+}
+.field {margin-bottom:15px}
+.field.full {grid-column:1/-1}
+label {display:block;font-size:13px;margin-bottom:6px}
+input,select {
+  width:100%;
+  padding:12px;
+  border:1px solid #ccd6cc;
+  border-radius:3px;
+  background:white;
+}
+.checks {margin:25px 0}
+.check {
+  display:flex;
+  gap:10px;
+  margin:15px 0;
+  font-size:13px;
+  align-items:flex-start;
+}
+.check input {width:auto;margin-top:4px;accent-color:var(--verde)}
+.check a {color:var(--verde);text-decoration:underline}
+.total {
+  display:flex;
+  justify-content:space-between;
+  padding:18px 0;
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  font-size:20px;
+  font-weight:bold;
+}
+.notice {
+  background:#f4ebd9;
+  padding:14px;
+  font-size:13px;
+  border-left:4px solid #c9a36b;
+  margin:20px 0;
+}
+.success {
+  background:var(--salvia);
+  padding:28px;
+  border-radius:5px;
+}
+.success h3 {color:var(--verde)}
+footer {
+  background:var(--verde);
+  color:white;
+  padding:40px 8%;
+  font-size:13px;
+}
+footer a {color:white;margin-right:16px}
+.modal {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  z-index:10;
+}
+.modal-content {
+  background:white;
+  max-width:700px;
+  width:100%;
+  max-height:85vh;
+  overflow:auto;
+  padding:30px;
+  border-radius:5px;
+}
+.modal-content h2 {margin-top:0}
+@media(max-width:950px) {
+  .grid {grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px) {
+  section {padding:50px 5%}
+  .grid,.date-grid,.form-grid {grid-template-columns:1fr}
+  .field.full {grid-column:auto}
+  .booking {padding:20px}
+  header {padding:15px}
+  .hero {min-height:420px}
+}
+</style>
 </head>
 <body>
-  <div class="topbar">Experiencias en español · Prealpes bávaros · Alemania</div>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#inicio">Una pausa en tu viaje<small>Montaña a tu ritmo</small></a>
-      <nav aria-label="Navegación principal">
-        <a href="#experiencias">Experiencias</a>
-        <a href="#como-funciona">Cómo funciona</a>
-        <a href="#proyecto">El proyecto</a>
-        <a class="button" href="#contacto">Consultar una fecha</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="wrap hero-content">
-        <div class="eyebrow">Al sur de Múnich</div>
-        <h1>Descubre<br>los Prealpes bávaros.</h1>
-        <p class="lead">Experiencias personalizadas en español que combinan el esfuerzo de caminar por la montaña con el placer de descansar y disfrutar de la naturaleza.</p>
-        <div class="hero-actions">
-          <a class="button" href="#experiencias">Encuentra tu experiencia</a>
-          <a class="button secondary" href="#como-funciona">Cómo funciona</a>
-        </div>
+<header>
+  <strong>Una pausa en tu viaje</strong>
+  <a href="#excursiones">Ver excursiones</a>
+</header>
+
+<div class="hero">
+  <div>
+    <small>AL SUR DE MÚNICH</small>
+    <h1>Descubre los Prealpes bávaros</h1>
+    <p>Montaña a tu ritmo. Experiencias compartidas en español, entre naturaleza, tranquilidad y paisajes inolvidables.</p>
+    <button class="btn" onclick="document.getElementById('excursiones').scrollIntoView()">
+      Explorar excursiones
+    </button>
+  </div>
+</div>
+
+<section>
+  <div class="center">
+    <h2>Una pausa en tu viaje</h2>
+    <p>Yo hago estas excursiones por las montañas bávaras y te invito a acompañarme. Compartimos el camino, el esfuerzo y las vistas, en grupos pequeños y sin prisas.</p>
+    <p>Elige la excursión que mejor se adapte a tu condición física y consulta las fechas disponibles.</p>
+  </div>
+</section>
+
+<section id="excursiones" class="tours">
+  <div class="center">
+    <small>EXCURSIONES EN LOS PREALPES BÁVAROS</small>
+    <h2>Elige tu próxima salida</h2>
+    <p>Cuatro rutas de ejemplo, con salidas programadas los fines de semana.</p>
+  </div>
+  <div class="grid" id="tourGrid"></div>
+</section>
+
+<section id="reserva" class="hidden">
+  <div class="booking">
+    <button class="btn" onclick="volver()">← Volver a excursiones</button>
+
+    <h2 id="tourTitle"></h2>
+    <p id="tourDescription"></p>
+    <p id="tourLevel"></p>
+    <div class="price">89 € por persona</div>
+
+    <button class="btn" id="startBooking" onclick="mostrarFechas()">
+      Reservar
+    </button>
+
+    <div id="calendarSection" class="hidden">
+      <h3>Selecciona una fecha</h3>
+      <p>Próximas salidas disponibles para esta excursión.</p>
+      <div class="notice">
+        Calendario de demostración. Todas las fechas y plazas son ficticias.
       </div>
-    </section>
+      <div class="date-grid" id="dateGrid"></div>
+    </div>
 
-    <section>
-      <div class="wrap intro-grid">
-        <div class="intro-photo" role="img" aria-label="Paisaje montañoso de los Alpes"></div>
-        <div class="intro-copy">
-          <div class="eyebrow dark">Un día fuera de la ciudad</div>
-          <h2>El placer de llegar. La belleza del camino.</h2>
-          <p>Deja atrás por un día el ritmo de las ciudades y ven a descubrir los paisajes de Baviera caminando. La propuesta no es coleccionar cimas: es disfrutar del recorrido, del esfuerzo y de las vistas, sin prisas innecesarias.</p>
-          <p>Después de la montaña, buscamos un lugar para relajarnos: un lago, un río, una piscina o una sauna, según la ruta, la temporada y el tiempo.</p>
-          <div class="pill-row">
-            <span class="pill">Grupos pequeños</span>
-            <span class="pill">Rutas por nivel</span>
-            <span class="pill">Transporte público</span>
+    <div id="formSection" class="hidden">
+      <h3>Datos de la reserva</h3>
+      <p id="selectedDateLabel"></p>
+
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="field full">
+            <label for="nombre">Nombre del titular de la reserva</label>
+            <input id="nombre" required placeholder="Nombre y apellidos">
+          </div>
+          <div class="field">
+            <label for="personas">Número de participantes</label>
+            <select id="personas" onchange="actualizarTotal()"></select>
+          </div>
+          <div class="field">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" type="email" required placeholder="correo@ejemplo.com">
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="experiences" id="experiencias">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow dark">Elige por nivel, no solo por destino</div>
-          <h2>¿Qué tipo de montaña te apetece?</h2>
-          <p>La dificultad y el esfuerzo son el punto de partida. Las rutas concretas se confirmarán según tu experiencia, el equipo, la temporada y las condiciones de la montaña.</p>
+        <div class="total">
+          <span>Total a pagar</span>
+          <span id="total">89 €</span>
         </div>
-        <div class="cards">
-          <article class="card">
-            <div class="card-image" style="background-image:url('portada2.jpg')" role="img" aria-label="Senderistas en un camino de montaña"></div>
-            <div class="card-body">
-              <div class="level">Nivel 1 · Moderado</div>
-              <h3>Caminar y descubrir</h3>
-              <p>Para quienes disfrutan de caminar varias horas, ganar altura poco a poco y contemplar el paisaje sin buscar una jornada extrema.</p>
-              <ul><li>Ritmo constante y pausas</li><li>Terreno y desnivel por confirmar en cada ruta</li><li>Ideal para conocer la región a pie</li></ul>
-              <a class="button secondary" href="#contacto">Consultar este nivel</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-image" style="background-image:url('nubesylago.jpg')" role="img" aria-label="Crestas y cimas de montaña"></div>
-            <div class="card-body">
-              <div class="level">Nivel 2 · Exigente</div>
-              <h3>El reto de la cima</h3>
-              <p>Para personas con buena condición física que buscan una jornada intensa, con más desnivel y terreno de montaña.</p>
-              <ul><li>Buen estado físico y calzado adecuado</li><li>Posibles tramos empinados o irregulares</li><li>Requisitos específicos según la ruta</li></ul>
-              <a class="button secondary" href="#contacto">Consultar este nivel</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-image" style="background-image:url('Benediktenwand.jpg')" role="img" aria-label="Paisaje natural de montaña y lago"></div>
-            <div class="card-body">
-              <div class="level">Nivel 3 · A medida</div>
-              <h3>Montaña, esfuerzo y descanso</h3>
-              <p>Una caminata elegida también pensando en el descanso posterior: un lago, un río u otra alternativa que encaje con el día.</p>
-              <ul><li>Especialmente atractiva en temporada cálida</li><li>El baño depende del clima y las condiciones</li><li>Alternativas si el plan no es viable</li></ul>
-              <a class="button secondary" href="#contacto">Diseñar mi experiencia</a>
-            </div>
-          </article>
-        </div>
-        <p class="form-note" style="margin-top:22px">Estos niveles son orientativos, no una clasificación definitiva de rutas. Antes de publicar cada excursión se indicarán distancia, desnivel, duración estimada, tipo de terreno, dificultad técnica y equipo requerido.</p>
-      </div>
-    </section>
 
-    <section style="padding:0">
-      <div class="wrap" style="width:100%;max-width:none;display:grid;grid-template-columns:1fr 1fr;min-height:390px">
-        <div style="background:url('lagoymontana.jpg') center/cover;min-height:340px" role="img" aria-label="Paisaje de montaña y agua"></div>
-        <div style="background:var(--forest);color:white;padding:clamp(30px,6vw,76px);display:flex;flex-direction:column;justify-content:center">
-          <div class="eyebrow" style="color:#dfe7d9">Más que una caminata</div>
-          <h2 style="font:500 clamp(2rem,4vw,3rem)/1.12 Georgia,serif;margin:12px 0 18px">Naturaleza, esfuerzo y descanso.</h2>
-          <p style="color:#e0e8e1">La experiencia no termina al llegar a la cima. Si las condiciones lo permiten, buscamos un lugar para bañarnos, relajarnos o simplemente sentarnos a disfrutar del paisaje.</p>
-          <p style="color:#e0e8e1">Y si la logística no permite encontrar un sitio para comer, llevamos algo sencillo para el camino. La comida no está incluida.</p>
-        </div>
-      </div>
-    </section>
+        <h3>Antes de pagar</h3>
+        <p>Para participar es obligatorio cumplir estos requisitos.</p>
 
-    <section class="custom" id="como-funciona">
-      <div class="wrap custom-grid">
-        <div>
-          <div class="eyebrow" style="color:#dfe7d9">Tu día en la montaña</div>
-          <h2>Una experiencia pensada para ti.</h2>
-          <p>Escoge entre las experiencias y fechas disponibles. Priorizamos que la exigencia de la ruta encaje contigo; después revisamos la fecha y las condiciones necesarias para realizarla responsablemente.</p>
-          <p>Los tours se plantean para grupos pequeños. El punto de encuentro y el final de cada recorrido se organizan, siempre que sea posible, junto a conexiones de tren o autobús que faciliten el regreso hacia Múnich.</p>
-          <a class="button" href="#contacto">Cuéntame qué buscas</a>
-        </div>
-        <div class="steps">
-          <div class="step"><div class="step-num">1</div><div><h3>Elegimos el nivel adecuado</h3><p>Hablamos de tu experiencia, condición física y del tipo de jornada que te gustaría vivir.</p></div></div>
-          <div class="step"><div class="step-num">2</div><div><h3>Preparamos la ruta</h3><p>Te informamos de la duración estimada, desnivel, terreno, equipo necesario, transporte y exigencia de la excursión.</p></div></div>
-          <div class="step"><div class="step-num">3</div><div><h3>Disfrutamos del camino</h3><p>La montaña manda: el recorrido puede ajustarse, acortarse o cancelarse si las condiciones lo requieren.</p></div></div>
-          <div class="step"><div class="step-num">4</div><div><h3>Nos tomamos un respiro</h3><p>Si las condiciones lo permiten, terminamos junto al agua o en otro lugar para relajarnos antes de regresar.</p></div></div>
-        </div>
-      </div>
-    </section>
+        <div class="checks">
+          <label class="check">
+            <input type="checkbox" class="requiredCheck" onchange="validar()">
+            <span>He leído las <a href="#" onclick="abrirInfo(event,'seguridad')">indicaciones de seguridad y equipamiento</a>, y confirmo que dispongo del calzado y material obligatorio.</span>
+          </label>
 
-    <section>
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow dark">Antes de reservar</div>
-          <h2>Lo importante, sin sorpresas.</h2>
-          <p>Queremos que sepas qué esperar y puedas decidir si la experiencia es adecuada para ti.</p>
-        </div>
-        <div class="practical-grid">
-          <article class="practical"><h3>Equipo y condición física</h3><p>Si una ruta es fácil no quiere decir que cualquier persona la puede hacer. Fácil significa que no se requiere una técnica especial, pero sí debes estar acostumbrado a largas caminatas o a hacer ejercicio con frecuencia. En un nivel moderado se debe contar con buena resistencia física y algo de técnica. En un nivel alto es indispensable tener buena técnica, saber escalar, mucha experiencia y alta resistencia física; lo cual no hace parte de ninguna de nuestras experiencias. Por razones de seguridad es obligatorio llevar calzado de montaña con buen agarre, un reloj con GPS, suficiente agua y ropa adecuada. La lista exacta dependerá de la ruta.</p></article>
-          <article class="practical"><h3>Un día completo</h3><p>Reserva el día entero. La duración es orientativa y puede alargarse por el clima, el terreno, el ritmo del grupo o cambios necesarios en el recorrido. La hora de partida suele ser por la mañana, pero se puede reprogramar para horas de la tarde según las condiciones meteorológicas.</p></article>
-          <article class="practical"><h3>Comida y transporte</h3><p>La comida no está incluida. Si no hay un lugar adecuado para comer cerca de la ruta, llevaremos algo sencillo. El transporte público se planifica según cada excursión.</p></article>
-          <article class="practical"><h3>Clima y decisiones</h3><p>Si el tiempo impide realizar la ruta prevista, valoraremos una alternativa comparable. Si no existe una opción adecuada, se ofrecerá reprogramar cuando sea posible o devolver el importe pagado, según las condiciones de reserva. No se hará el recorrido si el pronóstico de temperatura excede los 35 grados o si hay aviso de tormenta.</p></article>
-          <article class="practical"><h3>Descanso al final</h3><p>El baño en un lago o río, la piscina o la sauna dependen del clima, la temporada, el horario y la viabilidad logística. No se garantiza una opción concreta. Los gastos de entrada, donde aplique, no están incluidos.</p></article>
-          <article class="practical"><h3>Grupos pequeños</h3><p>Las plazas serán limitadas para poder organizar mejor la jornada. El tamaño máximo del grupo y los requisitos se indicarán en cada experiencia.</p></article>
-        </div>
-      </div>
-    </section>
+          <label class="check">
+            <input type="checkbox" class="requiredCheck" onchange="validar()">
+            <span>Dispongo de un seguro válido que cubre accidentes y rescate en montaña. He leído la <a href="#" onclick="abrirInfo(event,'seguro')">información sobre el seguro de montaña</a>.</span>
+          </label>
 
-    <section class="about" id="proyecto">
-      <div class="wrap about-inner">
-        <div class="eyebrow dark">Un proyecto que crece paso a paso</div>
-        <h2>Descubrir la montaña, una cima a la vez.</h2>
-        <p>Este proyecto nace de una curiosidad personal por los paisajes de los Prealpes bávaros y del reto de conocer cien montañas en un año. Cada salida es una oportunidad para explorar la región y descubrir nuevos caminos.</p>
-        <p>Quiero compartir esa experiencia con viajeros que buscan algo más que visitar una ciudad: pasar un día en la naturaleza, moverse, respirar y disfrutar de la satisfacción de llegar.</p>
-        <a class="button secondary" href="#contacto">Hablemos de tu próxima salida</a>
-      </div>
-    </section>
-
-    <section class="contact" id="contacto">
-      <div class="wrap contact-grid">
-        <div>
-          <div class="eyebrow dark">Cuéntame tu idea</div>
-          <h2>¿Qué montaña te gustaría vivir?</h2>
-          <p>Cuéntame cuántas personas sois, qué experiencia tenéis caminando y qué tipo de día buscáis. Revisaremos qué experiencia puede encajar mejor y las fechas posibles.</p>
-          <p><strong>Importante:</strong> enviar una consulta no confirma una reserva. La excursión se acuerda una vez revisados el nivel, el equipo, la fecha y las condiciones.</p>
+          <label class="check">
+            <input type="checkbox" class="requiredCheck" onchange="validar()">
+            <span>He leído y acepto los <a href="#" onclick="abrirInfo(event,'terminos')">términos y condiciones</a> y la <a href="#" onclick="abrirInfo(event,'cancelaciones')">política de cancelación</a>. He leído la <a href="#" onclick="abrirInfo(event,'privacidad')">información de privacidad</a>.</span>
+          </label>
         </div>
-        <div>
-          <form id="inquiry-form">
-            <div><label for="name">Nombre</label><input id="name" name="name" autocomplete="name" required placeholder="Tu nombre"></div>
-            <div><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@email.com"></div>
-            <div><label for="people">Número de personas</label><select id="people" name="people" required><option value="">Selecciona</option><option>1 persona</option><option>2 personas</option><option>3 personas</option><option>4 personas</option><option>5 personas</option><option>6 personas</option></select></div>
-            <div><label for="level">Nivel que buscas</label><select id="level" name="level" required><option value="">Selecciona</option><option>Moderado</option><option>Exigente</option><option>No estoy seguro/a</option></select></div>
-            <div><label for="date">Fecha preferida (opcional)</label><input id="date" name="date" type="date"></div>
-            <div><label for="language">Idioma preferido</label><select id="language" name="language"><option>Español</option><option>Inglés</option><option>Alemán</option></select></div>
-            <div class="full"><label for="experience">Tu experiencia caminando y lo que te gustaría hacer</label><textarea id="experience" name="experience" required placeholder="Por ejemplo: suelo caminar los fines de semana, me gustaría una ruta exigente y terminar cerca de un lago…"></textarea></div>
-            <div class="full"><button class="button" type="submit">Preparar consulta</button></div>
-            <p class="form-note full">Prototipo: este formulario todavía no envía mensajes ni almacena datos. Antes de publicarlo conectaremos un método de contacto real y añadiremos la información de privacidad necesaria.</p>
-            <div class="notice full" id="form-notice" role="status">La vista previa del formulario funciona. Para recibir consultas reales hay que conectar un servicio de formularios o correo antes de publicar la web.</div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="wrap footer-inner">
-      <div><strong>Una pausa en tu viaje</strong><br><span>Experiencias en los Prealpes bávaros</span></div>
-      <div class="legal-placeholder">Borrador en desarrollo. Antes de ofrecer reservas se añadirán el aviso legal (Impressum), la política de privacidad y las condiciones de reserva correspondientes.</div>
+        <button class="btn" id="payBtn" type="submit" disabled>
+          Simular pago y reserva
+        </button>
+        <p style="font-size:12px">
+          Prueba interactiva: no se cobra dinero ni se envían datos.
+        </p>
+      </form>
     </div>
-  </footer>
-  <script>
-    document.getElementById('inquiry-form').addEventListener('submit', function (event) {
-      event.preventDefault();
-      document.getElementById('form-notice').style.display = 'block';
-    });
-  </script>
+
+    <div id="confirmation" class="success hidden"></div>
+  </div>
+</section>
+
+<footer>
+  <p>Una pausa en tu viaje · Montaña a tu ritmo</p>
+  <a href="#" onclick="abrirInfo(event,'terminos')">Condiciones</a>
+  <a href="#" onclick="abrirInfo(event,'seguridad')">Seguridad</a>
+  <a href="#" onclick="abrirInfo(event,'seguro')">Seguro</a>
+  <a href="#" onclick="abrirInfo(event,'cancelaciones')">Cancelaciones</a>
+  <a href="#" onclick="abrirInfo(event,'privacidad')">Privacidad</a>
+  <a href="#" onclick="abrirInfo(event,'impressum')">Impressum</a>
+</footer>
+
+<div id="modal" class="modal hidden" onclick="cerrarInfo()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="btn" onclick="cerrarInfo()">Cerrar ×</button>
+    <h2 id="modalTitle"></h2>
+    <div id="modalText"></div>
+  </div>
+</div>
+
+<script>
+const PRECIO = 89;
+const CAPACIDAD = 8;
+
+// Las fotos locales se usan si existen.
+// Si no existen, se muestran fotos públicas ilustrativas de Unsplash.
+// Las imágenes alternativas NO identifican necesariamente la montaña.
+const tours = [
+  {
+    id:0,
+    nombre:"Geierstein",
+    nivel:"Nivel provisional: fácil / moderado",
+    descripcion:"Una jornada entre bosques y paisajes de montaña. Ideal para desconectar, caminar y disfrutar del entorno de los Prealpes bávaros. El itinerario definitivo y sus requisitos están pendientes de concretar.",
+    foto:"Geierstein.jpg",
+    alternativa:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000"
+  },
+  {
+    id:1,
+    nombre:"Zwiesel",
+    nivel:"Nivel provisional: fácil / moderado",
+    descripcion:"Una excursión para disfrutar de la naturaleza, el aire de montaña y las vistas. El recorrido exacto y su nivel definitivo se confirmarán antes de abrir las reservas reales.",
+    foto:"portada2.jpg",
+    alternativa:"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1000"
+  },
+  {
+    id:2,
+    nombre:"Fockenstein",
+    nivel:"Nivel provisional: moderado",
+    descripcion:"Una salida con ascenso, senderos de montaña y vistas amplias. Recomendada para personas acostumbradas a caminar y con buena condición física.",
+    foto:"Fockenstein.jpg",
+    alternativa:"https://images.unsplash.com/photo-1454496522488-7a8e488e860e?w=1000"
+  },
+  {
+    id:3,
+    nombre:"Benediktenwand",
+    nivel:"Nivel provisional: exigente",
+    descripcion:"Una jornada de montaña para quienes buscan un esfuerzo físico mayor. Requiere preparación y equipamiento adecuado. La ruta definitiva deberá evaluarse antes de ofrecerla.",
+    foto:"Benediktenwand.jpg",
+    alternativa:"https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1000"
+  }
+];
+
+let tourActual = null;
+let fechaActual = null;
+const plazas = {};
+
+// Fechas ficticias de la temporada 2027.
+// Primer fin de semana: excursión 1 sábado y 2 domingo.
+// Segundo fin de semana: excursión 3 sábado y 4 domingo.
+// Se repite el ciclo hasta finales de junio.
+function generarFechas() {
+  const fechas = [[],[],[],[]];
+  const inicio = new Date(2027,3,17,12);
+  const fin = new Date(2027,5,27,12);
+
+  let semana = 0;
+  for(let d=new Date(inicio);d<=fin;d.setDate(d.getDate()+7)) {
+    const sabado = new Date(d);
+    const domingo = new Date(d);
+    domingo.setDate(domingo.getDate()+1);
+
+    const grupo = semana%2===0 ? 0 : 2;
+    const fechaSab = claveFecha(sabado);
+    const fechaDom = claveFecha(domingo);
+
+    fechas[grupo].push(fechaSab);
+    fechas[grupo+1].push(fechaDom);
+
+    // Disponibilidad inicial ficticia, diferente por fecha.
+    plazas[grupo+"_"+fechaSab] = [3,6,2,8][semana%4];
+    plazas[(grupo+1)+"_"+fechaDom] = [5,4,7,3][semana%4];
+
+    semana++;
+  }
+  return fechas;
+}
+function claveFecha(d) {
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function fechaBonita(s) {
+  return new Date(s+"T12:00:00").toLocaleDateString("es-ES",{
+    weekday:"long",day:"numeric",month:"long",year:"numeric"
+  });
+}
+const fechasPorTour = generarFechas();
+
+function mostrarTours() {
+  const grid = document.getElementById("tourGrid");
+  grid.innerHTML="";
+  tours.forEach(t=>{
+    const card=document.createElement("article");
+    card.className="card";
+    card.innerHTML=`
+      <img src="${t.foto}" alt="Paisaje ilustrativo de montaña"
+        onerror="this.onerror=null;this.src='${t.alternativa}'">
+      <div class="card-body">
+        <span class="tag">${t.nivel}</span>
+        <h3>${t.nombre}</h3>
+        <p>${t.descripcion}</p>
+        <div class="price">89 € / persona</div>
+        <button class="btn" onclick="abrirTour(${t.id})">
+          Ver excursión
+        </button>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function abrirTour(id) {
+  tourActual=id;
+  fechaActual=null;
+  const t=tours[id];
+
+  document.getElementById("tourTitle").textContent=t.nombre;
+  document.getElementById("tourDescription").textContent=t.descripcion;
+  document.getElementById("tourLevel").textContent=t.nivel;
+  document.getElementById("reserva").classList.remove("hidden");
+  document.getElementById("startBooking").classList.remove("hidden");
+  document.getElementById("calendarSection").classList.add("hidden");
+  document.getElementById("formSection").classList.add("hidden");
+  document.getElementById("confirmation").classList.add("hidden");
+  document.getElementById("bookingForm").reset();
+  validar();
+  document.getElementById("reserva").scrollIntoView({behavior:"smooth"});
+}
+
+function volver() {
+  document.getElementById("reserva").classList.add("hidden");
+  document.getElementById("excursiones").scrollIntoView({behavior:"smooth"});
+}
+
+function mostrarFechas() {
+  document.getElementById("calendarSection").classList.remove("hidden");
+  document.getElementById("startBooking").classList.add("hidden");
+  pintarFechas();
+}
+
+function pintarFechas() {
+  const contenedor=document.getElementById("dateGrid");
+  contenedor.innerHTML="";
+
+  fechasPorTour[tourActual].forEach(fecha=>{
+    const libres=plazas[tourActual+"_"+fecha];
+    const boton=document.createElement("button");
+    boton.type="button";
+    boton.className="date"+(fechaActual===fecha?" selected":"");
+    boton.disabled=libres===0;
+    boton.innerHTML=`
+      <strong>${fechaBonita(fecha)}</strong>
+      <span>${libres} de ${CAPACIDAD} plazas libres</span>
+    `;
+    boton.onclick=()=>seleccionarFecha(fecha);
+    contenedor.appendChild(boton);
+  });
+}
+
+function seleccionarFecha(fecha) {
+  fechaActual=fecha;
+  pintarFechas();
+
+  const libres=plazas[tourActual+"_"+fecha];
+  const select=document.getElementById("personas");
+  select.innerHTML="";
+
+  for(let i=1;i<=libres;i++){
+    const opcion=document.createElement("option");
+    opcion.value=i;
+    opcion.textContent=i===1?"1 persona":i+" personas";
+    select.appendChild(opcion);
+  }
+
+  document.getElementById("selectedDateLabel").textContent=
+    "Excursión: "+tours[tourActual].nombre+" · "+fechaBonita(fecha);
+
+  document.getElementById("bookingForm").reset();
+  document.getElementById("formSection").classList.remove("hidden");
+  document.getElementById("confirmation").classList.add("hidden");
+  actualizarTotal();
+  validar();
+  document.getElementById("formSection").scrollIntoView({behavior:"smooth"});
+}
+
+function actualizarTotal() {
+  const n=Number(document.getElementById("personas").value)||0;
+  document.getElementById("total").textContent=(n*PRECIO)+" €";
+}
+
+function validar() {
+  const checks=[...document.querySelectorAll(".requiredCheck")];
+  document.getElementById("payBtn").disabled=!checks.every(c=>c.checked);
+}
+
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+  e.preventDefault();
+
+  if(!this.reportValidity())return;
+  if(![...document.querySelectorAll(".requiredCheck")].every(c=>c.checked))return;
+  if(fechaActual===null)return;
+
+  const nombre=document.getElementById("nombre").value.trim();
+  const personas=Number(document.getElementById("personas").value);
+  const correo=document.getElementById("correo").value.trim();
+  const clave=tourActual+"_"+fechaActual;
+
+  if(!nombre || personas<1 || personas>plazas[clave]){
+    alert("No hay suficientes plazas disponibles.");
+    pintarFechas();
+    return;
+  }
+
+  // Simulación local: se descuentan plazas en la memoria del navegador.
+  plazas[clave]-=personas;
+
+  const confirmacion=document.getElementById("confirmation");
+  confirmacion.replaceChildren();
+
+  const titulo=document.createElement("h3");
+  titulo.textContent="✓ Reserva simulada correctamente";
+  confirmacion.appendChild(titulo);
+
+  const datos=[
+    ["Excursión",tours[tourActual].nombre],
+    ["Fecha",fechaBonita(fechaActual)],
+    ["Titular",nombre],
+    ["Participantes",String(personas)],
+    ["Correo",correo],
+    ["Total ficticio",personas*PRECIO+" €"],
+    ["Plazas restantes",String(plazas[clave])]
+  ];
+
+  datos.forEach(([etiqueta,valor])=>{
+    const p=document.createElement("p");
+    const b=document.createElement("strong");
+    b.textContent=etiqueta+": ";
+    p.appendChild(b);
+    p.appendChild(document.createTextNode(valor));
+    confirmacion.appendChild(p);
+  });
+
+  const aviso=document.createElement("p");
+  aviso.textContent="Esta es una demostración. No se ha cobrado dinero, no se han enviado correos y no existe ninguna reserva real.";
+  confirmacion.appendChild(aviso);
+
+  const boton=document.createElement("button");
+  boton.className="btn";
+  boton.textContent="Probar otra reserva";
+  boton.onclick=()=>{
+    confirmacion.classList.add("hidden");
+    document.getElementById("formSection").classList.add("hidden");
+    fechaActual=null;
+    pintarFechas();
+    document.getElementById("calendarSection").scrollIntoView({behavior:"smooth"});
+  };
+  confirmacion.appendChild(boton);
+
+  document.getElementById("formSection").classList.add("hidden");
+  confirmacion.classList.remove("hidden");
+  pintarFechas();
+  confirmacion.scrollIntoView({behavior:"smooth"});
+});
+
+const informacion={
+  seguridad:{
+    titulo:"Seguridad y equipamiento",
+    texto:"<p><strong>Borrador.</strong> Cada excursión tendrá una descripción detallada de su dificultad, desnivel, duración, condición física necesaria y equipamiento obligatorio.</p><p>El calzado adecuado para senderismo en montaña será obligatorio. No podrá participar quien no cumpla los requisitos establecidos para la ruta.</p>"
+  },
+  seguro:{
+    titulo:"Seguro de montaña",
+    texto:"<p><strong>Borrador.</strong> Todos los participantes deberán contar con un seguro válido que cubra accidentes y rescate en montaña durante la actividad.</p><p>Aquí añadiremos opciones de seguros de un día y enlaces para contratar coberturas desde diferentes países de origen.</p><p>La pertenencia del organizador al DAV no significa que los participantes estén cubiertos por su seguro.</p>"
+  },
+  terminos:{
+    titulo:"Términos y condiciones",
+    texto:"<p><strong>Borrador pendiente de revisión legal.</strong> Se ofrecen salidas compartidas por los Prealpes bávaros. El organizador realiza sus excursiones y ofrece plazas para que otras personas se unan.</p><p>No se anuncia un servicio profesional de guía de montaña. Esta descripción no elimina las obligaciones legales que puedan corresponder al organizador.</p><p>El participante deberá cumplir las condiciones de seguridad y equipamiento de la excursión.</p>"
+  },
+  cancelaciones:{
+    titulo:"Cancelaciones y reembolsos",
+    texto:"<p><strong>Propuesta provisional.</strong> Las cancelaciones de participantes se gestionarán por plaza individual.</p><p>15 días o más: devolución del 100%. Entre 8 y 14 días: 75%. Entre 6 y 7 días: 50%. Cinco días o menos: sin devolución.</p><p>Si el organizador cancela la salida por seguridad o meteorología, se ofrecerá reprogramación o devolución completa.</p><p>Estos plazos están pendientes de confirmación y revisión legal.</p>"
+  },
+  privacidad:{
+    titulo:"Protección de datos",
+    texto:"<p><strong>Pendiente de completar.</strong> Aquí irá la política de privacidad conforme a la normativa aplicable en Alemania y al RGPD.</p><p>El formulario de esta demostración no transmite ni almacena datos en un servidor.</p>"
+  },
+  impressum:{
+    titulo:"Impressum · Aviso legal",
+    texto:"<p><strong>Pendiente de completar antes de publicar.</strong> Aquí se incorporarán los datos legales y de contacto obligatorios del responsable de la actividad.</p>"
+  }
+};
+
+function abrirInfo(e,tipo){
+  e.preventDefault();
+  const info=informacion[tipo];
+  document.getElementById("modalTitle").textContent=info.titulo;
+  document.getElementById("modalText").innerHTML=info.texto;
+  document.getElementById("modal").classList.remove("hidden");
+}
+function cerrarInfo(){
+  document.getElementById("modal").classList.add("hidden");
+}
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape")cerrarInfo();
+});
+
+mostrarTours();
+</script>
 </body>
 </html>
