@@ -1200,7 +1200,8 @@ $("form-reserva").addEventListener("submit",evento=>{
     ["Fecha",fechaBonita(fechaActiva)],
     ["Titular",$("titular").value.trim()],
     ["Participantes",String(cantidad)],
-    ["Total ficticio",(cantidad*PRECIO)+" €"],
+    ["Total ficticio",
+  (cantidad*tours[excursionActiva].precio)+" €"],
     ["Plazas restantes",String(plazas[clave])]
   ];
 
