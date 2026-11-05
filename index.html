@@ -936,7 +936,7 @@ function verDetalles(id){
 
 imagen.style.width="100%";
 imagen.style.height="clamp(160px,25vh,230px)";
-imagen.style.objectFit="cover";
+imagen.style.objectFit="contain";
 imagen.style.objectPosition="center";
 imagen.style.borderRadius="10px";
 imagen.style.display="block";
@@ -946,9 +946,9 @@ imagen.style.display="block";
   const ficha=document.createElement("div");
   ficha.style.display="grid";
   ficha.style.gridTemplateColumns="repeat(2,minmax(0,1fr))";
-  ficha.style.columnGap="24px";
-  ficha.style.rowGap="28px";
-  ficha.style.margin="28px 0 32px";
+ficha.style.columnGap="18px";
+ficha.style.rowGap="16px";
+ficha.style.margin="16px 0 20px";
 
   const iconos={
     nivel:'<path d="m3 17 6-12 4 8 3-5 5 9H3Z"/>',
@@ -973,7 +973,7 @@ imagen.style.display="block";
     encabezado.style.display="flex";
     encabezado.style.alignItems="center";
     encabezado.style.gap="10px";
-    encabezado.style.marginBottom="10px";
+    encabezado.style.marginBottom="4px";
     encabezado.style.color="var(--gris)";
     encabezado.style.fontSize=".9rem";
 
@@ -994,7 +994,7 @@ imagen.style.display="block";
     const dato=document.createElement("strong");
     dato.textContent=valor||"Por confirmar";
     dato.style.display="block";
-    dato.style.fontSize="1.15rem";
+    dato.style.fontSize="1rem";
     dato.style.fontWeight="650";
     dato.style.color="var(--texto)";
 
