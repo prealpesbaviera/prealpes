@@ -832,8 +832,12 @@ tours.forEach((tour,id)=>{
   resumen.textContent=tour.resumen;
 
   const precio=document.createElement("p");
-  precio.className="precio";
-  precio.innerHTML="<strong>89 €</strong> por persona";
+precio.className="precio";
+precio.innerHTML=
+  "<strong>"+tour.precio+" €</strong> por persona"+
+  '<small style="display:block;font-size:.8rem;color:var(--gris)">'+
+  "Grupo reducido · Máximo 8 participantes"+
+  "</small>";
 
   const botones=document.createElement("div");
   botones.className="acciones";
