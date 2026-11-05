@@ -867,36 +867,64 @@ function verDetalles(id){
   imagen.style.objectFit="contain";
   imagen.style.borderRadius="12px";
 
-  // Ficha técnica
+
+  // Ficha técnica con iconos
   const ficha=document.createElement("div");
   ficha.style.display="grid";
   ficha.style.gridTemplateColumns="repeat(2,minmax(0,1fr))";
-  ficha.style.gap="10px";
-  ficha.style.margin="22px 0";
+  ficha.style.columnGap="24px";
+  ficha.style.rowGap="28px";
+  ficha.style.margin="28px 0 32px";
+
+  const iconos={
+    nivel:'<path d="m3 17 6-12 4 8 3-5 5 9H3Z"/>',
+    altura:'<path d="M5 21V3m0 1 14 5-14 5"/>',
+    desnivel:'<path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+    duracion:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l-3 3"/>',
+    distancia:'<circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 17c8 0 1-10 8-10"/>'
+  };
 
   const datos=[
-    ["Nivel",tour.nivel],
-    ["Altura de la cima",tour.altura],
-    ["Desnivel positivo",tour.desnivel],
-    ["Duración aproximada",tour.duracion],
-    ["Distancia total",tour.distancia]
+    ["Nivel",tour.nivel,iconos.nivel],
+    ["Altura de la cima",tour.altura,iconos.altura],
+    ["Desnivel positivo",tour.desnivel,iconos.desnivel],
+    ["Duración",tour.duracion,iconos.duracion],
+    ["Distancia total",tour.distancia,iconos.distancia]
   ];
 
-  datos.forEach(([etiqueta,valor])=>{
+  datos.forEach(([etiqueta,valor,icono])=>{
     const casilla=document.createElement("div");
-    casilla.style.background="var(--salvia)";
-    casilla.style.padding="14px";
-    casilla.style.borderRadius="10px";
 
-    const nombre=document.createElement("div");
+    const encabezado=document.createElement("div");
+    encabezado.style.display="flex";
+    encabezado.style.alignItems="center";
+    encabezado.style.gap="10px";
+    encabezado.style.marginBottom="10px";
+    encabezado.style.color="var(--gris)";
+    encabezado.style.fontSize=".9rem";
+
+    const simbolo=document.createElement("span");
+    simbolo.innerHTML=
+      '<svg width="22" height="22" viewBox="0 0 24 24" '+
+      'fill="none" stroke="currentColor" stroke-width="1.8" '+
+      'stroke-linecap="round" stroke-linejoin="round" '+
+      'aria-hidden="true">'+icono+'</svg>';
+    simbolo.style.display="flex";
+    simbolo.style.flexShrink="0";
+
+    const nombre=document.createElement("span");
     nombre.textContent=etiqueta;
-    nombre.style.fontSize=".8rem";
-    nombre.style.color="var(--verde2)";
+
+    encabezado.append(simbolo,nombre);
 
     const dato=document.createElement("strong");
     dato.textContent=valor||"Por confirmar";
+    dato.style.display="block";
+    dato.style.fontSize="1.15rem";
+    dato.style.fontWeight="650";
+    dato.style.color="var(--texto)";
 
-    casilla.append(nombre,dato);
+    casilla.append(encabezado,dato);
     ficha.append(casilla);
   });
 
