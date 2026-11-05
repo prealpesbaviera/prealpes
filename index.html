@@ -334,6 +334,35 @@ footer{background:#172e26;color:white;padding:30px 0}
   }
 }
 
+#cerrar-modal{
+  position:sticky;
+  top:0;
+  float:right;
+  z-index:2;
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border:none;
+  border-radius:50%;
+  background:var(--crema);
+  color:var(--gris);
+  font-size:1.6rem;
+  line-height:1;
+  padding:0;
+  margin:0 0 4px 8px;
+}
+
+#cerrar-modal:hover{
+  background:var(--salvia);
+  color:var(--verde);
+}
+
+#cerrar-modal:focus-visible{
+  outline:2px solid var(--verde);
+  outline-offset:2px;
+}
+
 @media(max-width:800px){
   nav a:not(.boton){display:none}
   .introduccion,.como-grid,.contacto-grid,.banda{grid-template-columns:1fr}
