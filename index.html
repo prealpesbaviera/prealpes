@@ -785,6 +785,7 @@ const $=id=>document.getElementById(id);
 
 const tarjetas=$("tarjetas");
 
+
 tours.forEach((tour,id)=>{
   const articulo=document.createElement("article");
   articulo.className="tarjeta";
@@ -810,15 +811,25 @@ tours.forEach((tour,id)=>{
 
   const precio=document.createElement("p");
   precio.className="precio";
-  precio.textContent="89 € por persona";
+  precio.innerHTML="<strong>89 €</strong> por persona";
 
-  const boton=document.createElement("button");
-  boton.type="button";
-  boton.className="boton";
-  boton.textContent="Reservar";
-  boton.addEventListener("click",()=>abrirReserva(id));
+  const botones=document.createElement("div");
+  botones.className="acciones";
 
-  interior.append(nivel,titulo,resumen,precio,boton);
+  const detalles=document.createElement("button");
+  detalles.type="button";
+  detalles.className="boton secundario";
+  detalles.textContent="Ver detalles";
+  detalles.addEventListener("click",()=>verDetalles(id));
+
+  const reservar=document.createElement("button");
+  reservar.type="button";
+  reservar.className="boton";
+  reservar.textContent="Reservar";
+  reservar.addEventListener("click",()=>abrirReserva(id));
+
+  botones.append(detalles,reservar);
+  interior.append(nivel,titulo,resumen,precio,botones);
   articulo.append(imagen,interior);
   tarjetas.append(articulo);
 });
