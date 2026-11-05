@@ -381,34 +381,35 @@ footer{background:#172e26;color:white;padding:30px 0}
 }
 
 /* Fotografía izquierda y ficha técnica derecha */
+
 .cabecera-excursion{
   display:grid;
   grid-template-columns:34% minmax(0,1fr);
-  gap:12px;
+  gap:18px;
   align-items:stretch;
+  height:280px;
   margin:12px 0 18px;
 }
 
-/* La foto ocupa exactamente la altura de la franja */
 .cabecera-excursion > img{
   width:100% !important;
   height:100% !important;
-  min-height:0;
   max-height:none !important;
   object-fit:cover !important;
-  border-radius:4px;
+  object-position:center;
+  border-radius:10px;
 }
 
-/* Datos técnicos en dos columnas y tres filas */
 .cabecera-excursion > div{
   display:grid !important;
   grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-  column-gap:14px !important;
-  row-gap:10px !important;
+  column-gap:18px !important;
+  row-gap:14px !important;
   align-content:space-between;
   margin:0 !important;
   padding:4px 0;
 }
+
 
 /* Evitar que el texto se salga de su columna */
 .cabecera-excursion > div > div{
