@@ -969,38 +969,72 @@ function verDetalles(id){
     document.createTextNode(tour.final)
   );
 
-  // Qué incluye el precio
+  
+  // Qué incluye y qué no incluye
   const inclusiones=document.createElement("div");
-  inclusiones.style.margin="22px 0";
-  inclusiones.style.padding="18px";
-  inclusiones.style.background="var(--salvia)";
-  inclusiones.style.borderRadius="12px";
+  inclusiones.style.margin="24px 0";
+  inclusiones.style.paddingTop="18px";
+  inclusiones.style.borderTop="1px solid #d5ddd4";
 
-  const tituloIncluye=document.createElement("strong");
-  tituloIncluye.textContent="Incluye:";
+  const tituloIncluye=document.createElement("h3");
+  tituloIncluye.textContent="✓ Qué incluye tu experiencia";
+  tituloIncluye.style.fontSize="1.05rem";
+  tituloIncluye.style.color="var(--verde)";
+  tituloIncluye.style.margin="0 0 14px";
 
-  const incluye=document.createElement("p");
-  incluye.textContent=
-    "Organización de la excursión, acompañamiento en español "+
-    "durante el recorrido y grupo reducido de máximo "+
-    "8 participantes.";
+  const beneficios=[
+    "Acompañamiento personalizado en español, en un grupo de máximo ocho participantes.",
+    "Conocimiento del recorrido, sus paisajes y las tradiciones de la región.",
+    "Ayuda con el idioma alemán y la organización durante la jornada.",
+    "Información previa sobre el recorrido, el equipo necesario y las condiciones de participación.",
+    "Orientación de seguridad y asistencia para contactar con servicios de emergencia si fuera necesario.",
+    "Una bebida sin alcohol por participante."
+  ];
 
-  const tituloNoIncluye=document.createElement("strong");
-  tituloNoIncluye.textContent="No incluye:";
+  const lista=document.createElement("ul");
+  lista.style.listStyle="none";
+  lista.style.padding="0";
+  lista.style.margin="0 0 22px";
+
+  beneficios.forEach(texto=>{
+    const item=document.createElement("li");
+    item.style.display="flex";
+    item.style.gap="10px";
+    item.style.marginBottom="10px";
+
+    const icono=document.createElement("span");
+    icono.textContent="✓";
+    icono.style.color="var(--verde2)";
+    icono.style.flexShrink="0";
+
+    const contenido=document.createElement("span");
+    contenido.textContent=texto;
+
+    item.append(icono,contenido);
+    lista.append(item);
+  });
+
+  const tituloNoIncluye=document.createElement("h3");
+  tituloNoIncluye.textContent="No incluye";
+  tituloNoIncluye.style.fontSize="1rem";
+  tituloNoIncluye.style.color="var(--gris)";
+  tituloNoIncluye.style.margin="0 0 8px";
 
   const noIncluye=document.createElement("p");
   noIncluye.textContent=
-    "Comida y bebidas, billetes de transporte, seguro "+
-    "personal de montaña, entradas a piscinas, balnearios "+
-    "o saunas, ni otras actividades opcionales de pago.";
+    "Comidas, billetes de transporte público, seguro personal "+
+    "de montaña y entradas o actividades opcionales de pago, "+
+    "como piscinas, balnearios, saunas o trineos de verano.";
+  noIncluye.style.fontSize=".9rem";
+  noIncluye.style.color="var(--gris)";
+  noIncluye.style.margin="0";
 
   inclusiones.append(
     tituloIncluye,
-    incluye,
+    lista,
     tituloNoIncluye,
     noIncluye
   );
-
   // Aviso
   const nota=document.createElement("p");
   nota.className="aviso";
