@@ -933,10 +933,13 @@ function verDetalles(id){
   const imagen=document.createElement("img");
   imagen.src=tour.foto;
   imagen.alt="Paisaje de "+tour.nombre;
-  imagen.style.width="100%";
-  imagen.style.maxHeight="350px";
-  imagen.style.objectFit="contain";
-  imagen.style.borderRadius="12px";
+
+imagen.style.width="100%";
+imagen.style.height="clamp(160px,25vh,230px)";
+imagen.style.objectFit="cover";
+imagen.style.objectPosition="center";
+imagen.style.borderRadius="10px";
+imagen.style.display="block";
 
 
   // Ficha técnica con iconos
