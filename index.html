@@ -1086,6 +1086,9 @@ function abrirReserva(id){
   fechaActiva=null;
 
   $("titulo-reserva").textContent=tours[id].nombre;
+  document.querySelector("#reservas .precio").innerHTML=
+  "<strong>"+tours[id].precio+" €</strong> por persona · "+
+  "Máximo 8 participantes";
   $("descripcion-reserva").textContent=tours[id].descripcion;
 
   $("reservas").hidden=false;
