@@ -858,35 +858,73 @@ function verDetalles(id){
   const contenido=$("modal-texto");
   contenido.replaceChildren();
 
+  // Fotografía
   const imagen=document.createElement("img");
   imagen.src=tour.foto;
   imagen.alt="Paisaje de "+tour.nombre;
   imagen.style.width="100%";
-  imagen.style.maxHeight="360px";
+  imagen.style.maxHeight="350px";
   imagen.style.objectFit="contain";
   imagen.style.borderRadius="12px";
-  imagen.style.background="var(--salvia)";
 
-  const nivel=document.createElement("p");
-  nivel.className="nivel";
-  nivel.textContent=tour.nivel;
+  // Ficha técnica
+  const ficha=document.createElement("div");
+  ficha.style.display="grid";
+  ficha.style.gridTemplateColumns="repeat(2,minmax(0,1fr))";
+  ficha.style.gap="10px";
+  ficha.style.margin="22px 0";
 
+  const datos=[
+    ["Nivel",tour.nivel],
+    ["Altura de la cima",tour.altura],
+    ["Desnivel positivo",tour.desnivel],
+    ["Duración aproximada",tour.duracion],
+    ["Distancia total",tour.distancia]
+  ];
+
+  datos.forEach(([etiqueta,valor])=>{
+    const casilla=document.createElement("div");
+    casilla.style.background="var(--salvia)";
+    casilla.style.padding="14px";
+    casilla.style.borderRadius="10px";
+
+    const nombre=document.createElement("div");
+    nombre.textContent=etiqueta;
+    nombre.style.fontSize=".8rem";
+    nombre.style.color="var(--verde2)";
+
+    const dato=document.createElement("strong");
+    dato.textContent=valor||"Por confirmar";
+
+    casilla.append(nombre,dato);
+    ficha.append(casilla);
+  });
+
+  // Descripción de la excursión
   const descripcion=document.createElement("p");
   descripcion.textContent=tour.descripcion;
 
+  // Características especiales
   const especial=document.createElement("p");
   const destacado=document.createElement("strong");
   destacado.textContent="Lo especial de esta excursión: ";
-  especial.append(destacado,document.createTextNode(tour.especial));
+  especial.append(
+    destacado,
+    document.createTextNode(tour.especial)
+  );
 
+  // Precio
   const precio=document.createElement("p");
   precio.className="precio";
   precio.innerHTML="<strong>89 € por persona</strong>";
 
+  // Aviso
   const nota=document.createElement("p");
   nota.className="aviso";
-  nota.textContent="La ruta definitiva, duración, desnivel y requisitos de participación se confirmarán antes de abrir las reservas reales.";
+  nota.textContent=
+    "Los datos técnicos son provisionales hasta confirmar el itinerario definitivo. La comida, el transporte y las actividades opcionales no están incluidos.";
 
+  // Botón de reserva
   const boton=document.createElement("button");
   boton.type="button";
   boton.className="boton";
@@ -899,7 +937,7 @@ function verDetalles(id){
 
   contenido.append(
     imagen,
-    nivel,
+    ficha,
     descripcion,
     especial,
     precio,
