@@ -1153,7 +1153,8 @@ function elegirFecha(fecha){
 
 function actualizarTotal(){
   const cantidad=Number($("personas").value)||0;
-  $("importe").textContent=(cantidad*PRECIO)+" €";
+$("importe").textContent=
+  (cantidad*tours[excursionActiva].precio)+" €";
 }
 
 function actualizarAceptaciones(){
