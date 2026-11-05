@@ -1114,17 +1114,23 @@ ficha.style.margin="16px 0 20px";
     abrirReserva(id);
   });
 
-contenido.append(
-  imagen,
-  ficha,
-  descripcion,
-  especial,
-  final,
-  precio,
-  inclusiones,
-  nota,
-  boton
-);
+
+  const cabecera=document.createElement("div");
+  cabecera.className="cabecera-excursion";
+
+  cabecera.append(imagen,ficha);
+
+  contenido.append(
+    cabecera,
+    descripcion,
+    especial,
+    final,
+    precio,
+    inclusiones,
+    nota,
+    boton
+  );
+
 
   $("modal").hidden=false;
   $("cerrar-modal").focus();
