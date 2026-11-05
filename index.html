@@ -993,7 +993,9 @@ imagen.style.objectFit="contain";
 imagen.style.objectPosition="center";
 imagen.style.borderRadius="10px";
 imagen.style.display="block";
-
+if(id===0){
+  imagen.style.objectPosition="center 60%";
+}
 
   // Ficha técnica con iconos
   const ficha=document.createElement("div");
