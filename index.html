@@ -953,10 +953,53 @@ function verDetalles(id){
     document.createTextNode(tour.especial)
   );
 
+
   // Precio
   const precio=document.createElement("p");
   precio.className="precio";
-  precio.innerHTML="<strong>89 € por persona</strong>";
+  precio.innerHTML=
+    "<strong>"+tour.precio+" € por persona</strong>";
+
+  // Final de la experiencia
+  const final=document.createElement("p");
+  const tituloFinal=document.createElement("strong");
+  tituloFinal.textContent="Después de la montaña: ";
+  final.append(
+    tituloFinal,
+    document.createTextNode(tour.final)
+  );
+
+  // Qué incluye el precio
+  const inclusiones=document.createElement("div");
+  inclusiones.style.margin="22px 0";
+  inclusiones.style.padding="18px";
+  inclusiones.style.background="var(--salvia)";
+  inclusiones.style.borderRadius="12px";
+
+  const tituloIncluye=document.createElement("strong");
+  tituloIncluye.textContent="Incluye:";
+
+  const incluye=document.createElement("p");
+  incluye.textContent=
+    "Organización de la excursión, acompañamiento en español "+
+    "durante el recorrido y grupo reducido de máximo "+
+    "8 participantes.";
+
+  const tituloNoIncluye=document.createElement("strong");
+  tituloNoIncluye.textContent="No incluye:";
+
+  const noIncluye=document.createElement("p");
+  noIncluye.textContent=
+    "Comida y bebidas, billetes de transporte, seguro "+
+    "personal de montaña, entradas a piscinas, balnearios "+
+    "o saunas, ni otras actividades opcionales de pago.";
+
+  inclusiones.append(
+    tituloIncluye,
+    incluye,
+    tituloNoIncluye,
+    noIncluye
+  );
 
   // Aviso
   const nota=document.createElement("p");
@@ -975,15 +1018,17 @@ function verDetalles(id){
     abrirReserva(id);
   });
 
-  contenido.append(
-    imagen,
-    ficha,
-    descripcion,
-    especial,
-    precio,
-    nota,
-    boton
-  );
+contenido.append(
+  imagen,
+  ficha,
+  descripcion,
+  especial,
+  final,
+  precio,
+  inclusiones,
+  nota,
+  boton
+);
 
   $("modal").hidden=false;
   $("cerrar-modal").focus();
