@@ -295,15 +295,45 @@ footer{background:#172e26;color:white;padding:30px 0}
   place-items:center;
   padding:18px;
 }
+
 .modal-contenido{
-  width:min(720px,100%);
-  max-height:85vh;
-  overflow:auto;
+  position:relative;
+  width:min(760px,100%);
+  max-height:92vh;
+  overflow-y:auto;
   background:var(--crema);
-  border-radius:18px;
-  padding:28px;
+  border-radius:16px;
+  padding:20px 24px;
+  font-size:.91rem;
+  line-height:1.45;
 }
-.modal-contenido h2{font-size:2rem}
+
+.modal-contenido h2{
+  font-size:1.55rem;
+  line-height:1.2;
+  margin:0 35px 14px 0;
+}
+
+.modal-contenido h3{
+  font-size:1rem;
+  margin:14px 0 8px;
+}
+
+.modal-contenido p{
+  margin:9px 0;
+}
+
+.modal-contenido .precio{
+  margin:14px 0 8px;
+}
+
+@media(max-width:600px){
+  .modal-contenido{
+    padding:16px;
+    max-height:95vh;
+  }
+}
+
 @media(max-width:800px){
   nav a:not(.boton){display:none}
   .introduccion,.como-grid,.contacto-grid,.banda{grid-template-columns:1fr}
