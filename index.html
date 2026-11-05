@@ -834,6 +834,69 @@ tours.forEach((tour,id)=>{
   tarjetas.append(articulo);
 });
 
+function verDetalles(id){
+  const tour=tours[id];
+
+  elementoAnterior=document.activeElement;
+
+  $("modal-titulo").textContent=tour.nombre;
+
+  const contenido=$("modal-texto");
+  contenido.replaceChildren();
+
+  const imagen=document.createElement("img");
+  imagen.src=tour.foto;
+  imagen.alt="Paisaje de "+tour.nombre;
+  imagen.style.width="100%";
+  imagen.style.maxHeight="360px";
+  imagen.style.objectFit="contain";
+  imagen.style.borderRadius="12px";
+  imagen.style.background="var(--salvia)";
+
+  const nivel=document.createElement("p");
+  nivel.className="nivel";
+  nivel.textContent=tour.nivel;
+
+  const descripcion=document.createElement("p");
+  descripcion.textContent=tour.descripcion;
+
+  const especial=document.createElement("p");
+  const destacado=document.createElement("strong");
+  destacado.textContent="Lo especial de esta excursión: ";
+  especial.append(destacado,document.createTextNode(tour.especial));
+
+  const precio=document.createElement("p");
+  precio.className="precio";
+  precio.innerHTML="<strong>89 € por persona</strong>";
+
+  const nota=document.createElement("p");
+  nota.className="aviso";
+  nota.textContent="La ruta definitiva, duración, desnivel y requisitos de participación se confirmarán antes de abrir las reservas reales.";
+
+  const boton=document.createElement("button");
+  boton.type="button";
+  boton.className="boton";
+  boton.textContent="Ver fechas y reservar";
+
+  boton.addEventListener("click",()=>{
+    cerrarModal();
+    abrirReserva(id);
+  });
+
+  contenido.append(
+    imagen,
+    nivel,
+    descripcion,
+    especial,
+    precio,
+    nota,
+    boton
+  );
+
+  $("modal").hidden=false;
+  $("cerrar-modal").focus();
+}
+
 /* CALENDARIO DE DEMOSTRACIÓN */
 
 const calendarios=[[],[],[],[]];
