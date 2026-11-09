@@ -28,3 +28,13 @@ content:
       - name: body
         label: Mi historia
         type: rich-text
+      - name: estado
+        label: Estado de publicación
+        type: select
+        default: borrador
+        options:
+          values:
+            - value: borrador
+              label: Borrador
+            - value: publicado
+              label: Publicado
