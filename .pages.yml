@@ -8,6 +8,7 @@ content:
     label: Historias de montaña
     type: collection
     path: blog/historias
+    filename: "{primary}.md"
     view:
       fields: [title, numero, fecha]
     fields:
