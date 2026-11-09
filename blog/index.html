@@ -4,12 +4,733 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>100 montañas en 365 días | Prealpes bávaros</title>
+  <meta name="description" content="100 montañas en 365 días: historias reales, fotografías y caminos por los Alpes bávaros.">
+  <title>100 montañas en 365 días | Una pausa en tu viaje</title>
+
+  <style>
+    :root {
+      --forest: #1f4033;
+      --ink: #25382e;
+      --muted: #627269;
+      --cream: #faf8f2;
+      --line: #dfe5da;
+      --gold: #b9a47b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navigation {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: bold;
+      color: var(--forest);
+      line-height: 1.2;
+    }
+
+    .brand span {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: normal;
+      text-transform: uppercase;
+      margin-top: 7px;
+    }
+
+    .navigation nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 14px;
+    }
+
+    .navigation nav a:hover {
+      color: #6e8c76;
+    }
+
+    .hero {
+      padding: 75px 0 65px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #7c8a78;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--forest);
+      line-height: 1.18;
+    }
+
+    h1 {
+      font-size: clamp(48px, 6vw, 78px);
+      font-weight: normal;
+      margin: 25px 0;
+      letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      color: var(--forest);
+      line-height: 1.4;
+      margin-bottom: 25px;
+    }
+
+    .hero-description {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--forest);
+      color: white;
+      padding: 15px 28px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .button:hover {
+      background: #345e49;
+    }
+
+    .hero-photo {
+      position: relative;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 15px 18px 0 #e5e9df;
+    }
+
+    .photo-caption {
+      margin-top: 24px;
+      text-align: right;
+      color: var(--muted);
+      font-size: 12px;
+      font-style: italic;
+    }
+
+    .progress-section {
+      padding: 45px 0 65px;
+    }
+
+    .progress-box {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 30px 0;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .progress-number {
+      font-family: Georgia, serif;
+      font-size: 55px;
+      color: var(--forest);
+      line-height: 1;
+    }
+
+    .progress-number span {
+      color: #a5b1a6;
+      font-size: 27px;
+    }
+
+    .progress-label {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .progress-track {
+      background: #e4e8df;
+      height: 10px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 15px 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--forest);
+      border-radius: 20px;
+      transition: width 0.5s;
+    }
+
+    .progress-note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .intro-section {
+      padding: 60px 0 90px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 4vw, 49px);
+      font-weight: normal;
+      margin: 15px 0 25px;
+    }
+
+    .intro-text {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .quote {
+      border-left: 3px solid var(--gold);
+      padding-left: 25px;
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 23px;
+      line-height: 1.5;
+      color: var(--forest);
+      margin-top: 30px;
+    }
+
+    .stories-section {
+      padding: 80px 0 100px;
+      background: #f0f2eb;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .section-header p {
+      max-width: 360px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .story-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .story-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .story-content {
+      padding: 25px;
+    }
+
+    .story-number {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #7b8c7c;
+      font-weight: bold;
+    }
+
+    .story-content h3 {
+      font-size: 25px;
+      font-weight: normal;
+      margin: 12px 0;
+    }
+
+    .story-content p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .story-link {
+      display: inline-block;
+      color: var(--forest);
+      font-weight: bold;
+      font-size: 13px;
+      margin-top: 10px;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 65px 30px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .empty-state h3 {
+      font-size: 29px;
+      font-weight: normal;
+    }
+
+    .empty-state p {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 15px auto;
+    }
+
+    .invitation {
+      padding: 90px 0;
+      text-align: center;
+    }
+
+    .invitation h2 {
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: normal;
+      margin: 15px auto 25px;
+      max-width: 700px;
+    }
+
+    .invitation p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+
+    footer {
+      background: var(--forest);
+      color: #e0e9e0;
+      padding: 40px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #e0e9e0;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid,
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero {
+        padding: 45px 0;
+      }
+
+      .hero-photo {
+        max-width: 520px;
+      }
+
+      .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .progress-box {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .navigation {
+        flex-direction: column;
+        padding: 20px 0;
+        align-items: flex-start;
+      }
+
+      .navigation nav {
+        gap: 16px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .stories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .intro-section,
+      .stories-section,
+      .invitation {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>100 montañas en 365 días</h1>
-  <p>100 cumbres, 100 caminos y 100 historias por contar.</p>
-  <p>Próximamente: mi diario de montaña.</p>
-  <a href="/">Volver a las excursiones</a>
+
+  <header>
+    <div class="container navigation">
+      <a href="/" class="brand">
+        Una pausa en tu viaje
+        <span>Experiencias en los Prealpes bávaros</span>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <a href="/">Excursiones</a>
+        <a href="#historias">Las historias</a>
+        <a href="#proyecto">El proyecto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PORTADA DEL BLOG -->
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-text">
+          <div class="eyebrow">
+            Un diario personal de montaña
+          </div>
+
+          <h1>100 montañas<br>en 365 días</h1>
+
+          <p class="hero-subtitle">
+            Cien cumbres. Cien caminos.
+            Cien historias que merecen ser contadas.
+          </p>
+
+          <p class="hero-description">
+            Un desafío personal por los paisajes de Baviera.
+            Caminos que comienzan entre árboles,
+            cumbres que invitan a detenerse
+            y experiencias que merecen ser recordadas.
+          </p>
+
+          <a href="#historias" class="button">
+            Descubre las historias
+          </a>
+        </div>
+
+        <div class="hero-photo">
+          <img
+            src="../Arbolluz.jpg"
+            alt="Caminante en un bosque iluminado por rayos de sol"
+          >
+
+          <div class="photo-caption">
+            Hay caminos que invitan a detenerse.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTADOR DE CUMBRES -->
+
+    <section class="progress-section">
+      <div class="container">
+
+        <div class="progress-box">
+
+          <div>
+            <div class="progress-number">
+              <span id="summit-count">0</span>
+              <span>/ 100</span>
+            </div>
+
+            <div class="progress-label">
+              Historias publicadas
+            </div>
+          </div>
+
+          <div>
+            <div class="eyebrow">
+              El camino recorrido
+            </div>
+
+            <div class="progress-track">
+              <div
+                class="progress-fill"
+                id="progress-fill"
+              ></div>
+            </div>
+
+            <div class="progress-note">
+              Cada cumbre tiene su número,
+              su fecha y su propia historia.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRESENTACIÓN DEL PROYECTO -->
+
+    <section class="intro-section" id="proyecto">
+      <div class="container intro-grid">
+
+        <div>
+          <div class="eyebrow">
+            Detrás del desafío
+          </div>
+
+          <h2 class="section-title">
+            No se trata solamente
+            de llegar a la cima.
+          </h2>
+
+          <div class="quote">
+            A veces, lo mejor de una montaña
+            sucede mucho antes de llegar arriba.
+          </div>
+        </div>
+
+        <div class="intro-text">
+          <p>
+            Cien montañas en un año.
+            Una idea sencilla que se convierte
+            en una colección de experiencias,
+            fotografías, encuentros y recuerdos.
+          </p>
+
+          <p>
+            Algunas caminatas serán tranquilas.
+            Otras exigirán un poco más.
+            Habrá días de sol, caminos entre nubes
+            y momentos en los que el paisaje
+            será suficiente compañía.
+          </p>
+
+          <p>
+            Este diario reúne las historias
+            detrás de cada ascenso.
+            No pretende ser un catálogo de rutas
+            ni una colección de récords.
+            Es una forma de compartir
+            lo que se descubre caminando.
+          </p>
+
+          <p>
+            Porque la montaña no siempre
+            necesita muchas palabras.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HISTORIAS -->
+
+    <section class="stories-section" id="historias">
+      <div class="container">
+
+        <div class="section-header">
+
+          <div>
+            <div class="eyebrow">
+              El diario de montaña
+            </div>
+
+            <h2 class="section-title">
+              Las 100 historias
+            </h2>
+          </div>
+
+          <p>
+            Cada historia conserva el número
+            correspondiente al orden real
+            en que alcancé la cumbre.
+          </p>
+
+        </div>
+
+        <div class="stories-grid" id="stories-grid">
+
+          <div class="empty-state">
+            <div class="eyebrow">
+              Las primeras historias
+            </div>
+
+            <h3>
+              Cada aventura merece ser contada.
+            </h3>
+
+            <p>
+              Muy pronto comenzarán a aparecer
+              aquí las historias y fotografías
+              de este desafío por las montañas
+              de Baviera.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INVITACIÓN A LAS EXCURSIONES -->
+
+    <section class="invitation">
+      <div class="container">
+
+        <div class="eyebrow">
+          Vive tu propia experiencia
+        </div>
+
+        <h2>
+          Algunas montañas también
+          podemos descubrirlas juntos.
+        </h2>
+
+        <p>
+          Caminar sin prisas, conversar cuando apetezca
+          o simplemente disfrutar del silencio.
+          Descubre nuestras experiencias
+          en los Prealpes bávaros,
+          con grupos pequeños y tiempo para disfrutar
+          de cada paisaje.
+        </p>
+
+        <a href="/" class="button">
+          Descubrir las excursiones
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+
+      <div>
+        © Una pausa en tu viaje · Prealpes bávaros
+      </div>
+
+      <div>
+        <a href="/">Excursiones</a>
+        &nbsp; · &nbsp;
+        <a href="#historias">Historias</a>
+        &nbsp; · &nbsp;
+        <a href="#proyecto">El proyecto</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    /*
+      PRÓXIMA ETAPA:
+
+      Conectaremos aquí las historias
+      creadas mediante Pages CMS.
+
+      El sistema mostrará únicamente
+      las historias con estado "publicado".
+
+      Las historias se ordenarán por
+      su número de cumbre, no por
+      su fecha de publicación.
+
+      También actualizaremos el contador
+      y generaremos páginas individuales
+      para cada montaña.
+
+      Por ahora, el contador indica
+      cuántas historias están publicadas: 0.
+    */
+  </script>
+
 </body>
 </html>
