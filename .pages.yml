@@ -1,0 +1,30 @@
+
+media:
+  input: blog/imagenes
+  output: /blog/imagenes
+
+content:
+  - name: historias
+    label: Historias de montaña
+    type: collection
+    path: blog/historias
+    view:
+      fields: [title, numero, fecha]
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: numero
+        label: Número de cumbre
+        type: number
+        required: true
+      - name: fecha
+        label: Fecha de ascenso
+        type: date
+      - name: imagen
+        label: Fotografía principal
+        type: image
+      - name: body
+        label: Mi historia
+        type: rich-text
