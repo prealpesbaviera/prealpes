@@ -414,7 +414,7 @@ footer a {{
 
   {galeria_final}
 
-  <div class="invitacion">
+  <div class="invitacion" style="display: none;">
     <h2>Algunas montañas también podemos descubrirlas juntos.</h2>
 
     <p>
