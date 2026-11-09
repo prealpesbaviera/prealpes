@@ -29,6 +29,10 @@ content:
       - name: body
         label: Mi historia
         type: rich-text
+      - name: galeria
+        label: Galería de fotografías
+        type: image
+        list: true
       - name: estado
         label: Estado de publicación
         type: select
