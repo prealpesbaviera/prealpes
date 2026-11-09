@@ -1,5 +1,5 @@
 ---
-title: "Prueba de mi primera montaña "
+title: Mi primera aventura en la montaña.
 numero: 1
 fecha: 2026-11-09
 ---
