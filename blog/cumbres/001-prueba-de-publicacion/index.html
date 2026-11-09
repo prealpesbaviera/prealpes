@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>Prueba de publicación | 100 montañas en 365 días</title>
+  <meta name="description"
+        content="Cumbre 001: Prueba de publicación. Una historia personal de montaña en Baviera.">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #faf8f2;
+      color: #25382e;
+      font-family: Arial, sans-serif;
+      line-height: 1.8;
+    }
+
+    .contenedor {
+      width: min(780px, 90%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid #dfe5da;
+      padding: 24px 0;
+    }
+
+    a {
+      color: #1f4033;
+      text-decoration: none;
+    }
+
+    .marca {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 65px 0 100px;
+    }
+
+    .numero {
+      color: #728473;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      color: #1f4033;
+      font-weight: normal;
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.15;
+    }
+
+    .fecha {
+      color: #728473;
+      font-size: 14px;
+      margin-bottom: 35px;
+    }
+
+    .foto {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin: 35px 0;
+    }
+
+    .relato {
+      font-size: 18px;
+      overflow-wrap: break-word;
+    }
+
+    .relato img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .relato h2, .relato h3 {
+      font-family: Georgia, serif;
+      color: #1f4033;
+    }
+
+    .galeria-fotos { margin-top: 48px; }
+    .galeria-fotos h2 { font-family: Georgia, serif; font-weight: normal; }
+    .galeria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; }
+    .galeria-grid figure { margin: 0; }
+    .galeria-grid img { display: block; width: 100%; height: auto; border-radius: 5px; }
+
+    .invitacion {
+      margin-top: 75px;
+      border-top: 1px solid #dfe5da;
+      padding-top: 35px;
+    }
+
+    .boton {
+      display: inline-block;
+      background: #1f4033;
+      color: white;
+      padding: 13px 24px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    footer {
+      background: #1f4033;
+      color: white;
+      padding: 30px 0;
+    }
+
+    footer a {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="contenedor">
+      <a class="marca" href="/blog/">
+        100 montañas en 365 días
+      </a>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <div class="numero">
+      Cumbre 001 de 100
+    </div>
+
+    <h1>Prueba de publicación</h1>
+
+    <div class="fecha">
+      Fecha de ascenso: 2026-11-09
+    </div>
+
+    
+
+    <article class="relato">
+      <p>Esta es una prueba de publicación.</p>
+    </article>
+
+    <section class="galeria-fotos" aria-label="Fotografías de la excursión"><h2>Galería de fotografías</h2><div class="galeria-grid"><figure><img src="/blog/imagenes/Geierstein%204.jpg" alt="Prueba de publicación — fotografía 1" loading="lazy"></figure></div></section>
+
+    <div class="invitacion">
+      <h2>¿Te gustaría vivir tu propia experiencia?</h2>
+
+      <p>
+        Descubre nuestras caminatas por los
+        Prealpes bávaros. Grupos pequeños,
+        naturaleza y tiempo para disfrutar
+        de cada paisaje.
+      </p>
+
+      <a class="boton" href="/">
+        Descubrir las excursiones
+      </a>
+
+      <p>
+        <a href="/blog/">
+          Volver a las 100 montañas
+        </a>
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      Una pausa en tu viaje · Prealpes bávaros
+    </div>
+  </footer>
+
+</body>
+</html>
