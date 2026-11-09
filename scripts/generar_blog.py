@@ -1,9 +1,11 @@
 
+
 from pathlib import Path
 from html import escape
 import json
 import re
 import unicodedata
+from urllib.parse import quote, urlsplit, urlunsplit
 
 import markdown
 import yaml
@@ -78,6 +80,17 @@ def leer_historia(archivo):
     fecha = str(datos.get("fecha", "") or "")
     imagen = str(datos.get("imagen", "") or "").strip()
 
+    galeria = datos.get("galeria") or []
+    if isinstance(galeria, str):
+        galeria = [galeria]
+    if not isinstance(galeria, list):
+        raise ValueError(f"Galería incorrecta: {archivo.name}")
+    galeria = [str(ruta).strip() for ruta in galeria if ruta]
+
+    # La primera foto de la galería también sirve de portada.
+    if not imagen and galeria:
+        imagen = galeria[0]
+
     cuerpo = partes[2].strip()
 
     html_cuerpo = markdown.markdown(
@@ -92,6 +105,7 @@ def leer_historia(archivo):
         "numero": numero,
         "fecha": fecha,
         "imagen": imagen,
+        "galeria": galeria,
         "cuerpo": html_cuerpo,
         "slug": f"{numero:03d}-{slug}",
     }
@@ -102,23 +116,23 @@ def url_imagen(ruta, desde_articulo=False):
         return ""
 
     ruta = ruta.replace("\\", "/")
-
     if ruta.startswith(("https://", "http://")):
         return ruta
-
     if ruta.startswith("/"):
-        return ruta
+        destino = ruta
+    elif ruta.startswith("blog/"):
+        destino = "/" + ruta
+    elif ruta.startswith("../"):
+        destino = ruta
+    else:
+        # Compatible con rutas antiguas sin carpeta.
+        destino = "/blog/imagenes/" + ruta.split("/")[-1]
 
-    if ruta.startswith("blog/"):
-        return "/" + ruta
-
-    if ruta.startswith("../"):
-        return ruta
-
-    # Las imagenes subidas desde Pages CMS
-    # se guardan en blog/imagenes.
-    prefijo = "../../" if desde_articulo else ""
-    return prefijo + "imagenes/" + ruta.split("/")[-1]
+    # Los nombres con espacios o tildes deben funcionar en las URLs.
+    partes = urlsplit(destino)
+    return urlunsplit((partes.scheme, partes.netloc,
+                       quote(partes.path, safe="/%"),
+                       partes.query, partes.fragment))
 
 
 def crear_articulo(historia):
@@ -128,7 +142,7 @@ def crear_articulo(historia):
 
     imagen_html = ""
 
-    if historia["imagen"]:
+    if historia["imagen"] and historia["imagen"] not in historia["galeria"]:
         src = texto_seguro(
             url_imagen(historia["imagen"], desde_articulo=True)
         )
@@ -137,6 +151,25 @@ def crear_articulo(historia):
             f'<img class="foto" src="{src}" '
             f'alt="{titulo}" loading="lazy">'
         )
+
+    fotos = []
+    vistas = set()
+    for ruta in historia["galeria"]:
+        src = url_imagen(ruta, desde_articulo=True)
+        if src and src not in vistas:
+            vistas.add(src)
+            fotos.append(
+                f'<figure><img src="{texto_seguro(src)}" '
+                f'alt="{titulo} — fotografía {len(fotos) + 1}" '
+                f'loading="lazy"></figure>'
+            )
+
+    galeria_html = (
+        '<section class="galeria-fotos" aria-label="Fotografías de la excursión">'
+        '<h2>Galería de fotografías</h2>'
+        '<div class="galeria-grid">' + "\n".join(fotos) + '</div></section>'
+        if fotos else ""
+    )
 
     contenido = f"""<!DOCTYPE html>
 <html lang="es">
@@ -228,6 +261,12 @@ def crear_articulo(historia):
       color: #1f4033;
     }}
 
+    .galeria-fotos {{ margin-top: 48px; }}
+    .galeria-fotos h2 {{ font-family: Georgia, serif; font-weight: normal; }}
+    .galeria-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; }}
+    .galeria-grid figure {{ margin: 0; }}
+    .galeria-grid img {{ display: block; width: 100%; height: auto; border-radius: 5px; }}
+
     .invitacion {{
       margin-top: 75px;
       border-top: 1px solid #dfe5da;
@@ -282,6 +321,8 @@ def crear_articulo(historia):
     <article class="relato">
       {historia["cuerpo"]}
     </article>
+
+    {galeria_html}
 
     <div class="invitacion">
       <h2>¿Te gustaría vivir tu propia experiencia?</h2>
@@ -440,14 +481,20 @@ def actualizar_portada(historias):
 
     porcentaje = min(cantidad, 100)
 
+    # Actualizar el ancho sin duplicar el atributo style en cada ejecución.
+    def actualizar_progreso(m):
+        etiqueta = m.group(0)
+        estilo = re.search(r'\sstyle=["\']([^"\']*)["\']', etiqueta)
+        if estilo:
+            anterior = estilo.group(1)
+            nuevo = re.sub(r'width\s*:\s*[^;]+;?', '', anterior).strip()
+            nuevo = (nuevo.rstrip(';') + '; ' if nuevo else '') + f'width: {porcentaje}%'
+            return etiqueta[:estilo.start()] + f' style="{nuevo}"' + etiqueta[estilo.end():]
+        return etiqueta[:-1] + f' style="width: {porcentaje}%">'
+
     html = re.sub(
-        r'(<div\s+class="progress-fill"\s+id="progress-fill")',
-        lambda m: (
-            m.group(1)
-            + f' style="width: {porcentaje}%"'
-        ),
-        html,
-        count=1
+        r'<div\b(?=[^>]*\bid=["\']progress-fill["\'])[^>]*>',
+        actualizar_progreso, html, count=1
     )
 
     PORTADA.write_text(html, encoding="utf-8")
