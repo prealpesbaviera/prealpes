@@ -10,6 +10,8 @@ import markdown
 import yaml
 
 
+# CONFIGURACIÓN
+
 BASE = Path(__file__).resolve().parent.parent
 BLOG = BASE / "blog"
 HISTORIAS = BLOG / "historias"
@@ -19,12 +21,15 @@ SALIDA = BLOG / "cumbres"
 INICIO = "<!-- HISTORIAS_GENERADAS_INICIO -->"
 FIN = "<!-- HISTORIAS_GENERADAS_FIN -->"
 
+# Cambiar a True cuando lancemos las excursiones.
+MOSTRAR_EXCURSIONES = False
+
 
 def seguro(valor):
     return escape(str(valor or ""), quote=True)
 
 
-def slug(texto):
+def crear_slug(texto):
     texto = unicodedata.normalize("NFKD", str(texto))
     texto = "".join(
         c for c in texto if not unicodedata.combining(c)
@@ -53,6 +58,8 @@ def url_imagen(ruta):
     return quote(destino, safe="/%")
 
 
+# LEER HISTORIAS DE PAGES CMS
+
 def leer_historia(archivo):
     contenido = archivo.read_text(encoding="utf-8")
 
@@ -71,15 +78,21 @@ def leer_historia(archivo):
     if not isinstance(datos, dict):
         return None
 
-    if str(datos.get("estado", "")).lower().strip() != "publicado":
+    if str(datos.get("estado", "")).strip().lower() != "publicado":
         return None
 
-    titulo = str(datos.get("title", "")).strip()
-    numero = int(datos.get("numero"))
+    titulo = str(datos.get("title") or "").strip()
+
+    try:
+        numero = int(datos.get("numero"))
+    except (TypeError, ValueError):
+        raise ValueError(
+            f"Número incorrecto en {archivo.name}"
+        )
 
     if not titulo or not 1 <= numero <= 100:
         raise ValueError(
-            f"Titulo o numero incorrecto: {archivo.name}"
+            f"Título o número incorrecto: {archivo.name}"
         )
 
     galeria = datos.get("galeria") or []
@@ -89,7 +102,7 @@ def leer_historia(archivo):
 
     if not isinstance(galeria, list):
         raise ValueError(
-            f"Galeria incorrecta: {archivo.name}"
+            f"Galería incorrecta: {archivo.name}"
         )
 
     galeria = [
@@ -103,7 +116,25 @@ def leer_historia(archivo):
     if not imagen and galeria:
         imagen = galeria[0]
 
-    cuerpo = partes[2].strip()
+    campos = [
+        ("altitud", "Altitud"),
+        ("desnivel", "Desnivel +"),
+        ("distancia", "Distancia"),
+        ("duracion", "Duración"),
+        ("dificultad", "Dificultad"),
+        ("acceso", "Acceso")
+    ]
+
+    ficha = [
+        (etiqueta, str(datos.get(clave) or "").strip())
+        for clave, etiqueta in campos
+        if str(datos.get(clave) or "").strip()
+    ]
+
+    cuerpo = markdown.markdown(
+        partes[2].strip(),
+        extensions=["extra", "sane_lists"]
+    )
 
     return {
         "titulo": titulo,
@@ -111,98 +142,199 @@ def leer_historia(archivo):
         "fecha": str(datos.get("fecha") or ""),
         "imagen": imagen,
         "galeria": galeria,
-        "cuerpo": markdown.markdown(
-            cuerpo,
-            extensions=["extra", "sane_lists"]
-        ),
-        "slug": f"{numero:03d}-{slug(titulo)}"
+        "ficha": ficha,
+        "cuerpo": cuerpo,
+        "slug": f"{numero:03d}-{crear_slug(titulo)}"
     }
 
 
-def crear_articulo(historia):
-    titulo = seguro(historia["titulo"])
-    numero = historia["numero"]
-    fecha = seguro(historia["fecha"])
-    galeria = historia["galeria"]
+# FICHA TÉCNICA
 
+def crear_ficha(historia):
+    if not historia["ficha"]:
+        return ""
+
+    datos = ""
+
+    for etiqueta, valor in historia["ficha"]:
+        datos += f"""
+        <div class="dato">
+            <span>{seguro(etiqueta)}</span>
+            <strong>{seguro(valor)}</strong>
+        </div>
+        """
+
+    return f"""
+    <section class="ficha">
+        <div class="ficha-titulo">
+            Ficha técnica de la ruta
+        </div>
+        <div class="ficha-datos">
+            {datos}
+        </div>
+    </section>
+    """
+
+
+# FOTOGRAFÍAS DENTRO DEL RELATO
+
+def preparar_relato(historia):
+    galeria = historia["galeria"]
     utilizadas = set()
 
-    def foto_html(indice):
+    def crear_foto(indice, modo="foto"):
         if indice < 1 or indice > len(galeria):
-            return '<p>Fotografia no encontrada.</p>'
+            return '<p>Fotografía no encontrada.</p>'
 
         utilizadas.add(indice)
 
         src = seguro(url_imagen(galeria[indice - 1]))
+        titulo = seguro(historia["titulo"])
 
-        return (
-            f'<figure class="foto-relato">'
-            f'<img src="{src}" alt="{titulo} - foto {indice}" '
-            f'loading="lazy">'
-            f'</figure>'
-        )
+        clases = {
+            "foto": "foto-mediana",
+            "grande": "foto-grande",
+            "izquierda": "foto-izquierda",
+            "derecha": "foto-derecha"
+        }
 
-    def insertar_fotos(coincidencia):
+        clase = clases.get(modo, "foto-mediana")
+
+        return f"""
+        <figure class="foto-relato {clase}">
+            <img src="{src}"
+                 alt="{titulo} - fotografía {indice}"
+                 loading="lazy">
+        </figure>
+        """
+
+    def reemplazar(coincidencia):
+        modo = coincidencia.group(1).lower()
+
         indices = [
             int(n)
             for n in re.findall(
-                r"\d+", coincidencia.group(1)
+                r"\d+", coincidencia.group(2)
             )
         ]
 
-        fotos = [foto_html(i) for i in indices]
+        if modo == "fotos":
+            fotos = "".join(
+                crear_foto(i) for i in indices
+            )
 
-        if len(fotos) == 1:
-            return fotos[0]
+            return f"""
+            <div class="grupo-fotos">
+                {fotos}
+            </div>
+            """
 
-        return (
-            '<div class="grupo-fotos">'
-            + "\n".join(fotos)
-            + '</div>'
-        )
+        return crear_foto(indices[0], modo)
+
+    patron = (
+        r"<p>\s*\[\["
+        r"(foto|fotos|izquierda|derecha|grande)"
+        r":\s*([0-9, ]+)"
+        r"\]\]\s*</p>"
+    )
 
     cuerpo = re.sub(
-        r"<p>\s*\[\[(?:foto|fotos):\s*([0-9, ]+)\]\]\s*</p>",
-        insertar_fotos,
+        patron,
+        reemplazar,
         historia["cuerpo"],
         flags=re.IGNORECASE
     )
 
     restantes = [
-        foto_html(i)
-        for i in range(1, len(galeria) + 1)
+        i for i in range(1, len(galeria) + 1)
         if i not in utilizadas
     ]
 
     galeria_final = ""
 
     if restantes:
-        galeria_final = (
-            '<section class="galeria-final">'
-            '<h2>Más fotografías de esta montaña</h2>'
-            '<div class="grupo-fotos">'
-            + "\n".join(restantes)
-            + '</div></section>'
+        fotos = "".join(
+            crear_foto(i) for i in restantes
         )
+
+        galeria_final = f"""
+        <section class="galeria-final">
+            <h2>Más fotografías de esta montaña</h2>
+            <div class="grupo-fotos">
+                {fotos}
+            </div>
+        </section>
+        """
+
+    return cuerpo, galeria_final
+
+
+# INVITACIÓN A EXCURSIONES
+
+def crear_invitacion():
+    if not MOSTRAR_EXCURSIONES:
+        return ""
+
+    return """
+    <section class="invitacion">
+        <h2>
+            Algunas montañas también podemos
+            descubrirlas juntos.
+        </h2>
+
+        <p>
+            Descubre nuestras caminatas por los
+            Prealpes bávaros. Grupos pequeños,
+            naturaleza y tiempo para disfrutar
+            de cada paisaje.
+        </p>
+
+        <a class="boton" href="/">
+            Descubrir las excursiones
+        </a>
+    </section>
+    """
+
+
+# CREAR PÁGINA INDIVIDUAL
+
+def crear_articulo(historia):
+    titulo = seguro(historia["titulo"])
+    numero = historia["numero"]
+    fecha = seguro(historia["fecha"])
+
+    ficha = crear_ficha(historia)
+    cuerpo, galeria_final = preparar_relato(historia)
+    invitacion = crear_invitacion()
 
     portada = ""
 
-    if historia["imagen"] and historia["imagen"] not in galeria:
+    # Evitar duplicar la primera foto de la galería.
+    if (
+        historia["imagen"]
+        and historia["imagen"] not in historia["galeria"]
+    ):
         src = seguro(url_imagen(historia["imagen"]))
-        portada = (
-            f'<img class="portada" src="{src}" '
-            f'alt="{titulo}">'
-        )
+
+        portada = f"""
+        <img class="portada" src="{src}" alt="{titulo}">
+        """
 
     html = f"""<!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1">
+
 <title>{titulo} | 100 montañas en 365 días</title>
-<meta name="description" content="Cumbre {numero:03d}: {titulo}. Relato personal de montaña en Baviera.">
+
+<meta name="description"
+      content="Cumbre {numero:03d}: {titulo}. Relato personal de montaña en Baviera.">
 
 <style>
+
 * {{
     box-sizing: border-box;
 }}
@@ -211,68 +343,117 @@ body {{
     margin: 0;
     background: #faf8f2;
     color: #25382e;
-    font-family: Arial, sans-serif;
-    line-height: 1.85;
+    font-family: Georgia, serif;
+    line-height: 1.8;
 }}
 
 .contenedor {{
-    width: min(780px, 90%);
+    width: min(980px, 92%);
     margin: auto;
 }}
 
 header {{
-    border-bottom: 1px solid #dfe5da;
-    padding: 24px 0;
-}}
-
-a {{
-    color: #1f4033;
-    text-decoration: none;
+    background: #1f4033;
+    padding: 26px 0;
 }}
 
 .marca {{
-    font-family: Georgia, serif;
-    font-size: 23px;
+    color: white;
+    font-size: 25px;
     font-weight: bold;
+    text-decoration: none;
 }}
 
 main {{
-    padding: 65px 0 100px;
+    padding: 65px 0 90px;
 }}
 
 .numero {{
-    color: #728473;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    color: #71816f;
     font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }}
 
 h1 {{
-    font-family: Georgia, serif;
-    color: #1f4033;
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: 1.12;
     font-weight: normal;
-    font-size: clamp(38px, 6vw, 65px);
-    line-height: 1.15;
-    margin-bottom: 18px;
+    color: #1f4033;
+    margin: 22px 0;
 }}
 
 .fecha {{
+    font-family: Arial, sans-serif;
     color: #728473;
     font-size: 14px;
-    margin-bottom: 40px;
+    margin-bottom: 38px;
 }}
 
 .portada {{
     display: block;
     width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin: 35px 0;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 7px;
+    margin-bottom: 38px;
 }}
 
-.relato {{
+/* FICHA TÉCNICA */
+
+.ficha {{
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    background: #eeefe3;
+    border: 1px solid #d7dfd0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 35px 0 55px;
+}}
+
+.ficha-titulo {{
+    background: #1f4033;
+    color: white;
+    font-size: 21px;
+    line-height: 1.3;
+    padding: 28px 22px;
+    display: flex;
+    align-items: center;
+}}
+
+.ficha-datos {{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    padding: 25px;
+}}
+
+.dato {{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}}
+
+.dato span {{
+    color: #687967;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin-bottom: 7px;
+}}
+
+.dato strong {{
+    color: #1f4033;
     font-size: 18px;
+}}
+
+/* RELATO EDITORIAL */
+
+.relato {{
+    font-size: 19px;
+    line-height: 1.85;
     overflow-wrap: break-word;
+    display: flow-root;
 }}
 
 .relato p {{
@@ -282,47 +463,77 @@ h1 {{
 .relato h2,
 .relato h3,
 .galeria-final h2 {{
-    font-family: Georgia, serif;
     color: #1f4033;
     font-weight: normal;
     line-height: 1.3;
 }}
 
 .relato h2 {{
-    font-size: 30px;
-    margin-top: 2.2em;
+    font-size: 31px;
+    margin-top: 2em;
 }}
 
 .relato h3 {{
-    font-size: 23px;
-    margin-top: 1.8em;
+    font-size: 24px;
+    margin-top: 1.7em;
+}}
+
+.relato blockquote {{
+    margin: 35px 0;
+    padding: 18px 30px;
+    border-left: 4px solid #718a69;
+    background: #eeefe3;
+    font-style: italic;
 }}
 
 .relato img {{
     max-width: 100%;
-    height: auto;
-    border-radius: 5px;
 }}
 
+/* FOTOGRAFÍAS */
+
 .foto-relato {{
-    margin: 38px 0;
+    margin: 32px auto;
 }}
 
 .foto-relato img {{
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 7px;
+}}
+
+.foto-mediana {{
+    width: min(76%, 650px);
+}}
+
+.foto-grande {{
+    width: 100%;
+    clear: both;
+}}
+
+.foto-izquierda {{
+    float: left;
+    width: 39%;
+    margin: 8px 27px 20px 0;
+}}
+
+.foto-derecha {{
+    float: right;
+    width: 39%;
+    margin: 8px 0 20px 27px;
 }}
 
 .grupo-fotos {{
+    clear: both;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
-    margin: 36px 0;
+    margin: 38px 0;
 }}
 
 .grupo-fotos .foto-relato {{
+    width: 100%;
     margin: 0;
 }}
 
@@ -333,20 +544,21 @@ h1 {{
 }}
 
 .galeria-final {{
-    margin-top: 55px;
+    margin-top: 60px;
 }}
+
+/* INVITACIÓN FINAL */
 
 .invitacion {{
     margin-top: 80px;
+    padding-top: 38px;
     border-top: 1px solid #dfe5da;
-    padding-top: 40px;
 }}
 
 .invitacion h2 {{
-    font-family: Georgia, serif;
-    color: #1f4033;
-    font-weight: normal;
     font-size: 30px;
+    font-weight: normal;
+    color: #1f4033;
     line-height: 1.3;
 }}
 
@@ -354,132 +566,166 @@ h1 {{
     display: inline-block;
     background: #1f4033;
     color: white;
+    text-decoration: none;
     padding: 13px 24px;
-    border-radius: 4px;
+    border-radius: 5px;
     margin-top: 12px;
+}}
+
+.volver {{
+    margin-top: 65px;
+    font-size: 15px;
+}}
+
+.volver a {{
+    color: #1f4033;
+    text-decoration: none;
 }}
 
 footer {{
     background: #1f4033;
     color: white;
     padding: 30px 0;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
 }}
 
-footer a {{
-    color: white;
-}}
+/* VERSIÓN MÓVIL */
 
-@media (max-width: 520px) {{
+@media (max-width: 680px) {{
+
     main {{
         padding-top: 40px;
+    }}
+
+    .ficha {{
+        grid-template-columns: 1fr;
+    }}
+
+    .ficha-datos {{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }}
 
     .relato {{
         font-size: 17px;
     }}
 
+    .foto-mediana,
+    .foto-izquierda,
+    .foto-derecha {{
+        float: none;
+        width: 100%;
+        margin: 28px 0;
+    }}
+
     .grupo-fotos {{
         gap: 8px;
     }}
+
 }}
+
 </style>
 </head>
 
 <body>
+
 <header>
-  <div class="contenedor">
-    <a class="marca" href="/blog/">
-      100 montañas en 365 días
-    </a>
-  </div>
+    <div class="contenedor">
+        <a class="marca" href="/blog/">
+            100 montañas en 365 días
+        </a>
+    </div>
 </header>
 
 <main class="contenedor">
 
-  <div class="numero">
-    Cumbre {numero:03d} de 100
-  </div>
+    <div class="numero">
+        Cumbre {numero:03d} de 100
+    </div>
 
-  <h1>{titulo}</h1>
+    <h1>{titulo}</h1>
 
-  <div class="fecha">
-    Fecha de ascenso: {fecha}
-  </div>
+    <div class="fecha">
+        Fecha de ascenso: {fecha}
+    </div>
 
-  {portada}
+    {portada}
 
-  <article class="relato">
-    {cuerpo}
-  </article>
+    {ficha}
 
-  {galeria_final}
+    <article class="relato">
+        {cuerpo}
+    </article>
 
-  <div class="invitacion" style="display: none;">
-    <h2>Algunas montañas también podemos descubrirlas juntos.</h2>
+    {galeria_final}
 
-    <p>
-      Descubre nuestras caminatas por los Prealpes bávaros.
-      Grupos pequeños, naturaleza y tiempo para disfrutar
-      de cada paisaje.
-    </p>
+    {invitacion}
 
-    <a class="boton" href="/">
-      Descubrir las excursiones
-    </a>
-
-    <p>
-      <a href="/blog/">Volver a las 100 montañas</a>
-    </p>
-  </div>
+    <div class="volver">
+        <a href="/blog/">
+            ← Volver a las 100 montañas
+        </a>
+    </div>
 
 </main>
 
 <footer>
-  <div class="contenedor">
-    Una pausa en tu viaje · Prealpes bávaros
-  </div>
+    <div class="contenedor">
+        Una pausa en tu viaje · Prealpes bávaros
+    </div>
 </footer>
 
 </body>
-</html>"""
+</html>
+"""
 
     destino = SALIDA / historia["slug"] / "index.html"
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(html, encoding="utf-8")
 
 
+# TARJETAS DE LA PORTADA DEL BLOG
+
 def crear_tarjeta(historia):
     titulo = seguro(historia["titulo"])
     numero = historia["numero"]
     fecha = seguro(historia["fecha"])
+
     enlace = f"/blog/cumbres/{historia['slug']}/"
 
     imagen_html = ""
 
     if historia["imagen"]:
         src = seguro(url_imagen(historia["imagen"]))
+
         imagen_html = (
-            f'<img src="{src}" alt="{titulo}" loading="lazy">'
+            f'<img src="{src}" '
+            f'alt="{titulo}" loading="lazy">'
         )
 
     return f"""
     <article class="story-card">
-      <a href="{enlace}">
-        {imagen_html}
-        <div class="story-content">
-          <div class="story-number">
-            Cumbre {numero:03d} de 100
-          </div>
-          <h3>{titulo}</h3>
-          <p>{fecha}</p>
-          <span class="story-link">
-            Leer la historia
-          </span>
-        </div>
-      </a>
+        <a href="{enlace}">
+            {imagen_html}
+
+            <div class="story-content">
+                <div class="story-number">
+                    Cumbre {numero:03d} de 100
+                </div>
+
+                <h3>{titulo}</h3>
+                <p>{fecha}</p>
+
+                <span class="story-link">
+                    Leer la historia
+                </span>
+            </div>
+        </a>
     </article>
     """
 
+
+# ACTUALIZAR PORTADA Y CONTADOR
 
 def actualizar_portada(historias):
     html = PORTADA.read_text(encoding="utf-8")
@@ -491,11 +737,11 @@ def actualizar_portada(historias):
     if not tarjetas:
         tarjetas = """
         <div class="empty-state">
-          <h3>Las primeras historias llegarán pronto.</h3>
-          <p>
-            Este diario irá reuniendo las experiencias
-            y fotografías de cada cumbre.
-          </p>
+            <h3>Las primeras historias llegarán pronto.</h3>
+            <p>
+                Este diario irá reuniendo las experiencias
+                y fotografías de cada cumbre.
+            </p>
         </div>
         """
 
@@ -504,16 +750,19 @@ def actualizar_portada(historias):
 
         html = re.sub(
             patron,
-            lambda _: INICIO + "\n" + tarjetas + "\n" + FIN,
+            lambda m: (
+                INICIO + "\n" + tarjetas + "\n" + FIN
+            ),
             html,
             flags=re.DOTALL
         )
+
     else:
         apertura = '<div class="stories-grid" id="stories-grid">'
 
         if apertura not in html:
             raise ValueError(
-                "No se encontro stories-grid en blog/index.html"
+                "No se encontró stories-grid en blog/index.html"
             )
 
         comienzo = html.index(apertura) + len(apertura)
@@ -525,7 +774,7 @@ def actualizar_portada(historias):
 
         if cierre == -1:
             raise ValueError(
-                "No se encontro el cierre de la seccion de historias"
+                "No se encontró el cierre de la sección"
             )
 
         html = (
@@ -540,7 +789,9 @@ def actualizar_portada(historias):
 
     html = re.sub(
         r'(<span id="summit-count">).*?(</span>)',
-        lambda m: m.group(1) + str(cantidad) + m.group(2),
+        lambda m: (
+            m.group(1) + str(cantidad) + m.group(2)
+        ),
         html,
         count=1,
         flags=re.DOTALL
@@ -548,7 +799,7 @@ def actualizar_portada(historias):
 
     porcentaje = min(cantidad, 100)
 
-    def progreso(coincidencia):
+    def actualizar_progreso(coincidencia):
         etiqueta = coincidencia.group(0)
 
         estilo = re.search(
@@ -558,15 +809,17 @@ def actualizar_portada(historias):
 
         if estilo:
             anterior = estilo.group(1)
+
             nuevo = re.sub(
                 r'width\s*:\s*[^;]+;?',
                 '',
                 anterior
             ).strip()
 
-            nuevo = (
-                (nuevo.rstrip(";") + "; ") if nuevo else ""
-            ) + f"width: {porcentaje}%"
+            if nuevo:
+                nuevo = nuevo.rstrip(";") + "; "
+
+            nuevo += f"width: {porcentaje}%"
 
             return (
                 etiqueta[:estilo.start()]
@@ -581,13 +834,15 @@ def actualizar_portada(historias):
 
     html = re.sub(
         r'<div\b(?=[^>]*\bid=["\']progress-fill["\'])[^>]*>',
-        progreso,
+        actualizar_progreso,
         html,
         count=1
     )
 
     PORTADA.write_text(html, encoding="utf-8")
 
+
+# GENERACIÓN AUTOMÁTICA
 
 def main():
     historias = []
@@ -605,7 +860,8 @@ def main():
 
     if len(numeros) != len(set(numeros)):
         raise ValueError(
-            "Hay dos historias publicadas con el mismo numero de cumbre."
+            "Hay dos historias publicadas "
+            "con el mismo número de cumbre."
         )
 
     if SALIDA.exists():
