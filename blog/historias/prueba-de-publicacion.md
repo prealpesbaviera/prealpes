@@ -11,7 +11,7 @@ distancia: 14 km idea y vuelta
 duracion: 4 horas
 dificultad: Exigente
 acceso: "Bahnhof Lenggries, luego debes caminar "
-estado: publicado
+estado: borrador
 ---
 ## El comienzo del camino
 
