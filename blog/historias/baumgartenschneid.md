@@ -13,7 +13,7 @@ galeria:
   - /blog/imagenes/Imagen de ChatGPT 10 nov 2026, 15_04_33.jpg
 altitud: "1.444"
 desnivel: "780"
-distancia: 14 km idea y vuelta
+distancia: 14 km ida y vuelta
 duracion: 5 horas
 dificultad: Moderada
 acceso: "Parqueadero Prenzenweg 10 en Tegernsee "
