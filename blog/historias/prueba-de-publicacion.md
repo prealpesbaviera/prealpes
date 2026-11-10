@@ -10,7 +10,7 @@ desnivel: "800"
 distancia: 14 km idea y vuelta
 duracion: 4 horas
 dificultad: Exigente
-acceso: "Bahnhof Lenggreies, luego debes caminar "
+acceso: "Bahnhof Lenggries, luego debes caminar "
 estado: publicado
 ---
 ## El comienzo del camino
