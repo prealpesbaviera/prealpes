@@ -16,9 +16,7 @@ desnivel: "780"
 distancia: 14 km idea y vuelta
 duracion: 5 horas
 dificultad: Moderada
-acceso: "LLegamso en auto hasta Prenzenweg 10 en Tegernsee, pero también se
-  puede desde la estación de trenes de Tegernsee. Mucha gente inicia en esta
-  estación y cruza la montaña hasta la estación de trenes de Schliersee "
+acceso: "Parqueadero Prenzenweg 10 en Tegernsee "
 estado: publicado
 ---
 ## El camino por el bosque
@@ -35,7 +33,7 @@ La luz atravesaba las ramas.
 
 El valle quedó oculto bajo un mar de nubes.
 
-[[grande:4]]
+[[mediana:4]]
 
 [[fotos:5,6]]
 
