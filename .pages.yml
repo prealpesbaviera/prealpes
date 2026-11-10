@@ -34,33 +34,33 @@ content:
         type: image
         list: true
         
-- name: altitud
-  label: Altitud de la montaña
-  type: string
+      - name: altitud
+        label: Altitud de la montaña
+        type: string
 
-- name: desnivel
-  label: Desnivel positivo
-  type: string
+      - name: desnivel
+        label: Desnivel positivo
+        type: string
 
-- name: distancia
-  label: Distancia recorrida
-  type: string
+      - name: distancia
+        label: Distancia recorrida
+        type: string
 
-- name: duracion
-  label: Duración de la caminata
-  type: string
+      - name: duracion
+        label: Duración de la caminata
+        type: string
 
-- name: dificultad
-  label: Dificultad
-  type: select
-  options:
-    values:
-      - value: Facil
-        label: Fácil
-      - value: Moderada
-        label: Moderada
-      - value: Exigente
-        label: Exigente
+      - name: dificultad
+        label: Dificultad
+        type: select
+        options:
+        values:
+          - value: Facil
+            label: Fácil
+          - value: Moderada
+            label: Moderada
+          - value: Exigente
+            label: Exigente
 
 - name: acceso
   label: Acceso y transporte público
