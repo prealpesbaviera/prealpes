@@ -19,13 +19,15 @@ dificultad: Moderada
 acceso: "Parqueadero Prenzenweg 10 en Tegernsee "
 estado: publicado
 ---
-## El camino por el bosque
+## La previa a lo interesante
 
 Ha sido una semana con mucha nubosidad, así que no es tan claro cómo están las condiciones del suelo en las cumbres. Luego de cruzar información con varias apps, es claro que por la mañana no vale la pena salir. Organizamos todo para salir alrededor de las 11 de casa, y efectivamente salimos a las 11:15. Algún día seremos puntuales. Un poco antes de las 12 llegamos al parqueadero de la calle Prenzenweg que solo tiene capacidad como para 15 autos. Así que en temporada alta ni lo intentes, no vas a encontrar nada. Si vienes desde Munich, puedes llgear caminando desde la estación de trenes de Tegernsee que queda como a 10 minutos de allí. El parqueadero si consigues es bastante caro, alrededor de 8 euros. Como mi gusto es el menor costo posible, logramos parqueaer gratis en un espacio perfecto cerca de una obra en la calle Penzenweg; que al ser domingo pues cero lío con eso. Estimo que cerca del 70% de la subida es por carretera destapada entre el bosque. No soy muy amante de ese tipo de carreteras, pero si tienes una buena bici y una muy buena condición física puedes subir un gran tramo pedaleando. El camino se vuelve interesante cuando dejas esta destapada y subes por caminos de raíces hasta la cima. Es aquí donde se necesita un buen estado físico.  
 
 [[izquierda:1]]
 
-La luz atravesaba las ramas.
+## Caminando entre raíces, barro y nubes.
+
+Subir por un camino de raíces empinado es una de mis fortalezas, pero hacerlo cuando todo está humedo es muy retador y peligroso. Cuando las raíces se humedecen pasa lo mismo que cuando te lavas las manos, quedan suaves, resbalozas, es decir fijate bien donde pisas o te puedes resbalar y doblar un tobillo fácilmente. En algunas partes quedas a bordes de abismos y cualquier resbalón puede ser mortal. Tener unos zapatos de buen perfil y aumentar tu atención en cada pisada son esenciales para no terminar mal ese día o temrinar del todo con todo. La verdad es que en cada paso no me la paso pensando que puede se rmi último, solo me concentro en hacerlo bien y disfrutarlo. Entre más subíamos en esos últimos 45 minutos más niebla se acumulaba, pero como es uin camino muy transitado es muy poco probable perderse. Casi llegando a la cima no veíamos casi nada y esa incertidumbre de no ver a larga distancia te agota un poco. Como estaba estrenando reloj, que me muestra la altura, sabía que no faltaba mucho. Tan solo unos 20 metros antes de la cima, todas las nubes abren paso a un sol encantador. Como siempre una cosa es verlo, fotografiarlo, hacer un vídeo y otra cosa es sentirlo. Sensacional como de repente todo es soleado, estás sobre las nubes, tu sombra se refleja entre ellas alrededor de un arcoiris.  
 
 [[derecha:3]]
 
