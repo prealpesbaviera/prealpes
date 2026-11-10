@@ -16,24 +16,29 @@ content:
         label: Título
         type: string
         required: true
+
       - name: numero
         label: Número de cumbre
         type: number
         required: true
+
       - name: fecha
         label: Fecha de ascenso
         type: date
+
       - name: imagen
         label: Fotografía principal
         type: image
+
       - name: body
         label: Mi historia
         type: rich-text
+
       - name: galeria
         label: Galería de fotografías
         type: image
         list: true
-        
+
       - name: altitud
         label: Altitud de la montaña
         type: string
@@ -54,17 +59,17 @@ content:
         label: Dificultad
         type: select
         options:
-        values:
-          - value: Facil
-            label: Fácil
-          - value: Moderada
-            label: Moderada
-          - value: Exigente
-            label: Exigente
+          values:
+            - value: Facil
+              label: Fácil
+            - value: Moderada
+              label: Moderada
+            - value: Exigente
+              label: Exigente
 
-- name: acceso
-  label: Acceso y transporte público
-  type: string
+      - name: acceso
+        label: Acceso y transporte público
+        type: string
 
       - name: estado
         label: Estado de publicación
