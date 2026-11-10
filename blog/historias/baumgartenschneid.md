@@ -39,4 +39,4 @@ El valle quedó oculto bajo un mar de nubes.
 
 ### Los últimos metros
 
-[[foto:9]]
+[[foto:7]]
