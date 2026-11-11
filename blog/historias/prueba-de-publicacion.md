@@ -1,6 +1,6 @@
 ---
 title: Prueba de publicación
-numero: 1
+numero: 110
 fecha: 2026-11-09
 realizada: true
 galeria:
@@ -12,7 +12,7 @@ distancia: 14 km idea y vuelta
 duracion: 4 horas
 dificultad: Exigente
 acceso: "Bahnhof Lenggries, luego debes caminar "
-estado: publicado
+estado: borrador
 ---
 ## El comienzo del camino
 
