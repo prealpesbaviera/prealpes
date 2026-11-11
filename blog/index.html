@@ -4,8 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="100 montañas en 365 días: historias reales, fotografías y caminos por los Alpes bávaros.">
-  <title>100 montañas en 365 días | Una pausa en tu viaje</title>
+  <meta name="description" content="100 montañas en 365 días. Historias y fotografías de Giovanny Barrera en los Alpes bávaros.">
+  <title>100 montañas en 365 días | Giovanny Barrera</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoqE8QfQmMZc4="
+    crossorigin=""
+  >
 
   <style>
     :root {
@@ -13,7 +20,7 @@
       --ink: #25382e;
       --muted: #627269;
       --cream: #faf8f2;
-      --line: #dfe5da;
+      --line: #b8c6b7;
       --gold: #b9a47b;
       --white: #ffffff;
     }
@@ -49,57 +56,10 @@
       margin: 0 auto;
     }
 
-    header {
-      background: var(--cream);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .navigation {
-      min-height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      font-family: Georgia, serif;
-      font-size: 23px;
-      font-weight: bold;
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
       color: var(--forest);
-      line-height: 1.2;
-    }
-
-    .brand span {
-      display: block;
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      letter-spacing: 2px;
-      font-weight: normal;
-      text-transform: uppercase;
-      margin-top: 7px;
-    }
-
-    .navigation nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      font-size: 14px;
-    }
-
-    .navigation nav a:hover {
-      color: #6e8c76;
-    }
-
-    .hero {
-      padding: 75px 0 65px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 65px;
-      align-items: center;
+      line-height: 1.18;
     }
 
     .eyebrow {
@@ -110,16 +70,93 @@
       font-weight: bold;
     }
 
-    h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
+    /* ENCABEZADO */
+
+    header {
+      background: var(--cream);
+      border-bottom: 1px solid #dfe5da;
+    }
+
+    .navigation {
+      min-height: 83px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .logo-img {
+      width: 72px;
+      height: 54px;
+      object-fit: contain;
+    }
+
+    .logo-fallback {
+      display: none;
+      width: 72px;
+      height: 54px;
       color: var(--forest);
-      line-height: 1.18;
+    }
+
+    .brand-name {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 19px;
+      font-weight: bold;
+      color: var(--forest);
+      line-height: 1.2;
+    }
+
+    .brand-author {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .navigation nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 19px;
+    }
+
+    .navigation nav a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .navigation nav a:hover {
+      color: var(--forest);
+    }
+
+    /* PORTADA */
+
+    .hero {
+      padding: 42px 0 32px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 65px;
+      align-items: center;
     }
 
     h1 {
       font-size: clamp(48px, 6vw, 78px);
       font-weight: normal;
-      margin: 25px 0;
+      margin: 20px 0;
       letter-spacing: -2px;
     }
 
@@ -128,21 +165,21 @@
       font-size: 25px;
       color: var(--forest);
       line-height: 1.4;
-      margin-bottom: 25px;
+      margin-bottom: 23px;
     }
 
     .hero-description {
       font-size: 16px;
       color: var(--muted);
       max-width: 500px;
-      margin-bottom: 35px;
+      margin-bottom: 28px;
     }
 
     .button {
       display: inline-block;
       background: var(--forest);
       color: white;
-      padding: 15px 28px;
+      padding: 14px 27px;
       border-radius: 4px;
       font-size: 14px;
       font-weight: bold;
@@ -157,29 +194,40 @@
       position: relative;
     }
 
-    .hero-photo img {
+    .hero-slides {
+      position: relative;
       width: 100%;
-      height: auto;
-      border-radius: 5px;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 15px;
       box-shadow: 15px 18px 0 #e5e9df;
+      background: #e5e9df;
     }
 
-    .photo-caption {
-      margin-top: 24px;
-      text-align: right;
-      color: var(--muted);
-      font-size: 12px;
-      font-style: italic;
+    .hero-slides img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.8s ease-in-out;
     }
+
+    .hero-slides img.active {
+      opacity: 1;
+    }
+
+    /* CONTADOR */
 
     .progress-section {
-      padding: 45px 0 65px;
+      padding: 24px 0 26px;
     }
 
     .progress-box {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 30px 0;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      padding: 23px 0;
       display: grid;
       grid-template-columns: 1fr 2fr;
       align-items: center;
@@ -193,7 +241,7 @@
       line-height: 1;
     }
 
-    .progress-number span {
+    .progress-number span:last-child {
       color: #a5b1a6;
       font-size: 27px;
     }
@@ -225,14 +273,16 @@
       font-size: 13px;
     }
 
+    /* PRESENTACIÓN */
+
     .intro-section {
-      padding: 60px 0 90px;
+      padding: 34px 0 43px;
     }
 
     .intro-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 90px;
+      gap: 75px;
       align-items: start;
     }
 
@@ -247,6 +297,10 @@
       font-size: 16px;
     }
 
+    .intro-text p:first-child {
+      margin-top: 0;
+    }
+
     .quote {
       border-left: 3px solid var(--gold);
       padding-left: 25px;
@@ -255,12 +309,42 @@
       font-size: 23px;
       line-height: 1.5;
       color: var(--forest);
-      margin-top: 30px;
+      margin-top: 25px;
     }
 
-    .stories-section {
-      padding: 80px 0 100px;
-      background: #f0f2eb;
+    /* ESTADÍSTICAS */
+
+    .statistics-section {
+      padding: 20px 0 45px;
+    }
+
+    .statistics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .stat {
+      border-top: 2px solid var(--line);
+      padding: 17px 0;
+    }
+
+    .stat-value {
+      font-family: Georgia, serif;
+      color: var(--forest);
+      font-size: 34px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* MAPA */
+
+    .map-section {
+      padding: 40px 0 52px;
+      border-top: 1px solid #dfe5da;
     }
 
     .section-header {
@@ -268,26 +352,50 @@
       justify-content: space-between;
       align-items: end;
       gap: 25px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .section-header p {
-      max-width: 360px;
+      max-width: 370px;
       color: var(--muted);
       font-size: 14px;
     }
 
+    #summit-map {
+      width: 100%;
+      height: 430px;
+      border-radius: 15px;
+      background: #e5e9df;
+      z-index: 0;
+    }
+
+    .map-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 15px;
+    }
+
+    /* HISTORIAS */
+
+    .stories-section {
+      padding: 48px 0 65px;
+      background: #f0f2eb;
+    }
+
     .stories-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 25px;
     }
 
     .story-card {
       background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 5px;
+      border: 1px solid #dfe5da;
+      border-radius: 14px;
       overflow: hidden;
+      aspect-ratio: 3 / 4;
+      min-width: 0;
+      box-shadow: 0 5px 18px rgba(31,64,51,0.05);
       transition: transform 0.2s;
     }
 
@@ -295,86 +403,72 @@
       transform: translateY(-4px);
     }
 
+    .story-card > a {
+      display: grid;
+      grid-template-rows: minmax(0, 2fr) minmax(0, 1fr);
+      height: 100%;
+      width: 100%;
+    }
+
     .story-card img {
       width: 100%;
-      height: 220px;
+      height: 100%;
+      min-height: 0;
       object-fit: cover;
     }
 
     .story-content {
-      padding: 25px;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 14px 20px;
+      overflow: hidden;
     }
 
     .story-number {
-      font-size: 11px;
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1.7px;
       color: #7b8c7c;
       font-weight: bold;
     }
 
     .story-content h3 {
-      font-size: 25px;
+      font-size: 22px;
       font-weight: normal;
-      margin: 12px 0;
+      margin: 5px 0 3px;
     }
 
     .story-content p {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 12px;
+      line-height: 1.4;
+      margin: 4px 0;
     }
 
     .story-link {
       display: inline-block;
+      align-self: flex-start;
       color: var(--forest);
       font-weight: bold;
-      font-size: 13px;
-      margin-top: 10px;
+      font-size: 12px;
+      margin-top: auto;
       border-bottom: 1px solid var(--gold);
     }
 
     .empty-state {
       grid-column: 1 / -1;
-      padding: 65px 30px;
+      padding: 45px 25px;
       background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 5px;
       text-align: center;
     }
 
-    .empty-state h3 {
-      font-size: 29px;
-      font-weight: normal;
-    }
-
-    .empty-state p {
-      color: var(--muted);
-      max-width: 500px;
-      margin: 15px auto;
-    }
-
-    .invitation {
-      padding: 90px 0;
-      text-align: center;
-    }
-
-    .invitation h2 {
-      font-size: clamp(34px, 4vw, 48px);
-      font-weight: normal;
-      margin: 15px auto 25px;
-      max-width: 700px;
-    }
-
-    .invitation p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      color: var(--muted);
-    }
+    /* PIE DE PÁGINA */
 
     footer {
       background: var(--forest);
       color: #e0e9e0;
-      padding: 40px 0;
+      padding: 35px 0;
     }
 
     .footer-content {
@@ -389,241 +483,198 @@
       color: #e0e9e0;
     }
 
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 0;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .intro-grid {
+        gap: 40px;
+      }
+    }
+
     @media (max-width: 800px) {
       .hero-grid,
       .intro-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
       }
 
-      .hero {
-        padding: 45px 0;
-      }
-
-      .hero-photo {
+      .hero-slides {
         max-width: 520px;
+        aspect-ratio: 4 / 3;
       }
 
       .stories-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .progress-box {
         grid-template-columns: 1fr;
         gap: 15px;
       }
+
+      .statistics-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     @media (max-width: 550px) {
-      .navigation {
-        flex-direction: column;
-        padding: 20px 0;
-        align-items: flex-start;
+      .navigation nav {
+        gap: 13px;
       }
 
-      .navigation nav {
-        gap: 16px;
+      .navigation nav a {
+        font-size: 12px;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .logo-img,
+      .logo-fallback {
+        width: 55px;
+        height: 43px;
       }
 
       h1 {
         font-size: 48px;
       }
 
+      .hero {
+        padding-top: 35px;
+      }
+
+      .hero-slides {
+        aspect-ratio: 4 / 5;
+      }
+
       .stories-grid {
         grid-template-columns: 1fr;
+      }
+
+      .story-card {
+        max-width: 420px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .statistics-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
       .section-header {
         display: block;
       }
 
+      #summit-map {
+        height: 340px;
+      }
+
       .footer-content {
         flex-direction: column;
         align-items: flex-start;
       }
+    }
 
-      .intro-section,
-      .stories-section,
-      .invitation {
-        padding-top: 60px;
-        padding-bottom: 60px;
+    @media (prefers-reduced-motion: reduce) {
+      .hero-slides img {
+        transition: none;
+      }
+
+      .story-card {
+        transition: none;
       }
     }
-    
-/* MEJORAS EDITORIALES DEL BLOG */
-
-/* Encabezado */
-.navigation {
-  min-height: 76px;
-  gap: 28px;
-}
-
-.navigation nav {
-  align-items: center;
-  gap: 22px;
-}
-
-.navigation nav a {
-  color: #627269;
-  font-size: 13px;
-  font-weight: normal;
-}
-
-.navigation nav a:hover {
-  color: #1f4033;
-}
-
-/* Logotipo de montaña */
-.brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand-logo img {
-  width: 66px;
-  height: 46px;
-  object-fit: contain;
-}
-
-.brand-logo .brand {
-  font-size: 18px;
-}
-
-/* Fotografía cambiante */
-.hero-photo {
-  position: relative;
-}
-
-.hero-slides {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 15px 18px 0 #e5e9df;
-}
-
-.hero-slides img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0;
-  box-shadow: none;
-  opacity: 0;
-  transition: opacity 1.8s ease-in-out;
-}
-
-.hero-slides img.active {
-  opacity: 1;
-}
-
-/* Tarjetas de historias */
-.story-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 14px;
-  box-shadow: 0 5px 18px rgba(31, 64, 51, 0.05);
-}
-
-.story-card > a {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.story-card img {
-  height: 205px;
-}
-
-.story-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 24px;
-}
-
-.story-content h3 {
-  font-size: 24px;
-}
-
-.story-content p {
-  line-height: 1.6;
-}
-
-.story-link {
-  margin-top: auto;
-  padding-top: 16px;
-  align-self: flex-start;
-}
-
-/* Ocultar promoción comercial hasta el lanzamiento */
-.invitation {
-  display: none;
-}
-
-@media (max-width: 800px) {
-  .hero-slides {
-    aspect-ratio: 4 / 3;
-  }
-}
-
-@media (max-width: 550px) {
-  .brand-logo img {
-    width: 52px;
-    height: 40px;
-  }
-
-  .navigation nav {
-    gap: 14px;
-  }
-
-  .hero-slides {
-    aspect-ratio: 4 / 5;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-slides img {
-    transition: none;
-  }
-}
-
   </style>
 </head>
 
 <body>
 
+  <!-- ENCABEZADO -->
+
   <header>
     <div class="container navigation">
-      <a href="/" class="brand">
-        Una pausa en tu viaje
-        <span>Experiencias en los Prealpes bávaros</span>
+
+      <a href="/blog/" class="brand-logo">
+
+        <img
+          src="/blog/imagenes/logo-montanas.png"
+          alt="Logotipo de 100 montañas en 365 días"
+          class="logo-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+        >
+
+        <!-- Símbolo provisional hasta subir el logo aprobado -->
+        <svg
+          class="logo-fallback"
+          viewBox="0 0 100 70"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 59 L24 31 L35 43 L52 9 L74 37 L82 29 L97 59 Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M38 30 L52 9 L67 29"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+          />
+        </svg>
+
+        <div>
+          <span class="brand-name">
+            100 montañas en 365 días
+          </span>
+
+          <span class="brand-author">
+            Giovanny Barrera
+          </span>
+        </div>
       </a>
 
       <nav aria-label="Navegación principal">
+        <a href="/blog/">Inicio</a>
+        <a href="#historias">Historias</a>
+        <a href="#proyecto">El reto</a>
+        <a href="#mapa">Mapa de cumbres</a>
+        <a href="#sobre-mi">Sobre mí</a>
         <a href="/">Excursiones</a>
-        <a href="#historias">Las historias</a>
-        <a href="#proyecto">El proyecto</a>
       </nav>
+
     </div>
   </header>
 
   <main>
 
-    <!-- PORTADA DEL BLOG -->
+    <!-- PORTADA -->
 
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div class="container hero-grid">
 
         <div class="hero-text">
+
           <div class="eyebrow">
             Un diario personal de montaña
           </div>
 
-          <h1>100 montañas<br>en 365 días</h1>
+          <h1>
+            100 montañas<br>
+            en 365 días
+          </h1>
 
           <p class="hero-subtitle">
             Cien cumbres. Cien caminos.
@@ -640,44 +691,41 @@
           <a href="#historias" class="button">
             Descubre las historias
           </a>
+
         </div>
 
+        <div class="hero-photo">
 
-<div class="hero-photo">
+          <div class="hero-slides" id="hero-slides">
 
-  <div class="hero-slides" id="hero-slides">
-    <img
-      src="../Arbolluz.jpg"
-      alt="Rayos de sol entre los árboles"
-      class="active"
-    >
+            <img
+              src="/Arbolluz.jpg"
+              alt="Rayos de sol en un bosque de Baviera"
+              class="active"
+            >
 
-    <img
-      src="../Fockenstein.jpg"
-      alt="Paisaje de los Prealpes bávaros"
-      loading="lazy"
-    >
+            <img
+              src="/Fockenstein.jpg"
+              alt="Paisaje de montaña en los Prealpes bávaros"
+              loading="lazy"
+            >
 
-    <img
-      src="../nubesylago.jpg"
-      alt="Nubes y paisaje alpino"
-      loading="lazy"
-    >
-  </div>
+            <img
+              src="/nubesylago.jpg"
+              alt="Nubes y paisaje alpino"
+              loading="lazy"
+            >
 
-  <div class="photo-caption">
-    Hay caminos que invitan a detenerse.
-  </div>
+          </div>
 
-</div>
-
+        </div>
 
       </div>
     </section>
 
-    <!-- CONTADOR DE CUMBRES -->
+    <!-- CONTADOR -->
 
-    <section class="progress-section">
+    <section class="progress-section" id="reto">
       <div class="container">
 
         <div class="progress-box">
@@ -701,7 +749,8 @@
             <div class="progress-track">
               <div
                 class="progress-fill"
-                id="progress-fill" style="width: 1%" style="width: 0%" style="width: 1%" style="width: 0%"
+                id="progress-fill"
+                style="width: 1%"
               ></div>
             </div>
 
@@ -737,7 +786,8 @@
           </div>
         </div>
 
-        <div class="intro-text">
+        <div class="intro-text" id="sobre-mi">
+
           <p>
             Cien montañas en un año.
             Una idea sencilla que se convierte
@@ -766,7 +816,76 @@
             Porque la montaña no siempre
             necesita muchas palabras.
           </p>
+
+          <p>
+            <strong>Giovanny Barrera</strong>
+          </p>
+
         </div>
+
+      </div>
+    </section>
+
+    <!-- ESTADÍSTICAS DEL RETO -->
+
+    <section class="statistics-section">
+      <div class="container">
+
+        <div class="statistics-grid">
+
+          <div class="stat">
+            <div class="stat-value" id="total-summits">—</div>
+            <div class="stat-label">Cumbres realizadas</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-value" id="total-km">—</div>
+            <div class="stat-label">Kilómetros acumulados</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-value" id="total-ascent">—</div>
+            <div class="stat-label">Metros de desnivel positivo</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MAPA DE CUMBRES -->
+
+    <section class="map-section" id="mapa">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">
+              Geografía del desafío
+            </div>
+
+            <h2 class="section-title">
+              El mapa de las cumbres
+            </h2>
+          </div>
+
+          <p>
+            Cien montañas, cien lugares diferentes.
+            Cada punto del mapa representa
+            una experiencia en los Alpes bávaros.
+          </p>
+        </div>
+
+        <div
+          id="summit-map"
+          role="region"
+          aria-label="Mapa interactivo de las cumbres"
+        ></div>
+
+        <p class="map-note" id="map-note">
+          Las cumbres aparecerán aquí cuando
+          incorporemos sus coordenadas.
+        </p>
 
       </div>
     </section>
@@ -797,97 +916,65 @@
         </div>
 
         <div class="stories-grid" id="stories-grid">
+
 <!-- HISTORIAS_GENERADAS_INICIO -->
-<article class="story-card"><a href="/blog/cumbres/023-baumgartenschneid/">
-<img src="/blog/imagenes/Principal%20Baumgartenscheid.jpg" alt="Baumgartenschneid" loading="lazy"><div class="story-content">
-<div class="story-number">Cumbre 023 de 100</div>
-<h3>Baumgartenschneid</h3><p>2026-11-08</p>
-<span class="story-link">Leer la historia</span>
-</div></a></article>
-<!-- HISTORIAS_GENERADAS_FIN -->
-        </div>
-
+<article class="story-card">
+  <a href="/blog/cumbres/023-baumgartenschneid/">
+    <img
+      src="/blog/imagenes/Principal%20Baumgartenscheid.jpg"
+      alt="Baumgartenschneid"
+      loading="lazy"
+    >
+    <div class="story-content">
+      <div class="story-number">
+        Cumbre 023 de 100
       </div>
-    </section>
+      <h3>Baumgartenschneid</h3>
+      <p>2026-11-08</p>
+      <span class="story-link">
+        Leer la historia
+      </span>
+    </div>
+  </a>
+</article>
+<!-- HISTORIAS_GENERADAS_FIN -->
 
-    <!-- INVITACIÓN A LAS EXCURSIONES -->
-
-    <section class="invitation">
-      <div class="container">
-
-        <div class="eyebrow">
-          Vive tu propia experiencia
         </div>
-
-        <h2>
-          Algunas montañas también
-          podemos descubrirlas juntos.
-        </h2>
-
-        <p>
-          Caminar sin prisas, conversar cuando apetezca
-          o simplemente disfrutar del silencio.
-          Descubre nuestras experiencias
-          en los Prealpes bávaros,
-          con grupos pequeños y tiempo para disfrutar
-          de cada paisaje.
-        </p>
-
-        <a href="/" class="button">
-          Descubrir las excursiones
-        </a>
 
       </div>
     </section>
 
   </main>
 
+  <!-- PIE DE PÁGINA -->
+
   <footer>
     <div class="container footer-content">
 
       <div>
-        © Una pausa en tu viaje · Prealpes bávaros
+        © Giovanny Barrera · 100 montañas en 365 días
       </div>
 
       <div>
-        <a href="/">Excursiones</a>
+        <a href="/blog/">Inicio</a>
         &nbsp; · &nbsp;
         <a href="#historias">Historias</a>
         &nbsp; · &nbsp;
-        <a href="#proyecto">El proyecto</a>
+        <a href="#mapa">Mapa</a>
+        &nbsp; · &nbsp;
+        <a href="/">Excursiones</a>
       </div>
 
     </div>
   </footer>
 
-  <script>
-    /*
-      PRÓXIMA ETAPA:
+  <!-- CAMBIO AUTOMÁTICO DE FOTOGRAFÍAS -->
 
-      Conectaremos aquí las historias
-      creadas mediante Pages CMS.
-
-      El sistema mostrará únicamente
-      las historias con estado "publicado".
-
-      Las historias se ordenarán por
-      su número de cumbre, no por
-      su fecha de publicación.
-
-      También actualizaremos el contador
-      y generaremos páginas individuales
-      para cada montaña.
-
-      Por ahora, el contador indica
-      cuántas historias están publicadas: 0.
-    */
-
-  </script>
-
-  <!-- Cambio automático de fotografías -->
   <script>
     (function () {
-      const fotos = document.querySelectorAll("#hero-slides img");
+      const fotos = document.querySelectorAll(
+        "#hero-slides img"
+      );
 
       if (fotos.length < 2) return;
 
@@ -910,6 +997,155 @@
     })();
   </script>
 
+  <!-- MAPA INTERACTIVO -->
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script>
+    /*
+      REGISTRO DE CUMBRES
+
+      Aquí incorporaremos los datos reales.
+
+      Formato de cada montaña:
+
+      {
+        numero: 23,
+        nombre: "Baumgartenschneid",
+        lat: LATITUD_REAL,
+        lon: LONGITUD_REAL,
+        altitud: 1448,
+        distancia: DISTANCIA_REAL,
+        desnivel: DESNIVEL_REAL,
+        url: "/blog/cumbres/023-baumgartenschneid/"
+      }
+
+      No se han inventado coordenadas ni estadísticas.
+      El mapa ya está preparado para recibirlas.
+    */
+
+    const cumbres = [];
+
+    if (typeof L !== "undefined") {
+      const mapa = L.map("summit-map", {
+        scrollWheelZoom: false
+      }).setView([47.70, 11.65], 10);
+
+      L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          maxZoom: 18
+        }
+      ).addTo(mapa);
+
+      const puntos = [];
+
+      cumbres.forEach(function (cumbre) {
+        if (
+          !Number.isFinite(cumbre.lat) ||
+          !Number.isFinite(cumbre.lon)
+        ) return;
+
+        const marcador = L.marker([
+          cumbre.lat,
+          cumbre.lon
+        ]).addTo(mapa);
+
+        const titulo = document.createElement("strong");
+        titulo.textContent = cumbre.nombre;
+
+        const contenido = document.createElement("div");
+        contenido.appendChild(titulo);
+
+        const detalles = document.createElement("p");
+        detalles.textContent =
+          "Cumbre " + cumbre.numero +
+          (cumbre.altitud
+            ? " · " + cumbre.altitud + " m"
+            : "");
+
+        contenido.appendChild(detalles);
+
+        if (cumbre.url) {
+          const enlace = document.createElement("a");
+          enlace.href = cumbre.url;
+          enlace.textContent = "Leer la historia";
+          contenido.appendChild(enlace);
+        }
+
+        marcador.bindPopup(contenido);
+        puntos.push([cumbre.lat, cumbre.lon]);
+      });
+
+      if (puntos.length > 0) {
+        mapa.fitBounds(puntos, {
+          padding: [35, 35],
+          maxZoom: 12
+        });
+
+        document.getElementById(
+          "map-note"
+        ).textContent =
+          "Selecciona una cumbre para conocer su historia.";
+      }
+    }
+
+    /* ESTADÍSTICAS: SOLO DATOS REALES */
+
+    const montanasRegistradas = cumbres.length;
+
+    if (montanasRegistradas > 0) {
+      document.getElementById(
+        "total-summits"
+      ).textContent = montanasRegistradas;
+    }
+
+    const conDistancia = cumbres.filter(
+      c => Number.isFinite(c.distancia)
+    );
+
+    if (
+      montanasRegistradas > 0 &&
+      conDistancia.length === montanasRegistradas
+    ) {
+      const km = cumbres.reduce(
+        (total, c) => total + c.distancia, 0
+      );
+
+      document.getElementById(
+        "total-km"
+      ).textContent =
+        km.toLocaleString("es-ES", {
+          maximumFractionDigits: 1
+        });
+    }
+
+    const conDesnivel = cumbres.filter(
+      c => Number.isFinite(c.desnivel)
+    );
+
+    if (
+      montanasRegistradas > 0 &&
+      conDesnivel.length === montanasRegistradas
+    ) {
+      const metros = cumbres.reduce(
+        (total, c) => total + c.desnivel, 0
+      );
+
+      document.getElementById(
+        "total-ascent"
+      ).textContent =
+        metros.toLocaleString("es-ES", {
+          maximumFractionDigits: 0
+        });
+    }
+  </script>
+
 </body>
 </html>
-
