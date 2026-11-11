@@ -29,16 +29,17 @@ Ha sido una semana con mucha nubosidad, así que no es tan claro cómo están la
 
 Subir por un camino de raíces empinado es una de mis fortalezas, pero hacerlo cuando todo está humedo es muy retador y peligroso. Cuando las raíces se humedecen pasa lo mismo que cuando te lavas las manos, quedan suaves, resbalozas, es decir fijate bien donde pisas o te puedes resbalar y doblar un tobillo fácilmente. En algunas partes quedas a bordes de abismos y cualquier resbalón puede ser mortal. Tener unos zapatos de buen perfil y aumentar tu atención en cada pisada son esenciales para no terminar mal ese día o terminar del todo con todo. La verdad es que en cada paso no me la paso pensando que puede ser mi último, solo me concentro en hacerlo bien y disfrutarlo. Entre más subíamos en esos últimos 45 minutos más niebla se acumulaba, pero como es un camino muy transitado es muy poco probable perderse. Casi llegando a la cima no veíamos casi nada y esa incertidumbre de no ver a larga distancia te agota un poco. Como estaba estrenando reloj, que me muestra la altura, sabía que no faltaba mucho. Tan solo unos 20 metros antes de la cima, todas las nubes abren paso a un sol encantador. Como siempre una cosa es verlo, fotografiarlo, hacer un vídeo y otra cosa es sentirlo en carne propia. Sensacional como de repente todo es soleado, estás sobre las nubes, tu sombra se refleja entre ellas alrededor de un arcoiris, en medio de una vista que te deja anonadado.  
 
-[[derecha:3]]
+[[derecha:6]]
 
-## Por encima de las nubes
+## De la cima de Baumgartenscheid a la roca de Riederstein
+Parte de la misma montaña pasas por otra cumbre llamada Riederstein, donde se alza una capilla en lo alto de una roca enorme. Es uno de los atractivos estelares de Tegernsee y normalmente hay que hacer una fila larga para tomarse una foto espectacular con vista al lago. La buena noticia es que no tuvimos que hacer ninguna fila, la mala es que no veíamos nada porque estaba nublado. Es aquí cuando se valoran los regalos de la montaña. Ella te da lo que quiere darte cuando quiere. Una vez bajamos, se destapó todo. Fue simplemente una cuestión de una hora y media de diferencia. Pero haber estado allí en el moemnto jsuto habría implicado bajar de noche. En fin, las fotos hablan por sí solas
 
-El valle quedó oculto bajo un mar de nubes.
 
-[[mediana:4]]
+[[mediana:5]]
 
-[[fotos:5,6]]
+[[fotos:4,3]]
 
-### Los últimos metros
+### Regreso a casa
 
-[[foto:7]]
+Bueno en Tegernsee hay muchas cosas por hacer. Es una ciudad muy turística, habitada por muchas celebridades, y en general es bonito. Imperdible es ir al Bräustubl, plan BBB, para comer y tomar mi cerveza favorita llamada igualmente Tegernsee. Esta vez solo regresamos a casa porque aunque no me pareció una montaña muy exigente, te toma mucho tiempo hacerla (5 horas) y eso ya te pasa factura. Mejor una bañera. 
+[[foto:2]]
