@@ -2,6 +2,9 @@
 title: "Baumgartenschneid "
 numero: 23
 fecha: 2026-11-08
+realizada: true
+latitud: 47.70237
+longitud: 11.80909
 imagen: /blog/imagenes/Principal Baumgartenscheid.jpg
 galeria:
   - /blog/imagenes/Imagen de ChatGPT 10 nov 2026, 15_03_50.jpg
@@ -32,8 +35,8 @@ Subir por un camino de raíces empinado es una de mis fortalezas, pero hacerlo c
 [[derecha:6]]
 
 ## De la cima de Baumgartenscheid a la roca de Riederstein
-Parte de la misma montaña pasas por otra cumbre llamada Riederstein, donde se alza una capilla en lo alto de una roca enorme. Es uno de los atractivos estelares de Tegernsee y normalmente hay que hacer una fila larga para tomarse una foto espectacular con vista al lago. La buena noticia es que no tuvimos que hacer ninguna fila, la mala es que no veíamos nada porque estaba nublado. Es aquí cuando se valoran los regalos de la montaña. Ella te da lo que quiere darte cuando quiere. Una vez bajamos, se destapó todo. Fue simplemente una cuestión de una hora y media de diferencia. Pero haber estado allí en el moemnto jsuto habría implicado bajar de noche. En fin, las fotos hablan por sí solas
 
+Parte de la misma montaña pasas por otra cumbre llamada Riederstein, donde se alza una capilla en lo alto de una roca enorme. Es uno de los atractivos estelares de Tegernsee y normalmente hay que hacer una fila larga para tomarse una foto espectacular con vista al lago. La buena noticia es que no tuvimos que hacer ninguna fila, la mala es que no veíamos nada porque estaba nublado. Es aquí cuando se valoran los regalos de la montaña. Ella te da lo que quiere darte cuando quiere. Una vez bajamos, se destapó todo. Fue simplemente una cuestión de una hora y media de diferencia. Pero haber estado allí en el moemnto jsuto habría implicado bajar de noche. En fin, las fotos hablan por sí solas
 
 [[mediana:5]]
 
