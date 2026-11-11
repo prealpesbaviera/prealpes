@@ -26,6 +26,19 @@ content:
         label: Fecha de ascenso
         type: date
 
+      - name: realizada
+        label: Cumbre realizada
+        type: boolean
+        default: true
+
+      - name: latitud
+        label: Latitud de la cumbre
+        type: number
+
+      - name: longitud
+        label: Longitud de la cumbre
+        type: number
+
       - name: imagen
         label: Fotografía principal
         type: image
