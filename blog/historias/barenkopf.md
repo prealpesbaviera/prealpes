@@ -10,6 +10,6 @@ desnivel: "1.060"
 distancia: 11,5 km
 duracion: 4h 30 min
 dificultad: Moderada
-estado: publicado
+estado: borrador
 ---
 La montaña del oso Bruno
