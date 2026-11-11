@@ -6,86 +6,446 @@
 <title>Baumgartenschneid | 100 montañas en 365 días</title>
 <meta name="description" content="Cumbre 023: Baumgartenschneid. Relato personal de montaña en Baviera.">
 <style>
-* { box-sizing: border-box; }
-body { margin: 0; background: #faf8f2; color: #25382e; font-family: Georgia, serif; line-height: 1.8; }
-.contenedor { width: min(980px, 92%); margin: auto; }
-header { background: #faf8f2; border-bottom: 1px solid #e6e8de; }
-.cabecera { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.marca { color: #1f4033; font-family: Arial, sans-serif; font-size: 17px; font-weight: 600; text-decoration: none; letter-spacing: .3px; }
-.navegacion { display: flex; flex-wrap: wrap; gap: 22px; }
-.navegacion a { color: #67776c; font: 13px Arial, sans-serif; text-decoration: none; }
-.navegacion a:hover, .marca:hover { text-decoration: underline; }
-main { padding: 65px 0 90px; }
-.numero { font: 12px Arial, sans-serif; color: #71816f; letter-spacing: 3px; text-transform: uppercase; }
-h1 { font-size: clamp(38px, 6vw, 62px); line-height: 1.12; font-weight: normal; color: #1f4033; margin: 22px 0; }
-.fecha { font: 14px Arial, sans-serif; color: #728473; margin-bottom: 32px; }
-/* Imagen principal y ficha técnica, una junto a la otra. */
-.presentacion { display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 22px; align-items: stretch; margin: 0 0 50px; }
-.presentacion.solo-ficha { grid-template-columns: 1fr; }
-.presentacion.solo-foto { grid-template-columns: minmax(0, 1fr); }
-.portada-enlace { display: block; height: 100%; min-height: 280px; max-height: 390px; overflow: hidden; border-radius: 15px; cursor: zoom-in; }
-.portada { display: block; width: 100%; height: 100%; object-fit: cover; }
-.ficha { display: grid; grid-template-columns: 1fr; grid-template-rows: auto 1fr; background: #eeefe3; border: 1px solid #d7dfd0; border-radius: 15px; overflow: hidden; margin: 0; }
-.ficha-titulo { background: #1f4033; color: white; font-size: 18px; line-height: 1.3; padding: 17px 20px; }
-.ficha-datos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px 16px; padding: 20px; align-content: center; }
-.dato { display: flex; flex-direction: column; line-height: 1.4; min-width: 0; overflow-wrap: anywhere; }
-.dato span { color: #687967; font: 12px Arial, sans-serif; margin-bottom: 5px; }
-.dato strong { color: #1f4033; font-size: 16px; }
-/* Se mantiene el tamaño de texto del archivo original. */
-.relato { font-size: 19px; line-height: 1.85; overflow-wrap: break-word; display: flow-root; }
-.relato p { margin: 0 0 1.55em; }
-.relato h2, .relato h3, .galeria-final h2 { color: #1f4033; font-weight: normal; line-height: 1.3; }
-.relato h2 { font-size: 31px; margin-top: 2em; }
-.relato h3 { font-size: 24px; margin-top: 1.7em; }
-.relato blockquote { margin: 35px 0; padding: 18px 30px; border-left: 4px solid #718a69; background: #eeefe3; font-style: italic; }
-.relato img { max-width: 100%; }
-.foto-relato { margin: 32px auto; }
-.foto-relato img { display: block; width: 100%; height: auto; border-radius: 15px; }
-.ampliar { display: block; cursor: zoom-in; }
-.foto-mediana { width: min(76%, 650px); }
-.foto-grande { width: 100%; clear: both; }
-.foto-izquierda { float: left; width: 39%; margin: 8px 27px 20px 0; }
-.foto-derecha { float: right; width: 39%; margin: 8px 0 20px 27px; }
-.grupo-fotos { clear: both; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 38px 0; }
-.grupo-fotos .foto-relato { width: 100%; margin: 0; }
-.grupo-fotos .foto-relato img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.galeria-final { margin-top: 60px; }
-.invitacion { margin-top: 80px; padding-top: 38px; border-top: 1px solid #dfe5da; }
-.invitacion h2 { font-size: 30px; font-weight: normal; color: #1f4033; line-height: 1.3; }
-.boton { display: inline-block; background: #1f4033; color: white; text-decoration: none; padding: 13px 24px; border-radius: 5px; margin-top: 12px; }
-.volver { margin-top: 65px; font-size: 15px; }
-.volver a { color: #1f4033; text-decoration: none; }
-footer { background: #1f4033; color: white; padding: 30px 0; font: 13px Arial, sans-serif; }
-/* Visor de fotografías en pantalla completa. */
-.lightbox { position: fixed; inset: 0; z-index: 9999; background: rgba(8, 16, 12, .94); display: none; align-items: center; justify-content: center; padding: 52px 18px 20px; }
-.lightbox.abierto { display: flex; }
-.lightbox img { display: block; max-width: 96vw; max-height: 88vh; object-fit: contain; border-radius: 5px; }
-.lightbox-cerrar { position: absolute; top: 10px; right: 18px; color: white; background: transparent; border: 0; font-size: 35px; cursor: pointer; }
-@media (max-width: 680px) {
-  main { padding-top: 40px; }
-  .cabecera { padding: 16px 0; align-items: flex-start; flex-direction: column; gap: 12px; }
-  .presentacion { grid-template-columns: 1fr; gap: 12px; }
-  .portada-enlace { height: 290px; min-height: 0; }
-  .ficha-datos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .relato { font-size: 17px; }
-  .foto-mediana, .foto-izquierda, .foto-derecha { float: none; width: 100%; margin: 28px 0; }
-  .grupo-fotos { gap: 8px; }
+* {
+  box-sizing: border-box;
 }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+
+body {
+  margin: 0;
+  background: #faf8f2;
+  color: #25382e;
+  font-family: Georgia, serif;
+  line-height: 1.8;
+}
+
+.contenedor {
+  width: min(980px, 92%);
+  margin: auto;
+}
+
+header {
+  background: #faf8f2;
+  border-bottom: 1px solid #e6e8de;
+}
+
+.cabecera {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1f4033;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.marca img {
+  width: 90px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.marca small {
+  display: block;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+  color: #627269;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.navegacion a {
+  color: #67776c;
+  font: 13px Arial, sans-serif;
+  text-decoration: none;
+}
+
+.navegacion a:hover,
+.marca:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 65px 0 90px;
+}
+
+.numero {
+  font: 12px Arial, sans-serif;
+  color: #71816f;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 62px);
+  line-height: 1.12;
+  font-weight: normal;
+  color: #1f4033;
+  margin: 22px 0;
+}
+
+.fecha {
+  font: 14px Arial, sans-serif;
+  color: #728473;
+  margin-bottom: 32px;
+}
+
+/* Fotografía 60 % y ficha técnica 40 %. */
+.presentacion {
+  display: grid;
+  grid-template-columns: minmax(0, 60fr) minmax(0, 40fr);
+  gap: 22px;
+  align-items: stretch;
+  margin: 0 0 25px;
+}
+
+.presentacion.solo-ficha {
+  grid-template-columns: 1fr;
+}
+
+.presentacion.solo-foto {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.portada-enlace {
+  display: block;
+  height: 100%;
+  min-height: 280px;
+  max-height: 390px;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: zoom-in;
+}
+
+.portada {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ficha {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  background: #eeefe3;
+  border: 1px solid #d7dfd0;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.ficha-titulo {
+  background: #1f4033;
+  color: white;
+  font-size: 18px;
+  line-height: 1.3;
+  padding: 17px 20px;
+}
+
+.ficha-datos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px 16px;
+  padding: 20px;
+  align-content: center;
+}
+
+.dato {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.dato span {
+  color: #687967;
+  font: 12px Arial, sans-serif;
+  margin-bottom: 5px;
+}
+
+.dato strong {
+  color: #1f4033;
+  font-size: 16px;
+}
+
+.relato {
+  font-size: 19px;
+  line-height: 1.85;
+  overflow-wrap: break-word;
+  display: flow-root;
+}
+
+.relato p {
+  margin: 0 0 1.55em;
+}
+
+.relato h2,
+.relato h3,
+.galeria-final h2 {
+  color: #1f4033;
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+.relato h2 {
+  font-size: 31px;
+  margin-top: 1.2em;
+}
+
+.relato h3 {
+  font-size: 24px;
+  margin-top: 1.7em;
+}
+
+.relato blockquote {
+  margin: 35px 0;
+  padding: 18px 30px;
+  border-left: 4px solid #718a69;
+  background: #eeefe3;
+  font-style: italic;
+}
+
+.relato img {
+  max-width: 100%;
+}
+
+.foto-relato {
+  margin: 32px auto;
+}
+
+.foto-relato img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.ampliar {
+  display: block;
+  cursor: zoom-in;
+}
+
+.foto-mediana {
+  width: min(76%, 650px);
+}
+
+.foto-grande {
+  width: 100%;
+  clear: both;
+}
+
+.foto-izquierda {
+  float: left;
+  width: 39%;
+  margin: 8px 27px 20px 0;
+}
+
+.foto-derecha {
+  float: right;
+  width: 39%;
+  margin: 8px 0 20px 27px;
+}
+
+.grupo-fotos {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 38px 0;
+}
+
+.grupo-fotos .foto-relato {
+  width: 100%;
+  margin: 0;
+}
+
+.grupo-fotos .foto-relato img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.galeria-final {
+  margin-top: 60px;
+}
+
+.invitacion {
+  margin-top: 80px;
+  padding-top: 38px;
+  border-top: 1px solid #dfe5da;
+}
+
+.invitacion h2 {
+  font-size: 30px;
+  font-weight: normal;
+  color: #1f4033;
+  line-height: 1.3;
+}
+
+.boton {
+  display: inline-block;
+  background: #1f4033;
+  color: white;
+  text-decoration: none;
+  padding: 13px 24px;
+  border-radius: 5px;
+  margin-top: 12px;
+}
+
+.volver {
+  margin-top: 65px;
+  font-size: 15px;
+}
+
+.volver a {
+  color: #1f4033;
+  text-decoration: none;
+}
+
+footer {
+  background: #1f4033;
+  color: white;
+  padding: 30px 0;
+  font: 13px Arial, sans-serif;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(8, 16, 12, .94);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 52px 18px 20px;
+}
+
+.lightbox.abierto {
+  display: flex;
+}
+
+.lightbox img {
+  display: block;
+  max-width: 96vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.lightbox-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  color: white;
+  background: transparent;
+  border: 0;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+@media (max-width: 680px) {
+  main {
+    padding-top: 40px;
+  }
+
+  .cabecera {
+    padding: 16px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .presentacion {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .portada-enlace {
+    height: 290px;
+    min-height: 0;
+  }
+
+  .ficha-datos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .relato {
+    font-size: 17px;
+  }
+
+  .foto-mediana,
+  .foto-izquierda,
+  .foto-derecha {
+    float: none;
+    width: 100%;
+    margin: 28px 0;
+  }
+
+  .grupo-fotos {
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
 </style>
 </head>
 <body>
-<header><div class="contenedor cabecera">
-<a class="marca" href="/blog/">100 montañas en 365 días</a>
+
+<header>
+<div class="contenedor cabecera">
+
+<a class="marca" href="/blog/">
+<img src="/logonuevo.png" alt="Montañas">
+<span>Una pausa en tu camino
+<small>Giovanny Barrera</small>
+</span>
+</a>
+
 <nav class="navegacion" aria-label="Navegación principal">
-<a href="/blog/">Historias</a><a href="/blog/">El reto</a><a href="/">Prealpes bávaros</a>
-</nav></div></header>
+<a href="/blog/">Inicio</a>
+<a href="/blog/#historias">Historias</a>
+<a href="/blog/#proyecto">El reto</a>
+<a href="/blog/#mapa">Mapa de cumbres</a>
+<a href="/blog/#sobre-mi">Sobre mí</a>
+<a href="/">Excursiones</a>
+</nav>
+
+</div>
+</header>
+
 <main class="contenedor">
+
 <div class="numero">Cumbre 023 de 100</div>
 <h1>Baumgartenschneid</h1>
 <div class="fecha">Fecha de ascenso: 2026-11-08</div>
+
 <div class="presentacion"><a class="portada-enlace" href="/blog/imagenes/Principal%20Baumgartenscheid.jpg" data-lightbox aria-label="Ampliar fotografía principal"><img class="portada" src="/blog/imagenes/Principal%20Baumgartenscheid.jpg" alt="Baumgartenschneid"></a><section class="ficha"><div class="ficha-titulo">Ficha técnica de la ruta</div><div class="ficha-datos"><div class="dato"><span>Altitud</span><strong>1.444</strong></div><div class="dato"><span>Desnivel +</span><strong>780</strong></div><div class="dato"><span>Distancia</span><strong>14 km ida y vuelta</strong></div><div class="dato"><span>Duración</span><strong>5 horas</strong></div><div class="dato"><span>Dificultad</span><strong>Moderada</strong></div><div class="dato"><span>Acceso</span><strong>Parqueadero Prenzenweg 10 en Tegernsee</strong></div></div></section></div>
-<article class="relato"><h2>La previa a lo interesante</h2>
+
+<article class="relato">
+<h2>La previa a lo interesante</h2>
 <p>Ha sido una semana con mucha nubosidad, así que no es tan claro cómo están las condiciones del suelo en las cumbres. Luego de cruzar información con varias apps, es claro que por la mañana no vale la pena salir. Organizamos todo para salir alrededor de las 11 de casa, y efectivamente salimos a las 11:15. Algún día seremos puntuales. Un poco antes de las 12 llegamos al parqueadero de la calle Prenzenweg que solo tiene capacidad como para 15 autos. Así que en temporada alta ni lo intentes, no vas a encontrar nada. Si vienes desde Munich, puedes llgear caminando desde la estación de trenes de Tegernsee que queda como a 10 minutos de allí. El parqueadero si consigues es bastante caro, alrededor de 8 euros. Como mi gusto es el menor costo posible, logramos parqueaer gratis en un espacio perfecto cerca de una obra en la calle Penzenweg; que al ser domingo pues cero lío con eso. Estimo que cerca del 70% de la subida es por carretera destapada entre el bosque. No soy muy amante de ese tipo de carreteras, pero si tienes una buena bici y una muy buena condición física puedes subir un gran tramo pedaleando. El camino se vuelve interesante cuando dejas esta destapada y subes por caminos de raíces hasta la cima. Es aquí donde se necesita un buen estado físico.  </p>
 <figure class="foto-relato foto-izquierda"><a href="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_03_50.jpg" class="ampliar" data-lightbox aria-label="Ampliar fotografía 1"><img src="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_03_50.jpg" alt="Baumgartenschneid - fotografía 1" loading="lazy"></a></figure>
 <h2>Caminando entre raíces, barro y nubes.</h2>
@@ -97,16 +457,32 @@ footer { background: #1f4033; color: white; padding: 30px 0; font: 13px Arial, s
 <div class="grupo-fotos"><figure class="foto-relato foto-mediana"><a href="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_04_52.jpg" class="ampliar" data-lightbox aria-label="Ampliar fotografía 4"><img src="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_04_52.jpg" alt="Baumgartenschneid - fotografía 4" loading="lazy"></a></figure><figure class="foto-relato foto-mediana"><a href="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_05_22.jpg" class="ampliar" data-lightbox aria-label="Ampliar fotografía 3"><img src="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_05_22.jpg" alt="Baumgartenschneid - fotografía 3" loading="lazy"></a></figure></div>
 <h3>Regreso a casa</h3>
 <p>Bueno en Tegernsee hay muchas cosas por hacer. Es una ciudad muy turística, habitada por muchas celebridades, y en general es bonito. Imperdible es ir al Bräustubl, plan BBB, para comer y tomar mi cerveza favorita llamada igualmente Tegernsee. Esta vez solo regresamos a casa porque aunque no me pareció una montaña muy exigente, te toma mucho tiempo hacerla (5 horas) y eso ya te pasa factura. Mejor una bañera. 
-[[foto:2]]</p></article>
+[[foto:2]]</p>
+</article>
+
 <section class="galeria-final"><h2>Más fotografías de esta montaña</h2><div class="grupo-fotos"><figure class="foto-relato foto-mediana"><a href="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_04_12.jpg" class="ampliar" data-lightbox aria-label="Ampliar fotografía 2"><img src="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_04_12.jpg" alt="Baumgartenschneid - fotografía 2" loading="lazy"></a></figure><figure class="foto-relato foto-mediana"><a href="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_05_45.jpg" class="ampliar" data-lightbox aria-label="Ampliar fotografía 5"><img src="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_05_45.jpg" alt="Baumgartenschneid - fotografía 5" loading="lazy"></a></figure><figure class="foto-relato foto-mediana"><a href="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_04_33.jpg" class="ampliar" data-lightbox aria-label="Ampliar fotografía 7"><img src="/blog/imagenes/Imagen%20de%20ChatGPT%2010%20nov%202026%2C%2015_04_33.jpg" alt="Baumgartenschneid - fotografía 7" loading="lazy"></a></figure></div></section>
 
-<div class="volver"><a href="/blog/">← Volver a las 100 montañas</a></div>
+
+<div class="volver">
+<a href="/blog/">← Volver a las 100 montañas</a>
+</div>
+
 </main>
-<footer><div class="contenedor">Una pausa en tu viaje · Prealpes bávaros</div></footer>
-<div class="lightbox" id="visor" role="dialog" aria-label="Fotografía ampliada" aria-modal="true" aria-hidden="true">
-<button class="lightbox-cerrar" id="visor-cerrar" type="button" aria-label="Cerrar fotografía">×</button>
+
+<footer>
+<div class="contenedor">
+Una pausa en tu viaje · Prealpes bávaros
+</div>
+</footer>
+
+<div class="lightbox" id="visor" role="dialog"
+aria-label="Fotografía ampliada"
+aria-modal="true" aria-hidden="true">
+<button class="lightbox-cerrar" id="visor-cerrar"
+type="button" aria-label="Cerrar fotografía">×</button>
 <img id="visor-foto" alt="">
 </div>
+
 
 <script>
 (() => {
@@ -114,6 +490,7 @@ footer { background: #1f4033; color: white; padding: 30px 0; font: 13px Arial, s
   const foto = document.getElementById('visor-foto');
   const cerrar = document.getElementById('visor-cerrar');
   let anterior = null;
+
   function ocultar() {
     visor.classList.remove('abierto');
     visor.setAttribute('aria-hidden', 'true');
@@ -121,6 +498,7 @@ footer { background: #1f4033; color: white; padding: 30px 0; font: 13px Arial, s
     document.body.style.overflow = '';
     if (anterior) anterior.focus();
   }
+
   document.querySelectorAll('a[data-lightbox]').forEach(enlace => {
     enlace.addEventListener('click', evento => {
       evento.preventDefault();
@@ -133,12 +511,24 @@ footer { background: #1f4033; color: white; padding: 30px 0; font: 13px Arial, s
       cerrar.focus();
     });
   });
+
   cerrar.addEventListener('click', ocultar);
-  visor.addEventListener('click', evento => { if (evento.target === visor) ocultar(); });
+
+  visor.addEventListener('click', evento => {
+    if (evento.target === visor) ocultar();
+  });
+
   document.addEventListener('keydown', evento => {
-    if (evento.key === 'Escape' && visor.classList.contains('abierto')) ocultar();
+    if (
+      evento.key === 'Escape'
+      && visor.classList.contains('abierto')
+    ) {
+      ocultar();
+    }
   });
 })();
 </script>
 
-</body></html>
+
+</body>
+</html>
