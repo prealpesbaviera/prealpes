@@ -2,6 +2,7 @@
 title: Prueba de publicación
 numero: 1
 fecha: 2026-11-09
+realizada: true
 galeria:
   - /blog/imagenes/Geierstein 4.jpg
   - /blog/imagenes/camino-1.jpg
@@ -11,7 +12,7 @@ distancia: 14 km idea y vuelta
 duracion: 4 horas
 dificultad: Exigente
 acceso: "Bahnhof Lenggries, luego debes caminar "
-estado: borrador
+estado: publicado
 ---
 ## El comienzo del camino
 
