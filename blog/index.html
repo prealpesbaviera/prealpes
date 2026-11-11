@@ -881,7 +881,35 @@
       Por ahora, el contador indica
       cuántas historias están publicadas: 0.
     */
+
+  </script>
+
+  <!-- Cambio automático de fotografías -->
+  <script>
+    (function () {
+      const fotos = document.querySelectorAll("#hero-slides img");
+
+      if (fotos.length < 2) return;
+
+      let actual = 0;
+
+      const reducirMovimiento = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (reducirMovimiento) return;
+
+      setInterval(function () {
+        const siguiente = (actual + 1) % fotos.length;
+
+        fotos[siguiente].classList.add("active");
+        fotos[actual].classList.remove("active");
+
+        actual = siguiente;
+      }, 8000);
+    })();
   </script>
 
 </body>
 </html>
+
