@@ -10,5 +10,5 @@ desnivel: "800"
 distancia: 9,6 km
 duracion: 3 h 12 min
 dificultad: Exigente
-estado: borrador
+estado: publicado
 ---
