@@ -779,6 +779,89 @@ footer {
     scroll-behavior: auto !important;
   }
 }
+
+/* ELEMENTOS EDITORIALES */
+
+.relato .entradilla-editorial {
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.55;
+  color: #1f4033;
+  padding: 16px 0 18px;
+  border-bottom: 1px solid #b8c6b7;
+  margin: 0 0 36px;
+}
+
+.relato .cita-editorial {
+  clear: both;
+  margin: 46px auto;
+  max-width: 760px;
+  padding: 28px 35px;
+  background: #eeefe3;
+  border-left: 5px solid #b9a47b;
+  color: #1f4033;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.relato .destacado-editorial {
+  clear: both;
+  margin: 42px 0;
+  padding: 28px 34px;
+  border-radius: 12px;
+  background: #1f4033;
+  color: white;
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+.relato .nota-editorial {
+  clear: both;
+  margin: 30px 0;
+  padding: 18px 24px;
+  border: 1px solid #cdd8c8;
+  border-radius: 8px;
+  background: #f1f3eb;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.relato .epigrafe-editorial {
+  clear: both;
+  margin: 20px 0 45px;
+  color: #7a866f;
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.relato .capitulo-editorial {
+  clear: both;
+  margin: 62px 0 25px;
+  padding-top: 20px;
+  border-top: 1px solid #b9a47b;
+  font-size: clamp(29px, 4vw, 40px);
+  font-weight: normal;
+}
+
+.relato .centrado-editorial {
+  clear: both;
+  max-width: 700px;
+  margin: 45px auto;
+  text-align: center;
+  font-size: 23px;
+  font-style: italic;
+}
+
+.relato .separador-editorial {
+  clear: both;
+  border: 0;
+  width: 90px;
+  height: 2px;
+  background: #b9a47b;
+  margin: 52px auto;
+}
+
 '''
 
 
