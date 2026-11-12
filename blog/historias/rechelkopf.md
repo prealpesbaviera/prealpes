@@ -10,7 +10,7 @@ desnivel: "600"
 distancia: 9,5 km
 duracion: 2h 37 min
 dificultad: Moderada
-acceso: Gaißach, Wanderparkplatz Gerstland
+acceso: Gaißach-Mättenhof
 estado: publicado
 ---
 [[entradilla:Notas sueltas de un día entre senderos.]]
