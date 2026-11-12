@@ -1,14 +1,14 @@
 ---
-title: Achselköpfe
+title: De Benediktenwand a Achselköpfe
 numero: 11
 fecha: 2026-10-03
 realizada: true
 latitud: 47.65278
 longitud: 11.48639
 altitud: "1.712"
-desnivel: "450"
-distancia: 3,5 km
-duracion: 1h 30 min
+desnivel: "400"
+distancia: 3,2 km
+duracion: 2h 15 min
 dificultad: exigente
 acceso: "Desde la cumbre Benediktenwand "
 estado: publicado
