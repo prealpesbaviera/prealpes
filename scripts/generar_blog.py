@@ -330,7 +330,6 @@ def preparar_relato(historia):
         flags=re.IGNORECASE
     )
 
-      cuerpo = preparar_elementos_editoriales(cuerpo)
     # La portada no se repite en la galería final.
     portada_url = url_imagen(historia['imagen'])
 
