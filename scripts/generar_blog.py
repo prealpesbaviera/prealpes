@@ -220,6 +220,50 @@ def crear_ficha(historia):
     )
 
 
+def preparar_elementos_editoriales(cuerpo):
+    """Convierte los códigos editoriales de Pages CMS en HTML."""
+
+    patrones = {
+        'cita': ('cita-editorial', 'blockquote'),
+        'destacado': ('destacado-editorial', 'aside'),
+        'entradilla': ('entradilla-editorial', 'div'),
+        'nota': ('nota-editorial', 'aside'),
+        'epigrafe': ('epigrafe-editorial', 'p'),
+        'capitulo': ('capitulo-editorial', 'h2'),
+        'centrado': ('centrado-editorial', 'p'),
+    }
+
+    def sustituir(m):
+        tipo = m.group(1).lower()
+
+        if tipo == 'separador':
+            return '<hr class="separador-editorial">'
+
+        texto = seguro(m.group(2).strip())
+        clase, etiqueta = patrones[tipo]
+
+        return (
+            f'<{etiqueta} class="{clase}">'
+            f'{texto}'
+            f'</{etiqueta}>'
+        )
+
+    patron = (
+        r'<p>\s*\[\['
+        r'(cita|destacado|entradilla|nota|epigrafe|'
+        r'capitulo|centrado|separador)'
+        r'(?::([^\]\n]+))?'
+        r'\]\]\s*</p>'
+    )
+
+    return re.sub(
+        patron,
+        sustituir,
+        cuerpo,
+        flags=re.IGNORECASE
+    )
+
+
 def preparar_relato(historia):
     galeria = historia['galeria']
     utilizadas = set()
