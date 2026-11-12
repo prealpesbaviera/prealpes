@@ -12,4 +12,15 @@ duracion: 4h 30 min
 dificultad: Moderada
 estado: publicado
 ---
-La montaña del oso Bruno
+
+
+[[entradilla: La montaña del oso Bruno.]]
+## Antes de salir
+[Cuenta por qué elegiste esta montaña y cómo comenzó el día.]
+[[izquierda:2]]
+[Describe el camino mientras el texto acompaña la fotografía.]
+[[capitulo:El ascenso]]
+[El tramo principal de la ruta.]
+[[grande:3]]
+[[cita:Una frase que resume lo que sentiste en la cima.]]
+[Tu conclusión personal.]
