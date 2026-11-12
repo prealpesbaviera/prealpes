@@ -1027,33 +1027,44 @@ type="button" aria-label="Cerrar fotografía">×</button>
     destino.write_text(html, encoding='utf-8')
 
 
+
 def crear_tarjeta(historia):
     titulo = seguro(historia['titulo'])
     numero = historia['numero']
     fecha = seguro(historia['fecha'])
-
-    enlace = f"/blog/cumbres/{historia['slug']}/"
+    publicada = historia['publicado']
 
     imagen_html = ''
 
     if historia['imagen']:
         src = seguro(url_imagen(historia['imagen']))
-
         imagen_html = (
             f'<img src="{src}" alt="{titulo}" loading="lazy">'
         )
 
-    return f'''
-<article class="story-card">
-<a href="{enlace}">
-{imagen_html}
+    contenido = f'''
 <div class="story-content">
 <div class="story-number">Cumbre {numero:03d} de 100</div>
 <h3>{titulo}</h3>
 <p>{fecha}</p>
-<span class="story-link">Leer la historia</span>
-</div>
-</a>
+<span class="story-link">
+{"Leer la historia" if publicada else "Historia en preparación"}
+</span>
+</div>'''
+
+    if publicada:
+        enlace = f"/blog/cumbres/{historia['slug']}/"
+        interior = (
+            f'<a href="{enlace}">'
+            f'{imagen_html}{contenido}'
+            '</a>'
+        )
+    else:
+        interior = imagen_html + contenido
+
+    return f'''
+<article class="story-card">
+{interior}
 </article>'''
 
 
