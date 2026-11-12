@@ -323,6 +323,7 @@ def preparar_relato(historia):
         r'([0-9, ]+)\]\]\s*</p>'
     )
 
+
     cuerpo = re.sub(
         patron,
         reemplazar,
@@ -330,7 +331,10 @@ def preparar_relato(historia):
         flags=re.IGNORECASE
     )
 
+    cuerpo = preparar_elementos_editoriales(cuerpo)
+
     # La portada no se repite en la galería final.
+
     portada_url = url_imagen(historia['imagen'])
 
     restantes = [
