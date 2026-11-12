@@ -3,7 +3,7 @@ title: Zwiesel
 numero: 14
 fecha: 2026-10-09
 realizada: true
-latitud: 11.5211
+latitud: 47.7069
 longitud: 11.5211
 altitud: "1348"
 desnivel: "744"
