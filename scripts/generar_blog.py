@@ -1271,10 +1271,12 @@ def main():
     for historia in historias:
         crear_articulo(historia)
 
+
     actualizar_portada(
-        historias,
+        [r for r in registros if r['realizada']],
         registros
     )
+
 
     realizadas = sum(
         1 for r in registros
