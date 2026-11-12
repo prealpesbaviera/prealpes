@@ -68,17 +68,25 @@ content:
         label: Duración de la caminata
         type: string
 
+ 
       - name: dificultad
         label: Dificultad
         type: select
         options:
           values:
-            - value: Facil
+            - value: facil
               label: Fácil
-            - value: Moderada
-              label: Moderada
-            - value: Exigente
+            - value: facil-moderado
+              label: Fácil - moderado
+            - value: moderado
+              label: Moderado
+            - value: moderado-exigente
+              label: Moderado - exigente
+            - value: exigente
               label: Exigente
+            - value: muy-exigente
+              label: Muy exigente
+
 
       - name: acceso
         label: Acceso y transporte público
