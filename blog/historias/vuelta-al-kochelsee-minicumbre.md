@@ -1,6 +1,6 @@
 ---
 title: Vuelta al Kochelsee. Minicumbre
-numero: 0
+numero: 2
 fecha: 2026-11-12
 realizada: true
 latitud: 47.657469
