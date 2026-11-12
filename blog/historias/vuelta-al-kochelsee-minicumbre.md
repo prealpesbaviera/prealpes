@@ -11,5 +11,5 @@ distancia: 15 km
 duracion: 4h 21 min
 dificultad: Facil
 acceso: Bahnhof Kochel am See
-estado: borrador
+estado: publicado
 ---
