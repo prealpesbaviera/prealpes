@@ -1,6 +1,6 @@
 ---
 title: Hörnlealm
-numero: 9
+numero: 8
 fecha: 2026-11-11
 realizada: true
 latitud: 47.639466
