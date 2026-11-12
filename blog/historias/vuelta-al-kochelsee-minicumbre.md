@@ -1,5 +1,5 @@
 ---
-title: Vuelta al Kochelsee. Minicumbre
+title: Vuelta al Kochelsee. Microcumbre
 numero: 2
 fecha: 2026-11-12
 realizada: true
