@@ -5,6 +5,7 @@ fecha: 2026-10-27
 realizada: true
 latitud: 47.604865
 longitud: 11.607407
+imagen: /blog/imagenes/Hochalm.webp
 altitud: "1.277"
 desnivel: "550"
 distancia: 6 km
