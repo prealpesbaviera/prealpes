@@ -5,11 +5,12 @@ fecha: 2026-09-27
 realizada: true
 latitud: 47.684903
 longitud: 11.65251
+imagen: /blog/imagenes/Fockenstein.webp
 altitud: "1.564"
 desnivel: "800"
 distancia: 13 km
 duracion: 3h 30min
-dificultad: Moderada
+dificultad: facil-moderado
 acceso: Bad Wiessee (Sonnenbichl)
 estado: publicado
 ---
