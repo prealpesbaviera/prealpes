@@ -5,11 +5,12 @@ fecha: 2026-11-12
 realizada: true
 latitud: 47.722152
 longitud: 11.624785
+imagen: /blog/imagenes/Rechelkopf.webp
 altitud: "1330"
 desnivel: "600"
 distancia: 9,5 km
 duracion: 2h 37 min
-dificultad: Moderada
+dificultad: facil-moderado
 acceso: Gaißach-Mättenhof
 estado: publicado
 ---
