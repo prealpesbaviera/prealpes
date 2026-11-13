@@ -5,6 +5,7 @@ fecha: 2026-10-24
 realizada: true
 latitud: 47.632222
 longitud: 11.678611
+imagen: /blog/imagenes/Tegernsee_Huette.webp
 altitud: "1.650"
 desnivel: "850"
 distancia: 8 km
