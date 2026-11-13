@@ -10,7 +10,7 @@ altitud: "1.991"
 desnivel: "1.060"
 distancia: 11,5 km
 duracion: 4h 30 min
-dificultad: moderado-exigente
+dificultad: moderado
 estado: publicado
 ---
 [[entradilla: La montaña del oso Bruno.]]
