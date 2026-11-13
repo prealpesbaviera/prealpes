@@ -5,6 +5,7 @@ fecha: 2026-10-31
 realizada: true
 latitud: 47.6247
 longitud: 11.3717
+imagen: /blog/imagenes/Jochberg.webp
 altitud: 1.565 m
 desnivel: "750"
 distancia: 10 km
