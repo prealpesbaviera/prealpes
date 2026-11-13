@@ -5,11 +5,12 @@ fecha: 2026-09-19
 realizada: true
 latitud: 47.39874261874624
 longitud: 11.57459842418257
+imagen: /blog/imagenes/Engalm.webp
 altitud: "1.418"
 desnivel: "295"
 distancia: 6 km
 duracion: 1 h 20 min
-dificultad: Facil
+dificultad: facil-moderado
 acceso: Engalm Austria
 estado: publicado
 ---
