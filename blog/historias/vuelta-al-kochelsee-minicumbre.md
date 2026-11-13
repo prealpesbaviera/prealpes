@@ -10,7 +10,7 @@ altitud: "601"
 desnivel: "50"
 distancia: 15 km
 duracion: 4h 21 min
-dificultad: facil-moderado
+dificultad: facil
 acceso: Bahnhof Kochel am See
 estado: publicado
 ---
