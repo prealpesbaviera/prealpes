@@ -1,7 +1,7 @@
 ---
 title: Hochalm – ascenso hasta 1.277 m
 numero: 20
-fecha: 2026-11-13
+fecha: 2026-10-27
 realizada: true
 latitud: 47.604865
 longitud: 11.607407
