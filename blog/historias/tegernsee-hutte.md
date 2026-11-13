@@ -7,7 +7,7 @@ latitud: 47.632222
 longitud: 11.678611
 altitud: "1.650"
 desnivel: "850"
-distancia: "7 "
+distancia: 8 km
 duracion: 4h
 dificultad: moderado-exigente
 acceso: Bayerwald Parkplatz
