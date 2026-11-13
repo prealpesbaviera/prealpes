@@ -5,11 +5,12 @@ fecha: 2026-09-15
 realizada: true
 latitud: 47.719283
 longitud: 11.601376
+imagen: /blog/imagenes/Sunntratn.webp
 altitud: "1.096"
 desnivel: "367"
 distancia: "7 "
 duracion: 1h 10 min
-dificultad: Facil
+dificultad: facil-moderado
 acceso: Gaißach, Wanderparkplatz Gerstland
 estado: publicado
 ---
