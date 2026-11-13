@@ -5,6 +5,7 @@ fecha: 2026-11-12
 realizada: true
 latitud: 47.65659
 longitud: 11.49903
+imagen: /blog/imagenes/Latschenkopf.webp
 altitud: "1.712"
 desnivel: "500"
 distancia: 5,8
