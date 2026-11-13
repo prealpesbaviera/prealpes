@@ -14,3 +14,24 @@ dificultad: facil-moderado
 acceso: Wanderparkplatz Kappel en Unterammergau
 estado: publicado
 ---
+**[[capitulo:Primera parte · Bajo los árboles]]**
+
+**[[izquierda:2]]**
+
+[Describe la primera atmósfera.]
+
+**[[nota:Temperatura, sonidos, luz o detalles del bosque.]]**
+
+**[[separador]]**
+
+**[[capitulo:Segunda parte · A cielo abierto]]**
+
+**[[derecha:3]]**
+
+[Describe el cambio de paisaje.]
+
+**[[grande:4]]**
+
+**[[centrado:Era el mismo día, pero parecía otro mundo.]]**
+
+[Reflexión final.]
