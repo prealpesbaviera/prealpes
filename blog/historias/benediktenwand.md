@@ -10,7 +10,7 @@ altitud: "1.801"
 desnivel: "1.883"
 distancia: "11 km "
 duracion: 4 h 30 min
-dificultad: muy-exigente
+dificultad: exigente
 acceso: Parkplatz Benediktenwand en Benedikbeuern
 estado: publicado
 ---
