@@ -5,6 +5,7 @@ fecha: 2026-11-06
 realizada: true
 latitud: 47.66585
 longitud: 11.54274
+imagen: /blog/imagenes/Waxenstein.webp
 altitud: "1.310"
 desnivel: "580"
 distancia: 6 km
