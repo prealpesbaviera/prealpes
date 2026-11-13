@@ -10,7 +10,7 @@ altitud: "1.218"
 desnivel: "480"
 distancia: 6,5
 duracion: 1h 56min
-dificultad: facil-moderado
+dificultad: moderado
 acceso: Wackersberg (Waldherralm)
 estado: publicado
 ---
