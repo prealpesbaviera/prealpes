@@ -5,6 +5,7 @@ fecha: 2026-11-12
 realizada: true
 latitud: 47.73677142703091
 longitud: 11.500520707678842
+imagen: /blog/imagenes/Blomberghaus.webp
 altitud: "1.080"
 desnivel: "371"
 distancia: 7,5 km
