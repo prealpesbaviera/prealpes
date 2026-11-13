@@ -5,6 +5,7 @@ fecha: 2026-10-09
 realizada: true
 latitud: 47.72355
 longitud: 11.48846
+imagen: /blog/imagenes/Zwiesel.webp
 altitud: "1348"
 desnivel: "744"
 distancia: 11,4 km
