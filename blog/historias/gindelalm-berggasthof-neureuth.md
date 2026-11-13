@@ -5,6 +5,7 @@ fecha: 2026-11-13
 realizada: true
 latitud: 47.726
 longitud: 11.801
+imagen: /blog/imagenes/Gindelalm.webp
 altitud: "1.270"
 desnivel: "550"
 distancia: 14,9 km
