@@ -5,6 +5,7 @@ fecha: 2026-10-03
 realizada: true
 latitud: 47.65278
 longitud: 11.48639
+imagen: /blog/imagenes/Achselkopfe.webp
 altitud: "1.712"
 desnivel: "400"
 distancia: 3,2 km
