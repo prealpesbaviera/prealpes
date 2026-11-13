@@ -1,7 +1,7 @@
 ---
 title: Seekarkreuz
 numero: 18
-fecha: 2026-11-13
+fecha: 2026-10-23
 realizada: true
 latitud: 47.65215
 longitud: 11.64316
