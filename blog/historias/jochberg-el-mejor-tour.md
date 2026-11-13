@@ -1,5 +1,5 @@
 ---
-title: Jochberg. El mejor tour
+title: Jochberg
 numero: 21
 fecha: 2026-10-31
 realizada: true
