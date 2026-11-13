@@ -5,6 +5,7 @@ fecha: 2026-10-12
 realizada: true
 latitud: 47.8019
 longitud: 11.0155
+imagen: /blog/imagenes/Hohenpeissenberg_2.webp
 altitud: "988"
 desnivel: "410"
 distancia: 8 km
