@@ -5,11 +5,12 @@ fecha: 2026-10-02
 realizada: true
 latitud: 47.65317
 longitud: 11.46554
+imagen: /blog/imagenes/Benediktenwand.webp
 altitud: "1.801"
 desnivel: "1.883"
 distancia: "11 km "
 duracion: 4 h 30 min
-dificultad: Exigente
+dificultad: muy-exigente
 acceso: Parkplatz Benediktenwand en Benedikbeuern
 estado: publicado
 ---
