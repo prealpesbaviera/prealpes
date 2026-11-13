@@ -10,7 +10,7 @@ altitud: "1.431"
 desnivel: "700"
 distancia: 5,5 km
 duracion: 1h 30 min
-dificultad: muy-exigente
+dificultad: facil-moderado
 acceso: Wanderparkplatz Kappel en Unterammergau
 estado: publicado
 ---
