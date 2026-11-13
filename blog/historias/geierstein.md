@@ -10,7 +10,7 @@ altitud: "1.491"
 desnivel: "800"
 distancia: 9,6 km
 duracion: 3 h 12 min
-dificultad: muy-exigente
+dificultad: exigente
 estado: publicado
 ---
 [[centrado: No veo ninguna cumbre.]]
