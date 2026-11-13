@@ -10,7 +10,7 @@ altitud: "1.564"
 desnivel: "800"
 distancia: 13 km
 duracion: 3h 30min
-dificultad: facil-moderado
+dificultad: moderado
 acceso: Bad Wiessee (Sonnenbichl)
 estado: publicado
 ---
