@@ -5,6 +5,7 @@ fecha: 2026-10-23
 realizada: true
 latitud: 47.65215
 longitud: 11.64316
+imagen: /blog/imagenes/Seekarkreuz.webp
 altitud: 1.601 m
 desnivel: "800"
 distancia: 11 km
