@@ -10,7 +10,7 @@ altitud: "1330"
 desnivel: "600"
 distancia: 9,5 km
 duracion: 2h 37 min
-dificultad: facil-moderado
+dificultad: moderado
 acceso: Gaißach-Mättenhof
 estado: publicado
 ---
