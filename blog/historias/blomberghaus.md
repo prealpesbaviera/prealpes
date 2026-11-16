@@ -13,6 +13,7 @@ duracion: 1h 30 min
 dificultad: facil
 acceso: Parking Blomberg
 estado: publicado
+title_en: Blomberg house
 ---
 **[[entradilla:Notas sueltas de un día entre senderos.]]**
 
