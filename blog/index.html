@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,12 +6,10 @@
   <meta name="description" content="100 montañas en 365 días. Historias y fotografías de Giovanny Barrera en los Alpes bávaros.">
   <title>100 montañas en 365 días | Giovanny Barrera</title>
 
-
 <link
   rel="stylesheet"
   href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 >
-
 
   <style>
     :root {
@@ -214,8 +211,37 @@
       transition: opacity 1.8s ease-in-out;
     }
 
+    .hero-slides a {
+      position: absolute;
+      inset: 0;
+      display: block;
+    }
+
     .hero-slides img.active {
       opacity: 1;
+    }
+
+    .language-switch {
+      display: inline-flex;
+      gap: 5px;
+      align-items: center;
+      margin-left: 5px;
+    }
+
+    .language-switch button {
+      border: 1px solid #b8c6b7;
+      border-radius: 4px;
+      padding: 5px 7px;
+      background: transparent;
+      color: var(--forest);
+      cursor: pointer;
+      font: inherit;
+      font-size: 12px;
+    }
+
+    .language-switch button[aria-pressed="true"] {
+      background: var(--forest);
+      color: white;
     }
 
     /* CONTADOR */
@@ -233,8 +259,7 @@
       align-items: center;
       gap: 35px;
     }
-
-    .progress-number {
+        .progress-number {
       font-family: Georgia, serif;
       font-size: 55px;
       color: var(--forest);
@@ -502,7 +527,7 @@
     }
 
     @media (max-width: 800px) {
-      .hero-grid,
+            .hero-grid,
       .intro-grid {
         grid-template-columns: 1fr;
       }
@@ -653,6 +678,7 @@
         <a href="#mapa">Mapa de cumbres</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="/">Excursiones</a>
+        <span class="language-switch" role="group" aria-label="Idioma / Sprache / Language"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="de" aria-pressed="false">DE</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
       </nav>
 
     </div>
@@ -696,26 +722,8 @@
 
         <div class="hero-photo">
 
-          <div class="hero-slides" id="hero-slides">
-
-            <img
-              src="/Arbolluz.jpg"
-              alt="Rayos de sol en un bosque de Baviera"
-              class="active"
-            >
-
-            <img
-              src="/Fockenstein.jpg"
-              alt="Paisaje de montaña en los Prealpes bávaros"
-              loading="lazy"
-            >
-
-            <img
-              src="/nubesylago.jpg"
-              alt="Nubes y paisaje alpino"
-              loading="lazy"
-            >
-
+          <div class="hero-slides" id="hero-slides" aria-label="Fotografías de las cumbres">
+            <!-- Las fotografías se cargan automáticamente desde las tarjetas generadas de las historias. -->
           </div>
 
         </div>
@@ -764,8 +772,7 @@
 
       </div>
     </section>
-
-    <!-- PRESENTACIÓN DEL PROYECTO -->
+        <!-- PRESENTACIÓN DEL PROYECTO -->
 
     <section class="intro-section" id="proyecto">
       <div class="container intro-grid">
@@ -978,7 +985,6 @@ Leer la historia
 </span>
 </div></a>
 </article>
-
 <article class="story-card">
 <a href="/blog/cumbres/006-panorama-engalm/"><img src="/blog/imagenes/Engalm.webp" alt="Panorama Engalm" loading="lazy">
 <div class="story-content">
@@ -1098,7 +1104,6 @@ Leer la historia
 </span>
 </div></a>
 </article>
-
 <article class="story-card">
 <a href="/blog/cumbres/016-grasleitenstein/"><img src="/blog/imagenes/Grasleitenstein.webp" alt="Grasleitenstein" loading="lazy">
 <div class="story-content">
@@ -1194,6 +1199,7 @@ Leer la historia
 </span>
 </div></a>
 </article>
+
 <!-- HISTORIAS_GENERADAS_FIN -->
 
         </div>
@@ -1224,32 +1230,93 @@ Leer la historia
 
     </div>
   </footer>
-
-  <!-- CAMBIO AUTOMÁTICO DE FOTOGRAFÍAS -->
-
+    <!-- CARRUSEL AUTOMÁTICO: TODAS LAS HISTORIAS PUBLICADAS, SIN REPETIR EN CADA CICLO -->
   <script>
     (function () {
-      const fotos = document.querySelectorAll(
-        "#hero-slides img"
-      );
+      const marco = document.getElementById('hero-slides');
+      const tarjetas = Array.from(document.querySelectorAll('#stories-grid .story-card a'));
+      const disponibles = tarjetas.map(a => ({
+        src: a.querySelector('img')?.getAttribute('src'),
+        alt: a.querySelector('img')?.getAttribute('alt') || 'Cumbre',
+        url: a.getAttribute('href')
+      })).filter(f => f.src && f.url && aEsHistoria(f.url));
 
-      if (fotos.length < 2) return;
+      function aEsHistoria(url) {
+        return url.startsWith('/blog/cumbres/');
+      }
 
-      let actual = 0;
+      if (!disponibles.length) return;
 
-      const reducirMovimiento = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
+      let orden = [], posicion = 0, anterior = -1, activo = 0;
 
-      if (reducirMovimiento) return;
+      function barajar() {
+        orden = disponibles.map((_, i) => i);
 
-      setInterval(function () {
-        const siguiente = (actual + 1) % fotos.length;
+        for (let i = orden.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [orden[i], orden[j]] = [orden[j], orden[i]];
+        }
 
-        fotos[siguiente].classList.add("active");
-        fotos[actual].classList.remove("active");
+        if (orden.length > 1 && orden[0] === anterior) {
+          [orden[0], orden[1]] = [orden[1], orden[0]];
+        }
 
-        actual = siguiente;
+        posicion = 0;
+      }
+
+      function siguiente() {
+        if (posicion >= orden.length) barajar();
+
+        const indice = orden[posicion++];
+        anterior = indice;
+
+        return disponibles[indice];
+      }
+
+      const enlaces = [0, 1].map(() => {
+        const a = document.createElement('a');
+        const img = document.createElement('img');
+
+        img.alt = '';
+        a.appendChild(img);
+        marco.appendChild(a);
+
+        return a;
+      });
+
+      function asignar(enlace, foto) {
+        enlace.href = foto.url;
+        enlace.setAttribute('aria-label', foto.alt);
+
+        const img = enlace.querySelector('img');
+        img.src = foto.src;
+        img.alt = foto.alt;
+      }
+
+      barajar();
+      asignar(enlaces[0], siguiente());
+
+      enlaces[0].querySelector('img').classList.add('active');
+      enlaces[0].style.zIndex = '1';
+
+      if (
+        disponibles.length < 2 ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ) return;
+
+      setInterval(() => {
+        const proximo = 1 - activo;
+        const nueva = siguiente();
+
+        asignar(enlaces[proximo], nueva);
+
+        enlaces[proximo].style.zIndex = '2';
+        enlaces[activo].style.zIndex = '1';
+
+        enlaces[proximo].querySelector('img').classList.add('active');
+        enlaces[activo].querySelector('img').classList.remove('active');
+
+        activo = proximo;
       }, 8000);
     })();
   </script>
@@ -1404,5 +1471,250 @@ Leer la historia
     }
   </script>
 
+  <!-- TRADUCCIONES GUARDADAS DE LA INTERFAZ (ES / DE / EN) -->
+
+  <script>
+  (function () {
+    const textos = {
+      es: {
+        nav: [
+          'Inicio',
+          'Historias',
+          'El reto',
+          'Mapa de cumbres',
+          'Sobre mí',
+          'Excursiones'
+        ],
+        eyebrow: 'Un diario personal de montaña',
+        subtitle: 'Cien cumbres. Cien caminos. Cien historias que merecen ser contadas.',
+        description: 'Un desafío personal por los paisajes de Baviera. Caminos que comienzan entre árboles, cumbres que invitan a detenerse y experiencias que merecen ser recordadas.',
+        discover: 'Descubre las historias',
+        completed: 'Cumbres realizadas',
+        progress: 'El camino recorrido',
+        progressNote: 'Cada cumbre tiene su número, su fecha y su propia historia.',
+        behind: 'Detrás del desafío',
+        introTitle: 'No se trata solamente de llegar a la cima.',
+        quote: 'A veces, lo mejor de una montaña sucede mucho antes de llegar arriba.',
+        intro: [
+          'Cien montañas en un año. Una idea sencilla que se convierte en una colección de experiencias, fotografías, encuentros y recuerdos.',
+          'Algunas caminatas serán tranquilas. Otras exigirán un poco más. Habrá días de sol, caminos entre nubes y momentos en los que el paisaje será suficiente compañía.',
+          'Este diario reúne las historias detrás de cada ascenso. No pretende ser un catálogo de rutas ni una colección de récords. Es una forma de compartir lo que se descubre caminando.',
+          'Porque la montaña no siempre necesita muchas palabras.'
+        ],
+        stats: [
+          'Cumbres realizadas',
+          'Kilómetros acumulados',
+          'Metros de desnivel positivo'
+        ],
+        geo: 'Geografía del desafío',
+        mapTitle: 'El mapa de las cumbres',
+        mapDescription: 'Cien montañas, cien lugares diferentes. Cada punto del mapa representa una experiencia en los Alpes bávaros.',
+        journal: 'El diario de montaña',
+        storiesTitle: 'Las 100 historias',
+        storiesDescription: 'Cada historia conserva el número correspondiente al orden real en que alcancé la cumbre.',
+        mapNote: 'Selecciona una cumbre para ver sus datos y, si está publicada, leer su historia.',
+        story: 'Leer la historia',
+        summit: 'Cumbre',
+        footer: [
+          'Inicio',
+          'Historias',
+          'Mapa',
+          'Excursiones'
+        ]
+      },
+
+      de: {
+        nav: [
+          'Startseite',
+          'Geschichten',
+          'Die Herausforderung',
+          'Gipfelkarte',
+          'Über mich',
+          'Wanderungen'
+        ],
+        eyebrow: 'Ein persönliches Bergtagebuch',
+        subtitle: 'Hundert Gipfel. Hundert Wege. Hundert Geschichten, die es wert sind, erzählt zu werden.',
+        description: 'Eine persönliche Herausforderung in den Landschaften Bayerns. Wege, die zwischen Bäumen beginnen, Gipfel, die zum Innehalten einladen, und Erlebnisse, die in Erinnerung bleiben.',
+        discover: 'Geschichten entdecken',
+        completed: 'Bestiegene Gipfel',
+        progress: 'Der bisherige Weg',
+        progressNote: 'Jeder Gipfel hat seine Nummer, sein Datum und seine eigene Geschichte.',
+        behind: 'Hinter der Herausforderung',
+        introTitle: 'Es geht nicht nur darum, den Gipfel zu erreichen.',
+        quote: 'Manchmal geschieht das Schönste an einem Berg lange vor dem Gipfel.',
+        intro: [
+          'Hundert Berge in einem Jahr. Eine einfache Idee, aus der eine Sammlung von Erlebnissen, Fotografien, Begegnungen und Erinnerungen wird.',
+          'Manche Wanderungen werden gemütlich sein. Andere werden mehr abverlangen. Es wird sonnige Tage geben, Wege durch die Wolken und Augenblicke, in denen die Landschaft Gesellschaft genug ist.',
+          'Dieses Tagebuch versammelt die Geschichten hinter jedem Aufstieg. Es soll weder ein Routenverzeichnis noch eine Rekordsammlung sein. Es ist eine Möglichkeit, das zu teilen, was man unterwegs entdeckt.',
+          'Denn die Berge brauchen nicht immer viele Worte.'
+        ],
+        stats: [
+          'Bestiegene Gipfel',
+          'Zurückgelegte Kilometer',
+          'Positive Höhenmeter'
+        ],
+        geo: 'Geografie der Herausforderung',
+        mapTitle: 'Die Karte der Gipfel',
+        mapDescription: 'Hundert Berge, hundert verschiedene Orte. Jeder Punkt auf der Karte steht für ein Erlebnis in den Bayerischen Alpen.',
+        journal: 'Das Bergtagebuch',
+        storiesTitle: 'Die 100 Geschichten',
+        storiesDescription: 'Jede Geschichte behält ihre Nummer entsprechend der tatsächlichen Reihenfolge, in der ich den Gipfel erreicht habe.',
+        mapNote: 'Wähle einen Gipfel, um seine Daten anzusehen und, falls veröffentlicht, seine Geschichte zu lesen.',
+        story: 'Geschichte lesen',
+        summit: 'Gipfel',
+        footer: [
+          'Startseite',
+          'Geschichten',
+          'Karte',
+          'Wanderungen'
+        ]
+      },
+
+      en: {
+        nav: [
+          'Home',
+          'Stories',
+          'The challenge',
+          'Summit map',
+          'About me',
+          'Guided hikes'
+        ],
+        eyebrow: 'A personal mountain journal',
+        subtitle: 'One hundred summits. One hundred trails. One hundred stories worth telling.',
+        description: 'A personal challenge through the landscapes of Bavaria. Trails beginning among trees, summits inviting us to pause, and experiences worth remembering.',
+        discover: 'Discover the stories',
+        completed: 'Summits completed',
+        progress: 'The journey so far',
+        progressNote: 'Every summit has its number, its date and its own story.',
+        behind: 'Behind the challenge',
+        introTitle: 'It is not only about reaching the summit.',
+        quote: 'Sometimes the best part of a mountain happens long before reaching the top.',
+        intro: [
+          'One hundred mountains in one year. A simple idea that becomes a collection of experiences, photographs, encounters and memories.',
+          'Some hikes will be gentle. Others will demand more. There will be sunny days, paths through clouds and moments when the landscape is company enough.',
+          'This journal brings together the stories behind each ascent. It is not intended as a route catalogue or a collection of records. It is a way of sharing what we discover while walking.',
+          'Because the mountains do not always need many words.'
+        ],
+        stats: [
+          'Summits completed',
+          'Total kilometres',
+          'Total elevation gain'
+        ],
+        geo: 'Geography of the challenge',
+        mapTitle: 'The summit map',
+        mapDescription: 'One hundred mountains, one hundred different places. Each point on the map represents an experience in the Bavarian Alps.',
+        journal: 'The mountain journal',
+        storiesTitle: 'The 100 stories',
+        storiesDescription: 'Each story keeps its number in the actual order in which I reached the summit.',
+        mapNote: 'Select a summit to view its details and, if published, read its story.',
+        story: 'Read the story',
+        summit: 'Summit',
+        footer: [
+          'Home',
+          'Stories',
+          'Map',
+          'Guided hikes'
+        ]
+      }
+    };
+
+    function cambiar(lang) {
+      const t = textos[lang] || textos.es;
+
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('.navigation nav > a')
+        .forEach((e, i) => {
+          if (t.nav[i]) e.textContent = t.nav[i];
+        });
+
+      const poner = (selector, valor) => {
+        const e = document.querySelector(selector);
+        if (e) e.textContent = valor;
+      };
+
+      poner('.hero-text .eyebrow', t.eyebrow);
+      poner('.hero-subtitle', t.subtitle);
+      poner('.hero-description', t.description);
+      poner('.hero-text .button', t.discover);
+
+      poner('.progress-label', t.completed);
+      poner('.progress-box .eyebrow', t.progress);
+      poner('.progress-note', t.progressNote);
+
+      poner('.intro-section .eyebrow', t.behind);
+      poner('.intro-section .section-title', t.introTitle);
+      poner('.intro-section .quote', t.quote);
+
+      document.querySelectorAll('.intro-text p')
+        .forEach((e, i) => {
+          if (t.intro[i]) e.textContent = t.intro[i];
+        });
+
+      document.querySelectorAll('.stat-label')
+        .forEach((e, i) => {
+          if (t.stats[i]) e.textContent = t.stats[i];
+        });
+
+      poner('.map-section .eyebrow', t.geo);
+      poner('.map-section .section-title', t.mapTitle);
+      poner('.map-section .section-header > p', t.mapDescription);
+
+      poner('.stories-section .eyebrow', t.journal);
+      poner('.stories-section .section-title', t.storiesTitle);
+      poner('.stories-section .section-header > p', t.storiesDescription);
+
+      poner('#map-note', t.mapNote);
+
+      document.querySelectorAll('.story-card .story-number')
+        .forEach(e => {
+          e.textContent = e.textContent.replace(
+            /^(Cumbre|Gipfel|Summit)/,
+            t.summit
+          );
+        });
+
+      document.querySelectorAll('.story-card .story-link')
+        .forEach(e => {
+          if (e.textContent.trim() !== 'Historia en preparación') {
+            e.textContent = t.story;
+          }
+        });
+
+      document.querySelectorAll('.footer-content a')
+        .forEach((e, i) => {
+          if (t.footer[i]) e.textContent = t.footer[i];
+        });
+
+      document.querySelectorAll('.language-switch button')
+        .forEach(b => {
+          b.setAttribute(
+            'aria-pressed',
+            String(b.dataset.lang === lang)
+          );
+        });
+
+      try {
+        localStorage.setItem('blog-language', lang);
+      } catch (e) {}
+    }
+
+    document.querySelectorAll('.language-switch button')
+      .forEach(b => {
+        b.addEventListener('click', () => cambiar(b.dataset.lang));
+      });
+
+    let inicial = 'es';
+
+    try {
+      inicial = localStorage.getItem('blog-language') || 'es';
+    } catch (e) {}
+
+    cambiar(textos[inicial] ? inicial : 'es');
+  })();
+  </script>
+
 </body>
 </html>
+
+                      
