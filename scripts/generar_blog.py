@@ -154,9 +154,23 @@ def numero_decimal(valor):
 
     try:
         return float(numero)
+    try:
+        return float(numero)
     except ValueError:
         return None
-        def texto_traduccion(datos, clave):
+
+
+def texto_traduccion(datos, clave):
+    """Obtiene un campo de traducción sin alterar su contenido."""
+    valor = datos.get(clave)
+
+    if valor is None:
+        return ''
+
+    return str(valor).strip()
+
+
+def traducciones_historia(datos, cuerpo_original):
     """Obtiene un campo de traducción sin alterar su contenido."""
     valor = datos.get(clave)
 
