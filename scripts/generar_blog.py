@@ -1,4 +1,3 @@
-
 from pathlib import Path
 from html import escape
 from urllib.parse import quote
@@ -14,9 +13,77 @@ BLOG = BASE / 'blog'
 HISTORIAS = BLOG / 'historias'
 PORTADA = BLOG / 'index.html'
 SALIDA = BLOG / 'cumbres'
+
 INICIO = '<!-- HISTORIAS_GENERADAS_INICIO -->'
 FIN = '<!-- HISTORIAS_GENERADAS_FIN -->'
+
 MOSTRAR_EXCURSIONES = False
+
+IDIOMAS = ('es', 'de', 'en')
+
+ETIQUETAS = {
+    'es': {
+        'ficha': 'Ficha técnica de la ruta',
+        'galeria': 'Más fotografías de esta montaña',
+        'volver': '← Volver a las 100 montañas',
+        'fecha': 'Fecha de ascenso',
+        'cumbre': 'Cumbre',
+        'de': 'de',
+        'leer': 'Leer la historia',
+        'inicio': 'Inicio',
+        'historias': 'Historias',
+        'reto': 'El reto',
+        'mapa': 'Mapa de cumbres',
+        'sobre': 'Sobre mí',
+        'excursiones': 'Excursiones',
+        'ampliar': 'Ampliar fotografía',
+        'cerrar': 'Cerrar fotografía'
+    },
+    'de': {
+        'ficha': 'Tourendaten',
+        'galeria': 'Weitere Fotos von diesem Berg',
+        'volver': '← Zurück zu den 100 Bergen',
+        'fecha': 'Datum der Wanderung',
+        'cumbre': 'Gipfel',
+        'de': 'von',
+        'leer': 'Geschichte lesen',
+        'inicio': 'Startseite',
+        'historias': 'Geschichten',
+        'reto': 'Die Herausforderung',
+        'mapa': 'Gipfelkarte',
+        'sobre': 'Über mich',
+        'excursiones': 'Wanderungen',
+        'ampliar': 'Foto vergrößern',
+        'cerrar': 'Foto schließen'
+    },
+    'en': {
+        'ficha': 'Hike details',
+        'galeria': 'More photographs of this mountain',
+        'volver': '← Back to the 100 mountains',
+        'fecha': 'Date of ascent',
+        'cumbre': 'Summit',
+        'de': 'of',
+        'leer': 'Read the story',
+        'inicio': 'Home',
+        'historias': 'Stories',
+        'reto': 'The challenge',
+        'mapa': 'Summit map',
+        'sobre': 'About me',
+        'excursiones': 'Guided hikes',
+        'ampliar': 'Enlarge photograph',
+        'cerrar': 'Close photograph'
+    }
+}
+
+
+def ruta_articulo(historia, idioma='es'):
+    prefijo = (
+        '/blog/cumbres/'
+        if idioma == 'es'
+        else f'/blog/{idioma}/cumbres/'
+    )
+
+    return f"{prefijo}{historia['slug']}/"
 
 
 def seguro(valor):
@@ -29,6 +96,7 @@ def crear_slug(texto):
         c for c in texto
         if not unicodedata.combining(c)
     )
+
     return (
         re.sub(r'[^a-z0-9]+', '-', texto.lower()).strip('-')
         or 'montana'
@@ -88,10 +156,63 @@ def numero_decimal(valor):
         return float(numero)
     except ValueError:
         return None
+        def texto_traduccion(datos, clave):
+    """Obtiene un campo de traducción sin alterar su contenido."""
+    valor = datos.get(clave)
+
+    if valor is None:
+        return ''
+
+    return str(valor).strip()
+
+
+def traducciones_historia(datos, cuerpo_original):
+    """
+    Organiza el contenido de una historia en tres idiomas.
+
+    El español procede del cuerpo principal del archivo Markdown.
+
+    Las traducciones se guardan en los campos:
+        title_de
+        contenido_de
+        title_en
+        contenido_en
+
+    Una traducción se considera disponible cuando
+    tiene contenido y título.
+    """
+
+    traducciones = {
+        'es': {
+            'titulo': str(datos.get('title') or '').strip(),
+            'markdown': cuerpo_original.strip(),
+            'disponible': True
+        }
+    }
+
+    for idioma in ('de', 'en'):
+        titulo = texto_traduccion(
+            datos,
+            f'title_{idioma}'
+        )
+
+        contenido = texto_traduccion(
+            datos,
+            f'contenido_{idioma}'
+        )
+
+        traducciones[idioma] = {
+            'titulo': titulo,
+            'markdown': contenido,
+            'disponible': bool(titulo and contenido)
+        }
+
+    return traducciones
 
 
 def leer_historia(archivo):
     contenido = archivo.read_text(encoding='utf-8')
+
     partes = re.split(
         r'^---\s*$',
         contenido,
@@ -157,10 +278,23 @@ def leer_historia(archivo):
         if str(datos.get(clave) or '').strip()
     ]
 
-    cuerpo = markdown.markdown(
-        partes[2].strip(),
-        extensions=['extra', 'sane_lists']
+    cuerpo_original = partes[2].strip()
+
+    traducciones = traducciones_historia(
+        datos,
+        cuerpo_original
     )
+
+    for idioma, traduccion in traducciones.items():
+        if traduccion['disponible']:
+            traduccion['cuerpo'] = markdown.markdown(
+                traduccion['markdown'],
+                extensions=['extra', 'sane_lists']
+            )
+        else:
+            traduccion['cuerpo'] = ''
+
+    cuerpo = traducciones['es']['cuerpo']
 
     publicado = (
         str(datos.get('estado', '')).strip().lower()
@@ -194,26 +328,61 @@ def leer_historia(archivo):
         longitud=numero_decimal(datos.get('longitud')),
         altitud=numero_decimal(datos.get('altitud')),
         distancia=numero_decimal(datos.get('distancia')),
-        desnivel=numero_decimal(datos.get('desnivel'))
+        desnivel=numero_decimal(datos.get('desnivel')),
+        traducciones=traducciones
     )
+    def crear_ficha(historia, idioma='es'):
+    """Genera la ficha técnica en el idioma seleccionado."""
 
-
-def crear_ficha(historia):
     if not historia['ficha']:
         return ''
 
+    etiquetas_ficha = {
+        'es': {
+            'Altitud': 'Altitud',
+            'Desnivel +': 'Desnivel +',
+            'Distancia': 'Distancia',
+            'Duración': 'Duración',
+            'Dificultad': 'Dificultad',
+            'Acceso': 'Acceso'
+        },
+        'de': {
+            'Altitud': 'Höhe',
+            'Desnivel +': 'Höhenmeter +',
+            'Distancia': 'Strecke',
+            'Duración': 'Dauer',
+            'Dificultad': 'Schwierigkeit',
+            'Acceso': 'Anreise'
+        },
+        'en': {
+            'Altitud': 'Elevation',
+            'Desnivel +': 'Elevation gain',
+            'Distancia': 'Distance',
+            'Duración': 'Duration',
+            'Dificultad': 'Difficulty',
+            'Acceso': 'Getting there'
+        }
+    }
+
+    traducciones = etiquetas_ficha.get(
+        idioma,
+        etiquetas_ficha['es']
+    )
+
     datos = ''.join(
         f'<div class="dato">'
-        f'<span>{seguro(e)}</span>'
+        f'<span>{seguro(traducciones.get(e, e))}</span>'
         f'<strong>{seguro(v)}</strong>'
         f'</div>'
         for e, v in historia['ficha']
     )
 
+    titulo = ETIQUETAS[idioma]['ficha']
+
     return (
         '<section class="ficha">'
         '<div class="ficha-titulo">'
-        'Ficha técnica de la ruta'
+        f'{seguro(titulo)}'
         '</div>'
         f'<div class="ficha-datos">{datos}</div>'
         '</section>'
@@ -221,7 +390,20 @@ def crear_ficha(historia):
 
 
 def preparar_elementos_editoriales(cuerpo):
-    """Convierte los códigos editoriales de Pages CMS en HTML."""
+    """
+    Convierte los códigos editoriales de Pages CMS en HTML.
+
+    Los códigos funcionan igual en los tres idiomas:
+
+    [[cita:Texto]]
+    [[destacado:Texto]]
+    [[entradilla:Texto]]
+    [[nota:Texto]]
+    [[epigrafe:Texto]]
+    [[capitulo:Texto]]
+    [[centrado:Texto]]
+    [[separador]]
+    """
 
     patrones = {
         'cita': ('cita-editorial', 'blockquote'),
@@ -230,7 +412,7 @@ def preparar_elementos_editoriales(cuerpo):
         'nota': ('nota-editorial', 'aside'),
         'epigrafe': ('epigrafe-editorial', 'p'),
         'capitulo': ('capitulo-editorial', 'h2'),
-        'centrado': ('centrado-editorial', 'p'),
+        'centrado': ('centrado-editorial', 'p')
     }
 
     def sustituir(m):
@@ -239,7 +421,7 @@ def preparar_elementos_editoriales(cuerpo):
         if tipo == 'separador':
             return '<hr class="separador-editorial">'
 
-        texto = seguro(m.group(2).strip())
+        texto = seguro((m.group(2) or '').strip())
         clase, etiqueta = patrones[tipo]
 
         return (
@@ -264,9 +446,28 @@ def preparar_elementos_editoriales(cuerpo):
     )
 
 
-def preparar_relato(historia):
+def preparar_relato(historia, idioma='es'):
+    """
+    Prepara el relato y sus fotografías.
+
+    Las imágenes y la galería se comparten entre idiomas.
+
+    Cada traducción conserva sus propios códigos
+    editoriales y puede colocar las fotografías
+    en posiciones diferentes dentro del texto.
+    """
+
     galeria = historia['galeria']
     utilizadas = set()
+
+    traduccion = historia['traducciones'].get(idioma)
+
+    if not traduccion or not traduccion['disponible']:
+        return '', ''
+
+    cuerpo_original = traduccion['cuerpo']
+
+    titulo = traduccion['titulo']
 
     clases = {
         'foto': 'foto-mediana',
@@ -277,7 +478,17 @@ def preparar_relato(historia):
 
     def crear_foto(indice, modo='foto'):
         if indice < 1 or indice > len(galeria):
-            return '<p>Fotografía no encontrada.</p>'
+            mensajes = {
+                'es': 'Fotografía no encontrada.',
+                'de': 'Foto nicht gefunden.',
+                'en': 'Photograph not found.'
+            }
+
+            return (
+                '<p>'
+                + mensajes.get(idioma, mensajes['es'])
+                + '</p>'
+            )
 
         utilizadas.add(indice)
 
@@ -285,21 +496,26 @@ def preparar_relato(historia):
             url_imagen(galeria[indice - 1])
         )
 
-        titulo = seguro(historia['titulo'])
+        titulo_seguro = seguro(titulo)
         clase = clases.get(modo, 'foto-mediana')
+
+        ampliar = seguro(
+            ETIQUETAS[idioma]['ampliar']
+        )
 
         return (
             f'<figure class="foto-relato {clase}">'
             f'<a href="{src}" class="ampliar" '
             f'data-lightbox '
-            f'aria-label="Ampliar fotografía {indice}">'
+            f'aria-label="{ampliar} {indice}">'
             f'<img src="{src}" '
-            f'alt="{titulo} - fotografía {indice}" '
+            f'alt="{titulo_seguro} - {indice}" '
             f'loading="lazy"></a></figure>'
         )
 
     def reemplazar(m):
         modo = m.group(1).lower()
+
         indices = [
             int(n)
             for n in re.findall(r'\d+', m.group(2))
@@ -311,7 +527,10 @@ def preparar_relato(historia):
         if modo == 'fotos':
             return (
                 '<div class="grupo-fotos">'
-                + ''.join(crear_foto(i) for i in indices)
+                + ''.join(
+                    crear_foto(i)
+                    for i in indices
+                )
                 + '</div>'
             )
 
@@ -323,17 +542,17 @@ def preparar_relato(historia):
         r'([0-9, ]+)\]\]\s*</p>'
     )
 
-
     cuerpo = re.sub(
         patron,
         reemplazar,
-        historia['cuerpo'],
+        cuerpo_original,
         flags=re.IGNORECASE
     )
 
     cuerpo = preparar_elementos_editoriales(cuerpo)
 
-    # La portada no se repite en la galería final.
+    # La fotografía principal no se repite
+    # automáticamente en la galería final.
 
     portada_url = url_imagen(historia['imagen'])
 
@@ -352,9 +571,13 @@ def preparar_relato(historia):
             for i in restantes
         )
 
+        titulo_galeria = seguro(
+            ETIQUETAS[idioma]['galeria']
+        )
+
         galeria_final = (
             '<section class="galeria-final">'
-            '<h2>Más fotografías de esta montaña</h2>'
+            f'<h2>{titulo_galeria}</h2>'
             f'<div class="grupo-fotos">{fotos}</div>'
             '</section>'
         )
@@ -362,22 +585,66 @@ def preparar_relato(historia):
     return cuerpo, galeria_final
 
 
-def crear_invitacion():
+def crear_invitacion(idioma='es'):
+    """Invitación opcional a las excursiones guiadas."""
+
     if not MOSTRAR_EXCURSIONES:
         return ''
 
-    return '''
-    <section class="invitacion">
-    <h2>Algunas montañas también podemos descubrirlas juntos.</h2>
-    <p>Descubre nuestras caminatas por los Prealpes bávaros.
-    Grupos pequeños, naturaleza y tiempo para disfrutar
-    de cada paisaje.</p>
-    <a class="boton" href="/">Descubrir las excursiones</a>
-    </section>
-    '''
+    textos = {
+        'es': {
+            'titulo': (
+                'Algunas montañas también podemos '
+                'descubrirlas juntos.'
+            ),
+            'descripcion': (
+                'Descubre nuestras caminatas por los '
+                'Prealpes bávaros. Grupos pequeños, '
+                'naturaleza y tiempo para disfrutar '
+                'de cada paisaje.'
+            ),
+            'boton': 'Descubrir las excursiones'
+        },
+        'de': {
+            'titulo': (
+                'Manche Berge können wir auch '
+                'gemeinsam entdecken.'
+            ),
+            'descripcion': (
+                'Entdecke unsere geführten Wanderungen '
+                'in den bayerischen Voralpen. Kleine '
+                'Gruppen, Natur und genügend Zeit, '
+                'um die Landschaft zu genießen.'
+            ),
+            'boton': 'Wanderungen entdecken'
+        },
+        'en': {
+            'titulo': (
+                'Some mountains are even better '
+                'discovered together.'
+            ),
+            'descripcion': (
+                'Discover our guided hikes in the '
+                'Bavarian Prealps. Small groups, '
+                'beautiful landscapes and plenty '
+                'of time to enjoy nature.'
+            ),
+            'boton': 'Explore our guided hikes'
+        }
+    }
 
+    texto = textos.get(idioma, textos['es'])
 
-ESTILOS = '''
+    return (
+        '<section class="invitacion">'
+        f'<h2>{seguro(texto["titulo"])}</h2>'
+        f'<p>{seguro(texto["descripcion"])}</p>'
+        f'<a class="boton" href="/">'
+        f'{seguro(texto["boton"])}'
+        '</a>'
+        '</section>'
+    )
+    ESTILOS = '''
 * {
   box-sizing: border-box;
 }
@@ -476,7 +743,8 @@ h1 {
   margin-bottom: 32px;
 }
 
-/* Fotografía 60 % y ficha técnica 40 %. */
+/* FOTOGRAFÍA Y FICHA TÉCNICA */
+
 .presentacion {
   display: grid;
   grid-template-columns: minmax(0, 60fr) minmax(0, 40fr);
@@ -556,6 +824,8 @@ h1 {
   font-size: 16px;
 }
 
+/* RELATO */
+
 .relato {
   font-size: 19px;
   line-height: 1.85;
@@ -596,6 +866,8 @@ h1 {
 .relato img {
   max-width: 100%;
 }
+
+/* FOTOGRAFÍAS DENTRO DEL RELATO */
 
 .foto-relato {
   margin: 32px auto;
@@ -658,6 +930,8 @@ h1 {
   margin-top: 60px;
 }
 
+/* INVITACIÓN A EXCURSIONES */
+
 .invitacion {
   margin-top: 80px;
   padding-top: 38px;
@@ -698,6 +972,8 @@ footer {
   font: 13px Arial, sans-serif;
 }
 
+/* VISOR DE FOTOGRAFÍAS */
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -730,57 +1006,6 @@ footer {
   border: 0;
   font-size: 35px;
   cursor: pointer;
-}
-
-@media (max-width: 680px) {
-  main {
-    padding-top: 40px;
-  }
-
-  .cabecera {
-    padding: 16px 0;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .presentacion {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .portada-enlace {
-    height: 290px;
-    min-height: 0;
-  }
-
-  .ficha-datos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .relato {
-    font-size: 17px;
-  }
-
-  .foto-mediana,
-  .foto-izquierda,
-  .foto-derecha {
-    float: none;
-    width: 100%;
-    margin: 28px 0;
-  }
-
-  .grupo-fotos {
-    gap: 8px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-  }
 }
 
 /* ELEMENTOS EDITORIALES */
@@ -865,10 +1090,123 @@ footer {
   margin: 52px auto;
 }
 
+/* SELECTOR DE IDIOMAS */
+
+.selector-idiomas {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  margin: 24px 0 34px;
+  font-family: Arial, sans-serif;
+}
+
+.selector-idiomas a,
+.selector-idiomas span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 34px;
+  padding: 5px 9px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.selector-idiomas a {
+  color: #627269;
+  border: 1px solid #d7dfd0;
+  background: transparent;
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+.selector-idiomas a:hover {
+  background: #eeefe3;
+  color: #1f4033;
+}
+
+.selector-idiomas .idioma-activo {
+  background: #1f4033;
+  border: 1px solid #1f4033;
+  color: white;
+}
+
+.selector-idiomas .idioma-no-disponible {
+  color: #a8afa5;
+  border: 1px solid #e6e8de;
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.selector-idiomas a:focus-visible {
+  outline: 2px solid #b9a47b;
+  outline-offset: 3px;
+}
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 680px) {
+  main {
+    padding-top: 40px;
+  }
+
+  .cabecera {
+    padding: 16px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .presentacion {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .portada-enlace {
+    height: 290px;
+    min-height: 0;
+  }
+
+  .ficha-datos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .relato {
+    font-size: 17px;
+  }
+
+  .foto-mediana,
+  .foto-izquierda,
+  .foto-derecha {
+    float: none;
+    width: 100%;
+    margin: 28px 0;
+  }
+
+  .grupo-fotos {
+    gap: 8px;
+  }
+
+  .selector-idiomas {
+    justify-content: flex-start;
+    margin: 18px 0 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
 '''
-
-
-SCRIPT_LIGHTBOX = '''
+    SCRIPT_LIGHTBOX = '''
 <script>
 (() => {
   const visor = document.getElementById('visor');
@@ -889,7 +1227,7 @@ SCRIPT_LIGHTBOX = '''
       evento.preventDefault();
       anterior = enlace;
       foto.src = enlace.href;
-      foto.alt = enlace.querySelector('img')?.alt || 'Fotografía ampliada';
+      foto.alt = enlace.querySelector('img')?.alt || '';
       visor.classList.add('abierto');
       visor.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
@@ -916,14 +1254,64 @@ SCRIPT_LIGHTBOX = '''
 '''
 
 
-def crear_articulo(historia):
-    titulo = seguro(historia['titulo'])
+def crear_selector_idiomas(historia, idioma_actual):
+    """Enlaza únicamente las traducciones disponibles."""
+
+    elementos = []
+
+    for idioma in IDIOMAS:
+        traduccion = historia['traducciones'][idioma]
+        codigo = idioma.upper()
+
+        if idioma == idioma_actual:
+            elementos.append(
+                f'<span class="idioma-activo" '
+                f'aria-current="page">{codigo}</span>'
+            )
+
+        elif traduccion['disponible']:
+            url = seguro(ruta_articulo(historia, idioma))
+
+            elementos.append(
+                f'<a href="{url}" '
+                f'lang="{idioma}" '
+                f'aria-label="{codigo}">{codigo}</a>'
+            )
+
+        else:
+            elementos.append(
+                f'<span class="idioma-no-disponible" '
+                f'aria-label="{codigo} no disponible" '
+                f'title="Traducción pendiente">'
+                f'{codigo}</span>'
+            )
+
+    return (
+        '<nav class="selector-idiomas" '
+        'aria-label="Seleccionar idioma">'
+        + ''.join(elementos)
+        + '</nav>'
+    )
+
+
+def crear_articulo(historia, idioma='es'):
+    """Genera una versión de la historia en el idioma indicado."""
+
+    traduccion = historia['traducciones'][idioma]
+
+    if not traduccion['disponible']:
+        return
+
+    textos = ETIQUETAS[idioma]
+
+    titulo = seguro(traduccion['titulo'])
     numero = historia['numero']
     fecha = seguro(historia['fecha'])
 
-    ficha = crear_ficha(historia)
-    cuerpo, galeria_final = preparar_relato(historia)
-    invitacion = crear_invitacion()
+    ficha = crear_ficha(historia, idioma)
+    cuerpo, galeria_final = preparar_relato(historia, idioma)
+    invitacion = crear_invitacion(idioma)
+    selector = crear_selector_idiomas(historia, idioma)
 
     portada = ''
 
@@ -933,7 +1321,7 @@ def crear_articulo(historia):
         portada = (
             f'<a class="portada-enlace" href="{src}" '
             f'data-lightbox '
-            f'aria-label="Ampliar fotografía principal">'
+            f'aria-label="{seguro(textos["ampliar"])}">'
             f'<img class="portada" src="{src}" '
             f'alt="{titulo}"></a>'
         )
@@ -952,72 +1340,115 @@ def crear_articulo(historia):
         else ''
     )
 
+    enlaces_alternativos = '\n'.join(
+        (
+            f'<link rel="alternate" hreflang="{idioma_alt}" '
+            f'href="{seguro(ruta_articulo(historia, idioma_alt))}">'
+        )
+        for idioma_alt in IDIOMAS
+        if historia['traducciones'][idioma_alt]['disponible']
+    )
+
+    navegacion = f'''
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a href="/blog/">{seguro(textos["inicio"])}</a>
+      <a href="/blog/#historias">{seguro(textos["historias"])}</a>
+      <a href="/blog/#proyecto">{seguro(textos["reto"])}</a>
+      <a href="/blog/#mapa">{seguro(textos["mapa"])}</a>
+      <a href="/blog/#sobre-mi">{seguro(textos["sobre"])}</a>
+      <a href="/">{seguro(textos["excursiones"])}</a>
+    </nav>
+    '''
+
     html = f'''<!DOCTYPE html>
-<html lang="es">
+<html lang="{idioma}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>{titulo} | 100 montañas en 365 días</title>
-<meta name="description" content="Cumbre {numero:03d}: {titulo}. Relato personal de montaña en Baviera.">
+
+<meta name="description"
+content="{seguro(textos['cumbre'])} {numero:03d}: {titulo}.">
+
+{enlaces_alternativos}
+
 <style>{ESTILOS}</style>
 </head>
+
 <body>
 
 <header>
-<div class="contenedor cabecera">
+  <div class="contenedor cabecera">
 
-<a class="marca" href="/blog/">
-<img src="/logonuevo.png" alt="Montañas">
-<span>Una pausa en tu camino
-<small>Giovanny Barrera</small>
-</span>
-</a>
+    <a class="marca" href="/blog/">
+      <img src="/logonuevo.png" alt="Montañas">
+      <span>
+        Una pausa en tu camino
+        <small>Giovanny Barrera</small>
+      </span>
+    </a>
 
-<nav class="navegacion" aria-label="Navegación principal">
-<a href="/blog/">Inicio</a>
-<a href="/blog/#historias">Historias</a>
-<a href="/blog/#proyecto">El reto</a>
-<a href="/blog/#mapa">Mapa de cumbres</a>
-<a href="/blog/#sobre-mi">Sobre mí</a>
-<a href="/">Excursiones</a>
-</nav>
+    {navegacion}
 
-</div>
+  </div>
 </header>
 
 <main class="contenedor">
 
-<div class="numero">Cumbre {numero:03d} de 100</div>
-<h1>{titulo}</h1>
-<div class="fecha">Fecha de ascenso: {fecha}</div>
+  {selector}
 
-{presentacion}
+  <div class="numero">
+    {seguro(textos['cumbre'])} {numero:03d}
+    {seguro(textos['de'])} 100
+  </div>
 
-<article class="relato">
-{cuerpo}
-</article>
+  <h1>{titulo}</h1>
 
-{galeria_final}
-{invitacion}
+  <div class="fecha">
+    {seguro(textos['fecha'])}: {fecha}
+  </div>
 
-<div class="volver">
-<a href="/blog/">← Volver a las 100 montañas</a>
-</div>
+  {presentacion}
+
+  <article class="relato">
+    {cuerpo}
+  </article>
+
+  {galeria_final}
+
+  {invitacion}
+
+  <div class="volver">
+    <a href="/blog/">
+      {seguro(textos['volver'])}
+    </a>
+  </div>
 
 </main>
 
 <footer>
-<div class="contenedor">
-Una pausa en tu viaje · Prealpes bávaros
-</div>
+  <div class="contenedor">
+    Una pausa en tu viaje · Prealpes bávaros
+  </div>
 </footer>
 
-<div class="lightbox" id="visor" role="dialog"
-aria-label="Fotografía ampliada"
-aria-modal="true" aria-hidden="true">
-<button class="lightbox-cerrar" id="visor-cerrar"
-type="button" aria-label="Cerrar fotografía">×</button>
-<img id="visor-foto" alt="">
+<div class="lightbox"
+     id="visor"
+     role="dialog"
+     aria-label="{seguro(textos['ampliar'])}"
+     aria-modal="true"
+     aria-hidden="true">
+
+  <button class="lightbox-cerrar"
+          id="visor-cerrar"
+          type="button"
+          aria-label="{seguro(textos['cerrar'])}">
+    ×
+  </button>
+
+  <img id="visor-foto" alt="">
+
 </div>
 
 {SCRIPT_LIGHTBOX}
@@ -1025,41 +1456,113 @@ type="button" aria-label="Cerrar fotografía">×</button>
 </body>
 </html>'''
 
-    destino = SALIDA / historia['slug'] / 'index.html'
+    if idioma == 'es':
+        destino = SALIDA / historia['slug'] / 'index.html'
+    else:
+        destino = (
+            BLOG / idioma / 'cumbres'
+            / historia['slug'] / 'index.html'
+        )
+
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(html, encoding='utf-8')
+    def crear_tarjeta(historia, idioma='es'):
+    """
+    Genera una tarjeta para la portada del blog.
 
+    Mantiene la estructura HTML original para conservar
+    el diseño, el carrusel y los enlaces existentes.
 
+    Si hay traducción disponible, utiliza el título
+    y el enlace correspondientes al idioma solicitado.
+    """
 
-def crear_tarjeta(historia):
-    titulo = seguro(historia['titulo'])
     numero = historia['numero']
     fecha = seguro(historia['fecha'])
     publicada = historia['publicado']
+
+    traduccion = historia['traducciones'].get(idioma)
+
+    # Si la traducción no está disponible,
+    # utilizamos la versión española.
+    if not traduccion or not traduccion['disponible']:
+        idioma_tarjeta = 'es'
+        traduccion = historia['traducciones']['es']
+    else:
+        idioma_tarjeta = idioma
+
+    titulo = seguro(traduccion['titulo'])
 
     imagen_html = ''
 
     if historia['imagen']:
         src = seguro(url_imagen(historia['imagen']))
+
         imagen_html = (
-            f'<img src="{src}" alt="{titulo}" loading="lazy">'
+            f'<img src="{src}" '
+            f'alt="{titulo}" '
+            f'loading="lazy">'
         )
+
+    textos_tarjeta = {
+        'es': {
+            'cumbre': 'Cumbre',
+            'de': 'de',
+            'leer': 'Leer la historia',
+            'preparacion': 'Historia en preparación'
+        },
+        'de': {
+            'cumbre': 'Gipfel',
+            'de': 'von',
+            'leer': 'Geschichte lesen',
+            'preparacion': 'Geschichte in Vorbereitung'
+        },
+        'en': {
+            'cumbre': 'Summit',
+            'de': 'of',
+            'leer': 'Read the story',
+            'preparacion': 'Story coming soon'
+        }
+    }
+
+    textos = textos_tarjeta.get(
+        idioma_tarjeta,
+        textos_tarjeta['es']
+    )
+
+    estado = (
+        textos['leer']
+        if publicada
+        else textos['preparacion']
+    )
 
     contenido = f'''
 <div class="story-content">
-<div class="story-number">Cumbre {numero:03d} de 100</div>
-<h3>{titulo}</h3>
-<p>{fecha}</p>
-<span class="story-link">
-{"Leer la historia" if publicada else "Historia en preparación"}
-</span>
+
+  <div class="story-number">
+    {textos['cumbre']} {numero:03d}
+    {textos['de']} 100
+  </div>
+
+  <h3>{titulo}</h3>
+
+  <p>{fecha}</p>
+
+  <span class="story-link">
+    {estado}
+  </span>
+
 </div>'''
 
     if publicada:
-        enlace = f"/blog/cumbres/{historia['slug']}/"
+        enlace = seguro(
+            ruta_articulo(historia, idioma_tarjeta)
+        )
+
         interior = (
             f'<a href="{enlace}">'
-            f'{imagen_html}{contenido}'
+            f'{imagen_html}'
+            f'{contenido}'
             '</a>'
         )
     else:
@@ -1069,13 +1572,24 @@ def crear_tarjeta(historia):
 <article class="story-card">
 {interior}
 </article>'''
+    def actualizar_portada(historias, cumbres):
+    """
+    Actualiza la portada principal del blog.
 
+    Conserva:
+    - Las tarjetas de las historias.
+    - El contador de cumbres realizadas.
+    - La barra de progreso.
+    - Los datos del mapa interactivo.
+    """
 
-def actualizar_portada(historias, cumbres):
     html = PORTADA.read_text(encoding='utf-8')
 
+    # Generar las tarjetas de las historias.
+    # La portada principal sigue utilizando español.
+
     tarjetas = '\n'.join(
-        crear_tarjeta(h)
+        crear_tarjeta(h, 'es')
         for h in historias
     )
 
@@ -1088,6 +1602,9 @@ def actualizar_portada(historias, cumbres):
             '</div>'
         )
 
+    # Sustituir únicamente el bloque de historias.
+    # No modificar el resto de la portada.
+
     if INICIO in html and FIN in html:
         patron = re.escape(INICIO) + r'.*?' + re.escape(FIN)
 
@@ -1097,6 +1614,7 @@ def actualizar_portada(historias, cumbres):
             html,
             flags=re.DOTALL
         )
+
     else:
         apertura = '<div class="stories-grid" id="stories-grid">'
 
@@ -1125,8 +1643,8 @@ def actualizar_portada(historias, cumbres):
             + html[cierre:]
         )
 
-    # El progreso cuenta cumbres realizadas,
-    # no solamente relatos publicados.
+    # CONTADOR DE CUMBRES REALIZADAS
+
     cantidad = sum(
         1 for c in cumbres
         if c['realizada']
@@ -1139,6 +1657,8 @@ def actualizar_portada(historias, cumbres):
         count=1,
         flags=re.DOTALL
     )
+
+    # BARRA DE PROGRESO
 
     porcentaje = min(cantidad, 100)
 
@@ -1182,7 +1702,8 @@ def actualizar_portada(historias, cumbres):
         count=1
     )
 
-    # Preparar los datos para el mapa.
+    # DATOS DEL MAPA INTERACTIVO
+
     datos_mapa = []
 
     for c in cumbres:
@@ -1198,13 +1719,14 @@ def actualizar_portada(historias, cumbres):
             'distancia': c['distancia'],
             'desnivel': c['desnivel'],
             'url': (
-                f"/blog/cumbres/{c['slug']}/"
+                ruta_articulo(c, 'es')
                 if c['publicado']
                 else ''
             )
         })
 
-    # JSON seguro para insertarlo dentro de JavaScript.
+    # Convertir los datos a JSON seguro para JavaScript.
+
     datos_json = json.dumps(
         datos_mapa,
         ensure_ascii=False
@@ -1234,6 +1756,8 @@ def actualizar_portada(historias, cumbres):
 
 
 def main():
+    """Lee las historias y genera las páginas publicadas."""
+
     registros = []
 
     if HISTORIAS.exists():
@@ -1257,11 +1781,15 @@ def main():
             'Hay dos registros con el mismo número de cumbre.'
         )
 
-    # Solamente las historias publicadas generan artículos.
+    # Solamente las historias publicadas
+    # generan páginas individuales.
+
     historias = [
         r for r in registros
         if r['publicado']
     ]
+
+    # Limpiar páginas generadas anteriormente.
 
     if SALIDA.exists():
         shutil.rmtree(SALIDA)
@@ -1271,15 +1799,37 @@ def main():
         exist_ok=True
     )
 
-    for historia in historias:
-        crear_articulo(historia)
+    # Limpiar también las versiones traducidas antiguas.
+    # No borrar otros contenidos de blog/de o blog/en.
 
+    for idioma in ('de', 'en'):
+        carpeta = BLOG / idioma / 'cumbres'
+
+        if carpeta.exists():
+            shutil.rmtree(carpeta)
+
+    # GENERAR ARTÍCULOS EN LOS IDIOMAS DISPONIBLES
+
+    total_traducciones = {
+        'de': 0,
+        'en': 0
+    }
+
+    for historia in historias:
+        # El español siempre es la versión original.
+        crear_articulo(historia, 'es')
+
+        for idioma in ('de', 'en'):
+            if historia['traducciones'][idioma]['disponible']:
+                crear_articulo(historia, idioma)
+                total_traducciones[idioma] += 1
+
+    # ACTUALIZAR PORTADA, CONTADOR Y MAPA
 
     actualizar_portada(
         [r for r in registros if r['realizada']],
         registros
     )
-
 
     realizadas = sum(
         1 for r in registros
@@ -1289,6 +1839,12 @@ def main():
     print(
         f'Blog generado: {len(historias)} historias '
         f'publicadas y {realizadas} cumbres realizadas.'
+    )
+
+    print(
+        f'Traducciones: '
+        f'{total_traducciones["de"]} en alemán y '
+        f'{total_traducciones["en"]} en inglés.'
     )
 
 
