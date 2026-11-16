@@ -44,7 +44,7 @@ content:
         type: image
 
       - name: body
-        label: Mi historia
+        label: Mi historia (español)
         type: rich-text
 
       - name: galeria
@@ -68,7 +68,6 @@ content:
         label: Duración de la caminata
         type: string
 
- 
       - name: dificultad
         label: Dificultad
         type: select
@@ -87,7 +86,6 @@ content:
             - value: muy-exigente
               label: Muy exigente
 
-
       - name: acceso
         label: Acceso y transporte público
         type: string
@@ -102,3 +100,23 @@ content:
               label: Borrador
             - value: publicado
               label: Publicado
+
+      # TRADUCCIÓN AL ALEMÁN
+
+      - name: title_de
+        label: "🇩🇪 Título en alemán"
+        type: string
+
+      - name: contenido_de
+        label: "🇩🇪 Historia en alemán"
+        type: text
+
+      # TRADUCCIÓN AL INGLÉS
+
+      - name: title_en
+        label: "🇬🇧 Título en inglés"
+        type: string
+
+      - name: contenido_en
+        label: "🇬🇧 Historia en inglés"
+        type: text
