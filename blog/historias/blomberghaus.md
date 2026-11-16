@@ -13,6 +13,8 @@ duracion: 1h 30 min
 dificultad: facil
 acceso: Parking Blomberg
 estado: publicado
+title_de: Blomberghaus
+contenido_de: Was für ein Blomberghaus
 title_en: Blomberg house
 contenido_en: "Blomberg house "
 ---
