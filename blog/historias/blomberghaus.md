@@ -14,9 +14,7 @@ dificultad: facil
 acceso: Parking Blomberg
 estado: publicado
 title_de: Blomberghaus
-contenido_de: Was für ein Blomberghaus
 title_en: Blomberg house
-contenido_en: "Blomberg house "
 ---
 **[[entradilla:Notas sueltas de un día entre senderos.]]**
 
