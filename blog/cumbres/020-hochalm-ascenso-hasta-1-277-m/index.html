@@ -3,8 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Hochalm – ascenso hasta 1.277 m | 100 montañas en 365 días</title>
-<meta name="description" content="Cumbre 020: Hochalm – ascenso hasta 1.277 m. Relato personal de montaña en Baviera.">
+
+<meta name="description"
+content="Cumbre 020: Hochalm – ascenso hasta 1.277 m.">
+
+<link rel="alternate" hreflang="es" href="/blog/cumbres/020-hochalm-ascenso-hasta-1-277-m/">
+
 <style>
 * {
   box-sizing: border-box;
@@ -104,7 +110,8 @@ h1 {
   margin-bottom: 32px;
 }
 
-/* Fotografía 60 % y ficha técnica 40 %. */
+/* FOTOGRAFÍA Y FICHA TÉCNICA */
+
 .presentacion {
   display: grid;
   grid-template-columns: minmax(0, 60fr) minmax(0, 40fr);
@@ -184,6 +191,8 @@ h1 {
   font-size: 16px;
 }
 
+/* RELATO */
+
 .relato {
   font-size: 19px;
   line-height: 1.85;
@@ -224,6 +233,8 @@ h1 {
 .relato img {
   max-width: 100%;
 }
+
+/* FOTOGRAFÍAS DENTRO DEL RELATO */
 
 .foto-relato {
   margin: 32px auto;
@@ -286,6 +297,8 @@ h1 {
   margin-top: 60px;
 }
 
+/* INVITACIÓN A EXCURSIONES */
+
 .invitacion {
   margin-top: 80px;
   padding-top: 38px;
@@ -326,6 +339,8 @@ footer {
   font: 13px Arial, sans-serif;
 }
 
+/* VISOR DE FOTOGRAFÍAS */
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -358,57 +373,6 @@ footer {
   border: 0;
   font-size: 35px;
   cursor: pointer;
-}
-
-@media (max-width: 680px) {
-  main {
-    padding-top: 40px;
-  }
-
-  .cabecera {
-    padding: 16px 0;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .presentacion {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .portada-enlace {
-    height: 290px;
-    min-height: 0;
-  }
-
-  .ficha-datos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .relato {
-    font-size: 17px;
-  }
-
-  .foto-mediana,
-  .foto-izquierda,
-  .foto-derecha {
-    float: none;
-    width: 100%;
-    margin: 28px 0;
-  }
-
-  .grupo-fotos {
-    gap: 8px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-  }
 }
 
 /* ELEMENTOS EDITORIALES */
@@ -493,42 +457,170 @@ footer {
   margin: 52px auto;
 }
 
+/* SELECTOR DE IDIOMAS */
+
+.selector-idiomas {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  margin: 24px 0 34px;
+  font-family: Arial, sans-serif;
+}
+
+.selector-idiomas a,
+.selector-idiomas span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 34px;
+  padding: 5px 9px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.selector-idiomas a {
+  color: #627269;
+  border: 1px solid #d7dfd0;
+  background: transparent;
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+.selector-idiomas a:hover {
+  background: #eeefe3;
+  color: #1f4033;
+}
+
+.selector-idiomas .idioma-activo {
+  background: #1f4033;
+  border: 1px solid #1f4033;
+  color: white;
+}
+
+.selector-idiomas .idioma-no-disponible {
+  color: #a8afa5;
+  border: 1px solid #e6e8de;
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.selector-idiomas a:focus-visible {
+  outline: 2px solid #b9a47b;
+  outline-offset: 3px;
+}
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 680px) {
+  main {
+    padding-top: 40px;
+  }
+
+  .cabecera {
+    padding: 16px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .presentacion {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .portada-enlace {
+    height: 290px;
+    min-height: 0;
+  }
+
+  .ficha-datos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .relato {
+    font-size: 17px;
+  }
+
+  .foto-mediana,
+  .foto-izquierda,
+  .foto-derecha {
+    float: none;
+    width: 100%;
+    margin: 28px 0;
+  }
+
+  .grupo-fotos {
+    gap: 8px;
+  }
+
+  .selector-idiomas {
+    justify-content: flex-start;
+    margin: 18px 0 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="contenedor cabecera">
+  <div class="contenedor cabecera">
 
-<a class="marca" href="/blog/">
-<img src="/logonuevo.png" alt="Montañas">
-<span>Una pausa en tu camino
-<small>Giovanny Barrera</small>
-</span>
-</a>
+    <a class="marca" href="/blog/">
+      <img src="/logonuevo.png" alt="Montañas">
+      <span>
+        Una pausa en tu camino
+        <small>Giovanny Barrera</small>
+      </span>
+    </a>
 
-<nav class="navegacion" aria-label="Navegación principal">
-<a href="/blog/">Inicio</a>
-<a href="/blog/#historias">Historias</a>
-<a href="/blog/#proyecto">El reto</a>
-<a href="/blog/#mapa">Mapa de cumbres</a>
-<a href="/blog/#sobre-mi">Sobre mí</a>
-<a href="/">Excursiones</a>
-</nav>
+    
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a href="/blog/">Inicio</a>
+      <a href="/blog/#historias">Historias</a>
+      <a href="/blog/#proyecto">El reto</a>
+      <a href="/blog/#mapa">Mapa de cumbres</a>
+      <a href="/blog/#sobre-mi">Sobre mí</a>
+      <a href="/">Excursiones</a>
+    </nav>
+    
 
-</div>
+  </div>
 </header>
 
 <main class="contenedor">
 
-<div class="numero">Cumbre 020 de 100</div>
-<h1>Hochalm – ascenso hasta 1.277 m</h1>
-<div class="fecha">Fecha de ascenso: 2026-10-27</div>
+  <nav class="selector-idiomas" aria-label="Seleccionar idioma"><span class="idioma-activo" aria-current="page">ES</span><span class="idioma-no-disponible" aria-label="DE no disponible" title="Traducción pendiente">DE</span><span class="idioma-no-disponible" aria-label="EN no disponible" title="Traducción pendiente">EN</span></nav>
 
-<div class="presentacion"><a class="portada-enlace" href="/blog/imagenes/Hochalm.webp" data-lightbox aria-label="Ampliar fotografía principal"><img class="portada" src="/blog/imagenes/Hochalm.webp" alt="Hochalm – ascenso hasta 1.277 m"></a><section class="ficha"><div class="ficha-titulo">Ficha técnica de la ruta</div><div class="ficha-datos"><div class="dato"><span>Altitud</span><strong>1.277</strong></div><div class="dato"><span>Desnivel +</span><strong>550</strong></div><div class="dato"><span>Distancia</span><strong>6 km</strong></div><div class="dato"><span>Duración</span><strong>2 horas</strong></div><div class="dato"><span>Dificultad</span><strong>moderado</strong></div><div class="dato"><span>Acceso</span><strong>Wanderparkplatz Hochalm (B307)</strong></div></div></section></div>
+  <div class="numero">
+    Cumbre 020
+    de 100
+  </div>
 
-<article class="relato">
-<p><strong>[[entradilla:No sabía que iba a recordar precisamente este detalle.]]</strong></p>
+  <h1>Hochalm – ascenso hasta 1.277 m</h1>
+
+  <div class="fecha">
+    Fecha de ascenso: 2026-10-27
+  </div>
+
+  <div class="presentacion"><a class="portada-enlace" href="/blog/imagenes/Hochalm.webp" data-lightbox aria-label="Ampliar fotografía"><img class="portada" src="/blog/imagenes/Hochalm.webp" alt="Hochalm – ascenso hasta 1.277 m"></a><section class="ficha"><div class="ficha-titulo">Ficha técnica de la ruta</div><div class="ficha-datos"><div class="dato"><span>Altitud</span><strong>1.277</strong></div><div class="dato"><span>Desnivel +</span><strong>550</strong></div><div class="dato"><span>Distancia</span><strong>6 km</strong></div><div class="dato"><span>Duración</span><strong>2 horas</strong></div><div class="dato"><span>Dificultad</span><strong>moderado</strong></div><div class="dato"><span>Acceso</span><strong>Wanderparkplatz Hochalm (B307)</strong></div></div></section></div>
+
+  <article class="relato">
+    <p><strong>[[entradilla:No sabía que iba a recordar precisamente este detalle.]]</strong></p>
 <p>[Presenta una incógnita o una expectativa.]</p>
 <p><strong>[[izquierda:2]]</strong></p>
 <p>[Primer tramo de la historia.]</p>
@@ -540,29 +632,42 @@ footer {
 <p><strong>[[capitulo:La imagen que explica todo]]</strong></p>
 <p><strong>[[grande:5]]</strong></p>
 <p><strong>[[epigrafe:Escribe aquí una frase final que acompañe la fotografía.]]</strong></p>
-</article>
+  </article>
 
+  
 
+  
 
-
-<div class="volver">
-<a href="/blog/">← Volver a las 100 montañas</a>
-</div>
+  <div class="volver">
+    <a href="/blog/">
+      ← Volver a las 100 montañas
+    </a>
+  </div>
 
 </main>
 
 <footer>
-<div class="contenedor">
-Una pausa en tu viaje · Prealpes bávaros
-</div>
+  <div class="contenedor">
+    Una pausa en tu viaje · Prealpes bávaros
+  </div>
 </footer>
 
-<div class="lightbox" id="visor" role="dialog"
-aria-label="Fotografía ampliada"
-aria-modal="true" aria-hidden="true">
-<button class="lightbox-cerrar" id="visor-cerrar"
-type="button" aria-label="Cerrar fotografía">×</button>
-<img id="visor-foto" alt="">
+<div class="lightbox"
+     id="visor"
+     role="dialog"
+     aria-label="Ampliar fotografía"
+     aria-modal="true"
+     aria-hidden="true">
+
+  <button class="lightbox-cerrar"
+          id="visor-cerrar"
+          type="button"
+          aria-label="Cerrar fotografía">
+    ×
+  </button>
+
+  <img id="visor-foto" alt="">
+
 </div>
 
 
@@ -586,7 +691,7 @@ type="button" aria-label="Cerrar fotografía">×</button>
       evento.preventDefault();
       anterior = enlace;
       foto.src = enlace.href;
-      foto.alt = enlace.querySelector('img')?.alt || 'Fotografía ampliada';
+      foto.alt = enlace.querySelector('img')?.alt || '';
       visor.classList.add('abierto');
       visor.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
