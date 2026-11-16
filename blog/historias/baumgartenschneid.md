@@ -18,7 +18,7 @@ altitud: "1.444"
 desnivel: "780"
 distancia: 14 km ida y vuelta
 duracion: 5 horas
-dificultad: facil
+dificultad: moderado
 acceso: "Parqueadero Prenzenweg 10 en Tegernsee "
 estado: publicado
 title_de: Baumgartenschneid – Über den Wolken
