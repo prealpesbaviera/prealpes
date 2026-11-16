@@ -18,7 +18,7 @@ estado: publicado
 
 **## Antes de salir**
 
-[Cuenta por qué elegiste esta montaña y cómo comenzó el día.]
+[Und día como hoy estaba]
 
 **[[izquierda:2]]**
 
