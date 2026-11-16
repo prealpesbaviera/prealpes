@@ -154,8 +154,6 @@ def numero_decimal(valor):
 
     try:
         return float(numero)
-    try:
-        return float(numero)
     except ValueError:
         return None
 
