@@ -169,16 +169,6 @@ def texto_traduccion(datos, clave):
 
 
 def traducciones_historia(datos, cuerpo_original):
-    """Obtiene un campo de traducción sin alterar su contenido."""
-    valor = datos.get(clave)
-
-    if valor is None:
-        return ''
-
-    return str(valor).strip()
-
-
-def traducciones_historia(datos, cuerpo_original):
     """
     Organiza el contenido de una historia en tres idiomas.
 
@@ -343,7 +333,7 @@ def leer_historia(archivo):
         desnivel=numero_decimal(datos.get('desnivel')),
         traducciones=traducciones
     )
-    def crear_ficha(historia, idioma='es'):
+def crear_ficha(historia, idioma='es'):
     """Genera la ficha técnica en el idioma seleccionado."""
 
     if not historia['ficha']:
@@ -483,6 +473,7 @@ def preparar_relato(historia, idioma='es'):
 
     clases = {
         'foto': 'foto-mediana',
+        'mediana': 'foto-mediana',
         'grande': 'foto-grande',
         'izquierda': 'foto-izquierda',
         'derecha': 'foto-derecha'
@@ -550,7 +541,7 @@ def preparar_relato(historia, idioma='es'):
 
     patron = (
         r'<p>\s*\[\['
-        r'(foto|fotos|izquierda|derecha|grande):\s*'
+        r'(foto|fotos|mediana|izquierda|derecha|grande):\s*'
         r'([0-9, ]+)\]\]\s*</p>'
     )
 
@@ -656,7 +647,7 @@ def crear_invitacion(idioma='es'):
         '</a>'
         '</section>'
     )
-    ESTILOS = '''
+ESTILOS = '''
 * {
   box-sizing: border-box;
 }
@@ -1218,7 +1209,7 @@ footer {
   }
 }
 '''
-    SCRIPT_LIGHTBOX = '''
+SCRIPT_LIGHTBOX = '''
 <script>
 (() => {
   const visor = document.getElementById('visor');
@@ -1478,7 +1469,7 @@ content="{seguro(textos['cumbre'])} {numero:03d}: {titulo}.">
 
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(html, encoding='utf-8')
-    def crear_tarjeta(historia, idioma='es'):
+def crear_tarjeta(historia, idioma='es'):
     """
     Genera una tarjeta para la portada del blog.
 
@@ -1584,7 +1575,7 @@ content="{seguro(textos['cumbre'])} {numero:03d}: {titulo}.">
 <article class="story-card">
 {interior}
 </article>'''
-    def actualizar_portada(historias, cumbres):
+def actualizar_portada(historias, cumbres):
     """
     Actualiza la portada principal del blog.
 
