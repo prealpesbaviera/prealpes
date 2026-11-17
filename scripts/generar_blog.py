@@ -211,7 +211,32 @@ def traducciones_historia(datos, cuerpo_original):
 
     return traducciones
 
+def normalizar_estructura_narrativa(contenido):
+    """Interpreta bloques [párrafo] y [[código]] de las plantillas antiguas.
 
+    Solo modifica líneas compuestas íntegramente por bloques entre corchetes;
+    conserva el Markdown habitual, sus enlaces y los demás párrafos.
+    """
+    token = re.compile(r'\[\[[^\[\]\n]+\]\]|\[[^\[\]\n]+\]')
+    resultado = []
+    for linea in contenido.split('\n'):
+        piezas = list(token.finditer(linea))
+        if not piezas:
+            resultado.append(linea)
+            continue
+        resto = token.sub('', linea)
+        if resto.strip():
+            resultado.append(linea)
+            continue
+        bloques = []
+        for coincidencia in piezas:
+            pieza = coincidencia.group(0)
+            if pieza.startswith('[['):
+                bloques.append(pieza)
+            else:
+                bloques.append(pieza[1:-1].strip())
+        resultado.append('\n\n'.join(bloques))
+    return '\n'.join(resultado)
 def leer_historia(archivo):
     contenido = archivo.read_text(encoding='utf-8')
 
