@@ -6,6 +6,17 @@ realizada: true
 latitud: 47.415471
 longitud: 11.712821
 imagen: /blog/imagenes/Barenkopf-1.webp
+galeria:
+  - /blog/imagenes/Bärenkopf 1.jpg
+  - /blog/imagenes/Bärenkopf 2.jpg
+  - /blog/imagenes/Bärenkopf 3.jpg
+  - /blog/imagenes/Bärenkopf 4.jpg
+  - /blog/imagenes/Bärenkopf 5.jpg
+  - /blog/imagenes/Bärenkopf 6.jpg
+  - /blog/imagenes/Bärenkopf 7.jpg
+  - /blog/imagenes/Bärenkopf 8.jpg
+  - /blog/imagenes/Bärenkopf 9.jpg
+  - /blog/imagenes/Bärenkopf 10.jpg
 altitud: "1.991"
 desnivel: "1.060"
 distancia: 11,5 km
