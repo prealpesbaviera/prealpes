@@ -28,11 +28,11 @@ estado: publicado
 
 ## Antes de salir
 
-[Decidimo con el tio de Eva, Gerhard, ir a Austria porque el día estaba bonito.]
+Decidimo con el tio de Eva, Gerhard, ir a Austria porque el día estaba bonito.
 [[izquierda:2]]
-[Camino por los Karwandel es espectacular.]
-[[capitulo:El tío siempre busca caminos particulares y subimos por la pista de esquí. Sueper empinada por supuesto, casi perdemos el alma allí]]
-[El tramo principal es por el Alm y luego se da una ronda como se quiera dar. Hicimos por atrás y luego ascendimos hasta lo más altpo para bajar a toda velocidad al Alm.]
+## Camino por los Karwandel es espectacular.
+Capitulo:El tío siempre busca caminos particulares y subimos por la pista de esquí. Sueper empinada por supuesto, casi perdemos el alma allí
+El tramo principal es por el Alm y luego se da una ronda como se quiera dar. Hicimos por atrás y luego ascendimos hasta lo más altpo para bajar a toda velocidad al Alm.
 [[grande:3]]
-[[cita:Estar en la montaña del oso Bruno, con esa vista espectacular quedas sin palabras.]]
-[Es una montaña para ir muchas veces. El Achensee es simplemente espectacular desde arriba.]
+cita:Estar en la montaña del oso Bruno, con esa vista espectacular quedas sin palabras.
+Es una montaña para ir muchas veces. El Achensee es simplemente espectacular desde arriba.
