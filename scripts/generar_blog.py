@@ -212,31 +212,53 @@ def traducciones_historia(datos, cuerpo_original):
     return traducciones
 
 def normalizar_estructura_narrativa(contenido):
-    """Interpreta bloques [párrafo] y [[código]] de las plantillas antiguas.
+    """Separa párrafos narrativos y códigos editoriales."""
 
-    Solo modifica líneas compuestas íntegramente por bloques entre corchetes;
-    conserva el Markdown habitual, sus enlaces y los demás párrafos.
-    """
-    token = re.compile(r'\[\[[^\[\]\n]+\]\]|\[[^\[\]\n]+\]')
+    patron = re.compile(
+        r'\[\[[^\[\]\n]+\]\]|\[[^\[\]\n]+\]'
+    )
+
     resultado = []
+
     for linea in contenido.split('\n'):
-        piezas = list(token.finditer(linea))
-        if not piezas:
+        coincidencias = list(patron.finditer(linea))
+
+        if not coincidencias:
             resultado.append(linea)
             continue
-        resto = token.sub('', linea)
+
+        resto = patron.sub('', linea)
+
         if resto.strip():
             resultado.append(linea)
             continue
+
         bloques = []
-        for coincidencia in piezas:
+
+        for coincidencia in coincidencias:
             pieza = coincidencia.group(0)
+
             if pieza.startswith('[['):
                 bloques.append(pieza)
             else:
                 bloques.append(pieza[1:-1].strip())
+
         resultado.append('\n\n'.join(bloques))
+
     return '\n'.join(resultado)
+
+
+def separar_codigos_editoriales(contenido):
+    """Coloca los códigos editoriales en párrafos independientes."""
+
+    patron = re.compile(
+        r'(\[\[(?:foto|fotos|mediana|grande|izquierda|derecha|'
+        r'cita|destacado|entradilla|nota|epigrafe|capitulo|'
+        r'centrado|separador)(?::[^\]\n]*)?\]\])',
+        flags=re.IGNORECASE
+    )
+
+    return patron.sub(r'\n\n\1\n\n', contenido)
     
 def leer_historia(archivo):
     contenido = archivo.read_text(encoding='utf-8')
