@@ -237,6 +237,7 @@ def normalizar_estructura_narrativa(contenido):
                 bloques.append(pieza[1:-1].strip())
         resultado.append('\n\n'.join(bloques))
     return '\n'.join(resultado)
+    
 def leer_historia(archivo):
     contenido = archivo.read_text(encoding='utf-8')
 
