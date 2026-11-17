@@ -314,10 +314,10 @@ def leer_historia(archivo):
 
     for idioma, traduccion in traducciones.items():
         if traduccion['disponible']:
-            traduccion['cuerpo'] = markdown.markdown(
-                traduccion['markdown'],
-                extensions=['extra', 'sane_lists']
-            )
+traduccion['cuerpo'] = markdown.markdown(
+    normalizar_estructura_narrativa(traduccion['markdown']),
+    extensions=['extra', 'sane_lists']
+)
         else:
             traduccion['cuerpo'] = ''
 
