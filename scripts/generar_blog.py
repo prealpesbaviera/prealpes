@@ -1822,7 +1822,6 @@ def generar_sitemap(historias):
         ET.SubElement(elemento, 'loc').text = dominio + ruta
 
     # Página principal y portada del blog.
-    agregar_url('/')
     agregar_url('/blog/')
 
     # Artículos publicados en sus idiomas disponibles.
