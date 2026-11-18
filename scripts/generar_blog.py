@@ -1848,6 +1848,57 @@ def generar_sitemap(historias):
 
     print('Sitemap generado correctamente.')
 
+def generar_rss(historias):
+    """Genera el RSS de las historias publicadas del blog."""
+
+    from xml.etree import ElementTree as ET
+    from email.utils import format_datetime
+    from datetime import datetime, timezone
+
+    dominio = 'https://prealpes.pages.dev'
+
+    rss = ET.Element('rss', version='2.0')
+    canal = ET.SubElement(rss, 'channel')
+
+    ET.SubElement(canal, 'title').text = (
+        'Una pausa en tu camino | 100 montañas en 365 días'
+    )
+    ET.SubElement(canal, 'link').text = dominio + '/blog/'
+    ET.SubElement(canal, 'description').text = (
+        'Historias, fotografías y experiencias de montaña '
+        'en los Alpes bávaros y sus alrededores.'
+    )
+    ET.SubElement(canal, 'language').text = 'es'
+
+    # Publicaciones más recientes primero.
+    for historia in reversed(historias):
+        slug = historia['slug']
+        titulo = str(historia['titulo'])
+        enlace = f'{dominio}/blog/cumbres/{slug}/'
+
+        item = ET.SubElement(canal, 'item')
+
+        ET.SubElement(item, 'title').text = titulo
+        ET.SubElement(item, 'link').text = enlace
+        ET.SubElement(item, 'guid', isPermaLink='true').text = enlace
+
+        ET.SubElement(item, 'description').text = (
+            f'Nueva historia de montaña: {titulo}. '
+            'Descubrí el relato, las fotografías '
+            'y la información de la ruta.'
+        )
+
+    arbol = ET.ElementTree(rss)
+    ET.indent(arbol, space='  ')
+
+    arbol.write(
+        BLOG / 'feed.xml',
+        encoding='utf-8',
+        xml_declaration=True
+    )
+
+    print('RSS generado correctamente.')
+
 def main():
     """Lee las historias y genera las páginas publicadas."""
 
