@@ -1805,6 +1805,49 @@ def actualizar_portada(historias, cumbres):
         encoding='utf-8'
     )
 
+def generar_sitemap(historias):
+    """Genera automáticamente el sitemap del sitio."""
+
+    from xml.etree import ElementTree as ET
+
+    dominio = 'https://prealpes.pages.dev'
+
+    raiz = ET.Element(
+        'urlset',
+        xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'
+    )
+
+    def agregar_url(ruta):
+        elemento = ET.SubElement(raiz, 'url')
+        ET.SubElement(elemento, 'loc').text = dominio + ruta
+
+    # Página principal y portada del blog.
+    agregar_url('/')
+    agregar_url('/blog/')
+
+    # Artículos publicados en sus idiomas disponibles.
+    for historia in historias:
+        slug = historia['slug']
+
+        agregar_url(f'/blog/cumbres/{slug}/')
+
+        for idioma in ('de', 'en'):
+            if historia['traducciones'][idioma]['disponible']:
+                agregar_url(
+                    f'/blog/{idioma}/cumbres/{slug}/'
+                )
+
+    arbol = ET.ElementTree(raiz)
+
+    ET.indent(arbol, space='  ')
+
+    arbol.write(
+        'sitemap.xml',
+        encoding='utf-8',
+        xml_declaration=True
+    )
+
+    print('Sitemap generado correctamente.')
 
 def main():
     """Lee las historias y genera las páginas publicadas."""
