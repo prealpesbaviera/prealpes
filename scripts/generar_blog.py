@@ -1364,6 +1364,56 @@ def crear_articulo(historia, idioma='es'):
     invitacion = crear_invitacion(idioma)
     selector = crear_selector_idiomas(historia, idioma)
 
+    # Formulario de seguidores por correo electrónico
+    textos_seguir = {
+        'es': (
+            'Seguí mis aventuras por las montañas',
+            'Tu correo electrónico',
+            'Quiero seguir tus aventuras'
+        ),
+        'de': (
+            'Begleite mich auf meinen Bergabenteuern',
+            'Deine E-Mail-Adresse',
+            'Abonnieren'
+        ),
+        'en': (
+            'Follow my mountain adventures',
+            'Your email address',
+            'Subscribe'
+        )
+    }
+
+    titulo_seguir, correo_seguir, boton_seguir = textos_seguir[idioma]
+
+    formulario_seguir = f'''
+    <section class="seguir-aventuras" style="
+        max-width: 650px;
+        margin: 45px auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        text-align: center;
+        background: #f7f9f6;
+    ">
+      <h2>{titulo_seguir}</h2>
+      <form action="https://api.follow.it/subscription-form/YU43SExzOUpPTGd3cVFMYW90dkUvMVlLRkMrbVVOU2pwQkdJMmVsd1lHb01HU0oxMU9RY2NLeWlxUHZrREx2KzUxQ3JyMkJGVjZuYlRmL1BPbW1rUzhuZHo5WUFRL1BHQU9mQTJhUlhyVmZCaU9EOGJsVk4xK1preTB4akNtZ2V8bVFPenJ1Ui9yUDh4dnlZVEJkejdUa3pNcTkwUitLcTBuajRIcHhXZ0tkRT0=/8"
+            method="post">
+        <input type="email"
+               name="email"
+               required
+               placeholder="{correo_seguir}"
+               style="width:100%;padding:12px;margin:12px 0;">
+        <button type="submit"
+                style="padding:12px 24px;cursor:pointer;">
+          {boton_seguir}
+        </button>
+      </form>
+      <p style="font-size:12px;margin-top:12px;">
+        Powered by follow.it
+      </p>
+    </section>
+    '''
+
     portada = ''
 
     if historia['imagen']:
