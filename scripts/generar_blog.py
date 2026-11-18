@@ -1522,7 +1522,10 @@ content="{seguro(f'Ruta de senderismo al {titulo}. Descubrí la experiencia de a
 
   {invitacion}
 
+  {formulario_seguir}
+
   <div class="volver">
+  
     <a href="/blog/">
       {seguro(textos['volver'])}
     </a>
