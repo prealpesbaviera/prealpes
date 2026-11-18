@@ -1638,6 +1638,19 @@ def actualizar_portada(historias, cumbres):
 
     html = PORTADA.read_text(encoding='utf-8')
 
+        # Verificación de propiedad para Follow.it
+    etiqueta_followit = (
+        '<meta name="follow.it-verification-code" '
+        'content="k8SzEx5mdNkp8feb9Ck4"/>'
+    )
+
+    if 'name="follow.it-verification-code"' not in html:
+        html = html.replace(
+            '</head>',
+            etiqueta_followit + '\n</head>',
+            1
+        )
+
     # Generar las tarjetas de las historias.
     # La portada principal sigue utilizando español.
 
