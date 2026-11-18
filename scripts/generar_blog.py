@@ -1373,21 +1373,24 @@ def crear_comentarios(historia, idioma='es'):
                'El correo se utiliza únicamente para gestionar tu comentario.',
                'Cargando comentarios...', 'Comentario publicado.',
                'No se pudo completar la operación.', 'Responder', 'Cancelar respuesta',
-               'Respondiendo a', 'Verificación antispam pendiente.'),
+               'Respondiendo a', 'Verificación antispam pendiente.',
+               'Comentario recibido. Está pendiente de revisión y aparecerá cuando sea aprobado.'),
         'de': ('Kommentare', 'Noch keine Kommentare. Schreib den ersten!',
                'Dein Name', 'Deine E-Mail-Adresse (nicht öffentlich)',
                'Schreib deinen Kommentar', 'Kommentar veröffentlichen',
                'Deine E-Mail-Adresse wird nur zur Verwaltung deines Kommentars verwendet.',
                'Kommentare werden geladen...', 'Kommentar veröffentlicht.',
                'Vorgang fehlgeschlagen.', 'Antworten', 'Antwort abbrechen',
-               'Antwort an', 'Spam-Schutz noch nicht eingerichtet.'),
+               'Antwort an', 'Spam-Schutz noch nicht eingerichtet.',
+               'Kommentar erhalten. Er wird geprüft und nach Freigabe veröffentlicht.'),
         'en': ('Comments', 'No comments yet. Be the first!',
                'Your name', 'Your email (not public)',
                'Write your comment', 'Post comment',
                'Your email is used only to manage your comment.',
                'Loading comments...', 'Comment posted.',
                'Something went wrong.', 'Reply', 'Cancel reply',
-               'Replying to', 'Spam protection not configured yet.')
+               'Replying to', 'Spam protection not configured yet.',
+               'Comment received. It is awaiting review and will appear once approved.')
     }
     t = textos[idioma]
     historia_id = json.dumps(historia['slug'])
