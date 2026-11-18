@@ -1411,7 +1411,14 @@ def crear_articulo(historia, idioma='es'):
                name="email"
                required
                placeholder="{correo_seguir}"
-               style="width:100%;padding:12px;margin:12px 0;">
+                               style="padding:14px 24px;
+                       background:#315c43;
+                       color:white;
+                       border:none;
+                       border-radius:7px;
+                       font-size:15px;
+                       font-weight:600;
+                       cursor:pointer;">
         <button type="submit"
                 style="padding:12px 24px;cursor:pointer;">
           {boton_seguir}
