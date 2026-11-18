@@ -1416,7 +1416,7 @@ def crear_articulo(historia, idioma='es'):
                        cursor:pointer;">
         <button type="submit"
                 style="padding:12px 24px;cursor:pointer;">
-          {boton_seguir}
+          {("Enviar" if idioma == "es" else "Senden" if idioma == "de" else "Send")}
         </button>
       </form>
 
