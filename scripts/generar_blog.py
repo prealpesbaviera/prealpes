@@ -1841,7 +1841,7 @@ def generar_sitemap(historias):
     ET.indent(arbol, space='  ')
 
     arbol.write(
-        'sitemap.xml',
+        BLOG / 'sitemap.xml',
         encoding='utf-8',
         xml_declaration=True
     )
