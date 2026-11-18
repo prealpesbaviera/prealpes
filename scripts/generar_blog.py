@@ -1419,6 +1419,8 @@ def crear_articulo(historia, idioma='es'):
 
 <title>{titulo} | 100 montañas en 365 días</title>
 
+<meta name="follow.it-verification-code" content="k8SzEx5mdNkp8feb9Ck4"/>
+
 <meta name="description"
 content="{seguro(f'Ruta de senderismo al {titulo}. Descubrí la experiencia de ascender esta montaña, con fotografías, información de la ruta y un relato personal del desafío de 100 montañas en 365 días.' if idioma == 'es' else f'Wanderung zum {titulo}: persönliche Erfahrungen, Fotos und Informationen zur Route. Teil der Herausforderung 100 Berge in 365 Tagen.' if idioma == 'de' else f'Hiking {titulo}: personal experiences, photos and trail information. Part of the 100 mountains in 365 days challenge.')}">
 
