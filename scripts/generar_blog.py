@@ -1395,13 +1395,10 @@ def crear_articulo(historia, idioma='es'):
         text-align: center;
         background: #e4ebdf;
     ">
-      <div style="font-size:30px;margin-bottom:12px;">⛰️</div>
 
-      <h2 style="margin-bottom:12px;">{titulo_seguir}</h2>
-
-            <p style="font-size:16px;line-height:1.6;margin-bottom:24px;">
-        {("Nuevas cumbres, fotografías e historias de los Alpes bávaros. Recibilas directamente en tu correo." if idioma == "es" else "Neue Gipfel, Fotos und Geschichten aus den Bayerischen Alpen. Direkt in dein Postfach." if idioma == "de" else "New summits, photos and stories from the Bavarian Alps. Straight to your inbox.")}
-      </p>
+      <h2 style="margin-bottom:25px;">
+        {("Sigue mis experiencias por las montañas." if idioma == "es" else "Folge meinen Bergerlebnissen." if idioma == "de" else "Follow my mountain adventures.")}
+      </h2>
 
       <form action="https://api.follow.it/subscription-form/YU43SExzOUpPTGd3cVFMYW90dkUvMVlLRkMrbVVOU2pwQkdJMmVsd1lHb01HU0oxMU9RY2NLeWlxUHZrREx2KzUxQ3JyMkJGVjZuYlRmL1BPbW1rUzhuZHo5WUFRL1BHQU9mQTJhUlhyVmZCaU9EOGJsVk4xK1preTB4akNtZ2V8bVFPenJ1Ui9yUDh4dnlZVEJkejdUa3pNcTkwUitLcTBuajRIcHhXZ0tkRT0=/8"
             method="post">
