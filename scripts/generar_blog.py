@@ -1917,7 +1917,9 @@ def main():
             if historia['traducciones'][idioma]['disponible']:
                 crear_articulo(historia, idioma)
                 total_traducciones[idioma] += 1
-
+    # GENERAR SITEMAP PARA GOOGLE
+    generar_sitemap(historias)
+    
     # ACTUALIZAR PORTADA, CONTADOR Y MAPA
 
     actualizar_portada(
