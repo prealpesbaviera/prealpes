@@ -1969,6 +1969,9 @@ def main():
                 total_traducciones[idioma] += 1
     # GENERAR SITEMAP PARA GOOGLE
     generar_sitemap(historias)
+
+    # GENERAR RSS PARA LOS SEGUIDORES
+    generar_rss(historias)
     
     # ACTUALIZAR PORTADA, CONTADOR Y MAPA
 
