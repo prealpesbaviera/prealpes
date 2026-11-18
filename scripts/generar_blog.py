@@ -1390,10 +1390,10 @@ def crear_articulo(historia, idioma='es'):
         max-width: 650px;
         margin: 45px auto;
         padding: 30px;
-        border: 1px solid #ddd;
-        border-radius: 12px;
+        border: none;
+        border-radius: 16px;
         text-align: center;
-        background: #f7f9f6;
+        background: #e4ebdf;
     ">
       <div style="font-size:30px;margin-bottom:12px;">⛰️</div>
 
