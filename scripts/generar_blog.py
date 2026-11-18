@@ -1406,16 +1406,24 @@ def crear_articulo(historia, idioma='es'):
                name="email"
                required
                placeholder="{correo_seguir}"
-                               style="padding:14px 24px;
+               style="box-sizing:border-box;
+                      width:65%;
+                      padding:14px;
+                      background:#ffffff;
+                      color:#222222;
+                      border:1px solid #777777;
+                      border-radius:7px;
+                      font-size:15px;">
+
+        <button type="submit"
+                style="padding:14px 28px;
                        background:#315c43;
-                       color:white;
+                       color:#ffffff;
                        border:none;
                        border-radius:7px;
                        font-size:15px;
                        font-weight:600;
                        cursor:pointer;">
-        <button type="submit"
-                style="padding:12px 24px;cursor:pointer;">
           {("Enviar" if idioma == "es" else "Senden" if idioma == "de" else "Send")}
         </button>
       </form>
