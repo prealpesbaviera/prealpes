@@ -1345,6 +1345,235 @@ def crear_selector_idiomas(historia, idioma_actual):
     )
 
 
+# Copiá aquí la Site Key PÚBLICA de Turnstile (nunca la Secret Key).
+TURNSTILE_SITE_KEY = '0x4AAAAAAGHEiH-CdG-pin6w'
+COMENTARIOS_API = 'https://blog-comentarios-api.ybarrerao.workers.dev/api/comentarios'
+
+ESTILOS_COMENTARIOS = '''
+.comentarios-blog { margin: 65px 0 25px; padding-top: 30px; border-top: 1px solid #dfe5da; font-family: Arial, sans-serif; line-height: 1.6; }
+.comentarios-blog h2 { color: #1f4033; font: normal 30px Georgia, serif; }
+.comentarios-blog form { max-width: 650px; display: grid; gap: 12px; padding: 22px; border-radius: 12px; background: #eeefe3; }
+.comentarios-blog input, .comentarios-blog textarea { width: 100%; padding: 12px; font: 15px Arial, sans-serif; border: 1px solid #9aaa9d; border-radius: 6px; background: white; }
+.comentarios-blog button { justify-self: start; background: #1f4033; color: white; border: 0; border-radius: 6px; padding: 11px 20px; cursor: pointer; }
+.comentarios-blog button:disabled { opacity: .5; cursor: wait; }
+.comentario-blog { border-bottom: 1px solid #dfe5da; padding: 18px 0; overflow-wrap: anywhere; }
+.comentario-blog p { white-space: pre-wrap; margin: 8px 0; }
+.comentario-blog small, .comentarios-blog .nota-privacidad { color: #596e60; font-size: 12px; }
+.comentario-blog.respuesta { margin-left: 24px; padding-left: 16px; border-left: 2px solid #b9cbb8; }
+.comentarios-blog .mensaje { min-height: 22px; }
+'''
+
+
+def crear_comentarios(historia, idioma='es'):
+    # Un mismo hilo de comentarios para las tres traducciones.
+    textos = {
+        'es': ('Comentarios', 'Todavía no hay comentarios. ¡Sé el primero!',
+               'Tu nombre', 'Tu correo electrónico (no será público)',
+               'Escribí tu comentario', 'Publicar comentario',
+               'El correo se utiliza únicamente para gestionar tu comentario.',
+               'Cargando comentarios...', 'Comentario publicado.',
+               'No se pudo completar la operación.', 'Responder', 'Cancelar respuesta',
+               'Respondiendo a', 'Verificación antispam pendiente.'),
+        'de': ('Kommentare', 'Noch keine Kommentare. Schreib den ersten!',
+               'Dein Name', 'Deine E-Mail-Adresse (nicht öffentlich)',
+               'Schreib deinen Kommentar', 'Kommentar veröffentlichen',
+               'Deine E-Mail-Adresse wird nur zur Verwaltung deines Kommentars verwendet.',
+               'Kommentare werden geladen...', 'Kommentar veröffentlicht.',
+               'Vorgang fehlgeschlagen.', 'Antworten', 'Antwort abbrechen',
+               'Antwort an', 'Spam-Schutz noch nicht eingerichtet.'),
+        'en': ('Comments', 'No comments yet. Be the first!',
+               'Your name', 'Your email (not public)',
+               'Write your comment', 'Post comment',
+               'Your email is used only to manage your comment.',
+               'Loading comments...', 'Comment posted.',
+               'Something went wrong.', 'Reply', 'Cancel reply',
+               'Replying to', 'Spam protection not configured yet.')
+    }
+    t = textos[idioma]
+    historia_id = json.dumps(historia['slug'])
+    api = json.dumps(COMENTARIOS_API)
+    site_key = json.dumps(TURNSTILE_SITE_KEY)
+    mensajes = json.dumps(t, ensure_ascii=False).replace('<', '\\u003c')
+    idioma_js = json.dumps(idioma)
+    # Este bloque se inserta en cada artículo; los datos se muestran como texto,
+    # nunca como HTML, para impedir inyección de código en los comentarios.
+    plantilla = r'''
+<section class="comentarios-blog" id="comentarios" aria-label="__TITLE__">
+  <h2>__TITLE__</h2>
+  <div id="lista-comentarios" aria-live="polite">__LOADING__</div>
+  <form id="form-comentario">
+    <div id="respuesta-actual" hidden></div>
+    <input name="nombre" autocomplete="name" maxlength="80" minlength="2" required placeholder="__NAME__" aria-label="__NAME__">
+    <input name="correo" type="email" autocomplete="email" maxlength="254" required placeholder="__EMAIL__" aria-label="__EMAIL__">
+    <textarea name="contenido" rows="5" minlength="3" maxlength="2000" required placeholder="__CONTENT__" aria-label="__CONTENT__"></textarea>
+    <div id="turnstile-comentarios"></div>
+    <small class="nota-privacidad">__PRIVACY__</small>
+    <button id="enviar-comentario" type="submit">__SEND__</button>
+    <p class="mensaje" id="estado-comentario" role="status" aria-live="polite"></p>
+  </form>
+</section>
+<script>
+(() => {
+  const API = __API__;
+  const HISTORIA = __HISTORIA__;
+  const IDIOMA = __IDIOMA__;
+  const SITE_KEY = __SITE_KEY__;
+  const T = __TEXTOS__;
+  const lista = document.getElementById('lista-comentarios');
+  const form = document.getElementById('form-comentario');
+  const estado = document.getElementById('estado-comentario');
+  const boton = document.getElementById('enviar-comentario');
+  const aviso = document.getElementById('respuesta-actual');
+  let padre = null;
+  let widgetId = null;
+
+  function elemento(tag, texto, clase) {
+    const nodo = document.createElement(tag);
+    if (texto !== undefined) nodo.textContent = texto;
+    if (clase) nodo.className = clase;
+    return nodo;
+  }
+
+  function responder(id, nombre) {
+    padre = id;
+    aviso.hidden = false;
+    aviso.replaceChildren(elemento('span', T[12] + ' ' + nombre + ' '));
+    const cancelar = elemento('button', T[11]);
+    cancelar.type = 'button';
+    cancelar.addEventListener('click', () => {
+      padre = null;
+      aviso.hidden = true;
+    });
+    aviso.append(cancelar);
+    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    form.elements.contenido.focus();
+  }
+
+  function dibujar(comentarios) {
+    lista.replaceChildren();
+    if (!comentarios.length) {
+      lista.append(elemento('p', T[1]));
+      return;
+    }
+    const porPadre = new Map();
+    const ids = new Set(comentarios.map(c => c.id));
+    comentarios.forEach(c => {
+      const clave = c.comentario_padre_id && ids.has(c.comentario_padre_id)
+        ? c.comentario_padre_id : 0;
+      if (!porPadre.has(clave)) porPadre.set(clave, []);
+      porPadre.get(clave).push(c);
+    });
+    const vistos = new Set();
+    function pintar(idPadre, contenedor, nivel) {
+      (porPadre.get(idPadre) || []).forEach(c => {
+        if (vistos.has(c.id)) return;
+        vistos.add(c.id);
+        const item = elemento('article', undefined,
+          'comentario-blog' + (nivel ? ' respuesta' : ''));
+        item.append(elemento('strong', c.nombre));
+        item.append(elemento('p', c.contenido));
+        item.append(elemento('small', c.fecha_creacion || ''));
+        const accion = elemento('button', T[10]);
+        accion.type = 'button';
+        accion.addEventListener('click', () => responder(c.id, c.nombre));
+        item.append(document.createTextNode(' '), accion);
+        contenedor.append(item);
+        pintar(c.id, contenedor, nivel + 1);
+      });
+    }
+    pintar(0, lista, 0);
+  }
+
+  async function cargar() {
+    try {
+      const respuesta = await fetch(API + '?historia=' + encodeURIComponent(HISTORIA));
+      if (!respuesta.ok) throw new Error('HTTP ' + respuesta.status);
+      const datos = await respuesta.json();
+      dibujar(datos.comentarios || []);
+    } catch (e) {
+      lista.textContent = T[9];
+    }
+  }
+
+  function activarTurnstile() {
+    if (!SITE_KEY || SITE_KEY === 'PEGAR_AQUI_SITE_KEY_PUBLICA') {
+      boton.disabled = true;
+      estado.textContent = T[13];
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    script.async = true;
+    script.onload = () => {
+      widgetId = window.turnstile.render('#turnstile-comentarios', {
+        sitekey: SITE_KEY,
+        theme: 'auto'
+      });
+    };
+    script.onerror = () => {
+      boton.disabled = true;
+      estado.textContent = T[9];
+    };
+    document.head.append(script);
+  }
+
+  form.addEventListener('submit', async evento => {
+    evento.preventDefault();
+    if (widgetId === null || !window.turnstile) return;
+    const token = window.turnstile.getResponse(widgetId);
+    if (!token) {
+      estado.textContent = T[13];
+      return;
+    }
+    boton.disabled = true;
+    estado.textContent = '';
+    try {
+      const respuesta = await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          historia: HISTORIA,
+          idioma: IDIOMA,
+          nombre: form.elements.nombre.value.trim(),
+          correo: form.elements.correo.value.trim(),
+          contenido: form.elements.contenido.value.trim(),
+          comentario_padre_id: padre,
+          turnstileToken: token
+        })
+      });
+      const datos = await respuesta.json();
+      if (!respuesta.ok) throw new Error(datos.error || T[9]);
+      form.elements.contenido.value = '';
+      padre = null;
+      aviso.hidden = true;
+      estado.textContent = T[8];
+      await cargar();
+    } catch (e) {
+      estado.textContent = e.message || T[9];
+    } finally {
+      window.turnstile.reset(widgetId);
+      boton.disabled = false;
+    }
+  });
+
+  cargar();
+  activarTurnstile();
+})();
+</script>
+'''
+    reemplazos = {
+        '__TITLE__': seguro(t[0]), '__LOADING__': seguro(t[7]),
+        '__NAME__': seguro(t[2]), '__EMAIL__': seguro(t[3]),
+        '__CONTENT__': seguro(t[4]), '__PRIVACY__': seguro(t[6]),
+        '__SEND__': seguro(t[5]), '__API__': api,
+        '__HISTORIA__': historia_id, '__IDIOMA__': idioma_js,
+        '__SITE_KEY__': site_key, '__TEXTOS__': mensajes
+    }
+    for clave, valor in reemplazos.items():
+        plantilla = plantilla.replace(clave, valor)
+    return plantilla
+
+
 def crear_articulo(historia, idioma='es'):
     """Genera una versión de la historia en el idioma indicado."""
 
@@ -1364,73 +1593,7 @@ def crear_articulo(historia, idioma='es'):
     invitacion = crear_invitacion(idioma)
     selector = crear_selector_idiomas(historia, idioma)
 
-    # Formulario de seguidores por correo electrónico
-    textos_seguir = {
-        'es': (
-            'Seguí mis aventuras por las montañas',
-            'Tu correo electrónico',
-            'Quiero seguir tus aventuras'
-        ),
-        'de': (
-            'Begleite mich auf meinen Bergabenteuern',
-            'Deine E-Mail-Adresse',
-            'Abonnieren'
-        ),
-        'en': (
-            'Follow my mountain adventures',
-            'Your email address',
-            'Subscribe'
-        )
-    }
-
-    titulo_seguir, correo_seguir, boton_seguir = textos_seguir[idioma]
-
-    formulario_seguir = f'''
-    <section class="seguir-aventuras" style="
-        max-width: 650px;
-        margin: 45px auto;
-        padding: 18px 30px;
-        border: none;
-        border-radius: 16px;
-        text-align: center;
-        background: #e4ebdf;
-    ">
-
-      <h2 style="margin-top:0;margin-bottom:18px;">
-        {("Sigue mis experiencias por las montañas." if idioma == "es" else "Folge meinen Bergerlebnissen." if idioma == "de" else "Follow my mountain adventures.")}
-      </h2>
-
-      <form action="https://api.follow.it/subscription-form/YU43SExzOUpPTGd3cVFMYW90dkUvMVlLRkMrbVVOU2pwQkdJMmVsd1lHb01HU0oxMU9RY2NLeWlxUHZrREx2KzUxQ3JyMkJGVjZuYlRmL1BPbW1rUzhuZHo5WUFRL1BHQU9mQTJhUlhyVmZCaU9EOGJsVk4xK1preTB4akNtZ2V8bVFPenJ1Ui9yUDh4dnlZVEJkejdUa3pNcTkwUitLcTBuajRIcHhXZ0tkRT0=/8"
-            method="post"
-            target="_blank">
-        <input type="email"
-               name="email"
-               required
-               placeholder="{correo_seguir}"
-               style="box-sizing:border-box;
-                      width:65%;
-                      padding:14px;
-                      background:#ffffff;
-                      color:#222222;
-                      border:1px solid #777777;
-                      border-radius:7px;
-                      font-size:15px;">
-
-        <button type="submit"
-                style="padding:14px 28px;
-                       background:#315c43;
-                       color:#ffffff;
-                       border:none;
-                       border-radius:7px;
-                       font-size:15px;
-                       font-weight:600;
-                       cursor:pointer;">
-          {("Enviar" if idioma == "es" else "Senden" if idioma == "de" else "Send")}
-        </button>
-      </form>
-
-    </section>
-    '''
+    comentarios = crear_comentarios(historia, idioma)
 
     portada = ''
 
@@ -1494,7 +1657,8 @@ content="{seguro(f'Ruta de senderismo al {titulo}. Descubrí la experiencia de a
 
 {enlaces_alternativos}
 
-<style>{ESTILOS}</style>
+<style>{ESTILOS}
+{ESTILOS_COMENTARIOS}</style>
 </head>
 
 <body>
@@ -1540,7 +1704,7 @@ content="{seguro(f'Ruta de senderismo al {titulo}. Descubrí la experiencia de a
 
   {invitacion}
 
-  {formulario_seguir}
+  {comentarios}
 
   <div class="volver">
   
