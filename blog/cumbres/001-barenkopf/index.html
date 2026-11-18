@@ -800,7 +800,7 @@ Es una montaña para ir muchas veces. El Achensee es simplemente espectacular de
       form.elements.contenido.value = '';
       padre = null;
       aviso.hidden = true;
-      estado.textContent = T[8];
+      estado.textContent = datos.pendiente ? T[14] : T[8];
       await cargar();
     } catch (e) {
       estado.textContent = e.message || T[9];
