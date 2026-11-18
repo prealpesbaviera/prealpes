@@ -1408,9 +1408,7 @@ def crear_articulo(historia, idioma='es'):
           {boton_seguir}
         </button>
       </form>
-      <p style="font-size:12px;margin-top:12px;">
-        Powered by follow.it
-      </p>
+
     </section>
     '''
 
