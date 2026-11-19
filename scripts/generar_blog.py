@@ -1349,20 +1349,157 @@ def crear_selector_idiomas(historia, idioma_actual):
 TURNSTILE_SITE_KEY = '0x4AAAAAAGHEiH-CdG-pin6w'
 COMENTARIOS_API = 'https://blog-comentarios-api.ybarrerao.workers.dev/api/comentarios'
 
-ESTILOS_COMENTARIOS = '''
-.comentarios-blog { margin: 65px 0 25px; padding-top: 30px; border-top: 1px solid #dfe5da; font-family: Arial, sans-serif; line-height: 1.6; }
-.comentarios-blog h2 { color: #1f4033; font: normal 30px Georgia, serif; }
-.comentarios-blog form { max-width: 650px; display: grid; gap: 12px; padding: 22px; border-radius: 12px; background: #eeefe3; }
-.comentarios-blog input, .comentarios-blog textarea { width: 100%; padding: 12px; font: 15px Arial, sans-serif; border: 1px solid #9aaa9d; border-radius: 6px; background: white; }
-.comentarios-blog button { justify-self: start; background: #708B76; color: white; border: 0; border-radius: 6px; padding: 11px 20px; cursor: pointer; }
-.comentarios-blog button:disabled { opacity: .5; cursor: wait; }
-.comentario-blog { border-bottom: 1px solid #dfe5da; padding: 18px 0; overflow-wrap: anywhere; }
-.comentario-blog p { white-space: pre-wrap; margin: 8px 0; }
-.comentario-blog small, .comentarios-blog .nota-privacidad { color: #596e60; font-size: 12px; }
-.comentario-blog.respuesta { margin-left: 24px; padding-left: 16px; border-left: 2px solid #b9cbb8; }
-.comentarios-blog .mensaje { min-height: 22px; }
-'''
 
+ESTILOS_COMENTARIOS = '''
+.comentarios-blog {
+  margin: 65px 0 25px;
+  padding-top: 30px;
+  border-top: 1px solid #dfe5da;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.comentarios-blog h2 {
+  color: #1f4033;
+  font: normal 30px Georgia, serif;
+}
+
+/* FORMULARIO MÁS COMPACTO */
+
+.comentarios-blog form {
+  max-width: 650px;
+  display: grid;
+  gap: 10px;
+  padding: 18px 22px 12px;
+  border-radius: 12px;
+  background: #eeefe3;
+  align-content: start;
+}
+
+.comentarios-blog input,
+.comentarios-blog textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  font: 15px Arial, sans-serif;
+  border: 1px solid #9aaa9d;
+  border-radius: 6px;
+  background: white;
+}
+
+.comentarios-blog button {
+  justify-self: start;
+  background: #708B76;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 20px;
+  cursor: pointer;
+}
+
+.comentarios-blog button:disabled {
+  opacity: .5;
+  cursor: wait;
+}
+
+/* COMENTARIOS */
+
+.comentario-blog {
+  border-bottom: 1px solid #dfe5da;
+  padding: 18px 0;
+  overflow-wrap: anywhere;
+}
+
+.comentario-blog p {
+  white-space: pre-wrap;
+  margin: 8px 0 12px;
+}
+
+.comentario-blog small,
+.comentarios-blog .nota-privacidad {
+  color: #596e60;
+  font-size: 12px;
+}
+
+.comentario-blog.respuesta {
+  margin-left: 24px;
+  padding-left: 16px;
+  border-left: 2px solid #b9cbb8;
+}
+
+/* FECHA Y ACCIONES EN UNA MISMA FILA */
+
+.comentario-acciones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 8px;
+}
+
+.comentario-acciones small {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* RESPONDER: BOTÓN PRINCIPAL */
+
+.comentarios-blog .comentario-responder {
+  padding: 6px 12px;
+  font-size: 12px;
+  background: #708B76;
+  border-radius: 5px;
+}
+
+/* VER ORIGINAL: ENLACE DISCRETO */
+
+.comentarios-blog .comentario-idioma {
+  margin-left: auto;
+  padding: 4px 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: #426b56;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.comentarios-blog .comentario-idioma:hover {
+  color: #1f4033;
+}
+
+.comentarios-blog .comentario-idioma:focus-visible {
+  outline: 2px solid #426b56;
+  outline-offset: 4px;
+}
+
+/* MENSAJES DEL FORMULARIO */
+
+.comentarios-blog .mensaje {
+  min-height: 0;
+  margin: 0;
+}
+
+.comentarios-blog .mensaje:empty {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .comentario-acciones {
+    gap: 8px;
+  }
+
+  .comentarios-blog .comentario-idioma {
+    margin-left: 0;
+  }
+
+  .comentarios-blog form {
+    padding: 16px 16px 12px;
+  }
+}
+'''
 
 def crear_comentarios(historia, idioma='es'):
     # Un mismo hilo de comentarios para las tres traducciones.
