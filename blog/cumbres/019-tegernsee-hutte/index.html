@@ -919,7 +919,7 @@ if (hayTraduccion) {
 
   const botonIdioma = elemento(
     'button',
-    '🌐 ' + etiquetas[0]
+    etiquetas[0]
   );
 
   botonIdioma.type = 'button';
@@ -934,8 +934,8 @@ if (hayTraduccion) {
       ? c.contenido
       : c.contenido_traducido;
 
-    botonIdioma.textContent =
-      '🌐 ' + (
+botonIdioma.textContent =
+  (
         mostrandoOriginal
           ? etiquetas[1]
           : etiquetas[0]
