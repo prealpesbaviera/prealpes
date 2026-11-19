@@ -754,8 +754,55 @@ footer {
         vistos.add(c.id);
         const item = elemento('article', undefined,
           'comentario-blog' + (nivel ? ' respuesta' : ''));
-        item.append(elemento('strong', c.nombre));
-        item.append(elemento('p', c.contenido));
+
+item.append(elemento('strong', c.nombre));
+
+const hayTraduccion =
+  Boolean(c.contenido_traducido) &&
+  c.idioma !== IDIOMA;
+
+const textoComentario = elemento(
+  'p',
+  hayTraduccion ? c.contenido_traducido : c.contenido
+);
+
+item.append(textoComentario);
+
+if (hayTraduccion) {
+  const botonIdioma = elemento(
+    'button',
+    IDIOMA === 'de' ? 'Original anzeigen' :
+    IDIOMA === 'en' ? 'View original' :
+    'Ver original'
+  );
+
+  botonIdioma.type = 'button';
+
+  let mostrandoOriginal = false;
+
+  botonIdioma.addEventListener('click', () => {
+    mostrandoOriginal = !mostrandoOriginal;
+
+    textoComentario.textContent = mostrandoOriginal
+      ? c.contenido
+      : c.contenido_traducido;
+
+    botonIdioma.textContent = mostrandoOriginal
+      ? (
+          IDIOMA === 'de' ? 'Übersetzung anzeigen' :
+          IDIOMA === 'en' ? 'View translation' :
+          'Ver traducción'
+        )
+      : (
+          IDIOMA === 'de' ? 'Original anzeigen' :
+          IDIOMA === 'en' ? 'View original' :
+          'Ver original'
+        );
+  });
+
+  item.append(botonIdioma);
+}
+
         item.append(elemento('small', c.fecha_creacion || ''));
         const accion = elemento('button', T[10]);
         accion.type = 'button';
