@@ -1454,7 +1454,7 @@ ESTILOS_COMENTARIOS = '''
 /* VER ORIGINAL: ENLACE DISCRETO */
 
 .comentarios-blog .comentario-idioma {
-  margin-left: auto;
+  margin-left: 4px;
   padding: 4px 0;
   background: transparent;
   border: none;
