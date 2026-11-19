@@ -867,6 +867,7 @@ footer {
         const item = elemento('article', undefined,
           'comentario-blog' + (nivel ? ' respuesta' : ''));
 
+
 item.append(elemento('strong', c.nombre));
 
 const hayTraduccion =
@@ -875,20 +876,54 @@ const hayTraduccion =
 
 const textoComentario = elemento(
   'p',
-  hayTraduccion ? c.contenido_traducido : c.contenido
+  hayTraduccion
+    ? c.contenido_traducido
+    : c.contenido
 );
 
 item.append(textoComentario);
 
+// Fila para fecha y acciones
+const acciones = elemento(
+  'div',
+  undefined,
+  'comentario-acciones'
+);
+
+// Fecha de publicación
+acciones.append(
+  elemento('small', c.fecha_creacion || '')
+);
+
+// Botón responder
+const accion = elemento('button', T[10]);
+accion.type = 'button';
+accion.className = 'comentario-responder';
+
+accion.addEventListener(
+  'click',
+  () => responder(c.id, c.nombre)
+);
+
+acciones.append(accion);
+
+// Alternar traducción y texto original
 if (hayTraduccion) {
+  const textosIdioma = {
+    es: ['Ver original', 'Ver traducción'],
+    de: ['Original anzeigen', 'Übersetzung anzeigen'],
+    en: ['View original', 'View translation']
+  };
+
+  const etiquetas = textosIdioma[IDIOMA] || textosIdioma.es;
+
   const botonIdioma = elemento(
     'button',
-    IDIOMA === 'de' ? 'Original anzeigen' :
-    IDIOMA === 'en' ? 'View original' :
-    'Ver original'
+    '🌐 ' + etiquetas[0]
   );
 
   botonIdioma.type = 'button';
+  botonIdioma.className = 'comentario-idioma';
 
   let mostrandoOriginal = false;
 
@@ -899,28 +934,19 @@ if (hayTraduccion) {
       ? c.contenido
       : c.contenido_traducido;
 
-    botonIdioma.textContent = mostrandoOriginal
-      ? (
-          IDIOMA === 'de' ? 'Übersetzung anzeigen' :
-          IDIOMA === 'en' ? 'View translation' :
-          'Ver traducción'
-        )
-      : (
-          IDIOMA === 'de' ? 'Original anzeigen' :
-          IDIOMA === 'en' ? 'View original' :
-          'Ver original'
-        );
+    botonIdioma.textContent =
+      '🌐 ' + (
+        mostrandoOriginal
+          ? etiquetas[1]
+          : etiquetas[0]
+      );
   });
 
-  item.append(botonIdioma);
+  acciones.append(botonIdioma);
 }
 
-        item.append(elemento('small', c.fecha_creacion || ''));
-        const accion = elemento('button', T[10]);
-        accion.type = 'button';
-        accion.addEventListener('click', () => responder(c.id, c.nombre));
-        item.append(document.createTextNode(' '), accion);
-        contenedor.append(item);
+item.append(acciones);
+contenedor.append(item);
         pintar(c.id, contenedor, nivel + 1);
       });
     }
