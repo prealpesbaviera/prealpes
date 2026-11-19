@@ -743,16 +743,25 @@ footer {
     pintar(0, lista, 0);
   }
 
-  async function cargar() {
-    try {
-      const respuesta = await fetch(API + '?historia=' + encodeURIComponent(HISTORIA));
-      if (!respuesta.ok) throw new Error('HTTP ' + respuesta.status);
-      const datos = await respuesta.json();
-      dibujar(datos.comentarios || []);
-    } catch (e) {
-      lista.textContent = T[9];
+async function cargar() {
+  try {
+    const respuesta = await fetch(
+      API +
+      '?historia=' + encodeURIComponent(HISTORIA) +
+      '&idioma=' + encodeURIComponent(IDIOMA)
+    );
+
+    if (!respuesta.ok) {
+      throw new Error('HTTP ' + respuesta.status);
     }
+
+    const datos = await respuesta.json();
+    dibujar(datos.comentarios || []);
+
+  } catch (e) {
+    lista.textContent = T[9];
   }
+}
 
   function activarTurnstile() {
     if (!SITE_KEY || SITE_KEY === 'PEGAR_AQUI_SITE_KEY_PUBLICA') {
