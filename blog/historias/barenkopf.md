@@ -42,7 +42,7 @@ Cuando un oso se acerca demasiado a la población humana, se debe quitar porque 
 
 [[derecha:1]]
 
-El tío Gerhard siempre busca atajos particulares, bajo la lógica que la distancia más corta entre dos puntos A y B siempre es una línea recta, y entonces subimos por la pista de esquí. El matemático que dijo eso, Euclides, parece que siempre estuvo sentado en un escritorio y nunca subió una montaña. Como toda pista de esquí estaba super empinada por supuesto, casi perdemos el cuerpo, el alma y todo allí en menos de 15 minutos. Con un desnivel positivo por hacer de más de mil metros, yo sentía que ya había gastado la mitad de la batería y apenas estábamos empezando. Afortunadamente Eva protestó y buscamos el sendero normal.   
+El tío Gerhard siempre busca atajos particulares, bajo la lógica que la distancia más corta entre dos puntos A y B siempre es una línea recta, y entonces subimos por la pista de esquí. El matemático que dijo eso, Euclides, parece que siempre estuvo sentado en un escritorio y nunca subió una berraca montaña en su vida. Como toda pista de esquí estaba super empinada por supuesto, casi perdemos el cuerpo, el alma y todo allí en menos de 15 minutos. Con un desnivel positivo por hacer de más de mil metros, yo sentía que ya había gastado la mitad de la batería y apenas estábamos empezando. Afortunadamente Eva protestó y buscamos el sendero normal.   
 
 
 [[grande:4]]
