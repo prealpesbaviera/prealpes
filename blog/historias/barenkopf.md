@@ -32,7 +32,9 @@ Antes de salir decidimos con el tío de Eva, Gerhard, ir a Austria porque el dí
 
 [[izquierda:2]]
 
-## Camino por los Karwandel es espectacular.
+
+
+## ¿Quién es el oso Bruno?
 
 Capitulo:El tío siempre busca caminos particulares y subimos por la pista de esquí. Sueper empinada por supuesto, casi perdemos el alma allí
 El tramo principal es por el Alm y luego se da una ronda como se quiera dar. Hicimos por atrás y luego ascendimos hasta lo más altpo para bajar a toda velocidad al Alm.
