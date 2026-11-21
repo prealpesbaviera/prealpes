@@ -42,12 +42,12 @@ Esta historia empieza en el museo del hombre y la naturaleza en Múnich, donde e
 
 Cuando un oso se acerca demasiado a la población humana, se debe quitar porque en algún momento puede matar a cualquiera. Se decide atraparlo y trasladarlo al extranjero a un refugio especial, dado que abatirlo sonaba muy fuerte para la fama del país ante el mundo. Se intentó de todo un poco y nada funcionó. Se trajeron expertos cazadores finlandeses, pero la gente local decía que en vez de cazar se la pasaron probando todas las diferentes especies de cerveza bávaras. Cansado de tanto vaivén, y lo peligroso que podía ser para un turista del mundial, el ministro de medio de ambiente de Baviera finalmente autorizó que se podía abatir y pocas horas después cazadoras locales acabaron con su vida. Dado el estallido polémico de esta decisión y su rápida ejecución, hasta el día de hoy el nombre de los cazadores permanece en el anonimato porque mucha gente les quería hacer lo mismo. En fin, su memoria sigue viva, y fue muy placentero para mí caminar por donde fue alguna vez su hábitat.   
 
-
+[[grande:4]]
 
 Capitulo:El tío siempre busca caminos particulares y subimos por la pista de esquí. Sueper empinada por supuesto, casi perdemos el alma allí
 El tramo principal es por el Alm y luego se da una ronda como se quiera dar. Hicimos por atrás y luego ascendimos hasta lo más altpo para bajar a toda velocidad al Alm.
 
-[[grande:4]]
+
 
 Cita:Estar en la montaña del oso Bruno, con esa vista espectacular quedas sin palabras.  
 Es una montaña para ir muchas veces. El Achensee es simplemente espectacular desde arriba.
