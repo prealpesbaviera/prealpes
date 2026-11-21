@@ -1,5 +1,5 @@
 ---
-title: "Bärenkopf. "
+title: Bärenkopf
 numero: 1
 fecha: 2026-09-06
 realizada: true
