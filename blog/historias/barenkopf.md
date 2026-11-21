@@ -42,7 +42,7 @@ Cuando un oso se acerca demasiado a la población humana, se debe quitar porque 
 
 [[derecha:1]]
 
-Capitulo:El tío siempre busca caminos particulares y subimos por la pista de esquí. Sueper empinada por supuesto, casi perdemos el alma allí
+El tío siempre busca caminos particulares y subimos por la pista de esquí. Sueper empinada por supuesto, casi perdemos el alma allí  
 El tramo principal es por el Alm y luego se da una ronda como se quiera dar. Hicimos por atrás y luego ascendimos hasta lo más altpo para bajar a toda velocidad al Alm.
 
 [[grande:4]]
