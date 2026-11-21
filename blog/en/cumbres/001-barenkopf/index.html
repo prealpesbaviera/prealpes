@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Bärenkopf | 100 montañas en 365 días</title>
+
+<meta name="follow.it-verification-code" content="k8SzEx5mdNkp8feb9Ck4"/>
+
+<meta name="description"
+content="Hiking Bärenkopf: personal experiences, photos and trail information. Part of the 100 mountains in 365 days challenge.">
+
+<link rel="alternate" hreflang="es" href="/blog/cumbres/001-barenkopf/">
+<link rel="alternate" hreflang="de" href="/blog/de/cumbres/001-barenkopf/">
+<link rel="alternate" hreflang="en" href="/blog/en/cumbres/001-barenkopf/">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #faf8f2;
+  color: #25382e;
+  font-family: Georgia, serif;
+  line-height: 1.8;
+}
+
+.contenedor {
+  width: min(980px, 92%);
+  margin: auto;
+}
+
+header {
+  background: #faf8f2;
+  border-bottom: 1px solid #e6e8de;
+}
+
+.cabecera {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1f4033;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.marca img {
+  width: 90px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.marca small {
+  display: block;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+  color: #627269;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.navegacion a {
+  color: #67776c;
+  font: 13px Arial, sans-serif;
+  text-decoration: none;
+}
+
+.navegacion a:hover,
+.marca:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 65px 0 90px;
+}
+
+.numero {
+  font: 12px Arial, sans-serif;
+  color: #71816f;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 62px);
+  line-height: 1.12;
+  font-weight: normal;
+  color: #1f4033;
+  margin: 22px 0;
+}
+
+.fecha {
+  font: 14px Arial, sans-serif;
+  color: #728473;
+  margin-bottom: 32px;
+}
+
+/* FOTOGRAFÍA Y FICHA TÉCNICA */
+
+.presentacion {
+  display: grid;
+  grid-template-columns: minmax(0, 60fr) minmax(0, 40fr);
+  gap: 22px;
+  align-items: stretch;
+  margin: 0 0 25px;
+}
+
+.presentacion.solo-ficha {
+  grid-template-columns: 1fr;
+}
+
+.presentacion.solo-foto {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.portada-enlace {
+  display: block;
+  height: 100%;
+  min-height: 280px;
+  max-height: 390px;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: zoom-in;
+}
+
+.portada {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ficha {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  background: #eeefe3;
+  border: 1px solid #d7dfd0;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.ficha-titulo {
+  background: #1f4033;
+  color: white;
+  font-size: 18px;
+  line-height: 1.3;
+  padding: 17px 20px;
+}
+
+.ficha-datos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px 16px;
+  padding: 20px;
+  align-content: center;
+}
+
+.dato {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.dato span {
+  color: #687967;
+  font: 12px Arial, sans-serif;
+  margin-bottom: 5px;
+}
+
+.dato strong {
+  color: #1f4033;
+  font-size: 16px;
+}
+
+/* RELATO */
+
+.relato {
+  font-size: 19px;
+  line-height: 1.85;
+  overflow-wrap: break-word;
+  display: flow-root;
+}
+
+.relato p {
+  margin: 0 0 1.55em;
+}
+
+.relato h2,
+.relato h3,
+.galeria-final h2 {
+  color: #1f4033;
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+.relato h2 {
+  font-size: 31px;
+  margin-top: 1.2em;
+}
+
+.relato h3 {
+  font-size: 24px;
+  margin-top: 1.7em;
+}
+
+.relato blockquote {
+  margin: 35px 0;
+  padding: 18px 30px;
+  border-left: 4px solid #718a69;
+  background: #eeefe3;
+  font-style: italic;
+}
+
+.relato img {
+  max-width: 100%;
+}
+
+/* FOTOGRAFÍAS DENTRO DEL RELATO */
+
+.foto-relato {
+  margin: 32px auto;
+}
+
+.foto-relato img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.ampliar {
+  display: block;
+  cursor: zoom-in;
+}
+
+.foto-mediana {
+  width: min(76%, 650px);
+}
+
+.foto-grande {
+  width: 100%;
+  clear: both;
+}
+
+.foto-izquierda {
+  float: left;
+  width: 39%;
+  margin: 8px 27px 20px 0;
+}
+
+.foto-derecha {
+  float: right;
+  width: 39%;
+  margin: 8px 0 20px 27px;
+}
+
+.grupo-fotos {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 38px 0;
+}
+
+.grupo-fotos .foto-relato {
+  width: 100%;
+  margin: 0;
+}
+
+.grupo-fotos .foto-relato img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.galeria-final {
+  margin-top: 60px;
+}
+
+/* INVITACIÓN A EXCURSIONES */
+
+.invitacion {
+  margin-top: 80px;
+  padding-top: 38px;
+  border-top: 1px solid #dfe5da;
+}
+
+.invitacion h2 {
+  font-size: 30px;
+  font-weight: normal;
+  color: #1f4033;
+  line-height: 1.3;
+}
+
+.boton {
+  display: inline-block;
+  background: #1f4033;
+  color: white;
+  text-decoration: none;
+  padding: 13px 24px;
+  border-radius: 5px;
+  margin-top: 12px;
+}
+
+.volver {
+  margin-top: 65px;
+  font-size: 15px;
+}
+
+.volver a {
+  color: #1f4033;
+  text-decoration: none;
+}
+
+footer {
+  background: #1f4033;
+  color: white;
+  padding: 30px 0;
+  font: 13px Arial, sans-serif;
+}
+
+/* VISOR DE FOTOGRAFÍAS */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(8, 16, 12, .94);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 52px 18px 20px;
+}
+
+.lightbox.abierto {
+  display: flex;
+}
+
+.lightbox img {
+  display: block;
+  max-width: 96vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.lightbox-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  color: white;
+  background: transparent;
+  border: 0;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* ELEMENTOS EDITORIALES */
+
+.relato .entradilla-editorial {
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.55;
+  color: #1f4033;
+  padding: 16px 0 18px;
+  border-bottom: 1px solid #b8c6b7;
+  margin: 0 0 36px;
+}
+
+.relato .cita-editorial {
+  clear: both;
+  margin: 46px auto;
+  max-width: 760px;
+  padding: 28px 35px;
+  background: #eeefe3;
+  border-left: 5px solid #b9a47b;
+  color: #1f4033;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.relato .destacado-editorial {
+  clear: both;
+  margin: 42px 0;
+  padding: 28px 34px;
+  border-radius: 12px;
+  background: #1f4033;
+  color: white;
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+.relato .nota-editorial {
+  clear: both;
+  margin: 30px 0;
+  padding: 18px 24px;
+  border: 1px solid #cdd8c8;
+  border-radius: 8px;
+  background: #f1f3eb;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.relato .epigrafe-editorial {
+  clear: both;
+  margin: 20px 0 45px;
+  color: #7a866f;
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.relato .capitulo-editorial {
+  clear: both;
+  margin: 62px 0 25px;
+  padding-top: 20px;
+  border-top: 1px solid #b9a47b;
+  font-size: clamp(29px, 4vw, 40px);
+  font-weight: normal;
+}
+
+.relato .centrado-editorial {
+  clear: both;
+  max-width: 700px;
+  margin: 45px auto;
+  text-align: center;
+  font-size: 23px;
+  font-style: italic;
+}
+
+.relato .separador-editorial {
+  clear: both;
+  border: 0;
+  width: 90px;
+  height: 2px;
+  background: #b9a47b;
+  margin: 52px auto;
+}
+
+/* SELECTOR DE IDIOMAS */
+
+.selector-idiomas {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  margin: 24px 0 34px;
+  font-family: Arial, sans-serif;
+}
+
+.selector-idiomas a,
+.selector-idiomas span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 34px;
+  padding: 5px 9px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.selector-idiomas a {
+  color: #627269;
+  border: 1px solid #d7dfd0;
+  background: transparent;
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+.selector-idiomas a:hover {
+  background: #eeefe3;
+  color: #1f4033;
+}
+
+.selector-idiomas .idioma-activo {
+  background: #1f4033;
+  border: 1px solid #1f4033;
+  color: white;
+}
+
+.selector-idiomas .idioma-no-disponible {
+  color: #a8afa5;
+  border: 1px solid #e6e8de;
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.selector-idiomas a:focus-visible {
+  outline: 2px solid #b9a47b;
+  outline-offset: 3px;
+}
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 680px) {
+  main {
+    padding-top: 40px;
+  }
+
+  .cabecera {
+    padding: 16px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .presentacion {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .portada-enlace {
+    height: 290px;
+    min-height: 0;
+  }
+
+  .ficha-datos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .relato {
+    font-size: 17px;
+  }
+
+  .foto-mediana,
+  .foto-izquierda,
+  .foto-derecha {
+    float: none;
+    width: 100%;
+    margin: 28px 0;
+  }
+
+  .grupo-fotos {
+    gap: 8px;
+  }
+
+  .selector-idiomas {
+    justify-content: flex-start;
+    margin: 18px 0 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+
+
+.comentarios-blog {
+  margin: 65px 0 25px;
+  padding-top: 30px;
+  border-top: 1px solid #dfe5da;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.comentarios-blog h2 {
+  color: #1f4033;
+  font: normal 30px Georgia, serif;
+}
+
+/* FORMULARIO MÁS COMPACTO */
+
+.comentarios-blog form {
+  max-width: 650px;
+  display: grid;
+  gap: 10px;
+  padding: 18px 22px 12px;
+  border-radius: 12px;
+  background: #eeefe3;
+  align-content: start;
+}
+
+.comentarios-blog input,
+.comentarios-blog textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  font: 15px Arial, sans-serif;
+  border: 1px solid #9aaa9d;
+  border-radius: 6px;
+  background: white;
+}
+
+.comentarios-blog button {
+  justify-self: start;
+  background: #708B76;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 20px;
+  cursor: pointer;
+}
+
+.comentarios-blog button:disabled {
+  opacity: .5;
+  cursor: wait;
+}
+
+/* COMENTARIOS */
+
+.comentario-blog {
+  border-bottom: 1px solid #dfe5da;
+  padding: 18px 0;
+  overflow-wrap: anywhere;
+}
+
+.comentario-blog p {
+  white-space: pre-wrap;
+  margin: 8px 0 12px;
+}
+
+.comentario-blog small,
+.comentarios-blog .nota-privacidad {
+  color: #596e60;
+  font-size: 12px;
+}
+
+.comentario-blog.respuesta {
+  margin-left: 24px;
+  padding-left: 16px;
+  border-left: 2px solid #b9cbb8;
+}
+
+/* FECHA Y ACCIONES EN UNA MISMA FILA */
+
+.comentario-acciones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 8px;
+}
+
+.comentario-acciones small {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* RESPONDER: BOTÓN PRINCIPAL */
+
+.comentarios-blog .comentario-responder {
+  padding: 6px 12px;
+  font-size: 12px;
+  background: #708B76;
+  border-radius: 5px;
+}
+
+/* VER ORIGINAL: ENLACE DISCRETO */
+
+.comentarios-blog .comentario-idioma {
+  margin-left: 4px;
+  padding: 4px 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: #426b56;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.comentarios-blog .comentario-idioma:hover {
+  color: #1f4033;
+}
+
+.comentarios-blog .comentario-idioma:focus-visible {
+  outline: 2px solid #426b56;
+  outline-offset: 4px;
+}
+
+/* MENSAJES DEL FORMULARIO */
+
+.comentarios-blog .mensaje {
+  min-height: 0;
+  margin: 0;
+}
+
+.comentarios-blog .mensaje:empty {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .comentario-acciones {
+    gap: 8px;
+  }
+
+  .comentarios-blog .comentario-idioma {
+    margin-left: 0;
+  }
+
+  .comentarios-blog form {
+    padding: 16px 16px 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="contenedor cabecera">
+
+    <a class="marca" href="/blog/">
+      <img src="/logonuevo.png" alt="Montañas">
+      <span>
+        Una pausa en tu camino
+        <small>Giovanny Barrera</small>
+      </span>
+    </a>
+
+    
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a href="/blog/">Home</a>
+      <a href="/blog/#historias">Stories</a>
+      <a href="/blog/#proyecto">The challenge</a>
+      <a href="/blog/#mapa">Summit map</a>
+      <a href="/blog/#sobre-mi">About me</a>
+      <a href="/">Guided hikes</a>
+    </nav>
+    
+
+  </div>
+</header>
+
+<main class="contenedor">
+
+  <nav class="selector-idiomas" aria-label="Seleccionar idioma"><a href="/blog/cumbres/001-barenkopf/" lang="es" aria-label="ES">ES</a><a href="/blog/de/cumbres/001-barenkopf/" lang="de" aria-label="DE">DE</a><span class="idioma-activo" aria-current="page">EN</span></nav>
+
+  <div class="numero">
+    Summit 001
+    of 100
+  </div>
+
+  <h1>Bärenkopf</h1>
+
+  <div class="fecha">
+    Date of ascent: 2026-09-06
+  </div>
+
+  <div class="presentacion"><a class="portada-enlace" href="/blog/imagenes/Barenkopf-1.webp" data-lightbox aria-label="Enlarge photograph"><img class="portada" src="/blog/imagenes/Barenkopf-1.webp" alt="Bärenkopf"></a><section class="ficha"><div class="ficha-titulo">Hike details</div><div class="ficha-datos"><div class="dato"><span>Elevation</span><strong>1.991</strong></div><div class="dato"><span>Elevation gain</span><strong>1.060</strong></div><div class="dato"><span>Distance</span><strong>11,5 km</strong></div><div class="dato"><span>Duration</span><strong>4h 30 min</strong></div><div class="dato"><span>Difficulty</span><strong>moderado</strong></div></div></section></div>
+
+  <article class="relato">
+    <div class="entradilla-editorial">The Mountain of Bruno the Bear.</div>
+<p>Before setting off, we decided with Eva's uncle Gerhard to head over to Austria, since the weather was beautiful. Summer was coming to an end, the days were just about perfect for this kind of activity, and little by little I was feeling the urge to climb more and more mountains. Besides, I was expecting a very fit visitor from Colombia soon, and we were planning to conquer several summits together. I couldn't afford to embarrass myself with my physical condition, so I thought: well, why not? This looks interesting, I don't need any particularly intense training beforehand, it's never too late to get started, and the only person you're competing against is yourself—if the word <em>competing</em> even makes sense here. These thoughts kept running through my head throughout the day, and off I went hiking.</p>
+<p>This wasn't my first mountain, but it was the first in a series of 100 hiking routes. There isn't really a clear rule defining what counts as a summit, what counts as a mountain, or what is simply a gentle walk. My challenge is about getting out there and immersing myself in nature, living by its rules—the ones that truly matter—and leaving all that urban life behind. During autumn and winter, for safety reasons, considering the snow accumulation and shorter days, most of the summits I tackle will be between 1,000 and 2,000 metres. Once spring is over, I want to take on mountains between 2,000 and 3,000 metres above sea level. The ultimate challenge will be the Zugspitze, Germany's highest mountain: reaching the summit and returning in a single day, around twelve hours of demanding hiking. For now, though, I'll start relatively gently and gradually increase the difficulty. This first mountain is officially rated moderate, although it's certainly demanding for an ordinary person. It wasn't exactly the most suitable choice for a beginner, but I wanted to start with an iconic mountain, and what better place than Bärenkopf—the Bear's Head?</p>
+<h2>Who Is Bruno the Bear?</h2>
+<figure class="foto-relato foto-derecha"><a href="/blog/imagenes/oso%20Bruno-1.jpg" class="ampliar" data-lightbox aria-label="Enlarge photograph 2"><img src="/blog/imagenes/oso%20Bruno-1.jpg" alt="Bärenkopf - 2" loading="lazy"></a></figure>
+<p>This story begins at the Museum of Man and Nature in Munich, where the poor bear's stuffed body is on display. I went there last year with Eva and my son Jan, and his story stayed with us long afterwards. For almost 170 years, no wild bear had been seen roaming freely in Bavaria. Then, all of a sudden, one appeared and began wandering around near populated areas as if it were the most normal thing in the world. Naturally, he became a media sensation throughout the region, sparking heated controversy between those who saw him as a threat and those determined to protect him. Bruno wandered through many of the mountain areas I plan to explore during this challenge, and according to local stories, he was particularly fond of the area around today's destination. That's why Bärenkopf is sometimes unofficially called the mountain of Bruno the Bear.</p>
+<p>As happens with so many species, his only real crime was simply existing. His parents had been brought to the Italian Alps as part of a European Union programme called LIFE Ursus, aimed at restoring the bear population in the region. Bruno was born there, and at the age of two, apparently tired of living with his parents, he decided it was time to get his own place. So off he went, roaming freely through South Tyrol and eventually making his way into southern Bavaria. When it came to finding food, Bruno discovered a rather convenient solution: eating whatever farm animals happened to cross his path. Unsurprisingly, it didn't take long for much of the region's farming community to turn against him, with some people even organising to hunt him down illegally. This was May 2006, just before Germany hosted the FIFA World Cup, when television cameras from around the world were focused on the country and security measures had to be particularly strict. Bruno's adventures suddenly became an international media story, at times even stealing newspaper headlines from Germany's national football team.</p>
+<figure class="foto-relato foto-izquierda"><a href="/blog/imagenes/B%C3%A4renkopf%206.jpg" class="ampliar" data-lightbox aria-label="Enlarge photograph 6"><img src="/blog/imagenes/B%C3%A4renkopf%206.jpg" alt="Bärenkopf - 6" loading="lazy"></a></figure>
+<p>Of course, when a bear gets too close to human settlements, something has to be done, because sooner or later it could attack someone. To avoid a scandal under the eyes of the international media, the authorities initially decided to capture Bruno alive and relocate him to a sanctuary abroad. They tried a bit of everything, but nothing worked. They even brought in specialist hunters from Finland. According to a joke circulating among the locals, however, the Finnish experts spent more time sampling every variety of Bavarian beer than actually hunting for the bear—all at the government's expense. Eventually, tired of the endless back-and-forth and concerned about the possible danger to World Cup tourists, Bavaria's environment minister authorised Bruno to be shot. A few hours later, on 26 June 2006, local hunters killed him. The decision and how quickly it was carried out triggered an enormous public outcry. To this day, the hunters' identities remain secret because some people wanted to do to them exactly what they had done to Bruno. Anyway, his memory lives on, and for me it was a real pleasure to walk through a landscape that had once been part of his habitat.</p>
+<h2>The Route to the Summit</h2>
+<figure class="foto-relato foto-derecha"><a href="/blog/imagenes/B%C3%A4renkopf%201.jpg" class="ampliar" data-lightbox aria-label="Enlarge photograph 1"><img src="/blog/imagenes/B%C3%A4renkopf%201.jpg" alt="Bärenkopf - 1" loading="lazy"></a></figure>
+<p>Uncle Gerhard has a particular fondness for shortcuts. His reasoning is simple: the shortest distance between two points, A and B, is always a straight line. So naturally, we headed straight up the ski slope. The mathematician who came up with that principle—Euclid—must have spent his entire life sitting behind a desk. I seriously doubt he ever climbed a bloody great mountain. Like any respectable ski slope, this one was ridiculously steep, and within fifteen minutes we were on the verge of leaving our bodies, souls and everything else behind. We still had more than a thousand metres of elevation to gain, and I already felt as though I'd used up half my battery. Fortunately, Eva protested, and we found the proper hiking trail.</p>
+<figure class="foto-relato foto-izquierda"><a href="/blog/imagenes/B%C3%A4renkopf%203.jpg" class="ampliar" data-lightbox aria-label="Enlarge photograph 4"><img src="/blog/imagenes/B%C3%A4renkopf%203.jpg" alt="Bärenkopf - 4" loading="lazy"></a></figure>
+<p>The main part of the route led towards a mountain pasture called Bärenbadalm, which roughly translates as the Bears' Bath Alpine Pasture. An <em>Alm</em> is traditionally a high-altitude grazing area, usually with one or more Alpine huts. Some huts serve food, and others also offer accommodation. A classic Alpine outing involves making your way up to one of these places and enjoying traditional food surrounded by spectacular mountain scenery. In the case of Bärenkopf, you can also use a cable car to cover much of the climb. That's why my parents-in-law joined us at the Alm that day. We had arranged to meet them there later. The summit, however, was still much higher up. At Bärenbadalm, we were roughly halfway up the mountain. From there, you can reach the summit as part of a circular route. We chose the loop that begins behind the Alm, offering the views you can see in this photograph.</p>
+<p>Because she was exhausted, and because we had arranged to meet my parents-in-law, Eva decided to skip the final ten percent of the climb. She completed the loop and returned to the Alm without reaching the summit. Gerhard and I carried on. I was every bit as exhausted as Eva, but there was no way I was going to miss that view. And listen, if you ever find yourself at Achensee—the lake you can see down below—don't hesitate for a second: get yourself up that mountain! The climb is absolutely worth it. You're right in the heart of the Alps. What more could you possibly ask for?</p>
+<figure class="foto-relato foto-grande"><a href="/blog/imagenes/B%C3%A4renkopf%208.jpg" class="ampliar" data-lightbox aria-label="Enlarge photograph 8"><img src="/blog/imagenes/B%C3%A4renkopf%208.jpg" alt="Bärenkopf - 8" loading="lazy"></a></figure>
+<h2>A Little Something to Eat at the Alm, Then Back Down We Go</h2>
+<p>After enjoying that incredible panorama from the summit, we hurried back down because my parents-in-law were already waiting at the Alm, and patience isn't exactly their strongest quality. I'd never descended a mountain so quickly in my life. I think it qualified as power hiking, because in just forty minutes we dropped 500 metres along a steep, root-covered trail. By then, I'd completely exhausted my water supplies, and when I finally reached the Alm, my brain had switched into full Homer Simpson mode and could only produce one word: beer. I drank an entire litre in practically no time. Then I had Kaiserschmarrn, the traditional Austrian shredded pancake, together with Eva, Gerhard and my parents-in-law. It was a lovely moment, sitting there with people who mean so much to me.</p>
+<p>Afterwards, my parents-in-law headed towards the cable car, while the rest of us continued downhill. One funny thing about climbing mountains is that you lose all sense of how far you've actually climbed, and you tend to forget that every metre you go up is another metre you have to come back down. We still had another 500 metres of descent ahead of us. That day I learned one of the fundamental rules of hiking: a beer at the end of a hike? Absolutely. But make sure it's really the end! That litre I'd enjoyed at the Alm came back to haunt me. The first third of the remaining descent was particularly difficult. My legs felt incredibly heavy, and I had absolutely no enthusiasm left for walking downhill. After a while, though, my body got moving again, and I managed to continue more or less normally.</p>
+<p>At last, we reached the car park beside the lake. Now picture this: a lake straight out of a film, a beautiful sunny day, and a tremendous mountain hike behind you. What's the first thing that comes to mind? Into the water, of course! There was just one small problem. After several cold days, the weather had finally turned relatively warm—at least by our standards—and it hadn't occurred to us to bring swimwear. So we started by dipping our feet into the water, but it felt so good that our legs kept going deeper and deeper. Eventually we looked at each other and said, "Oh, what the hell. Let's just swim in our underwear!" Swimming in that lake was the ultimate reward, the ribbon on a gift from nature after a perfect day. Finally, we headed home, without any underwear beneath our outer clothes, but incredibly happy and grateful for the wonderful day we'd had.</p>
+<p>In memory of Bruno.</p>
+  </article>
+
+  <section class="galeria-final"><h2>More photographs of this mountain</h2><div class="grupo-fotos"><figure class="foto-relato foto-mediana"><a href="/blog/imagenes/B%C3%A4renkopf%202.jpg" class="ampliar" data-lightbox aria-label="Enlarge photograph 3"><img src="/blog/imagenes/B%C3%A4renkopf%202.jpg" alt="Bärenkopf - 3" loading="lazy"></a></figure><figure class="foto-relato foto-mediana"><a href="/blog/imagenes/B%C3%A4renkopf%205.jpg" class="ampliar" data-lightbox aria-label="Enlarge photograph 5"><img src="/blog/imagenes/B%C3%A4renkopf%205.jpg" alt="Bärenkopf - 5" loading="lazy"></a></figure><figure class="foto-relato foto-mediana"><a href="/blog/imagenes/B%C3%A4renkopf%207.jpg" class="ampliar" data-lightbox aria-label="Enlarge photograph 7"><img src="/blog/imagenes/B%C3%A4renkopf%207.jpg" alt="Bärenkopf - 7" loading="lazy"></a></figure><figure class="foto-relato foto-mediana"><a href="/blog/imagenes/B%C3%A4renkopf%209.jpg" class="ampliar" data-lightbox aria-label="Enlarge photograph 9"><img src="/blog/imagenes/B%C3%A4renkopf%209.jpg" alt="Bärenkopf - 9" loading="lazy"></a></figure><figure class="foto-relato foto-mediana"><a href="/blog/imagenes/B%C3%A4renkopf%2010.jpg" class="ampliar" data-lightbox aria-label="Enlarge photograph 10"><img src="/blog/imagenes/B%C3%A4renkopf%2010.jpg" alt="Bärenkopf - 10" loading="lazy"></a></figure></div></section>
+
+  
+
+  
+<section class="comentarios-blog" id="comentarios" aria-label="Comments">
+  <h2>Comments</h2>
+  <div id="lista-comentarios" aria-live="polite">Loading comments...</div>
+  <form id="form-comentario">
+    <div id="respuesta-actual" hidden></div>
+    <input name="nombre" autocomplete="name" maxlength="80" minlength="2" required placeholder="Your name" aria-label="Your name">
+    <input name="correo" type="email" autocomplete="email" maxlength="254" required placeholder="Your email (not public)" aria-label="Your email (not public)">
+    <textarea name="contenido" rows="5" minlength="3" maxlength="2000" required placeholder="Write your comment" aria-label="Write your comment"></textarea>
+    <div id="turnstile-comentarios"></div>
+    <small class="nota-privacidad">Your email is used only to manage your comment.</small>
+    <button id="enviar-comentario" type="submit">Post comment</button>
+    <p class="mensaje" id="estado-comentario" role="status" aria-live="polite"></p>
+  </form>
+</section>
+<script>
+(() => {
+  const API = "https://blog-comentarios-api.ybarrerao.workers.dev/api/comentarios";
+  const HISTORIA = "001-barenkopf";
+  const IDIOMA = "en";
+  const SITE_KEY = "0x4AAAAAAGHEiH-CdG-pin6w";
+  const T = ["Comments", "No comments yet. Be the first!", "Your name", "Your email (not public)", "Write your comment", "Post comment", "Your email is used only to manage your comment.", "Loading comments...", "Comment posted.", "Something went wrong.", "Reply", "Cancel reply", "Replying to", "Spam protection not configured yet.", "Comment received. It is awaiting review and will appear once approved."];
+  const lista = document.getElementById('lista-comentarios');
+  const form = document.getElementById('form-comentario');
+  const estado = document.getElementById('estado-comentario');
+  const boton = document.getElementById('enviar-comentario');
+  const aviso = document.getElementById('respuesta-actual');
+  let padre = null;
+  let widgetId = null;
+
+  function elemento(tag, texto, clase) {
+    const nodo = document.createElement(tag);
+    if (texto !== undefined) nodo.textContent = texto;
+    if (clase) nodo.className = clase;
+    return nodo;
+  }
+
+  function responder(id, nombre) {
+    padre = id;
+    aviso.hidden = false;
+    aviso.replaceChildren(elemento('span', T[12] + ' ' + nombre + ' '));
+    const cancelar = elemento('button', T[11]);
+    cancelar.type = 'button';
+    cancelar.addEventListener('click', () => {
+      padre = null;
+      aviso.hidden = true;
+    });
+    aviso.append(cancelar);
+    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    form.elements.contenido.focus();
+  }
+
+  function dibujar(comentarios) {
+    lista.replaceChildren();
+    if (!comentarios.length) {
+      lista.append(elemento('p', T[1]));
+      return;
+    }
+    const porPadre = new Map();
+    const ids = new Set(comentarios.map(c => c.id));
+    comentarios.forEach(c => {
+      const clave = c.comentario_padre_id && ids.has(c.comentario_padre_id)
+        ? c.comentario_padre_id : 0;
+      if (!porPadre.has(clave)) porPadre.set(clave, []);
+      porPadre.get(clave).push(c);
+    });
+    const vistos = new Set();
+    function pintar(idPadre, contenedor, nivel) {
+      (porPadre.get(idPadre) || []).forEach(c => {
+        if (vistos.has(c.id)) return;
+        vistos.add(c.id);
+        const item = elemento('article', undefined,
+          'comentario-blog' + (nivel ? ' respuesta' : ''));
+
+
+item.append(elemento('strong', c.nombre));
+
+const hayTraduccion =
+  Boolean(c.contenido_traducido) &&
+  c.idioma !== IDIOMA;
+
+const textoComentario = elemento(
+  'p',
+  hayTraduccion
+    ? c.contenido_traducido
+    : c.contenido
+);
+
+item.append(textoComentario);
+
+// Fila para fecha y acciones
+const acciones = elemento(
+  'div',
+  undefined,
+  'comentario-acciones'
+);
+
+// Fecha de publicación
+acciones.append(
+  elemento('small', c.fecha_creacion || '')
+);
+
+// Botón responder
+const accion = elemento('button', T[10]);
+accion.type = 'button';
+accion.className = 'comentario-responder';
+
+accion.addEventListener(
+  'click',
+  () => responder(c.id, c.nombre)
+);
+
+acciones.append(accion);
+
+// Alternar traducción y texto original
+if (hayTraduccion) {
+  const textosIdioma = {
+    es: ['Ver original', 'Ver traducción'],
+    de: ['Original anzeigen', 'Übersetzung anzeigen'],
+    en: ['View original', 'View translation']
+  };
+
+  const etiquetas = textosIdioma[IDIOMA] || textosIdioma.es;
+
+  const botonIdioma = elemento(
+    'button',
+    etiquetas[0]
+  );
+
+  botonIdioma.type = 'button';
+  botonIdioma.className = 'comentario-idioma';
+
+  let mostrandoOriginal = false;
+
+  botonIdioma.addEventListener('click', () => {
+    mostrandoOriginal = !mostrandoOriginal;
+
+    textoComentario.textContent = mostrandoOriginal
+      ? c.contenido
+      : c.contenido_traducido;
+
+botonIdioma.textContent =
+  (
+        mostrandoOriginal
+          ? etiquetas[1]
+          : etiquetas[0]
+      );
+  });
+
+  acciones.append(botonIdioma);
+}
+
+item.append(acciones);
+contenedor.append(item);
+        pintar(c.id, contenedor, nivel + 1);
+      });
+    }
+    pintar(0, lista, 0);
+  }
+
+async function cargar() {
+  try {
+    const respuesta = await fetch(
+      API +
+      '?historia=' + encodeURIComponent(HISTORIA) +
+      '&idioma=' + encodeURIComponent(IDIOMA)
+    );
+
+    if (!respuesta.ok) {
+      throw new Error('HTTP ' + respuesta.status);
+    }
+
+    const datos = await respuesta.json();
+    dibujar(datos.comentarios || []);
+
+  } catch (e) {
+    lista.textContent = T[9];
+  }
+}
+
+  function activarTurnstile() {
+    if (!SITE_KEY || SITE_KEY === 'PEGAR_AQUI_SITE_KEY_PUBLICA') {
+      boton.disabled = true;
+      estado.textContent = T[13];
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    script.async = true;
+    script.onload = () => {
+      widgetId = window.turnstile.render('#turnstile-comentarios', {
+        sitekey: SITE_KEY,
+        theme: 'auto'
+      });
+    };
+    script.onerror = () => {
+      boton.disabled = true;
+      estado.textContent = T[9];
+    };
+    document.head.append(script);
+  }
+
+  form.addEventListener('submit', async evento => {
+    evento.preventDefault();
+    if (widgetId === null || !window.turnstile) return;
+    const token = window.turnstile.getResponse(widgetId);
+    if (!token) {
+      estado.textContent = T[13];
+      return;
+    }
+    boton.disabled = true;
+    estado.textContent = '';
+    try {
+      const respuesta = await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          historia: HISTORIA,
+          idioma: IDIOMA,
+          nombre: form.elements.nombre.value.trim(),
+          correo: form.elements.correo.value.trim(),
+          contenido: form.elements.contenido.value.trim(),
+          comentario_padre_id: padre,
+          turnstileToken: token
+        })
+      });
+      const datos = await respuesta.json();
+      if (!respuesta.ok) throw new Error(datos.error || T[9]);
+      form.elements.contenido.value = '';
+      padre = null;
+      aviso.hidden = true;
+      estado.textContent = datos.pendiente ? T[14] : T[8];
+      await cargar();
+    } catch (e) {
+      estado.textContent = e.message || T[9];
+    } finally {
+      window.turnstile.reset(widgetId);
+      boton.disabled = false;
+    }
+  });
+
+  cargar();
+  activarTurnstile();
+})();
+</script>
+
+
+  <div class="volver">
+  
+    <a href="/blog/">
+      ← Back to the 100 mountains
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="contenedor">
+    Una pausa en tu viaje · Prealpes bávaros
+  </div>
+</footer>
+
+<div class="lightbox"
+     id="visor"
+     role="dialog"
+     aria-label="Enlarge photograph"
+     aria-modal="true"
+     aria-hidden="true">
+
+  <button class="lightbox-cerrar"
+          id="visor-cerrar"
+          type="button"
+          aria-label="Close photograph">
+    ×
+  </button>
+
+  <img id="visor-foto" alt="">
+
+</div>
+
+
+<script>
+(() => {
+  const visor = document.getElementById('visor');
+  const foto = document.getElementById('visor-foto');
+  const cerrar = document.getElementById('visor-cerrar');
+  let anterior = null;
+
+  function ocultar() {
+    visor.classList.remove('abierto');
+    visor.setAttribute('aria-hidden', 'true');
+    foto.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (anterior) anterior.focus();
+  }
+
+  document.querySelectorAll('a[data-lightbox]').forEach(enlace => {
+    enlace.addEventListener('click', evento => {
+      evento.preventDefault();
+      anterior = enlace;
+      foto.src = enlace.href;
+      foto.alt = enlace.querySelector('img')?.alt || '';
+      visor.classList.add('abierto');
+      visor.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      cerrar.focus();
+    });
+  });
+
+  cerrar.addEventListener('click', ocultar);
+
+  visor.addEventListener('click', evento => {
+    if (evento.target === visor) ocultar();
+  });
+
+  document.addEventListener('keydown', evento => {
+    if (
+      evento.key === 'Escape'
+      && visor.classList.contains('abierto')
+    ) {
+      ocultar();
+    }
+  });
+})();
+</script>
+
+
+</body>
+</html>
