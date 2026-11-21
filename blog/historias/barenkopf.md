@@ -52,11 +52,11 @@ El tío Gerhard siempre busca atajos particulares, bajo la lógica que la distan
 
 El tramo principal es por el Alm llamado Bärenbadalm. Un Alm es una casita en lo alto de la montaña, que ofrece comida o dormida. En algunas se puede dormir, y en otras comer, por ende en un sentido estricto es un refugio. Un plan turístico tradicional es subir la montaña de alguna forma y deleitar allí la comida tradicional que ofrecen en medio de vistas espectaculares. Para el caso del Bärenkopf se puede acceder también por telesferico, por eso, ese día también nos acompanaron en ese Alm mis suegros, con quienes vimos sobre el final. Pero la cumbre queda mucho más arriba, allí estamos más o menos en la mitad de la montaña. Nosotros dimos la vuelta iniciando por detrás del Alm, la cual ofrece las vistas de esta foto.  
 
-Por razones de agotamiento y por tiempo, dado que estábamos agendados con mis suegros en el Alm, Eva no hizo el último 10%, y se fue al Alm completando la ronda pero sin cumbre.  
-
-
+Por razones de agotamiento y por tiempo, dado que estábamos agendados con mis suegros en el Alm, Eva no hizo el último 10%, y se fue al Alm completando la ronda pero sin cumbre.  Seguí con Gerhard hasta la cumbre, y aunque yo estaba igual de agotado que Eva, subí porque no me podía perder tremendo espectáculo. Mira si alguna vez estás en Achensee, el lago que se ve allí abajo, no lo dudes ni por un segundo. Vete de inmediato arriba. Vale enormemente la pena subir esta cumbre. Estás en la mitad de los Alpes, más no se puede pedir. 
 
 [[grande:8]]
+
+## El recorrido hacia la cumbre
 
 Cita:Estar en la montaña del oso Bruno, con esa vista espectacular quedas sin palabras.  
 Es una montaña para ir muchas veces. El Achensee es simplemente espectacular desde arriba.
