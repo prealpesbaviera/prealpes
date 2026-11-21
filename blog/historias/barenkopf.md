@@ -50,7 +50,11 @@ El tío Gerhard siempre busca atajos particulares, bajo la lógica que la distan
 
 [[izquierda:4]]
 
-El tramo principal es por el Alm llamado Bärenbadalm. Un Alm es una casita en lo alto de la montaña, que ofrece comida o dormida. En algunas se puede dormir, y en otras comer  y luego se da una ronda como se quiera dar. Hicimos por atrás y luego ascendimos hasta lo más altpo para bajar a toda velocidad al Alm.
+El tramo principal es por el Alm llamado Bärenbadalm. Un Alm es una casita en lo alto de la montaña, que ofrece comida o dormida. En algunas se puede dormir, y en otras comer, por ende en un sentido estricto es un refugio. Un plan turístico tradicional es subir la montaña de alguna forma y deleitar allí la comida tradicional que ofrecen en medio de vistas espectaculares. Para el caso del Bärenkopf se puede acceder también por telesferico, por eso, ese día también nos acompanaron en ese Alm mis suegros, con quienes vimos sobre el final. Pero la cumbre queda mucho más arriba, allí estamos más o menos en la mitad de la montaña. Nosotros dimos la vuelta iniciando por detrás del Alm, la cual ofrece las vistas de esta foto.  
+
+Por razones de agotamiento y por tiempo, dado que estábamos agendados con mis suegros en el Alm, Eva no hizo el último 10%, y se fue al Alm completando la ronda pero sin cumbre.  
+
+
 
 [[grande:8]]
 
