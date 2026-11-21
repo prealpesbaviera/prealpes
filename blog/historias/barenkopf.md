@@ -42,7 +42,7 @@ Cuando un oso se acerca demasiado a la población humana, se debe quitar porque 
 
 [[derecha:1]]
 
-El tío siempre busca caminos particulares y subimos por la pista de esquí. Sueper empinada por supuesto, casi perdemos el alma allí  
+El tío Gerhard siempre busca atajos particulares, bajo la lógica que la distancia más corta entre dos puntos A y B siempre es una línea recta, y entonces subimos por la pista de esquí. El matemático que dijo eso, Euclides, parece que siempre estuvo sentado en un escritorio y nunca subió una montaña. Como toda pista de esquí estaba super empinada por supuesto, casi perdemos el cuerpo, el alma y todo allí en menos de 15 minutos. Afortunadamente Eva protestó y buscamos el camino normal.   
 El tramo principal es por el Alm y luego se da una ronda como se quiera dar. Hicimos por atrás y luego ascendimos hasta lo más altpo para bajar a toda velocidad al Alm.
 
 [[grande:4]]
