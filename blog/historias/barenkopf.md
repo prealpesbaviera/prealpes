@@ -23,6 +23,207 @@ distancia: 11,5 km
 duracion: 4h 30 min
 dificultad: moderado
 estado: publicado
+title_de: Bärenkopf
+contenido_de: >-
+  [[entradilla: Der Berg des Bären Bruno.]]
+
+
+  Bevor wir losfuhren, beschlossen wir gemeinsam mit Evas Onkel Gerhard, nach
+  Österreich zu fahren, weil das Wetter so schön war. Der Sommer ging langsam zu
+  Ende, die Tage waren geradezu perfekt zum Wandern, und allmählich bekam ich
+  immer mehr Lust, einen Berg nach dem anderen zu besteigen. Außerdem erwartete
+  ich bald Besuch aus Kolumbien, und zwar von jemandem, der ausgesprochen fit
+  ist und mit dem ich mehrere Gipfel besteigen wollte. Da durfte ich mich mit
+  meiner Kondition natürlich nicht blamieren. Also dachte ich mir: Warum
+  eigentlich nicht? Das klingt interessant, ich brauche dafür kein besonders
+  hartes Training im Voraus, es ist nie zu spät, mit dem Bergwandern anzufangen,
+  und letztlich tritt man nur gegen sich selbst an – falls das Wort „Wettkampf“
+  hier überhaupt angebracht ist. Diese Gedanken gingen mir den ganzen Tag durch
+  den Kopf, und so machte ich mich auf den Weg.
+
+
+  Es war nicht mein erster Berg, aber der erste einer Reihe von 100 Wanderungen,
+  die ich mir vorgenommen hatte. Es gibt keine eindeutige Regel dafür, was als
+  Gipfelbesteigung gilt, was als Bergtour und was lediglich als gemütlicher
+  Spaziergang. Bei meiner Herausforderung geht es vor allem darum, hinauszugehen
+  und in die Natur einzutauchen, sich ihren Regeln zu unterwerfen – den Regeln,
+  die wirklich zählen –, weit weg von all dem städtischen Trubel. Im Herbst und
+  Winter werde ich mich aus Sicherheitsgründen überwiegend auf Gipfel zwischen
+  1.000 und 2.000 Metern konzentrieren. Schnee und kurze Tage machen höhere
+  Touren in dieser Jahreszeit schwieriger und gefährlicher. Nach dem Frühjahr
+  möchte ich dann Berge zwischen 2.000 und 3.000 Metern über dem Meeresspiegel
+  angehen. Die ultimative Herausforderung soll die Zugspitze werden,
+  Deutschlands höchster Berg: Aufstieg und Abstieg an einem einzigen Tag,
+  ungefähr zwölf Stunden anspruchsvolles Wandern. Aber zunächst fange ich etwas
+  bescheidener an und werde den Schwierigkeitsgrad nach und nach steigern. Diese
+  erste Tour gilt offiziell als mittelschwer, ist für einen durchschnittlich
+  trainierten Menschen aber durchaus anstrengend. Eigentlich war sie nicht
+  unbedingt der ideale Einstieg. Doch wenn man schon anfängt, dann doch am
+  besten mit einem Berg, der eine besondere Geschichte hat. Und welcher wäre
+  dafür besser geeignet als der Bärenkopf?
+
+
+  ## Wer ist der Bär Bruno?
+
+
+  [[derecha:2]]
+
+
+  Diese Geschichte beginnt im Museum Mensch und Natur in München, wo der
+  ausgestopfte Körper des armen Bären ausgestellt ist. Im vergangenen Jahr war
+  ich mit Eva und meinem Sohn Jan dort gewesen, und seine Geschichte ging uns
+  danach noch lange durch den Kopf. Fast 170 Jahre lang hatte man in Bayern
+  keinen frei lebenden Bären mehr gesehen. Und plötzlich spazierte einer durch
+  die Gegend, näherte sich Ortschaften und schien sich dabei überhaupt nichts zu
+  denken. Entsprechend groß war das Medienecho. Bruno löste in der Region
+  heftige Diskussionen aus: zwischen Menschen, die ihn als Gefahr betrachteten,
+  und jenen, die ihn unbedingt schützen wollten. Er streifte durch viele der
+  Bergregionen, die ich im Rahmen meiner Herausforderung noch erkunden möchte.
+  Nach Erzählungen der Einheimischen soll er sich besonders häufig in der Gegend
+  unserer heutigen Wanderung aufgehalten haben. Deshalb wird der Bärenkopf
+  gelegentlich inoffiziell als Berg des Bären Bruno bezeichnet.
+
+
+  Wie bei so vielen Tierarten bestand sein größtes Vergehen schlicht darin, dass
+  er existierte. Seine Eltern waren im Rahmen des von der Europäischen Union
+  unterstützten Projekts LIFE Ursus in die italienischen Alpen gebracht worden,
+  um die Bärenpopulation in der Region wieder aufzubauen. Dort wurde Bruno
+  geboren. Im Alter von zwei Jahren hatte er offenbar genug davon, bei seinen
+  Eltern zu wohnen, und beschloss, endlich auf eigenen Beinen zu stehen. Also
+  machte er sich selbstständig und wanderte nach Lust und Laune durch Südtirol
+  und weiter bis nach Südbayern. Bei der Nahrungssuche machte er es sich
+  allerdings ziemlich einfach: Er bediente sich an den Nutztieren, die ihm
+  unterwegs begegneten. Damit hatte er innerhalb kürzester Zeit einen großen
+  Teil der bäuerlichen Bevölkerung gegen sich aufgebracht. Manche wollten ihn
+  sogar auf eigene Faust jagen. Das war im Mai 2006, kurz vor der
+  Fußball-Weltmeisterschaft in Deutschland. Die Kameras aus aller Welt richteten
+  sich auf das Land, und die Sicherheitsvorkehrungen mussten entsprechend streng
+  sein. So wurde Bruno plötzlich zu einer internationalen Mediengeschichte.
+  Zeitweise stahl er sogar der deutschen Nationalmannschaft die Schlagzeilen.
+
+
+  [[izquierda:6]]
+
+
+  Wenn ein Bär menschlichen Siedlungen zu nahe kommt, muss man natürlich etwas
+  unternehmen. Schließlich besteht die Gefahr, dass er irgendwann jemanden
+  angreift. Um vor den Augen der Weltöffentlichkeit einen Skandal zu vermeiden,
+  beschloss man zunächst, Bruno lebend einzufangen und in ein geeignetes
+  Schutzgebiet im Ausland zu bringen. Man versuchte so einiges, doch nichts
+  funktionierte. Sogar finnische Spezialisten wurden engagiert. Unter den
+  Einheimischen kursierte allerdings der Spott, die Männer hätten ihre Zeit
+  weniger mit der Bärensuche als mit der Verkostung sämtlicher bayerischer
+  Biersorten verbracht – und das auch noch auf Staatskosten. Irgendwann hatte
+  man genug von dem ganzen Hin und Her. Angesichts der möglichen Gefahr für die
+  Besucher der Fußball-Weltmeisterschaft genehmigte der bayerische
+  Umweltminister schließlich, Bruno abzuschießen. Wenige Stunden später, am 26.
+  Juni 2006, wurde er von einheimischen Jägern getötet. Die Entscheidung und
+  ihre rasche Umsetzung lösten einen gewaltigen Aufschrei aus. Die Identität der
+  beteiligten Jäger ist bis heute nicht öffentlich bekannt, weil manche Menschen
+  ihnen am liebsten dasselbe angetan hätten wie sie Bruno. Wie auch immer,
+  Brunos Geschichte ist bis heute nicht vergessen. Für mich war es deshalb etwas
+  Besonderes, durch eine Landschaft zu wandern, die einst zu seinem Lebensraum
+  gehörte.
+
+
+  ## Der Weg zum Gipfel
+
+
+  [[derecha:1]]
+
+
+  Onkel Gerhard hat eine besondere Vorliebe für Abkürzungen. Seine Logik ist
+  einfach: Die kürzeste Verbindung zwischen zwei Punkten A und B ist eine gerade
+  Linie. Also marschierten wir direkt die Skipiste hinauf. Der Mathematiker, der
+  diesen Grundsatz formulierte – Euklid –, hat offenbar sein ganzes Leben am
+  Schreibtisch verbracht und noch nie einen verdammt steilen Berg bestiegen. Wie
+  es sich für eine Skipiste gehört, war das Gelände natürlich unglaublich steil.
+  Schon nach weniger als fünfzehn Minuten waren wir kurz davor, Körper, Geist
+  und Seele dort oben zurückzulassen. Mehr als tausend Höhenmeter lagen noch vor
+  uns, und ich hatte bereits das Gefühl, die Hälfte meiner Batterie verbraucht
+  zu haben. Zum Glück protestierte Eva, und wir suchten uns den normalen
+  Wanderweg.
+
+
+  [[izquierda:4]]
+
+
+  Der Hauptteil der Strecke führte über die Bärenbadalm, deren Name so viel wie
+  „Badeplatz der Bären“ bedeutet. Eine Alm ist ursprünglich eine hoch gelegene
+  Weidefläche, meistens mit einer oder mehreren Hütten. Manche Almhütten bieten
+  Wanderern Essen an, andere auch Übernachtungsmöglichkeiten. Ein klassischer
+  Ausflug in den Alpen besteht darin, auf irgendeine Weise zu einer
+  bewirtschafteten Alm hinaufzukommen und dort bei spektakulärer Aussicht die
+  traditionelle Küche zu genießen. Im Fall des Bärenkopfs gibt es auch die
+  Möglichkeit, mit der Seilbahn einen großen Teil des Aufstiegs zurückzulegen.
+  Deshalb waren an diesem Tag auch meine Schwiegereltern dort oben. Wir hatten
+  uns für später auf der Alm verabredet. Der Gipfel lag allerdings noch deutlich
+  höher. An der Bärenbadalm hatten wir ungefähr die Hälfte des Berges geschafft.
+  Von dort kann man den Gipfel auf einer Rundtour erreichen. Wir entschieden uns
+  für die Variante, die hinter der Alm beginnt und unter anderem den Ausblick
+  bietet, den man auf diesem Foto sieht.
+
+
+  Wegen der Erschöpfung und weil wir mit meinen Schwiegereltern verabredet
+  waren, verzichtete Eva auf die letzten zehn Prozent des Aufstiegs. Sie setzte
+  die Runde fort und ging direkt zur Alm zurück, ohne den Gipfel mitzunehmen.
+  Gerhard und ich stiegen weiter hinauf. Ich war genauso erschöpft wie Eva, aber
+  diesen Anblick wollte ich mir auf keinen Fall entgehen lassen. Und falls du
+  irgendwann einmal am Achensee bist – das ist der See, den du dort unten siehst
+  –, dann überleg nicht lange: Geh da hoch! Der Aufstieg lohnt sich unglaublich.
+  Du stehst mitten in den Alpen. Was will man mehr?
+
+
+  [[grande:8]]
+
+
+  ## Etwas Leckeres auf der Alm – und dann wieder bergab
+
+
+  Nachdem wir oben dieses fantastische Panorama ausgiebig genossen hatten,
+  mussten wir uns beim Abstieg ziemlich beeilen. Meine Schwiegereltern warteten
+  bereits auf der Alm, und Geduld gehört nicht unbedingt zu ihren größten
+  Stärken. So schnell war ich noch nie einen Berg hinuntergelaufen. Ich glaube,
+  das war schon Powerhiking. In gerade einmal vierzig Minuten bewältigten wir
+  500 steile Höhenmeter bergab, über einen Weg voller Wurzeln. Meine gesamten
+  Flüssigkeitsreserven waren aufgebraucht, und als ich endlich an der Alm ankam,
+  konnte mein Gehirn im Homer-Simpson-Modus nur noch ein einziges Wort
+  hervorbringen: Bier. Innerhalb kürzester Zeit trank ich einen ganzen Liter.
+  Danach gab es Kaiserschmarrn, gemeinsam mit Eva, Gerhard und meinen
+  Schwiegereltern. Es war ein wunderschöner Moment, mit diesen Menschen
+  zusammenzusitzen, die in meinem Leben so wichtig sind.
+
+
+  Anschließend machten sich meine Schwiegereltern auf den Weg zur Seilbahn,
+  während wir unseren Abstieg fortsetzten. Beim Bergaufgehen verliert man
+  manchmal völlig das Gefühl dafür, wie viele Höhenmeter man eigentlich
+  zurückgelegt hat. Und dass man das Ganze anschließend auch wieder hinunter
+  muss. Uns fehlten noch weitere 500 Höhenmeter bis zum Ausgangspunkt. An diesem
+  Tag lernte ich eine grundlegende Regel des Wanderns: Ein Bier am Ende der
+  Tour? Unbedingt. Aber wirklich erst ganz am Ende! Der Liter Bier auf der Alm
+  rächte sich nämlich gewaltig. Besonders das erste Drittel des restlichen
+  Abstiegs war mühsam. Meine Beine fühlten sich bleischwer an, und ich hatte
+  absolut keine Lust mehr, weiterzugehen. Nach einer Weile kam mein Körper
+  wieder in Schwung, und ich konnte einigermaßen normal weiterlaufen.
+
+
+  Endlich erreichten wir den Parkplatz direkt am Seeufer. Stellt euch die
+  Situation einmal vor: ein See wie aus dem Bilderbuch, strahlender Sonnenschein
+  und eine gewaltige Wanderung hinter uns. Was geht einem da wohl durch den
+  Kopf? Ab ins Wasser! Allerdings hatten wir eines nicht bedacht: Nach mehreren
+  kalten Tagen war es ausgerechnet heute wieder relativ warm geworden, zumindest
+  für unsere Verhältnisse. Badesachen hatten wir deshalb nicht eingepackt. Also
+  hielten wir zunächst nur die Füße ins Wasser. Aber es fühlte sich so herrlich
+  an, dass unsere Beine immer tiefer eintauchten. Bis wir schließlich sagten:
+  Ach, was soll's! Wir gehen einfach in Unterwäsche schwimmen. Dieses Bad war
+  die eigentliche Belohnung des Tages, die Schleife um ein Geschenk der Natur an
+  einem perfekten Tag. Schließlich fuhren wir nach Hause, ohne Unterwäsche unter
+  unseren normalen Kleidern, aber überglücklich darüber, was für einen
+  wunderbaren Tag wir erleben durften.
+
+
+  In Erinnerung an Bruno.
+title_en: Bärenkopf
 ---
 [[entradilla: La montaña del oso Bruno.]]
 
