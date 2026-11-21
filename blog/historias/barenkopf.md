@@ -148,20 +148,17 @@ contenido_de: >-
   [[izquierda:4]]
 
 
-  Der Hauptteil der Strecke führte über die Bärenbadalm, deren Name so viel wie
-  „Badeplatz der Bären“ bedeutet. Eine Alm ist ursprünglich eine hoch gelegene
-  Weidefläche, meistens mit einer oder mehreren Hütten. Manche Almhütten bieten
-  Wanderern Essen an, andere auch Übernachtungsmöglichkeiten. Ein klassischer
-  Ausflug in den Alpen besteht darin, auf irgendeine Weise zu einer
-  bewirtschafteten Alm hinaufzukommen und dort bei spektakulärer Aussicht die
-  traditionelle Küche zu genießen. Im Fall des Bärenkopfs gibt es auch die
-  Möglichkeit, mit der Seilbahn einen großen Teil des Aufstiegs zurückzulegen.
-  Deshalb waren an diesem Tag auch meine Schwiegereltern dort oben. Wir hatten
-  uns für später auf der Alm verabredet. Der Gipfel lag allerdings noch deutlich
-  höher. An der Bärenbadalm hatten wir ungefähr die Hälfte des Berges geschafft.
-  Von dort kann man den Gipfel auf einer Rundtour erreichen. Wir entschieden uns
-  für die Variante, die hinter der Alm beginnt und unter anderem den Ausblick
-  bietet, den man auf diesem Foto sieht.
+  Der Hauptteil der Strecke führte über die Bärenbadalm. Ein klassischer Ausflug
+  in den Alpen besteht darin, auf irgendeine Weise zu einer bewirtschafteten Alm
+  hinaufzukommen und dort bei spektakulärer Aussicht die traditionelle Küche zu
+  genießen. Im Fall des Bärenkopfs gibt es auch die Möglichkeit, mit der
+  Seilbahn einen großen Teil des Aufstiegs zurückzulegen. Deshalb waren an
+  diesem Tag auch meine Schwiegereltern dort oben. Wir hatten uns für später auf
+  der Alm verabredet. Der Gipfel lag allerdings noch deutlich höher. An der
+  Bärenbadalm hatten wir ungefähr die Hälfte des Berges geschafft. Von dort kann
+  man den Gipfel auf einer Rundtour erreichen. Wir entschieden uns für die
+  Variante, die hinter der Alm beginnt und unter anderem den Ausblick bietet,
+  den man auf diesem Foto sieht.
 
 
   Wegen der Erschöpfung und weil wir mit meinen Schwiegereltern verabredet
