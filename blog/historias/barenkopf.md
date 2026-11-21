@@ -224,6 +224,191 @@ contenido_de: >-
 
   In Erinnerung an Bruno.
 title_en: Bärenkopf
+contenido_en: >-
+  [[entradilla: The Mountain of Bruno the Bear.]]
+
+
+  Before setting off, we decided with Eva's uncle Gerhard to head over to
+  Austria, since the weather was beautiful. Summer was coming to an end, the
+  days were just about perfect for this kind of activity, and little by little I
+  was feeling the urge to climb more and more mountains. Besides, I was
+  expecting a very fit visitor from Colombia soon, and we were planning to
+  conquer several summits together. I couldn't afford to embarrass myself with
+  my physical condition, so I thought: well, why not? This looks interesting, I
+  don't need any particularly intense training beforehand, it's never too late
+  to get started, and the only person you're competing against is yourself—if
+  the word *competing* even makes sense here. These thoughts kept running
+  through my head throughout the day, and off I went hiking.
+
+
+  This wasn't my first mountain, but it was the first in a series of 100 hiking
+  routes. There isn't really a clear rule defining what counts as a summit, what
+  counts as a mountain, or what is simply a gentle walk. My challenge is about
+  getting out there and immersing myself in nature, living by its rules—the ones
+  that truly matter—and leaving all that urban life behind. During autumn and
+  winter, for safety reasons, considering the snow accumulation and shorter
+  days, most of the summits I tackle will be between 1,000 and 2,000 metres.
+  Once spring is over, I want to take on mountains between 2,000 and 3,000
+  metres above sea level. The ultimate challenge will be the Zugspitze,
+  Germany's highest mountain: reaching the summit and returning in a single day,
+  around twelve hours of demanding hiking. For now, though, I'll start
+  relatively gently and gradually increase the difficulty. This first mountain
+  is officially rated moderate, although it's certainly demanding for an
+  ordinary person. It wasn't exactly the most suitable choice for a beginner,
+  but I wanted to start with an iconic mountain, and what better place than
+  Bärenkopf—the Bear's Head?
+
+
+  ## Who Is Bruno the Bear?
+
+
+  [[derecha:2]]
+
+
+  This story begins at the Museum of Man and Nature in Munich, where the poor
+  bear's stuffed body is on display. I went there last year with Eva and my son
+  Jan, and his story stayed with us long afterwards. For almost 170 years, no
+  wild bear had been seen roaming freely in Bavaria. Then, all of a sudden, one
+  appeared and began wandering around near populated areas as if it were the
+  most normal thing in the world. Naturally, he became a media sensation
+  throughout the region, sparking heated controversy between those who saw him
+  as a threat and those determined to protect him. Bruno wandered through many
+  of the mountain areas I plan to explore during this challenge, and according
+  to local stories, he was particularly fond of the area around today's
+  destination. That's why Bärenkopf is sometimes unofficially called the
+  mountain of Bruno the Bear.
+
+
+  As happens with so many species, his only real crime was simply existing. His
+  parents had been brought to the Italian Alps as part of a European Union
+  programme called LIFE Ursus, aimed at restoring the bear population in the
+  region. Bruno was born there, and at the age of two, apparently tired of
+  living with his parents, he decided it was time to get his own place. So off
+  he went, roaming freely through South Tyrol and eventually making his way into
+  southern Bavaria. When it came to finding food, Bruno discovered a rather
+  convenient solution: eating whatever farm animals happened to cross his path.
+  Unsurprisingly, it didn't take long for much of the region's farming community
+  to turn against him, with some people even organising to hunt him down
+  illegally. This was May 2006, just before Germany hosted the FIFA World Cup,
+  when television cameras from around the world were focused on the country and
+  security measures had to be particularly strict. Bruno's adventures suddenly
+  became an international media story, at times even stealing newspaper
+  headlines from Germany's national football team.
+
+
+  [[izquierda:6]]
+
+
+  Of course, when a bear gets too close to human settlements, something has to
+  be done, because sooner or later it could attack someone. To avoid a scandal
+  under the eyes of the international media, the authorities initially decided
+  to capture Bruno alive and relocate him to a sanctuary abroad. They tried a
+  bit of everything, but nothing worked. They even brought in specialist hunters
+  from Finland. According to a joke circulating among the locals, however, the
+  Finnish experts spent more time sampling every variety of Bavarian beer than
+  actually hunting for the bear—all at the government's expense. Eventually,
+  tired of the endless back-and-forth and concerned about the possible danger to
+  World Cup tourists, Bavaria's environment minister authorised Bruno to be
+  shot. A few hours later, on 26 June 2006, local hunters killed him. The
+  decision and how quickly it was carried out triggered an enormous public
+  outcry. To this day, the hunters' identities remain secret because some people
+  wanted to do to them exactly what they had done to Bruno. Anyway, his memory
+  lives on, and for me it was a real pleasure to walk through a landscape that
+  had once been part of his habitat.
+
+
+  ## The Route to the Summit
+
+
+  [[derecha:1]]
+
+
+  Uncle Gerhard has a particular fondness for shortcuts. His reasoning is
+  simple: the shortest distance between two points, A and B, is always a
+  straight line. So naturally, we headed straight up the ski slope. The
+  mathematician who came up with that principle—Euclid—must have spent his
+  entire life sitting behind a desk. I seriously doubt he ever climbed a bloody
+  great mountain. Like any respectable ski slope, this one was ridiculously
+  steep, and within fifteen minutes we were on the verge of leaving our bodies,
+  souls and everything else behind. We still had more than a thousand metres of
+  elevation to gain, and I already felt as though I'd used up half my battery.
+  Fortunately, Eva protested, and we found the proper hiking trail.
+
+
+  [[izquierda:4]]
+
+
+  The main part of the route led towards a mountain pasture called Bärenbadalm,
+  which roughly translates as the Bears' Bath Alpine Pasture. An *Alm* is
+  traditionally a high-altitude grazing area, usually with one or more Alpine
+  huts. Some huts serve food, and others also offer accommodation. A classic
+  Alpine outing involves making your way up to one of these places and enjoying
+  traditional food surrounded by spectacular mountain scenery. In the case of
+  Bärenkopf, you can also use a cable car to cover much of the climb. That's why
+  my parents-in-law joined us at the Alm that day. We had arranged to meet them
+  there later. The summit, however, was still much higher up. At Bärenbadalm, we
+  were roughly halfway up the mountain. From there, you can reach the summit as
+  part of a circular route. We chose the loop that begins behind the Alm,
+  offering the views you can see in this photograph.
+
+
+  Because she was exhausted, and because we had arranged to meet my
+  parents-in-law, Eva decided to skip the final ten percent of the climb. She
+  completed the loop and returned to the Alm without reaching the summit.
+  Gerhard and I carried on. I was every bit as exhausted as Eva, but there was
+  no way I was going to miss that view. And listen, if you ever find yourself at
+  Achensee—the lake you can see down below—don't hesitate for a second: get
+  yourself up that mountain! The climb is absolutely worth it. You're right in
+  the heart of the Alps. What more could you possibly ask for?
+
+
+  [[grande:8]]
+
+
+  ## A Little Something to Eat at the Alm, Then Back Down We Go
+
+
+  After enjoying that incredible panorama from the summit, we hurried back down
+  because my parents-in-law were already waiting at the Alm, and patience isn't
+  exactly their strongest quality. I'd never descended a mountain so quickly in
+  my life. I think it qualified as power hiking, because in just forty minutes
+  we dropped 500 metres along a steep, root-covered trail. By then, I'd
+  completely exhausted my water supplies, and when I finally reached the Alm, my
+  brain had switched into full Homer Simpson mode and could only produce one
+  word: beer. I drank an entire litre in practically no time. Then I had
+  Kaiserschmarrn, the traditional Austrian shredded pancake, together with Eva,
+  Gerhard and my parents-in-law. It was a lovely moment, sitting there with
+  people who mean so much to me.
+
+
+  Afterwards, my parents-in-law headed towards the cable car, while the rest of
+  us continued downhill. One funny thing about climbing mountains is that you
+  lose all sense of how far you've actually climbed, and you tend to forget that
+  every metre you go up is another metre you have to come back down. We still
+  had another 500 metres of descent ahead of us. That day I learned one of the
+  fundamental rules of hiking: a beer at the end of a hike? Absolutely. But make
+  sure it's really the end! That litre I'd enjoyed at the Alm came back to haunt
+  me. The first third of the remaining descent was particularly difficult. My
+  legs felt incredibly heavy, and I had absolutely no enthusiasm left for
+  walking downhill. After a while, though, my body got moving again, and I
+  managed to continue more or less normally.
+
+
+  At last, we reached the car park beside the lake. Now picture this: a lake
+  straight out of a film, a beautiful sunny day, and a tremendous mountain hike
+  behind you. What's the first thing that comes to mind? Into the water, of
+  course! There was just one small problem. After several cold days, the weather
+  had finally turned relatively warm—at least by our standards—and it hadn't
+  occurred to us to bring swimwear. So we started by dipping our feet into the
+  water, but it felt so good that our legs kept going deeper and deeper.
+  Eventually we looked at each other and said, "Oh, what the hell. Let's just
+  swim in our underwear!" Swimming in that lake was the ultimate reward, the
+  ribbon on a gift from nature after a perfect day. Finally, we headed home,
+  without any underwear beneath our outer clothes, but incredibly happy and
+  grateful for the wonderful day we'd had.
+
+
+  In memory of Bruno.
 ---
 [[entradilla: La montaña del oso Bruno.]]
 
