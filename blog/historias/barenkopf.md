@@ -48,12 +48,11 @@ En memoria de Bruno.
 
 El tío Gerhard siempre busca atajos particulares, bajo la lógica que la distancia más corta entre dos puntos A y B siempre es una línea recta, y entonces subimos por la pista de esquí. El matemático que dijo eso, Euclides, parece que siempre estuvo sentado en un escritorio y nunca subió una berraca montaña en su vida. Como toda pista de esquí estaba super empinada por supuesto, casi perdemos el cuerpo, el alma y todo allí en menos de 15 minutos. Con un desnivel positivo por hacer de más de mil metros, yo sentía que ya había gastado la mitad de la batería y apenas estábamos empezando. Afortunadamente Eva protestó y buscamos el sendero normal.   
 
-
 [[izquierda:4]]
 
-El tramo principal es por el Alm y luego se da una ronda como se quiera dar. Hicimos por atrás y luego ascendimos hasta lo más altpo para bajar a toda velocidad al Alm.
+El tramo principal es por el Alm llamado Bärenbadalm. Un Alm es una casita en lo alto de la montaña, que ofrece comida o dormida. En algunas se puede dormir, y en otras comer  y luego se da una ronda como se quiera dar. Hicimos por atrás y luego ascendimos hasta lo más altpo para bajar a toda velocidad al Alm.
 
-[[grande:4]]
+[[grande:8]]
 
 Cita:Estar en la montaña del oso Bruno, con esa vista espectacular quedas sin palabras.  
 Es una montaña para ir muchas veces. El Achensee es simplemente espectacular desde arriba.
