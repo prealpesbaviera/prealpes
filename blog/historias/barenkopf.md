@@ -40,7 +40,7 @@ Esta historia empieza en el museo del hombre y la naturaleza en Múnich, donde e
 
 Si un oso se acerca demasiado a la población humana toca quitarlo de alguna forma porque en algún momento puede atacar a cualquiera. Para quedar bien y evitar escándalos ante la lupa del mundo se decide atraparlo con vida y trasladarlo al extranjero a un refugio. Se intentó de todo un poco pero nada funcionó. Se contrataron incluso expertos cazadores finlandeses, pero la gente local decía que en vez de cazar se la pasaron probando todas las diferentes especies de cerveza bávaras con el dinero que les dio el gobierno. Cansado de tanto vaivén, y lo peligroso que podía ser para un turista del mundial, el ministro de medio de ambiente de Baviera finalmente autorizó que se podía abatir y pocas horas después cazadoras locales acabaron con su vida. Dado el mega estallido polémico de esta decisión y su muy rápida ejecución, hasta el día de hoy el nombre de los cazadores permanece en el anonimato porque mucha gente les quería hacer lo mismo. En fin, su memoria sigue viva, y fue muy placentero para mí caminar por donde fue alguna vez su hábitat.   
 
-En memoria de Bruno. 
+
 
 ## El recorrido hacia la cumbre
 
@@ -56,7 +56,8 @@ Por razones de agotamiento y por tiempo, dado que estábamos agendados con mis s
 
 [[grande:8]]
 
-## El recorrido hacia la cumbre
+## Comidita en el Alm y sígamos bajando
 
-Cita:Estar en la montaña del oso Bruno, con esa vista espectacular quedas sin palabras.  
-Es una montaña para ir muchas veces. El Achensee es simplemente espectacular desde arriba.
+Después de deleitarnos arriba con tremendo panorama, bajamos a toda velocidad porque mis suegros ya estaban en el Alm y son bastante impacientes. Nunca había bajado tan rápido una montaña. Yo creo que fue nivel power hiking porque en 40 minutos bajamos 500 metros bien empinados por camino de raíces. Agoté todas mis reservas líquidas y cuando llegué al Alm, mi cerebro Homero solo pudo pronunciar la palabra: cerveza. Me tomé un litro en menos de nada. Comí Kaiserschmar con los suegros, Gerhard y Eva. Fue un momento muy grato y bonito. Luego los suegros se fueron al telesferico y nosostros a seguir bajando. Cuando uno sube pierde el sentido de cuánto realmente has subido y que luego toca bajarlo. Todavía nos quedaban 500 metros de desnivel por superar hacia abajo. Aquí aprendí una regla fundamental del senderismo. Cerveza al final sí, pero bien al final. Ese litro que me tomé en el Alm me pasó factura. Fue bastante difícil especialmente le primer tercio. Sentía las piernas super pesadas y con cero ánimos de bajar. Después de un rato largo tu cuerpo vuelve a entrar en calor y sigues caminando normal. Por fie llegamos al parqueadero, localizado en la orilla del lago. Ustedes se pueden imaginar, un lago de película, en día soleado, después de tremenda caminata, ¿qué pasa por tu mente? Al Agua patos. Pero claro no se nos ocurrió que después de varios días fríos, iba a estar ese día relativamente caliente, al menos para nosotros, y no trajimos ropa de baño. Metimos los piecitos solamente, pero las piernas se hundían progresivamente por lo rica que estaba el agua, hasta que dijimos: que caray, nos metemos en ropa interior. Nadar allí fue el gran premio, el moño de un regalo de la naturaleza en un día perfecto. Finalmente regresamos a casa, sin ropa interior puesta, pero en carro no pasa nada. 
+
+En memoria de Bruno. 
