@@ -28,8 +28,7 @@ estado: publicado
 
 ## Antes de salir
 
-Decidimo con el tio de Eva, Gerhard, ir a Austria porque el día estaba bonito.
-
+Decidimos con el tío de Eva, Gerhard, ir a Austria porque el día estaba bonito. Estamso terminando el verano, los días quedan justo en el momento perfecto para hacer esta actividad. En verano subir montañas por encima de 35 grados es peligroso por el factor de olas de calor que te pueden dejar inconsciente. El agua que tomamos normalmente viene de la montaña, pero de toda la montaña. En las partes más altas no encuentras ninguna fuente de hidratación natural. Dado que me encontraba en el momento perfecto del año para  hacer senderismo, y que pronto iba a recibir una visita muy fit de Colombia para hacer varias cumbres, decidí que bueno, por qué no? Esto se ve interesante, no necesito un entrenamiento fuerte previo, nunca es tarde para arrancar en esta actividad, y solo compites contra ti mismo; si es que mencionar la palabra competir. Estos pensamientos rondaron por mi cabeza durante todo el día. 
 
 [[izquierda:2]]
 
@@ -38,9 +37,7 @@ Decidimo con el tio de Eva, Gerhard, ir a Austria porque el día estaba bonito.
 Capitulo:El tío siempre busca caminos particulares y subimos por la pista de esquí. Sueper empinada por supuesto, casi perdemos el alma allí
 El tramo principal es por el Alm y luego se da una ronda como se quiera dar. Hicimos por atrás y luego ascendimos hasta lo más altpo para bajar a toda velocidad al Alm.
 
-
 [[grande:3]]
-
 
 Cita:Estar en la montaña del oso Bruno, con esa vista espectacular quedas sin palabras.  
 Es una montaña para ir muchas veces. El Achensee es simplemente espectacular desde arriba.
