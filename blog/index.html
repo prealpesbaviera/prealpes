@@ -1819,10 +1819,18 @@
         if (e) e.textContent = valor;
       };
 
+
       poner('.hero-text .eyebrow', t.eyebrow);
+
+      document.querySelectorAll('.hero-text h1 [data-es]')
+        .forEach(e => {
+          e.textContent = e.getAttribute('data-' + lang) || e.getAttribute('data-es');
+        });
+
       poner('.hero-subtitle', t.subtitle);
       poner('.hero-description', t.description);
       poner('.hero-text .button', t.discover);
+
 
       poner('.progress-label', t.completed);
       poner('.progress-box .eyebrow', t.progress);
