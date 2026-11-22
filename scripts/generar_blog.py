@@ -2496,6 +2496,19 @@ def main():
         if carpeta.exists():
             shutil.rmtree(carpeta)
 
+    # CALCULAR LA SIGUIENTE HISTORIA DISPONIBLE POR IDIOMA
+
+    for indice, historia in enumerate(historias):
+        historia['siguiente'] = {}
+
+        for idioma in IDIOMAS:
+            for proxima in historias[indice + 1:]:
+                if proxima['traducciones'][idioma]['disponible']:
+                    historia['siguiente'][idioma] = ruta_articulo(
+                        proxima, idioma
+                    )
+                    break
+
     # GENERAR ARTÍCULOS EN LOS IDIOMAS DISPONIBLES
 
     total_traducciones = {
