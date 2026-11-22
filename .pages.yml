@@ -50,8 +50,9 @@ content:
       - name: galeria
         label: Galería de fotografías
         type: image
-        list: true
+        options:
           multiple: true
+          unique: true
 
       - name: altitud
         label: Altitud de la montaña
