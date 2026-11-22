@@ -17,7 +17,6 @@ galeria:
   - /blog/imagenes/Bärenkopf 8.jpg
   - /blog/imagenes/Bärenkopf 9.jpg
   - /blog/imagenes/Bärenkopf 10.jpg
-  - /blog/imagenes/Heiglkopf-2.webp
 altitud: "1.991"
 desnivel: "1.060"
 distancia: 11,5 km
