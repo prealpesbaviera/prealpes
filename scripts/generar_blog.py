@@ -1949,7 +1949,8 @@ content="{seguro(f'Ruta de senderismo al {titulo}. Descubrí la experiencia de a
 {enlaces_alternativos}
 
 <style>{ESTILOS}
-{ESTILOS_COMENTARIOS}</style>
+{ESTILOS_COMENTARIOS}
+{ESTILOS_NAVEGACION}</style>
 </head>
 
 <body>
