@@ -1949,7 +1949,16 @@ content="{seguro(f'Ruta de senderismo al {titulo}. Descubrí la experiencia de a
 
 <style>{ESTILOS}
 {ESTILOS_COMENTARIOS}
-{ESTILOS_NAVEGACION}</style>
+{ESTILOS_NAVEGACION}
+
+.logo-montes {{
+  display: block;
+  width: 185px;
+  height: auto;
+}}
+
+</style>
+
 </head>
 
 <body>
@@ -2403,7 +2412,7 @@ def generar_rss(historias):
     canal = ET.SubElement(rss, 'channel')
 
     ET.SubElement(canal, 'title').text = (
-        'Una pausa en tu camino | 100 montañas en 365 días'
+        'Montes de Gio | 100 montañas en 365 días'
     )
     ET.SubElement(canal, 'link').text = dominio + '/blog/'
     ET.SubElement(canal, 'description').text = (
