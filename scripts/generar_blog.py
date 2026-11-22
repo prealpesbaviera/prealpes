@@ -1959,11 +1959,11 @@ content="{seguro(f'Ruta de senderismo al {titulo}. Descubrí la experiencia de a
 
     <a class="marca" href="/blog/">
       <img src="/logonuevo.png" alt="Montañas">
-      <span>
-        Una pausa en tu camino
-        <small>Giovanny Barrera</small>
-      </span>
-    </a>
+  <span>
+    Una pausa en tu camino
+    <small>Giovanny Barrera</small>
+  </span>
+</a>
 
     {navegacion}
 
