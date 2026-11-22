@@ -63,7 +63,7 @@ contenido_de: >-
   dafür besser geeignet als der Bärenkopf?
 
 
-  ## Wer ist der Bär Bruno?
+  ## Wer war der Bär Bruno?
 
 
   [[derecha:2]]
@@ -256,7 +256,7 @@ contenido_en: >-
   Bärenkopf—the Bear's Head?
 
 
-  ## Who Is Bruno the Bear?
+  ## Who was Bruno the Bear?
 
 
   [[derecha:2]]
