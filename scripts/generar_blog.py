@@ -2009,7 +2009,7 @@ content="{seguro(f'Ruta de senderismo al {titulo}. Descubrí la experiencia de a
 
 <footer>
   <div class="contenedor">
-    Una pausa en tu viaje · Prealpes bávaros
+    Montes de Gio · Prealpes bávaros
   </div>
 </footer>
 
