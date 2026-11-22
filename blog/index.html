@@ -627,63 +627,36 @@
 
   <!-- ENCABEZADO -->
 
-  <header>
-    <div class="container navigation">
+  
+<header>
+  <div class="container navigation">
 
-      <a href="/blog/" class="brand-logo">
+    <a href="/blog/" class="brand-logo">
+      <img
+        src="/logo-montes-de-gio.png"
+        alt="Montes de Gio"
+        class="logo-montes"
+      >
+    </a>
 
-        <img
-          src="/logonuevo.png"
-          alt="Logotipo de 100 montañas en 365 días"
-          class="logo-img"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
-        >
+    <nav aria-label="Navegación principal">
+      <a href="/blog/">Inicio</a>
+      <a href="#historias">Historias</a>
+      <a href="#proyecto">El reto</a>
+      <a href="#mapa">Mapa de cumbres</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="/">Excursiones</a>
 
-        <!-- Símbolo provisional hasta subir el logo aprobado -->
-        <svg
-          class="logo-fallback"
-          viewBox="0 0 100 70"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path
-            d="M4 59 L24 31 L35 43 L52 9 L74 37 L82 29 L97 59 Z"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="4"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M38 30 L52 9 L67 29"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-          />
-        </svg>
+      <span class="language-switch" role="group"
+            aria-label="Idioma / Sprache / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </span>
+    </nav>
 
-        <div>
-          <span class="brand-name">
-            Una pausa en tu camino
-          </span>
-
-          <span class="brand-author">
-            Giovanny Barrera
-          </span>
-        </div>
-      </a>
-
-      <nav aria-label="Navegación principal">
-        <a href="/blog/">Inicio</a>
-        <a href="#historias">Historias</a>
-        <a href="#proyecto">El reto</a>
-        <a href="#mapa">Mapa de cumbres</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="/">Excursiones</a>
-        <span class="language-switch" role="group" aria-label="Idioma / Sprache / Language"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="de" aria-pressed="false">DE</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
-      </nav>
-
-    </div>
-  </header>
+  </div>
+</header>
 
   <main>
 
