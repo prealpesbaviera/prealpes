@@ -1870,7 +1870,7 @@ def crear_articulo(historia, idioma='es'):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>{titulo} | 100 montañas en 365 días</title>
+<title>{titulo} | {'100 montañas en 365 días' if idioma == 'es' else '100 Berge in 365 Tagen' if idioma == 'de' else '100 Mountains in 365 Days'}</title>
 
 <meta name="follow.it-verification-code" content="k8SzEx5mdNkp8feb9Ck4"/>
 
