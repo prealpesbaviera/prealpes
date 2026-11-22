@@ -413,7 +413,7 @@ Antes de salir decidimos con el tío de Eva, Gerhard, ir a Austria porque el dí
 
 
 
-## ¿Quién es el oso Bruno?
+## ¿Quién era el oso Bruno?
 
 [[derecha:2]]
 
