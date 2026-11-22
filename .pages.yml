@@ -50,7 +50,7 @@ content:
       - name: galeria
         label: Galería de fotografías
         type: image
-        options:
+        list: true
           multiple: true
 
       - name: altitud
