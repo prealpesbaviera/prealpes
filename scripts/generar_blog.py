@@ -1544,7 +1544,7 @@ def crear_comentarios(historia, idioma='es'):
   <form id="form-comentario">
     <div id="respuesta-actual" hidden></div>
     <input name="nombre" autocomplete="name" maxlength="80" minlength="2" required placeholder="__NAME__" aria-label="__NAME__">
-    <input name="correo" type="email" autocomplete="email" maxlength="254" required placeholder="__EMAIL__" aria-label="__EMAIL__">
+    <input name="correo" type="email" autocomplete="email" maxlength="254" placeholder="__EMAIL__" aria-label="__EMAIL__">
     <textarea name="contenido" rows="5" minlength="3" maxlength="2000" required placeholder="__CONTENT__" aria-label="__CONTENT__"></textarea>
     <div id="turnstile-comentarios"></div>
     <small class="nota-privacidad">__PRIVACY__</small>
