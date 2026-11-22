@@ -1846,7 +1846,7 @@ def crear_articulo(historia, idioma='es'):
     selector = crear_selector_idiomas(historia, idioma)
 
     comentarios = crear_comentarios(historia, idioma)
-
+navegacion_historias = crear_navegacion_historias(historia, idioma)
     portada = ''
 
     if historia['imagen']:
