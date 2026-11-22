@@ -1956,6 +1956,8 @@ content="{seguro(f'Ruta de senderismo al {titulo}. Descubrí la experiencia de a
 
   {invitacion}
 
+  {navegacion_historias}
+
   {comentarios}
 
   <div class="volver">
