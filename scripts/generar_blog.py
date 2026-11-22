@@ -1958,12 +1958,11 @@ content="{seguro(f'Ruta de senderismo al {titulo}. Descubrí la experiencia de a
   <div class="contenedor cabecera">
 
     <a class="marca" href="/blog/">
-      <img src="/logonuevo.png" alt="Montañas">
-  <span>
-    Una pausa en tu camino
-    <small>Giovanny Barrera</small>
-  </span>
-</a>
+      <img
+        src="/logo-montes-de-gio.png"
+        alt="Montes de Gio"
+        class="logo-montes">
+    </a>
 
     {navegacion}
 
