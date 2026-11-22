@@ -808,10 +808,10 @@ footer {
   <form id="form-comentario">
     <div id="respuesta-actual" hidden></div>
     <input name="nombre" autocomplete="name" maxlength="80" minlength="2" required placeholder="Dein Name" aria-label="Dein Name">
-    <input name="correo" type="email" autocomplete="email" maxlength="254" required placeholder="Deine E-Mail-Adresse (nicht öffentlich)" aria-label="Deine E-Mail-Adresse (nicht öffentlich)">
+    <input name="correo" type="email" autocomplete="email" maxlength="254" required placeholder="Deine E-Mail-Adresse (optional, nicht öffentlich)" aria-label="Deine E-Mail-Adresse (optional, nicht öffentlich)">
     <textarea name="contenido" rows="5" minlength="3" maxlength="2000" required placeholder="Schreib deinen Kommentar" aria-label="Schreib deinen Kommentar"></textarea>
     <div id="turnstile-comentarios"></div>
-    <small class="nota-privacidad">Deine E-Mail-Adresse wird nur zur Verwaltung deines Kommentars verwendet.</small>
+    <small class="nota-privacidad">Du kannst deine E-Mail-Adresse freiwillig angeben. Sie wird nicht veröffentlicht.</small>
     <button id="enviar-comentario" type="submit">Kommentar veröffentlichen</button>
     <p class="mensaje" id="estado-comentario" role="status" aria-live="polite"></p>
   </form>
@@ -822,7 +822,7 @@ footer {
   const HISTORIA = "001-barenkopf";
   const IDIOMA = "de";
   const SITE_KEY = "0x4AAAAAAGHEiH-CdG-pin6w";
-  const T = ["Kommentare", "Noch keine Kommentare. Schreib den ersten!", "Dein Name", "Deine E-Mail-Adresse (nicht öffentlich)", "Schreib deinen Kommentar", "Kommentar veröffentlichen", "Deine E-Mail-Adresse wird nur zur Verwaltung deines Kommentars verwendet.", "Kommentare werden geladen...", "Kommentar veröffentlicht.", "Vorgang fehlgeschlagen.", "Antworten", "Antwort abbrechen", "Antwort an", "Spam-Schutz noch nicht eingerichtet.", "Kommentar erhalten. Er wird geprüft und nach Freigabe veröffentlicht."];
+  const T = ["Kommentare", "Noch keine Kommentare. Schreib den ersten!", "Dein Name", "Deine E-Mail-Adresse (optional, nicht öffentlich)", "Schreib deinen Kommentar", "Kommentar veröffentlichen", "Du kannst deine E-Mail-Adresse freiwillig angeben. Sie wird nicht veröffentlicht.", "Kommentare werden geladen...", "Kommentar veröffentlicht.", "Vorgang fehlgeschlagen.", "Antworten", "Antwort abbrechen", "Antwort an", "Spam-Schutz noch nicht eingerichtet.", "Kommentar erhalten. Er wird geprüft und nach Freigabe veröffentlicht."];
   const lista = document.getElementById('lista-comentarios');
   const form = document.getElementById('form-comentario');
   const estado = document.getElementById('estado-comentario');

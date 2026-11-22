@@ -825,10 +825,10 @@ footer {
   <form id="form-comentario">
     <div id="respuesta-actual" hidden></div>
     <input name="nombre" autocomplete="name" maxlength="80" minlength="2" required placeholder="Your name" aria-label="Your name">
-    <input name="correo" type="email" autocomplete="email" maxlength="254" required placeholder="Your email (not public)" aria-label="Your email (not public)">
+    <input name="correo" type="email" autocomplete="email" maxlength="254" required placeholder="Your email (optional, not public)" aria-label="Your email (optional, not public)">
     <textarea name="contenido" rows="5" minlength="3" maxlength="2000" required placeholder="Write your comment" aria-label="Write your comment"></textarea>
     <div id="turnstile-comentarios"></div>
-    <small class="nota-privacidad">Your email is used only to manage your comment.</small>
+    <small class="nota-privacidad">You can provide your email if you wish. It will not be public.</small>
     <button id="enviar-comentario" type="submit">Post comment</button>
     <p class="mensaje" id="estado-comentario" role="status" aria-live="polite"></p>
   </form>
@@ -839,7 +839,7 @@ footer {
   const HISTORIA = "023-baumgartenschneid";
   const IDIOMA = "en";
   const SITE_KEY = "0x4AAAAAAGHEiH-CdG-pin6w";
-  const T = ["Comments", "No comments yet. Be the first!", "Your name", "Your email (not public)", "Write your comment", "Post comment", "Your email is used only to manage your comment.", "Loading comments...", "Comment posted.", "Something went wrong.", "Reply", "Cancel reply", "Replying to", "Spam protection not configured yet.", "Comment received. It is awaiting review and will appear once approved."];
+  const T = ["Comments", "No comments yet. Be the first!", "Your name", "Your email (optional, not public)", "Write your comment", "Post comment", "You can provide your email if you wish. It will not be public.", "Loading comments...", "Comment posted.", "Something went wrong.", "Reply", "Cancel reply", "Replying to", "Spam protection not configured yet.", "Comment received. It is awaiting review and will appear once approved."];
   const lista = document.getElementById('lista-comentarios');
   const form = document.getElementById('form-comentario');
   const estado = document.getElementById('estado-comentario');

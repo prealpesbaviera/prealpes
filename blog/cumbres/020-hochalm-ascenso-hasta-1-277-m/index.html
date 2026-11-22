@@ -797,10 +797,10 @@ footer {
   <form id="form-comentario">
     <div id="respuesta-actual" hidden></div>
     <input name="nombre" autocomplete="name" maxlength="80" minlength="2" required placeholder="Tu nombre" aria-label="Tu nombre">
-    <input name="correo" type="email" autocomplete="email" maxlength="254" required placeholder="Tu correo electrónico (no será público)" aria-label="Tu correo electrónico (no será público)">
-    <textarea name="contenido" rows="5" minlength="3" maxlength="2000" required placeholder="Escribí tu comentario" aria-label="Escribí tu comentario"></textarea>
+    <input name="correo" type="email" autocomplete="email" maxlength="254" required placeholder="Tu correo electrónico (opcional, no será público)" aria-label="Tu correo electrónico (opcional, no será público)">
+    <textarea name="contenido" rows="5" minlength="3" maxlength="2000" required placeholder="Escribe tu comentario" aria-label="Escribe tu comentario"></textarea>
     <div id="turnstile-comentarios"></div>
-    <small class="nota-privacidad">El correo se utiliza únicamente para gestionar tu comentario.</small>
+    <small class="nota-privacidad">Puedes dejar tu correo si quieres. No será público.</small>
     <button id="enviar-comentario" type="submit">Publicar comentario</button>
     <p class="mensaje" id="estado-comentario" role="status" aria-live="polite"></p>
   </form>
@@ -811,7 +811,7 @@ footer {
   const HISTORIA = "020-hochalm-ascenso-hasta-1-277-m";
   const IDIOMA = "es";
   const SITE_KEY = "0x4AAAAAAGHEiH-CdG-pin6w";
-  const T = ["Comentarios", "Todavía no hay comentarios. ¡Sé el primero!", "Tu nombre", "Tu correo electrónico (no será público)", "Escribí tu comentario", "Publicar comentario", "El correo se utiliza únicamente para gestionar tu comentario.", "Cargando comentarios...", "Comentario publicado.", "No se pudo completar la operación.", "Responder", "Cancelar respuesta", "Respondiendo a", "Verificación antispam pendiente.", "Comentario recibido. Está pendiente de revisión y aparecerá cuando sea aprobado."];
+  const T = ["Comentarios", "Todavía no hay comentarios. ¡Sé el primero!", "Tu nombre", "Tu correo electrónico (opcional, no será público)", "Escribe tu comentario", "Publicar comentario", "Puedes dejar tu correo si quieres. No será público.", "Cargando comentarios...", "Comentario publicado.", "No se pudo completar la operación.", "Responder", "Cancelar respuesta", "Respondiendo a", "Verificación antispam pendiente.", "Comentario recibido. Está pendiente de revisión y aparecerá cuando sea aprobado."];
   const lista = document.getElementById('lista-comentarios');
   const form = document.getElementById('form-comentario');
   const estado = document.getElementById('estado-comentario');
