@@ -1796,6 +1796,36 @@ async function cargar() {
     return plantilla
 
 
+def crear_navegacion_historias(historia, idioma='es'):
+    """Enlaces a la siguiente historia publicada y a la portada."""
+
+    etiquetas = {
+        'es': ('Siguiente historia →', 'Inicio'),
+        'de': ('Nächste Geschichte →', 'Startseite'),
+        'en': ('Next story →', 'Home')
+    }
+
+    siguiente_texto, inicio_texto = etiquetas[idioma]
+
+    siguiente = historia.get('siguiente', {}).get(idioma)
+
+    boton_siguiente = ''
+
+    if siguiente:
+        boton_siguiente = (
+            f'<a class="boton-siguiente" '
+            f'href="{seguro(siguiente)}">'
+            f'{seguro(siguiente_texto)}</a>'
+        )
+
+    return (
+        '<nav class="navegacion-historias">'
+        + boton_siguiente
+        + f'<a class="boton-inicio" href="/blog/">'
+        + f'{seguro(inicio_texto)}</a>'
+        + '</nav>'
+    )
+
 def crear_articulo(historia, idioma='es'):
     """Genera una versión de la historia en el idioma indicado."""
 
