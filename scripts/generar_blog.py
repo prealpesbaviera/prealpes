@@ -1356,7 +1356,7 @@ ESTILOS_NAVEGACION = '''
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 12px;
-  margin: 45px 0 10px;
+  margin: 15px 0 0;
   font-family: Arial, sans-serif;
 }
 
