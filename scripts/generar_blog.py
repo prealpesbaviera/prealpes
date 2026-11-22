@@ -308,6 +308,22 @@ def leer_historia(archivo):
         if f
     ]
 
+    # Carga masiva alternativa a Pages CMS:
+    # subir varias fotos juntas a blog/imagenes/por-cumbre/001/
+    # (001 es el numero de la cumbre). Se añaden automaticamente
+    # a la galeria, sin modificar el Markdown ni las fotos antiguas.
+    carpeta_fotos = BLOG / 'imagenes' / 'por-cumbre' / f'{numero:03d}'
+    extensiones = {'.jpg', '.jpeg', '.png', '.webp', '.gif', '.avif'}
+    if carpeta_fotos.is_dir():
+        existentes = {url_imagen(f) for f in galeria}
+        for foto in sorted(carpeta_fotos.iterdir(), key=lambda p: p.name.lower()):
+            if not foto.is_file() or foto.suffix.lower() not in extensiones:
+                continue
+            ruta_foto = '/blog/imagenes/por-cumbre/' + f'{numero:03d}/' + foto.name
+            if url_imagen(ruta_foto) not in existentes:
+                galeria.append(ruta_foto)
+                existentes.add(url_imagen(ruta_foto))
+
     imagen = (
         str(datos.get('imagen') or '').strip()
         or (galeria[0] if galeria else '')
