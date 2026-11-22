@@ -1350,6 +1350,45 @@ TURNSTILE_SITE_KEY = '0x4AAAAAAGHEiH-CdG-pin6w'
 COMENTARIOS_API = 'https://blog-comentarios-api.ybarrerao.workers.dev/api/comentarios'
 
 
+ESTILOS_NAVEGACION = '''
+.navegacion-historias {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 45px 0 10px;
+  font-family: Arial, sans-serif;
+}
+
+.navegacion-historias a {
+  display: inline-block;
+  padding: 11px 18px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.boton-siguiente {
+  background: #1f4033;
+  color: white;
+}
+
+.boton-siguiente:hover {
+  background: #345e49;
+}
+
+.boton-inicio {
+  border: 1px solid #b8c6b7;
+  color: #1f4033;
+  background: transparent;
+}
+
+.boton-inicio:hover {
+  background: #eeefe3;
+}
+'''
+
 ESTILOS_COMENTARIOS = '''
 .comentarios-blog {
   margin: 65px 0 25px;
