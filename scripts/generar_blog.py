@@ -1502,28 +1502,28 @@ ESTILOS_COMENTARIOS = '''
 '''
 
 def crear_comentarios(historia, idioma='es'):
-    # Un mismo hilo de comentarios para las tres traducciones.
+    # Un mismo hilo de comentarios para las tres traducciones.  
     textos = {
         'es': ('Comentarios', 'Todavía no hay comentarios. ¡Sé el primero!',
-               'Tu nombre', 'Tu correo electrónico (no será público)',
-               'Escribí tu comentario', 'Publicar comentario',
-               'El correo se utiliza únicamente para gestionar tu comentario.',
+               'Tu nombre', 'Tu correo electrónico (opcional, no será público)',
+               'Escribe tu comentario', 'Publicar comentario',
+               'Puedes dejar tu correo si quieres. No será público.',
                'Cargando comentarios...', 'Comentario publicado.',
                'No se pudo completar la operación.', 'Responder', 'Cancelar respuesta',
                'Respondiendo a', 'Verificación antispam pendiente.',
                'Comentario recibido. Está pendiente de revisión y aparecerá cuando sea aprobado.'),
         'de': ('Kommentare', 'Noch keine Kommentare. Schreib den ersten!',
-               'Dein Name', 'Deine E-Mail-Adresse (nicht öffentlich)',
+               'Dein Name', 'Deine E-Mail-Adresse (optional, nicht öffentlich)',
                'Schreib deinen Kommentar', 'Kommentar veröffentlichen',
-               'Deine E-Mail-Adresse wird nur zur Verwaltung deines Kommentars verwendet.',
+               'Du kannst deine E-Mail-Adresse freiwillig angeben. Sie wird nicht veröffentlicht.',
                'Kommentare werden geladen...', 'Kommentar veröffentlicht.',
                'Vorgang fehlgeschlagen.', 'Antworten', 'Antwort abbrechen',
                'Antwort an', 'Spam-Schutz noch nicht eingerichtet.',
                'Kommentar erhalten. Er wird geprüft und nach Freigabe veröffentlicht.'),
         'en': ('Comments', 'No comments yet. Be the first!',
-               'Your name', 'Your email (not public)',
+               'Your name', 'Your email (optional, not public)',
                'Write your comment', 'Post comment',
-               'Your email is used only to manage your comment.',
+               'You can provide your email if you wish. It will not be public.',
                'Loading comments...', 'Comment posted.',
                'Something went wrong.', 'Reply', 'Cancel reply',
                'Replying to', 'Spam protection not configured yet.',
