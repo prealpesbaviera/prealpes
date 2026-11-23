@@ -17,6 +17,14 @@ galeria:
   - /blog/imagenes/Bärenkopf 8.jpg
   - /blog/imagenes/Bärenkopf 9.jpg
   - /blog/imagenes/Bärenkopf 10.jpg
+  - /blog/imagenes/Bärenkop 15.jpg
+  - /blog/imagenes/Bärenkop 11.jpg
+  - /blog/imagenes/Bärenkop 13.jpg
+  - /blog/imagenes/Bärenkop 16.jpg
+  - /blog/imagenes/Bärenkop 17.jpg
+  - /blog/imagenes/Bärenkop 18.jpg
+  - /blog/imagenes/Bärenkop 12.jpg
+  - /blog/imagenes/Bärenkop 14.jpg
 altitud: "1.991"
 desnivel: "1.060"
 distancia: 11,5 km
