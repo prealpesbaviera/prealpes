@@ -42,5 +42,5 @@ En la cima se ven muy cerca todas esas cadenas montañosas alrededor#. Los Alpes
 
 [[fotos:2,3,4,7]]
 
-
-Es un buen plan de unas 3 horas para hacerlo con alguien relativamente fit. EN su momento lo utilizaré como montaña de entrenamiento. Un factor interesante al final es que cuenta con una mini cascada escondida, bien cubierta de vegetación, donde puedes bañarte sin probblema de ser visto. Una refrescada después de esta subida no cae nada mal. En tren puedes llegar desde Munich y te bajas en la parada Gaissach. Tal vez son unos 2 kilométros que debes caminar, pero es bonito ese paseo hasta el pie de monte. Mi  
+##Mi valoración
+Es un buen plan de unas 3 horas para hacerlo con alguien relativamente fit. Un factor interesante al final del recorrido ida y vuelta es que cuenta con una mini cascada escondida, bien cubierta de vegetación, donde puedes bañarte sin probblema de ser visto. Una refrescada después de esta subida no cae nada mal. En tren puedes llegar desde Munich y te bajas en la parada Gaissach. Tal vez son unos 2 kilométros que debes caminar, pero es bonito ese paseo hasta el pie de monte. Sumando todos esos factores, buena para hacer ejercicio, accesible con transporte público, con cerveza disponible en lo alto, con buena vista y no tan turístico, creo que definitivamente merece mucho la pena subirla.
