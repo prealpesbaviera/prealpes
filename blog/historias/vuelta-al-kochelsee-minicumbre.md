@@ -6,6 +6,12 @@ realizada: true
 latitud: 47.637792
 longitud: 11.327226
 imagen: /blog/imagenes/Kochelsee.webp
+galeria:
+  - /blog/imagenes/Kochel 7.jpg
+  - /blog/imagenes/Kochel 5.jpg
+  - /blog/imagenes/Kochel 2.jpg
+  - /blog/imagenes/Kochel 4.jpg
+  - /blog/imagenes/Kochel 6.jpg
 altitud: "601"
 desnivel: "50"
 distancia: 15 km
@@ -18,7 +24,7 @@ estado: publicado
 
 Una pareja de buenos amigos de Berlin llegan a visitarme y queríamos hacer un tour relativamente exigente. Sin embargo, por problemas repentinos en su familia mi amiga no tenía cabeza ni fuerza para hacer algo deportivo exigente, pero claro una buena terapia sí podía ser un paseo alrededor de un lago para distraernos. Esto también empataba bien con la gradualidad que debe tener este reto, empezar por algo micro, logrando victorias pequeñas tempranas, que te motiven a subir cimas muy altas en el futuro. Esta cumbre no se puede ni siquiera llamar cumbre, porque solo se suben escasos metros. Sin embargo, la ronda por todo el lago Kochel es bastante larga para lo cual requieres estar acostumbrado a caminar. Nos tomó 16 kilómetros hacer todo este recorrido que bajo un día soleado requiere un buen aguante.   
 
-**[[derecha:2]]**
+**[[derecha:1]]**
 
 ## Recorrido
 
@@ -27,6 +33,8 @@ Este se inicia en Schlendoorf. Hay un parqueadero allí, pero recuerdo que es ca
 ## Baño en el lago
 
 Luego del Felsenweg, hay una playa muy bonita, con agua azul turquesa, limpia, especzacular, super recomendado. Día soleado y con una buena acumulación ya de kilometros, pues no se diga más. Aquí las fotos hablan por sí solas. Si vas al lago tienes que hacerlo. Una opción para no caminar tanto es usar barcos que por ejemplo te pueden trasladar desde donde arrancamos hasta este punto, en caso que no quieras caminar. No salen muchos en todo el día, así que es importante consultar primero los horarios. Nosotros estamos en un plan sin plan, así que ni lo miramos. 
+
+**[[izquierda:4,5]]**
 
 ## Represa del Kochelsee
 
