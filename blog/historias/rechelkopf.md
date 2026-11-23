@@ -27,7 +27,7 @@ estado: publicado
 
 ### El punto de partida
 
-Buscas el parqueadero al pie de la montaña por el lado del barrio Lehen de Gaissach. Desde allí tienes también la opción de recorrer el pantana o hacer una ruta exigente en bici hasta la Schwaiger Alm. Ese es el primer punto a conectar en esta ruta de senderismo, pero se va por un camino de raíces relativamente empinado. Les recomiendo llevar algunas monedas en el bolsillo porque allí hay un espendedor muy bueno de cerveza que atiende las 24 horas. Se trata de un espendedor tina de cerveza. Funciona muy fácil, en un bebededero para vacas están sumergidas en agua canastas de cerveza y refrescos. Tomas lo que quieres, y pones en una alcancia tu aporte voluntario de lo que consideres cuesta una cerveza a esa altura. Ese negocio no funcionaría en mi país, pero aquí la gente siempre deja algo. 
+Buscas el parqueadero al pie de la montaña por el lado del barrio Lehen de Gaissach. Desde allí tienes también la opción de recorrer el pantano o hacer una ruta exigente en bici hasta la Schwaiger Alm. Ese es el primer punto a conectar en esta ruta de senderismo, pero se va por un camino de raíces relativamente empinado. Les recomiendo llevar algunas monedas en el bolsillo porque allí hay un espendedor muy bueno de cerveza que atiende las 24 horas. Se trata de un espendedor tina de cerveza. Funciona muy fácil, en un bebededero para vacas están sumergidas canastas de cerveza y refrescos. Tomas lo que quieres, y pones en una alcancia tu aporte voluntario de lo que consideres cuesta una cerveza a esa altura. Ese negocio no funcionaría en mi país, pero aquí la gente siempre deja algo. 
 
 [[foto:2]]
 
