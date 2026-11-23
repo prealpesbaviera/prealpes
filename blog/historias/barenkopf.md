@@ -14,7 +14,6 @@ galeria:
   - /blog/imagenes/Bärenkopf 5.jpg
   - /blog/imagenes/Bärenkopf 6.jpg
   - /blog/imagenes/Bärenkopf 7.jpg
-  - /blog/imagenes/Bärenkopf 8.jpg
   - /blog/imagenes/Bärenkopf 9.jpg
   - /blog/imagenes/Bärenkopf 10.jpg
   - /blog/imagenes/Bärenkop 15.jpg
