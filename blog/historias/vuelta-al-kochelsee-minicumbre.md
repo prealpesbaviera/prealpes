@@ -36,8 +36,6 @@ Este se inicia en Schlendoorf. Hay un parqueadero allí, pero recuerdo que es ca
 
 [[grande:2]]
 
-[[izquierda:4]]
-
 Luego del Felsenweg, hay una playa muy bonita, con agua azul turquesa, limpia, especzacular, super recomendado. Día soleado y con una buena acumulación ya de kilometros, pues no se diga más. Aquí las fotos hablan por sí solas. Si vas al lago tienes que hacerlo. Una opción para no caminar tanto es usar barcos que por ejemplo te pueden trasladar desde donde arrancamos hasta este punto, en caso que no quieras caminar. No salen muchos en todo el día, así que es importante consultar primero los horarios. Nosotros estamos en un plan sin plan, así que ni lo miramos. 
 
 
