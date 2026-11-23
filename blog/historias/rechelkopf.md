@@ -11,6 +11,8 @@ galeria:
   - /blog/imagenes/Rechelkopf 2-2.jpg
   - /blog/imagenes/Rechelkopf 3-2.jpg
   - /blog/imagenes/Rechelkopf 4.jpg
+  - /blog/imagenes/Rechelkopf 5-1.jpg
+  - /blog/imagenes/Rechelkopf 6.jpg
 altitud: "1330"
 desnivel: "600"
 distancia: 9,5 km
