@@ -26,7 +26,7 @@ Ese de verdad es un buen premio, pero aconsejo primero llegar a lo alto de la cu
 
 ### Vista a Gaissach
 
-Arriba tienes vista a Gaissach, que es el único pueblo con dos estaciones de trenes. Según cuenta la leyenda, los habitantes de Gaissach pertenecen a la tercera raza. Quiere decir, que son bin particulares, bien conservadores, bien tradicionalistas, y su variante del bávaro es difícil de entender. Fue el primer pueblo donde llegué a vivir después de haber vivido en una metropoli de 10 millones como es Bogotá, tenía unos cuantos vecinos chismosos y muchas vacas. Creo que hay más vacas que habitantes en el pueblo. Cuando estaba viviendo allí vi una estadística en el períodico que afirmaba que solo había una sola persona pobre en ese pueblo. Sí, se refería con toda certeza a mí, a quién más?
+Arriba tienes vista a Gaissach, que es el único pueblo con dos estaciones de trenes. Según cuenta la leyenda, los habitantes de Gaissach pertenecen a la tercera raza. Quiere decir, que son bin particulares, bien conservadores, bien tradicionalistas, y su variante del bávaro es difícil de entender. Fue el primer pueblo donde llegué a vivir después de haber vivido en una metropoli de 10 millones como es Bogotá, tenía unos cuantos vecinos chismosos y muchas vacas. Creo que hay más vacas que habitantes en el pueblo. Cuando estaba viviendo allí vi una estadística en el períodico que afirmaba que solo había una sola persona pobre en ese pueblo. Sí, ¿se refería con toda certeza a mí, a quién más?
 
 [[nota:Apunte del camino: un detalle curioso sobre la ruta.]]
 [[fotos:3,4]]
