@@ -26,6 +26,10 @@ Este se inicia en Schlendoorf. Hay un parqueadero allí, pero recuerdo que es ca
 
 ## Baño en el lago
 
+Luego del Felsenweg, hay una playa muy bonita, con agua azul turquesa, limpia, especzacular, super recomendado. Día soleado y con una buena acumulación ya de kilometros, pues no se diga más. Aquí las fotos hablan por sí solas. Si vas al lago tienes que hacerlo. Una opción para no caminar tanto es usar barcos que por ejemplo te pueden trasladar desde donde arrancamos hasta este punto, en caso que no quieras caminar. No salen muchos en todo el día, así que es importante consultar primero los horarios. Nosotros estamos en un plan sin plan, así que ni lo miramos. 
+
+## Represa del Kochelsee 
+
 Después tomas rumbo hacia la represa del lago. Dado que muy cerca es el lago Walchensee, y se encuentra un poco más alto que el Kochelsee, entonces se aprovecha ese desnivel para generar energía limpia con la caída del agua. Aproximadamente el 30% de la energía que consume el sistema de trenes de Alemania, el Deutsche Bahn, se suple de esta planta. Hay un sendero si quieres caminar al otro lago desde aquí, lo cual también es muy recomendado. Luego de eso
 
 
