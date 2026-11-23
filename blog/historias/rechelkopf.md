@@ -31,7 +31,7 @@ Buscas el parqueadero al pie de la montaña por el lado del barrio Lehen de Gais
 
 [[foto:2]]
 
-Ese de verdad es un buen premio, pero aconsejo primero llegar a lo alto de la cumbre y luego de bajada sí tomarse una y sola una cerveza. Ten en cuenta que bajar borrachito por camino de raíces puede llegar a ser bastante peligroso, incluso más que manejar en un estado así. Es un camino constantemente exigente, así que mejor no hacer tonterías. Recomiendo mucho esta montaña para practicar senderismo porque lo tienes todo en poca distancia. La subida la haces como en hora y media por camino casi todo de raíces, algunos trozos por carretera rural, a veces cubierto de árboles, y a veces en claros. 
+Ese de verdad es un buen premio, pero aconsejo primero llegar a lo alto de la cumbre y luego de bajada sí tomarse una y sola una cerveza. Ten en cuenta que bajar borrachito por camino de raíces puede llegar a ser bastante peligroso, incluso más que manejar en un estado así. Es un camino constantemente exigente, así que mejor no hacer tonterías. Recomiendo mucho esta montaña para practicar senderismo porque lo tienes todo en poca distancia. La subida la haces como en hora y media por camino casi todo de raíces, algunos trozos por carretera rural, a veces cubierto de árboles, y a veces en claros, siempre acompañado del sirilé de las campanas que cuelgan de los cuellos de las vacas. 
 
 
 ### Vista a Gaissach
