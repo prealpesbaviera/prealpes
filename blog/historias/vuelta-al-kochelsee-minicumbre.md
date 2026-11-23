@@ -12,6 +12,7 @@ galeria:
   - /blog/imagenes/Kochel 2.jpg
   - /blog/imagenes/Kochel 4.jpg
   - /blog/imagenes/Kochel 6.jpg
+  - /blog/imagenes/Kochel 3.jpg
 altitud: "601"
 desnivel: "50"
 distancia: 15 km
@@ -30,11 +31,13 @@ Una pareja de buenos amigos de Berlin llegan a visitarme y queríamos hacer un t
 
 Este se inicia en Schlendoorf. Hay un parqueadero allí, pero recuerdo que es caro y anda siempre muy lleno. Nosotros no pudimos aparcar ahí, así que nos tocó buscar un sitio en cualquier calle del pueblo. Si ya vas a caminar 16 kilómetros, caminar unas pocas cuadras de más no es un problema y además no tienes que pagar nada. Se empieza por el sur, como si fueras a Herzogstand, una montaña muy interesante que también se puede hacer desde aquí. Como la idea solo es bordear el lago, simplemente te quedas en el camino donde siempre ves el lago y ya. En algún momento se pasa por una zona interesante rocosa, Felsenweg, que puede tener cierto grado de exigencia para personas muy sedentarias, y es allí donde subes los 50 metros de este tour. La vista desde allí hacia el lago es muy bonita y cuenta con una cruz esta mini cumbre. 
 
+**[[derecha:3]]**
+
 ## Baño en el lago
 
 Luego del Felsenweg, hay una playa muy bonita, con agua azul turquesa, limpia, especzacular, super recomendado. Día soleado y con una buena acumulación ya de kilometros, pues no se diga más. Aquí las fotos hablan por sí solas. Si vas al lago tienes que hacerlo. Una opción para no caminar tanto es usar barcos que por ejemplo te pueden trasladar desde donde arrancamos hasta este punto, en caso que no quieras caminar. No salen muchos en todo el día, así que es importante consultar primero los horarios. Nosotros estamos en un plan sin plan, así que ni lo miramos. 
 
-**[[izquierda:4,5]]**
+**[[izquierda:2,4]]**
 
 ## Represa del Kochelsee
 
@@ -51,5 +54,7 @@ El camino nunca es aburrido, en un momento te desprendes del borde del lago, jus
 Luego vuelves a encontrar el lago, y sigues bordeándolo, lo dejas, lo encuentras de nuevo, y así te la pasas caminando por el lado de playas y terrenos privados. Finalmente llegas al pueblo Kochel donde puedes hacer de todo un poco. Interesante es el museo del pintor impresionista Franz Marc. Hay muchos cafés y restaurantes buenos, o si no te vas a una de las muchas playas al borde del lago que hay. Es un plan de todo un fin de semana. Si quieres algo más relajado, también puedes disfrutar del sauna y piscina Kristall Trimini con vista al lago. Es uno de los saunas más famosos de la región y es inmenso.  
 
 Después queda un estrecho largo al pie de la carretera principal entre el pueblo Kochel y Schlendorf, donde iniciamos el recorrido. Puede parecer un poco monótono porque es bastante recto, sin sombra y largo, pero si miras hacia el lago te vas a deleitar con la hermosa vista hacia la montaña del Herzogstand que te hace perder en pensamientos tranquilos. 
+
+**[[grande:5]]**
 
 Así terminó un día tranquilo justo al atardecer, y aunque no hubo casi nada que trepar nuestras piernas sentía el agotamiento natural de una jornada con mucho plan de por medio. Mi recomendación, es hacer un trayecto en barco, quizá en el último tramo, y aprovechar ese tiempo ahorrado en otras actividades muy interesantes para hacer en los diferentes puntos del recorrido. Un plan para hacer tranquilo con personas que están acostumbradas a caminar.
