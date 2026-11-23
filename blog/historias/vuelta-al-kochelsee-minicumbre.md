@@ -34,7 +34,7 @@ Este se inicia en Schlendoorf. Hay un parqueadero allí, pero recuerdo que es ca
 
 ## Baño en el lago
 
-[[izquierda:2]]
+[[grande:2]]
 
 [[izquierda:4]]
 
