@@ -31,21 +31,22 @@ Una pareja de buenos amigos de Berlin llegan a visitarme y queríamos hacer un t
 
 Este se inicia en Schlendoorf. Hay un parqueadero allí, pero recuerdo que es caro y anda siempre muy lleno. Nosotros no pudimos aparcar ahí, así que nos tocó buscar un sitio en cualquier calle del pueblo. Si ya vas a caminar 16 kilómetros, caminar unas pocas cuadras de más no es un problema y además no tienes que pagar nada. Se empieza por el sur, como si fueras a Herzogstand, una montaña muy interesante que también se puede hacer desde aquí. Como la idea solo es bordear el lago, simplemente te quedas en el camino donde siempre ves el lago y ya. En algún momento se pasa por una zona interesante rocosa, Felsenweg, que puede tener cierto grado de exigencia para personas muy sedentarias, y es allí donde subes los 50 metros de este tour. La vista desde allí hacia el lago es muy bonita y cuenta con una cruz esta mini cumbre. 
 
-[[derecha:3]]
 
 ## Baño en el lago
 
-Luego del Felsenweg, hay una playa muy bonita, con agua azul turquesa, limpia, especzacular, super recomendado. Día soleado y con una buena acumulación ya de kilometros, pues no se diga más. Aquí las fotos hablan por sí solas. Si vas al lago tienes que hacerlo. Una opción para no caminar tanto es usar barcos que por ejemplo te pueden trasladar desde donde arrancamos hasta este punto, en caso que no quieras caminar. No salen muchos en todo el día, así que es importante consultar primero los horarios. Nosotros estamos en un plan sin plan, así que ni lo miramos. 
-
 [[izquierda:2]]
 
-[[derecha:4]]
+[[izquierda:4]]
+
+Luego del Felsenweg, hay una playa muy bonita, con agua azul turquesa, limpia, especzacular, super recomendado. Día soleado y con una buena acumulación ya de kilometros, pues no se diga más. Aquí las fotos hablan por sí solas. Si vas al lago tienes que hacerlo. Una opción para no caminar tanto es usar barcos que por ejemplo te pueden trasladar desde donde arrancamos hasta este punto, en caso que no quieras caminar. No salen muchos en todo el día, así que es importante consultar primero los horarios. Nosotros estamos en un plan sin plan, así que ni lo miramos. 
+
+
 
 ## Represa del Kochelsee
 
 Después tomas rumbo hacia la represa del lago. Dado que muy cerca es el lago Walchensee, y se encuentra un poco más alto que el Kochelsee, entonces se aprovecha ese desnivel naturla de unos 200 metros para generar energía limpia con la caída del agua. Aproximadamente el 30% de toda la energía que consume el sistema de trenes de Alemania, el Deutsche Bahn, se suple de esta planta. Hay un sendero si quieres caminar al otro lago desde aquí, lo cual también es muy recomendado. Se fundó en 1.924 y para aquel entonces era una de las más grandes y potentes del mundo. Allí puedes entrar y ver las turbinas que generan la energía, y hay un mini museo que te explica a grandes rasgos la historia y temas de interés en torno a la represa. Hay también un restaurante, pero venden más como comidas rápidas que platos interesantes. Así que no recomiendo comer allí. 
 
-
+[[derecha:3]]
 ## Caminata bordeando zona de escaladas hasta el pueblo am Kochelsee
 
 
