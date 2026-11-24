@@ -14,6 +14,8 @@ dificultad: facil-moderado
 acceso: Gaißach, Wanderparkplatz Gerstland
 estado: publicado
 ---
+[[entradilla: Mi montaña corta de entrenamiento frecuente.]]
+
 [[cita: Mi montaña corta de entrenamiento]]  
 [Reflexión sobre el motivo de caminar.]  
 [[separador]]  
