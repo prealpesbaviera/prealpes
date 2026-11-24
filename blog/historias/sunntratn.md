@@ -6,6 +6,13 @@ realizada: true
 latitud: 47.719283
 longitud: 11.601376
 imagen: /blog/imagenes/Sunntratn.webp
+galeria:
+  - /blog/imagenes/Sunntratn 1.jpg
+  - /blog/imagenes/Sunntratn 2.jpg
+  - /blog/imagenes/Sunntratn 3.jpg
+  - /blog/imagenes/Sunntratn 4.jpg
+  - /blog/imagenes/Sunntratn 5.jpg
+  - /blog/imagenes/Sunntratn 6.jpg
 altitud: "1.096"
 desnivel: "367"
 distancia: "7 "
