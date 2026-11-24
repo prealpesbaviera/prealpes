@@ -14,11 +14,11 @@ dificultad: facil-moderado
 acceso: Gaißach, Wanderparkplatz Gerstland
 estado: publicado
 ---
-[[cita:Hay lugares que uno comprende mejor cuando deja de hablar.]]
-[Reflexión sobre el motivo de caminar.]
-[[separador]]
-[[grande:2]]
-[[epigrafe:La luz cambió el paisaje durante unos minutos.]]
-[Describe el silencio, la atmósfera o los recuerdos.]
-[[centrado:Quizá no era la cima lo que estaba buscando.]]
+[[cita: Mi montaña corta de entrenamiento]]  
+[Reflexión sobre el motivo de caminar.]  
+[[separador]]  
+[[grande:2]]  
+[[epigrafe:La luz cambió el paisaje durante unos minutos.]]  
+[Describe el silencio, la atmósfera o los recuerdos.]  
+[[centrado:Quizá no era la cima lo que estaba buscando.]]  
 [Conclusión breve y abierta.]
