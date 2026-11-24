@@ -17,10 +17,12 @@ estado: publicado
 [[entradilla: Mi montaña corta de entrenamiento frecuente.]]
 
 [[cita: Mi montaña corta de entrenamiento]]  
-[Reflexión sobre el motivo de caminar.]  
-[[separador]]  
+
+##Cerca de Obergries 
+Es una montaña que queda cerca del poblado Obergries, perteneciente a Gaissach. Allí viven mis suegros y por ende frecuento mucho esta parte. Mucha gente usa esta montaña como entrenamiento diario. También viene mucho visitante de Múnich porque es un senderismo que se hace en muy corto tiempo, ideal para depsués del trabajo, aunque por su grado de inclinación se puede decir que es exigente, dado lo corto del trayecto también es cierto que casi cualquier persona la puede hacer. Gente muy fit hace esto en una hora, el ida y vuelta, pero sin prisa puedes disponer de unas dos horas para relajarte arriba un rato. 
+
 [[grande:2]]  
 [[epigrafe:La luz cambió el paisaje durante unos minutos.]]  
-[Describe el silencio, la atmósfera o los recuerdos.]  
-[[centrado:Quizá no era la cima lo que estaba buscando.]]  
+##Atardecer
+Los madrugadores suben antes del amanecer, yo no lo logro, así que prefiero ver el atardecer.  
 [Conclusión breve y abierta.]
