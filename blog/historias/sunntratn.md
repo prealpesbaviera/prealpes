@@ -14,9 +14,8 @@ dificultad: facil-moderado
 acceso: Gaißach, Wanderparkplatz Gerstland
 estado: publicado
 ---
-[[entradilla: Mi montaña corta de entrenamiento frecuente.]]
+[[entradilla: Mi montaña corta de entrenamiento.]]
 
-[[cita: Mi montaña corta de entrenamiento]]  
 
 ##Cerca de Obergries 
 Es una montaña que queda cerca del poblado Obergries, perteneciente a Gaissach. Allí viven mis suegros y por ende frecuento mucho esta parte. Mucha gente usa esta montaña como entrenamiento diario. También viene mucho visitante de Múnich porque es un senderismo que se hace en muy corto tiempo, ideal para depsués del trabajo, aunque por su grado de inclinación se puede decir que es exigente, dado lo corto del trayecto también es cierto que casi cualquier persona la puede hacer. Gente muy fit hace esto en una hora, el ida y vuelta, pero sin prisa puedes disponer de unas dos horas para relajarte arriba un rato. 
