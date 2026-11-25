@@ -40,7 +40,8 @@ Empiezas este recorrido en el parqueadero Waldherralm en Wackersberg, municipio 
 
 Casi todo el trayecto es por una via forestal empinada, muy frecuentada por ciclistas de montaña. Puede llegar a ser un poco monótono, pero como ejercicio está bien porque necesitas resistencia por un buen rato. En lagún punto, ya muy cerca de la cima, hay un desvio señalizado que te saca de esa via y haces un camino mucho más empinado para subir los últimso 200 metros por camino de raíces. Al final tienes una vista muy hermosa hacia el valle del Isar y Lenggries. 
 
-
+## La cruz y su relación con la esvástica 
+Durante el período del nacionalsocialismo era muy normal que a diferentes cosas le pusieron el nombre de Hitler 
 
 [Cuenta el esfuerzo, la conversación o la sorpresa.]
 [[grande:6]]
