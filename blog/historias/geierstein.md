@@ -43,7 +43,7 @@ estado: publicado
 
 [[fotos:2,3,4,5]]
 
-&nbsp;
+Este es uno de las rutas de senderismo que más me ha gustado hacer y especialmente la forma cómo la hice ese día. No fue quizá la forma más responsable de hacerlo, pero fue una aventura increible. Como pueden ver más abajo esta entrada está llena de fotos porque todo era muy bonito allí arriba. Hay un detalle importante es que cuando estuve arriba era jsuto el atardecer como pueden apreciar. Es decir que cuentas a lo sumo con 30 minutos de luz de día para el descenso. Bien aquí les cuento como fue todo. 
 
 [[centrado: No veo ninguna cumbre.]]
 [[grande:2]]
