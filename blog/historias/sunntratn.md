@@ -24,7 +24,7 @@ estado: publicado
 
 
 ##Cerca de Obergries 
-Es una montaña que queda cerca del poblado Obergries, perteneciente a Gaissach. Allí viven mis suegros, razón por la cual frecuento mucho esta zona. Mucha gente usa esta montaña como entrenamiento diario antes o después de ir a trabajar. También viene mucho visitante de Múnich porque es una ruta un poco exigente, pero rápida, así que casi cualquier persona la puede hacer y sentirse bien disfrutando la hermosa vista al valle del río Isar. Este es el mismo río que atraviesa Munich y sus aguas vienen directamente de Los Alpes. Gente muy fit hace esto en una hora, el ida y vuelta, pero sin prisa puedes disponer de unas dos horas para relajarte arriba un rato. Es interesante por ejemplo ver parapentistas lanzándose desde aquí
+Es una montaña que queda cerca del poblado Obergries, perteneciente a Gaissach. Allí viven mis suegros, razón por la cual frecuento mucho esta zona. Mucha gente usa esta montaña como entrenamiento diario antes o después de ir a trabajar. También viene mucho visitante de Múnich porque es una ruta un poco exigente, pero rápida, así que casi cualquier persona la puede hacer y sentirse bien disfrutando la hermosa vista al valle del río Isar. Este es el mismo río que atraviesa Munich y sus aguas vienen directamente desde Los Alpes. La gente muy fit hace esto en una hora, el ida y vuelta, pero sin prisa puedes disponer de unas dos horas para relajarte arriba un rato. Es interesante por ejemplo ver parapentistas lanzándose desde aquí.
 
 [[grande:2]]  
 
