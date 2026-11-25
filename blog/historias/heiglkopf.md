@@ -29,7 +29,7 @@ estado: publicado
 
 ##Salida en Wackersberg
 
-Empiezas este recorrido en el parqueadero Waldherralm en Wackersberg, municipio al lado de Bad Tölz. 
+Empiezas este recorrido en el parqueadero Waldherralm en Wackersberg, municipio al lado de Bad Tölz. Cuando en algún momento Bad Tölz era famoso por sus saunas y todo los tratamiento de wellness alrededor de ello
 
 [[fotos:2,3,4,5]]
 [[epigrafe:Cuatro momentos del mismo recorrido.]]
