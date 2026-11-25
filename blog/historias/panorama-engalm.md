@@ -24,7 +24,7 @@ dificultad: facil-moderado
 acceso: Engalm Austria
 estado: publicado
 ---
-[[entradilla:La cumbre de Gaissach]]
+[[entradilla:Uno de los rinconcitos más bonitos en Austria]]
 
 ### El punto de partida
 
