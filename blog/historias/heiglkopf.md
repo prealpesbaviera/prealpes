@@ -25,7 +25,8 @@ dificultad: moderado
 acceso: Wackersberg (Waldherralm)
 estado: publicado
 ---
-[[entradilla: Mi montaña corta de entrenamiento.]]
+[[entradilla: Una montaña con historia]]
+
 ##Cerca de Obergries 
 [Dos o tres líneas para situar al lector.]
 [[fotos:2,3,4,5]]
