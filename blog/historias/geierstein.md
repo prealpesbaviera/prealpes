@@ -45,10 +45,13 @@ estado: publicado
 
 Este es uno de las rutas de senderismo que más me ha gustado hacer y especialmente la forma cómo la hice ese día. No fue quizá la forma más responsable de hacerlo, pero fue una aventura increible. Como pueden ver más abajo esta entrada está llena de fotos porque todo era muy bonito allí arriba. Hay un detalle importante es que cuando estuve arriba era jsuto el atardecer como pueden apreciar. Es decir que cuentas a lo sumo con 30 minutos de luz de día para el descenso. Bien aquí les cuento como fue todo. 
 
-[[centrado: No veo ninguna cumbre.]]
+##El inicio
+
+Se arranca en el parqueadero del Hohenburg en Lenggries, desde dodne también puedes empezar otros tours que estaré coemntando en otras historias más adelante. Allí debes tomar dirección hacia el norte siguiendo las indicaciones de los letreros amarillos. No hay forma de perderse, el inicio está bien claro. Luego de caminar por un paseo bonito con un riachuelo al lado, te metes de lleno en la montaña. Apenas pisas, no hay pedazos de descanso. Todo es empinado por camino de raíces, que a medida que avanza se pone cada vez más exigente. Para este tour se necesita muy buena condición física, cero vertigo y estar preparado para escalar un poco. Cuando sientes que ya casi es el final y que todo va a empezar a ponerse más fácil, es cuando realmente todo se pone más difícil. Sumado a eso iba contrareloj porque dentro de ya muy poco era el atardecer, así que tiempo para hacer pausa tampoco tenía mucho.  
+
 [[grande:2]]
-[Efectivamente no hay que subir casi nada, solo 50 metros, pero cuando te pones retos a larego plazo lo mejor es tener victorias tempranas fáciles de conseguir. En todo caso se hizo una ronda bastante larga y estenuante, 16 kilómetros en un día soleado con muy poca sombra, que vale la pena ser contada.]
-[[separador]]
+
+Se necesita además una buena capacidad de ubicación. Aunque hay señales pintadas en lso árboles, a veces no son tan claras, y muchas veces no están ahí. Cuando lelgas a la roca final, ya no hay más señales y hay huellas tanto para la izquierda como para la derecha. La diferencia es sencilla, por la derecha es un cmaino relativamente normal; soloque no lo sabes; y por la izquierda tienes que escalar. Es importante resaltar que en este momento ya no tienes casi fuerzas, y que te toque escalar es algo que te gustaría con un poco más de reservas de energía. Bueno nada que agregar, tomé obviamente por la izquierda 
 
 ### Unas horas antes
 
