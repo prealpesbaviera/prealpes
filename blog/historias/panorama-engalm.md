@@ -11,7 +11,6 @@ galeria:
   - /blog/imagenes/Panorama Eng 2.jpg
   - /blog/imagenes/Panorama Eng 3.jpg
   - /blog/imagenes/Panorama Eng 4.jpg
-  - /blog/imagenes/Panorama Eng 5.jpg
   - /blog/imagenes/Panorama Eng 6.jpg
   - /blog/imagenes/Panorama Eng 7.jpg
   - /blog/imagenes/Panorama Eng 8.jpg
@@ -35,7 +34,7 @@ En Bogotá vivimos con Carito, y era un día muy especial porque decidió venir 
 
 ### Recorrido
 
-Llegamos en auto, pero también hay una ruta en bus hasta allá. 
+Llegamos en auto, pero también hay una ruta en bus hasta allá. Empiezas a subir cerca del letrero de bienvenida que se en esta foto. Es un camino entre raíces y rocas bien empinado. Luego pasas a una via destapada que te conduce a la Alm. Ahí puedes refrescarte un poco mientras contemplas el paisaje. Luego sigues subiendo por un sendero bastante empinado y al rematar encontrarás un mirador natural muy bonito. Desde allí luego desciendes por un camino con bastante pendiente y terminas en el caserio llamado Eng, donde la ogerta gastronómica es bastante amplia y los paisajes alrededor sos expectaculares. No sé si la mayoría, pero muchos turistas se quedan abajo sin hacer el recorrido. La verdad es que sí, solo estar aallí abajo ya merece mucho la pena. Recomiendo 
 
 **[[grande:6]]**
 
