@@ -14,13 +14,13 @@ dificultad: facil-moderado
 acceso: Engalm Austria
 estado: publicado
 ---
-**[[entradilla:Notas sueltas de un día entre senderos.]]**
+[[entradilla:La cumbre de Gaissach]]
 
-### 16:45 · El punto de partida****
+### El punto de partida
 
-**[[fotos:2,3,4,5]]**
+[[fotos:2,3,4,5]]
 
-**[[epigrafe:Cuatro momentos del mismo recorrido.]]**
+En Bogotá vivimos con Carito, y era un día muy especial porque decidió venir a visitarnos. Una de los rincones más bonitos que existen en la zona y como en el planeta tierra es Panorama Eng. Es una especie de enclave austriaco dentro de Alemania. Hay muchas montañas del Karwendel se pueden hacer desde allí. 
 
 **### Lo que no se ve en las fotos**
 
