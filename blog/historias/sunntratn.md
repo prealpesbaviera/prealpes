@@ -10,7 +10,6 @@ galeria:
   - /blog/imagenes/Sunntratn 1.jpg
   - /blog/imagenes/Sunntratn 2.jpg
   - /blog/imagenes/Sunntratn 3.jpg
-  - /blog/imagenes/Sunntratn 4.jpg
   - /blog/imagenes/Sunntratn 5.jpg
   - /blog/imagenes/Sunntratn 6.jpg
 altitud: "1.096"
