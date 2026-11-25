@@ -28,7 +28,5 @@ Es una montaña que queda cerca del poblado Obergries, perteneciente a Gaissach.
 
 [[grande:2]]  
 
-[[epigrafe:La luz cambió el paisaje durante unos minutos.]]  
 ##Atardecer
 Los madrugadores suben antes del amanecer, yo no lo logro, así que prefiero ver el atardecer.  
-[Conclusión breve y abierta.]
