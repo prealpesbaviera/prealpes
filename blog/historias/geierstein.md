@@ -17,6 +17,19 @@ galeria:
   - /blog/imagenes/Geierstein 8.jpg
   - /blog/imagenes/Geierstein 9.jpg
   - /blog/imagenes/Geierstein 10.jpg
+  - /blog/imagenes/Geierstein 12.jpg
+  - /blog/imagenes/Geierstein 11.jpg
+  - /blog/imagenes/Geierstein 13.jpg
+  - /blog/imagenes/Geierstein 14.jpg
+  - /blog/imagenes/Geierstein 15.jpg
+  - /blog/imagenes/Geierstein 16.jpg
+  - /blog/imagenes/Geierstein 17.jpg
+  - /blog/imagenes/Geierstein 18.jpg
+  - /blog/imagenes/Geierstein 19.jpg
+  - /blog/imagenes/Geierstein 20.jpg
+  - /blog/imagenes/Geierstein 21.jpg
+  - /blog/imagenes/Geierstein 22.jpg
+  - /blog/imagenes/Geierstein 23.jpg
 altitud: "1.491"
 desnivel: "800"
 distancia: 9,6 km
