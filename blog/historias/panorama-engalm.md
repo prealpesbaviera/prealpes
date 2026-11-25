@@ -6,6 +6,17 @@ realizada: true
 latitud: 47.39874261874624
 longitud: 11.57459842418257
 imagen: /blog/imagenes/Engalm.webp
+galeria:
+  - /blog/imagenes/Panorama Eng 1.jpg
+  - /blog/imagenes/Panorama Eng 2.jpg
+  - /blog/imagenes/Panorama Eng 3.jpg
+  - /blog/imagenes/Panorama Eng 4.jpg
+  - /blog/imagenes/Panorama Eng 5.jpg
+  - /blog/imagenes/Panorama Eng 6.jpg
+  - /blog/imagenes/Panorama Eng 7.jpg
+  - /blog/imagenes/Panorama Eng 8.jpg
+  - /blog/imagenes/Panorama Eng 9.jpg
+  - /blog/imagenes/Panorama Eng 10.jpg
 altitud: "1.418"
 desnivel: "295"
 distancia: 6 km
