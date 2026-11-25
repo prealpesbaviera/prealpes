@@ -32,7 +32,7 @@ estado: publicado
 Empiezas este recorrido en el parqueadero Waldherralm en Wackersberg, municipio al lado de Bad Tölz. Las aguas de la zona llamada Sauersberg son o eran ricas en yodo y sales mineraleses con buenas propiedades para la salud humana. Hacia mediados del siglo XIX se organizaron varios manantiales con fines curativos y esto atrajo mucho el turismo medicinal. En 1899 el el principe regente Leopold de Baviera le dio el título de Bad (balneario) a la ciudad de Tölz, y desde allí se llama Bad Tölz. Este título atrajo celebridades y fue un boom para el turismo del municipio. Luego se montaron baños termales, saunas y demás. Con las guerras se detuvo su actividad económica, pero luego de ello se modernizó y tuvo un fuerte auge económico. Sin embargo, luego con el crecimiento de la competencia, y los malos manejos administrativos llevaron al declive de este referente internacional en esta actividad. 
 
 
-[[fotos:2,3,4,5]]
+[[fotos:2,3]]
 
 
 
