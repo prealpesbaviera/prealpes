@@ -29,7 +29,7 @@ Es una montaña que queda cerca del poblado Obergries, perteneciente a Gaissach.
 [[grande:2]]  
 
 ##Atardecer
-El sol cuando se esconde lo hace del lado opuesto, así que es ideal para ver la puesta del sol.Tienes al frente las famosas montañas Brauneck y Blomberg que reciben muchos turistas todo el año. De los Alpes se ve un poquito, pero lo que más se destaca es ver todo el recorrido del Isar hasta Múnich. Apenas dejes de ver el sol, el tiempo hasta la última luz del día es justo el que necesitas para llegar al parqueadero. Si te gusta esquiar hay una pista justo al lado y el auto lo puedes dejar en este parqueadero o un poco más adelante. Donde remata la pista hay una Alm, donde puedes comer algo en temporada de invierno. De resto en esta montaña no encuentras oferta de nada, así que lelva lo que necesites tomar y comer. 
+El sol cuando se esconde lo hace del lado opuesto, así que es ideal para ver la puesta del sol.Tienes al frente las famosas montañas Brauneck y Blomberg que reciben muchos turistas todo el año. De los Alpes se ve un poquito, pero lo que más se destaca es ver todo el recorrido del Isar hasta Múnich. Apenas dejes de ver el sol, el tiempo hasta la última luz del día es justo el que necesitas para llegar al parqueadero. Si te gusta esquiar hay una pista justo al lado y el auto lo puedes dejar en este parqueadero o un poco más adelante. Donde remata la pista hay una Alm, donde puedes comer algo en temporada de invierno. De resto en esta montaña no encuentras oferta de nada, así que lleva lo que necesites tomar y comer. 
 
 ##Valoración
 
