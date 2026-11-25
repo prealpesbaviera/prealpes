@@ -27,8 +27,10 @@ estado: publicado
 ---
 [[entradilla: Una montaña con historia]]
 
-##Cerca de Obergries 
-[Dos o tres líneas para situar al lector.]
+##Salida en Wackersberg
+
+Empiezas este recorrido en el parqueadero Waldherralm en Wackersberg, municipio al lado de Bad Tölz. 
+
 [[fotos:2,3,4,5]]
 [[epigrafe:Cuatro momentos del mismo recorrido.]]
 
