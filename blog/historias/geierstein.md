@@ -37,7 +37,7 @@ duracion: 3 h 12 min
 dificultad: exigente
 estado: publicado
 ---
-[[entradilla:Uno de los rinconcitos más bonitos en Austria]]
+[[entradilla:Una montaña muy exigente e interesante]]
 
 ### El punto de partida
 
