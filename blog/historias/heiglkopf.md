@@ -6,6 +6,17 @@ realizada: true
 latitud: 47.727666
 longitud: 11.513358
 imagen: /blog/imagenes/Heiglkopf.webp
+galeria:
+  - /blog/imagenes/Heiglkopf 2.jpg
+  - /blog/imagenes/Heiglkopf 1.jpg
+  - /blog/imagenes/Heiglkopf 3.jpg
+  - /blog/imagenes/Heiglkopf 4.jpg
+  - /blog/imagenes/Heiglkopf 5.jpg
+  - /blog/imagenes/Heiglkopf 6.jpg
+  - /blog/imagenes/Heiglkopf 7.jpg
+  - /blog/imagenes/Heiglkopf 8.jpg
+  - /blog/imagenes/Heiglkopf 9.jpg
+  - /blog/imagenes/Heiglkopf 10.jpg
 altitud: "1.218"
 desnivel: "480"
 distancia: 6,5
