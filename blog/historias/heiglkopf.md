@@ -49,4 +49,5 @@ Durante el período del nacionalsocialismo era muy normal que a diferentes cosas
 ## Cosas para hacer
 
 [[derecha:8]]
+
 Mi plan este día fue coronar esta cumbre al igual que la de Blomberg que queda justo al lado. Después de eso regresé por el mismo sendero y listo. En todo caso, si uno sigue en esa dirección se encuentra con un montón de juegos en medio de la naturaleza para toda la familia. Por ahí vas encontrando la pista de esquí y la pista para tirarse en trineo de Blomberg. Finalmente está la Blomberghaus, donde se puede deleitar allí con el servicio bueno y variado menú que tienen. Puedes bajar en gondola o en Rodeln (carritos deslizadores) o por la via forestal de la Blomberghaus. También tienes la opción de seguir metido en el senderismo y conquistar la cumbre Zwiesel para hacer la ronda completa. Es bastante interesante y variado como plan de todo el día con familiares o amigos, y esa es la razón por la que va tanto turista.   
