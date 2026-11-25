@@ -18,7 +18,7 @@ estado: publicado
 
 **[[entradilla:Una historia contada principalmente a través de imágenes.]]**
 
-[Dos o tres líneas para situar al lector.]
+
 
 **[[fotos:2,3,4,5]]**
 
