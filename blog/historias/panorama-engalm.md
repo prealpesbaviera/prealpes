@@ -22,9 +22,9 @@ estado: publicado
 
 En Bogotá vivimos con Carito, y era un día muy especial porque decidió venir a visitarnos. Una de los rincones más bonitos que existen en la zona y como en el planeta tierra es Panorama Eng. Es una especie de enclave austriaco dentro de Alemania. Hay muchas montañas del Karwendel se pueden hacer desde allí. 
 
-**### Lo que no se ve en las fotos**
+### Recorrido
 
-[Cuenta el esfuerzo, la conversación o la sorpresa.]
+Llegamos en auto, pero también hay una ruta en bus hasta allá. 
 
 **[[grande:6]]**
 
