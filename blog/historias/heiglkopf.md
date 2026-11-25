@@ -29,10 +29,12 @@ estado: publicado
 
 ##Salida en Wackersberg
 
-Empiezas este recorrido en el parqueadero Waldherralm en Wackersberg, municipio al lado de Bad Tölz. Cuando en algún momento Bad Tölz era famoso por sus saunas y todo los tratamiento de wellness alrededor de ello
+Empiezas este recorrido en el parqueadero Waldherralm en Wackersberg, municipio al lado de Bad Tölz. Las aguas de la zona llamda Sauersberg son o eran ricas en yodo y sales mineraleses con buenas propiedades para la salud humana. Hacia mediados del siglo XIX se organizaron varios manantiales con fines curativos y esto atrajo mucho el turismo medicinal. En 1899 el el principe regente Leopold de Baviera le dio el título de Bad (balneario) a la ciudad de Tölz, y desde allí se llama Bad Tölz. Este título atrajo celebridades y fue un boom para el turismo dle municipio. Luego se montaron baños termales, saunas y demás. Con las guerras se detuvo su actividad económica, pero luego de ello se modernizó y tuvo un fuerte auge económico. Sin embargo, luego con el crecimiento d ela competencia, y los amlso manejos administrativos llevaron al declive de este referente internacional en esta actividad. 
+
 
 [[fotos:2,3,4,5]]
-[[epigrafe:Cuatro momentos del mismo recorrido.]]
+
+
 
 ### Lo que no se ve en las fotos
 
