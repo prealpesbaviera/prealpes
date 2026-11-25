@@ -59,4 +59,4 @@ Me encontraba allá arriba solo, porque entre otras cosas, bueno sí lo acepto, 
 
 ##¿Valió la pena?
 
-Definitivamente sí. Fue muy arriesgado todo, pero me sentí vivo en todo momento, sentí mucha drenalina, muchas ganas de seguir haciendo. Me encontré conmigo mismo. Fue una aventura espectacular. Me dejó muchas lesiones aprendidas, sobre todo de las cosas que no debería hacer. Cuando sale bien lo disfrutas, pero estuve al limite. Es mejor hacer esto d eforma responsable. Como tal todo esto es un proceso de aprendizaje y cada vez lo  iré mejorando. Les dejo mis fotos aquí abajo. 
+Definitivamente sí. Fue muy arriesgado todo, pero me sentí vivo en todo momento, sentí mucha adrenalina, muchas ganas de seguir haciendo esta actividad. Me encontré conmigo mismo. Fue una aventura espectacular. Me dejó muchas lesiones aprendidas, sobre todo de las cosas que no debería hacer. Cuando sale bien lo disfrutas, pero estuve al limite. Es mejor hacer esto de forma responsable. Como tal todo esto es un proceso de aprendizaje y cada vez lo iré mejorando. Les dejo mis fotos aquí abajo. 
