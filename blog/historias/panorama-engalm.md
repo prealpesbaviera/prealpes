@@ -14,11 +14,9 @@ dificultad: facil-moderado
 acceso: Engalm Austria
 estado: publicado
 ---
+**[[entradilla:Notas sueltas de un día entre senderos.]]**
 
-
-**[[entradilla:Una historia contada principalmente a través de imágenes.]]**
-
-
+### 16:45 · El punto de partida****
 
 **[[fotos:2,3,4,5]]**
 
