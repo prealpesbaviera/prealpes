@@ -14,24 +14,26 @@ dificultad: facil-moderado
 acceso: Wanderparkplatz Kappel en Unterammergau
 estado: publicado
 ---
-**[[capitulo:Primera parte · Bajo los árboles]]**
+[[entradilla:Una montaña muy exigente e interesante]]
 
-**[[izquierda:2]]**
+### El punto de partida
 
-[Describe la primera atmósfera.]
+[[fotos:2,3,4,5]]
 
-**[[nota:Temperatura, sonidos, luz o detalles del bosque.]]**
+Este es uno de las rutas de senderismo que más me ha gustado hacer y especialmente haberla hecho de la forma cómo la hice ese día. No fue definitivamente nada responsable como lo hice, pero terminó siendo una aventura increible. Como pueden ver más abajo esta entrada está llena de fotos porque todo era muy bonito allí arriba. Hay un detalle importante es que cuando estuve arriba fue justo el atardecer como pueden apreciar. Esto se traduce en que contaba con cerca de 30 minutos de luz de día para el descenso de más de una hora. Bien aquí les cuento como fue todo. 
 
-**[[separador]]**
+##El inicio
 
-**[[capitulo:Segunda parte · A cielo abierto]]**
+Se arranca en el parqueadero del Hohenburg en Lenggries, desde donde también puedes empezar otros tours que estaré comentando en otras historias más adelante. Allí debes tomar dirección hacia el norte siguiendo las indicaciones de los letreros amarillos. No hay forma de perderse, el inicio está bien claro. Luego de caminar por un paseo bonito con un riachuelo al lado, te metes de lleno en la montaña. Apenas pisas, no hay pedazos de descanso. Todo es empinado por camino de raíces, que a medida que avanza se va poniendo más exigente. Para este tour se necesita muy buena condición física, cero vertigo y estar preparado para escalar un poco. Cuando sientes que ya casi es el final y que todo va a empezar a ponerse más fácil, es cuando realmente todo se pone más difícil. Sumado a eso iba contrareloj porque dentro de ya muy poco era el atardecer, así que tiempo para hacer pausa tampoco tenía mucho.  
 
-**[[derecha:3]]**
+[[grande:2]]
 
-[Describe el cambio de paisaje.]
+Se necesita además una buena capacidad de ubicación. Aunque hay señales rojas con blanco pintadas en los árboles, a veces no son tan claras, y muchas veces no están ahí. Cuando llegas a la roca final, ya no hay más señales y hay huellas tanto para la izquierda como para la derecha. La diferencia es sencilla, por la derecha te conduce por un camino relativamente normal; soloque no lo sabes; y por la izquierda tienes que escalar. Es importante resaltar que en este momento ya no tenía casi fuerzas porque subí muy rápido y sin pausa alguna. Bueno nada que agregar, tomé obviamente por la izquierda porque no sabía que camino escoger. Me gusta escalar pedazos así, pero con buenas reservas de energía. Esa escalada fue fuerte para mí, y llegué a sentir un poco de miedo y ansiedad, porque entre otras cosas andaba solo y en todo el camino tampoco me encontré a ningún otro senderista. Recomiendo no mirar para abajo mientras se escala y concentrarse solo en el objetivo final. Listo ahí ya casi lo tienes, solo es caminar un poco por el borde del abismo y ya. Si tienes miedo a las alturas, va a ser difícil. Bueno y a sí como por arte de magia, allí ante mi uno de los espectáculos más hermosos que he presenciado en mi vida, y todo para mí solo allá arriba. Increible el juego de luces del atardecer, era como si todo fuera perfecto. Todo lindo. Estoy lejos de saber tomar fotos, de tener una buena cámara y demás, pero lo que presenciaron mis ojos la verdad es que no hay cámara que lo pueda plasmar perfectamente. Una cosa es lo que uno ve y otra como quedan las fotos. Fue maravilloso, una gran recompensa llegar ahí. 
 
-**[[grande:4]]**
+### La bajada entre tinieblas
 
-**[[centrado:Era el mismo día, pero parecía otro mundo.]]**
+Me encontraba allá arriba solo, porque entre otras cosas, bueno sí lo acepto, no era la hora más indicada para subir, menos si lo haces solo, menos si no conoces la montaña y menos si aun no tienes la experiencia suficiente para hacerlo. Ahh y menso si para bajar no tienes lampra frontal y la batería de tu celular está por debajo del 15%. Sí todo mal, pero cuento con buenas habilidades de ubicación y memoria, así que bueno apliqué todas mis capacidades cognitivas para poder bajar ese terreno tan complejo. Si bien es cierto, a medida que bajas se va poniendo más sencillo, el camino es bastante largo, y siempre es empinado. Una mala pisada y quedas en medio de la nada a tu suerte. Tuve más o menos 20 minutos de buena luz. Luego se fue poniendo gris, así que otros 20 minutos con esa luz tenue. Como el camino es en medio del bosque, los altos árboles tapan los pocos rayos de luz que quedan y de repente quedas en la total penumbra. Puse mi celular en modo avión y use mi única fuente de luz, su lámpara. La luz es ideal, pero me inquietaba que poco esatría en cero. Nada qué pensar, tocaba bajar tan rápido como fuera posible o de lo contrario bajar el último estrecho sin luz sería bastante no sé, entre muy difícil y medio imposible. A esto debo agregar que escuché un animal relativamente cerca de mí, pero como no veía nada, no pude saber qué era. Mi corazón a toda porque venía bajando a lo que daba, y porque algo de susto sí que da estar así tan oscuras en un camino de mucho riesgo. 
 
-[Reflexión final.]
+##¿Valió la pena?
+
+Definitivamente sí. Fue muy arriesgado todo, pero me sentí vivo en todo momento, sentí mucha adrenalina, muchas ganas de seguir haciendo esta actividad. Me encontré conmigo mismo. Fue una aventura espectacular. Me dejó muchas lesiones aprendidas, sobre todo de las cosas que no debería hacer. Cuando sale bien lo disfrutas, pero estuve al limite. Es mejor hacer esto de forma responsable. Como tal todo esto es un proceso de aprendizaje y cada vez lo iré mejorando. Les dejo mis fotos aquí abajo. 
